@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=NetCON7_1 Pin=CON7-1
+Added Pin To Net: NetName=NetCON2_5 Pin=CON1-2
+Added Pin To Net: NetName=NetCON2_5 Pin=CON2-1
+Added Pin To Net: NetName=NetCON7_1 Pin=CON2-8
+Added Pin To Net: NetName=NetCON2_5 Pin=CON3-1
+Added Pin To Net: NetName=NetCON7_1 Pin=CON3-8
+Added Pin To Net: NetName=NetCON2_5 Pin=CON4-2
+Added Pin To Net: NetName=NetCON2_5 Pin=U1-7
+Added Pin To Net: NetName=NetCON7_1 Pin=U1-9
+Added Pin To Net: NetName=NetCON2_5 Pin=U1-16
+Change Net Name : Old Net Name=NetCON1_1 New Net Name=+5
+Change Net Name : Old Net Name=NetCON2_5 New Net Name=GND
+Change Net Name : Old Net Name=NetCON7_1 New Net Name=VCC

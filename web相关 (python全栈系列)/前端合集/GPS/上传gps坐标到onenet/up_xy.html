@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hello, World</title>
+<style type="text/css">
+html{height:100%}
+body{height:100%;margin:0px;padding:0px}
+
+</style>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</script>
+</head>
+
+<body>
+
+    lng:<br>
+    <input type="text" id="lng">
+    <br>
+    lat:<br>
+    <input type="text" id="lat">
+    <button onclick="fresh();"> 提交 </button>
+    
+
+
+<script>
+
+
+
+
+
+    param = {"limit_num":1,"id":"590657612","password":"gjU2173SbsvrSi4OpLyK8IXW3tc="};
+	data_name = ["lng","lat"]; 
+	data_value = ["0","0"];
+
+    function fresh(){
+        // data_value[0] = parseFloat($("#lng").val());
+        // data_value[1] = parseFloat($("#lat").val());
+        data_value[0] = $("#lng").val();
+        data_value[1] = $("#lat").val();
+        
+    console.log(data_value);
+
+	param['data_name']=JSON.stringify(data_name);
+	param['data_value']=JSON.stringify(data_value);
+		console.log(param);
+		$.get("http://39.105.218.125:80/onenet_write/",param,function(data,status){
+        console.log(data);
+        alert(data); 
+		}) 
+	}
+</script>
+
+
+</body>

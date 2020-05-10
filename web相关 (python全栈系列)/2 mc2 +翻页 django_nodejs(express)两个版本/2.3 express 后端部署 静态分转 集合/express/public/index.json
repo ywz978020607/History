@@ -1,0 +1,58 @@
+[{
+	"id":1,
+	"strang":'[2020-01-13],
+	"txt":'Our paper entitled “State-of-the-art in 360° Video/Image Processing: Perception, Assessment and Compression” has been accepted by IEEE Journal of Selected Topics in Signal Processing (JSTSP). Congratulations, Chen Li.'
+},{
+	"id":2,
+	"strang":'[2019-10-03]',
+	"txt":'Our paper entitled “An EM-based User Clustering Method in Non-orthogonal Multiple Access” has been accepted by IEEE Transactions on Communications (TCOM). Well done, Jie Ren.'
+},{
+	"id":3,
+	"strang":'[2019-09-27]',
+	"txt": 'Our paper entitled “MFQE 2.0: A New Approach for Multi-frame Quality Enhancement on Compressed Video” has been accepted by IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI, IF=17.730). Congratulations, Qunliang Xing.'
+},{
+	"id":4,
+	"strang":'[2019-09-03]',
+	"txt":'Our paper entitled ’A Meta-learning Framework for Learning Multi-User Preferences in QoE Optimization of DASH" has been accepted by IEEE Transactions on Circuits and Systems for Video Technology (TCSVT). Well done, Liangyu Huo.'
+},{
+	"id":5,
+	"strang":'[2019-07-22]',
+	"txt":'Our paper entitled “Wavelet Domain Style Transfer for an Effective Perception-distortion Tradeoff in Single Image Super-Resolution” has been accepted by IEEE International Conference on Computer Vision (ICCV’19), oral presentation. Congratulations, Xin Deng. <a href=" https://github.com/cindydeng1991/Wavelet-Domain-Style-Transfer-for-an-Effective-Perception-distortion-Tradeoff-in-Single-Image-Super-">[Software]</a><a href=" https://www.youtube.com/watch?v=HwMWViC08Zc&list=PLBAFw2oKatLJ7Mb8Xat6fq_oGyD7JdaNU&index=6">[Video presentation]</a>'
+},{
+	"id":6,
+	"strang":'[2019-07-03]',
+	"txt":'Our paper entitled “A Large-scale Database and a CNN Model for Attention Based Glaucoma Detection” has been accepted by IEEE Transactions on Medical Imaging (TMI). Well done, Liu Li.'
+},{
+	"id":7,
+	"strang":'[2019-06-30]',
+	"txt":'Our paper entitled "Pathology-aware deep network visualization and its application in glaucoma image synthesis" has been accepted by MICCAI19. Congratulations, Xiaofei Wang.'
+},{
+	"id":8,
+	"strang":'[2019-06-02]',
+	"txt":'Our paper entitled "DeepMTT: A Deep Learning Maneuvering Target-Tracking Algorithm Based on Bidirectional LSTM Network" has been accepted by Information Fusion. Well done, Jingxian Liu.'
+},{
+	"id":9,
+	"strang":'[2019-05-30]',
+	"txt":'Our paper entitled "A Deep Learning Approach for Multi-Frame In-Loop Filter of HEVC" has been accepted by IEEE Transactions on Image Processing (TIP). Congratulations, Tianyi Li.'
+},{
+	"id":10,
+	"strang":'[2019-03-10]',
+	"txt":'Our papers entitled “Removing Rain in Videos: A Large-scale Database and a Two-stream Convlstm Approach” and “Quality-gated Convolutional LSTM for Enhancing Compressed Video” have been accepted by ICME"19 for oral presentations. Well done, Tie Liu and Ren Yang.'
+},{
+	"id":11,
+	"strang":'[2019-03-06]',
+	"txt":'Our co-authored paper entitled “Learning QoE of Mobile Video Transmission with Deep Neural Network: A Data-driven Approach” has been accepted by IEEE JSAC.
+},{
+	"id":12,
+	"strang":'[2019-02-25]',
+	"txt":'Our papers entitled “Viewport Proposal CNN for 360° Video Quality Assessment” and “Attention Based Glaucoma Detection: A Large-scale Database and CNN Model” have been accepted by CVPR"19. Well done, Chen Li and Liu Li.'
+},{
+	"id":13,
+	"strang":'[2019-02-02]',
+	"txt":'Three of our papers have been accepted by ICASSP.'
+},{
+	"id":14,
+	"strang":'[2019-01-15]',
+	"txt":'We are organizing a special issue of IEEE J-STSP (IF: 4.361), the title of which is Perception-driven 360-degree video processing. Please see <a href="pdf/JSTSP_SI_360_CFP.pdf">Call for Paper</a>. '
+}
+]

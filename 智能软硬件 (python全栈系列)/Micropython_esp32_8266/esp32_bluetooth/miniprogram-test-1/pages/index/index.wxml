@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="input-section">{{motto1}}</text>
+    <text>\n\n</text>
+    <text class="user-motto">{{motto2}}</text>
+    <text>\n\n</text>
+    <input type="text" name='down1' class="input-section" placeholder="请输入消息" bindinput="down1Input"/><text>\n\n</text>
+
+    <button bindtap='Btn1'>发送</button>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Free Documents]
+   Generated File[ywz0920.TXT]
+   Generated File[ywz0920.LDP]
+   Generated File[ywz0920.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 15:14:33 On 2019/9/25

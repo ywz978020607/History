@@ -1,0 +1,5 @@
+DRC Rules Export File for PCB: D:\Desktop\git\History\智能软硬件 (python全栈系列)\Micropython_esp32\esp32_PCB底座_工程\esp32底座\ywz0920.PcbDoc
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=10.00
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=10.00
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0

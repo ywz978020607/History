@@ -1,0 +1,4 @@
+<script src="https://libs.baidu.com/jquery/1.4.4/jquery.min.js"></script>
+
+python manage.py makemigrations
+python manage.py migrate

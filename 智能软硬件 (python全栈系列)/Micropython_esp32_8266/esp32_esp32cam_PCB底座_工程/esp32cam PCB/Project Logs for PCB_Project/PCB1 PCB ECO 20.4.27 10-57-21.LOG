@@ -1,0 +1,106 @@
+Added Component: Designator=CON1(8PIN)
+Added Component: Designator=CON2(8PIN)
+Added Component: Designator=CON3(8PIN)
+Added Component: Designator=CON4(8PIN)
+Added Component: Designator=CON5(MicroUSB)
+Added Component: Designator=CON6(8PIN_2)
+Added Component: Designator=CON7(8PIN_2)
+Added Component: Designator=CON8(8PIN_2)
+Added Component: Designator=U1(ESPCAM_BOARD)
+Added Pin To Net: NetName=NetCON1_1 Pin=CON1-1
+Added Pin To Net: NetName=NetCON1_1 Pin=CON4-1
+Added Pin To Net: NetName=NetCON1_1 Pin=CON5-1
+Added Pin To Net: NetName=NetCON1_1 Pin=CON6-1
+Added Pin To Net: NetName=NetCON1_1 Pin=CON6-2
+Added Pin To Net: NetName=NetCON1_1 Pin=CON6-3
+Added Pin To Net: NetName=NetCON1_1 Pin=CON6-4
+Added Pin To Net: NetName=NetCON1_1 Pin=CON6-5
+Added Pin To Net: NetName=NetCON1_1 Pin=CON6-6
+Added Pin To Net: NetName=NetCON1_1 Pin=CON6-7
+Added Pin To Net: NetName=NetCON1_1 Pin=CON6-8
+Added Pin To Net: NetName=NetCON1_1 Pin=U1-8
+Added Net: Name=NetCON1_1
+Added Pin To Net: NetName=NetCON1_2 Pin=CON1-2
+Added Pin To Net: NetName=NetCON1_2 Pin=CON4-2
+Added Pin To Net: NetName=NetCON1_2 Pin=U1-7
+Added Net: Name=NetCON1_2
+Added Pin To Net: NetName=NetCON1_3 Pin=CON1-3
+Added Pin To Net: NetName=NetCON1_3 Pin=CON4-3
+Added Pin To Net: NetName=NetCON1_3 Pin=U1-6
+Added Net: Name=NetCON1_3
+Added Pin To Net: NetName=NetCON1_4 Pin=CON1-4
+Added Pin To Net: NetName=NetCON1_4 Pin=CON4-4
+Added Pin To Net: NetName=NetCON1_4 Pin=U1-5
+Added Net: Name=NetCON1_4
+Added Pin To Net: NetName=NetCON1_5 Pin=CON1-5
+Added Pin To Net: NetName=NetCON1_5 Pin=CON4-5
+Added Pin To Net: NetName=NetCON1_5 Pin=U1-4
+Added Net: Name=NetCON1_5
+Added Pin To Net: NetName=NetCON1_6 Pin=CON1-6
+Added Pin To Net: NetName=NetCON1_6 Pin=CON4-6
+Added Pin To Net: NetName=NetCON1_6 Pin=U1-3
+Added Net: Name=NetCON1_6
+Added Pin To Net: NetName=NetCON1_7 Pin=CON1-7
+Added Pin To Net: NetName=NetCON1_7 Pin=CON4-7
+Added Pin To Net: NetName=NetCON1_7 Pin=U1-2
+Added Net: Name=NetCON1_7
+Added Pin To Net: NetName=NetCON1_8 Pin=CON1-8
+Added Pin To Net: NetName=NetCON1_8 Pin=CON4-8
+Added Pin To Net: NetName=NetCON1_8 Pin=U1-1
+Added Net: Name=NetCON1_8
+Added Pin To Net: NetName=NetCON2_1 Pin=CON2-1
+Added Pin To Net: NetName=NetCON2_1 Pin=CON3-1
+Added Pin To Net: NetName=NetCON2_1 Pin=U1-16
+Added Net: Name=NetCON2_1
+Added Pin To Net: NetName=NetCON2_2 Pin=CON2-2
+Added Pin To Net: NetName=NetCON2_2 Pin=CON3-2
+Added Pin To Net: NetName=NetCON2_2 Pin=U1-15
+Added Net: Name=NetCON2_2
+Added Pin To Net: NetName=NetCON2_3 Pin=CON2-3
+Added Pin To Net: NetName=NetCON2_3 Pin=CON3-3
+Added Pin To Net: NetName=NetCON2_3 Pin=U1-14
+Added Net: Name=NetCON2_3
+Added Pin To Net: NetName=NetCON2_4 Pin=CON2-4
+Added Pin To Net: NetName=NetCON2_4 Pin=CON3-4
+Added Pin To Net: NetName=NetCON2_4 Pin=U1-13
+Added Net: Name=NetCON2_4
+Added Pin To Net: NetName=NetCON2_5 Pin=CON2-5
+Added Pin To Net: NetName=NetCON2_5 Pin=CON3-5
+Added Pin To Net: NetName=NetCON2_5 Pin=CON5-5
+Added Pin To Net: NetName=NetCON2_5 Pin=CON5-GND
+Added Pin To Net: NetName=NetCON2_5 Pin=CON5-GND
+Added Pin To Net: NetName=NetCON2_5 Pin=CON5-GND
+Added Pin To Net: NetName=NetCON2_5 Pin=CON5-GND
+Added Pin To Net: NetName=NetCON2_5 Pin=CON8-1
+Added Pin To Net: NetName=NetCON2_5 Pin=CON8-2
+Added Pin To Net: NetName=NetCON2_5 Pin=CON8-3
+Added Pin To Net: NetName=NetCON2_5 Pin=CON8-4
+Added Pin To Net: NetName=NetCON2_5 Pin=CON8-5
+Added Pin To Net: NetName=NetCON2_5 Pin=CON8-6
+Added Pin To Net: NetName=NetCON2_5 Pin=CON8-7
+Added Pin To Net: NetName=NetCON2_5 Pin=CON8-8
+Added Pin To Net: NetName=NetCON2_5 Pin=U1-12
+Added Net: Name=NetCON2_5
+Added Pin To Net: NetName=NetCON2_6 Pin=CON2-6
+Added Pin To Net: NetName=NetCON2_6 Pin=CON3-6
+Added Pin To Net: NetName=NetCON2_6 Pin=U1-11
+Added Net: Name=NetCON2_6
+Added Pin To Net: NetName=NetCON2_7 Pin=CON2-7
+Added Pin To Net: NetName=NetCON2_7 Pin=CON3-7
+Added Pin To Net: NetName=NetCON2_7 Pin=U1-10
+Added Net: Name=NetCON2_7
+Added Pin To Net: NetName=NetCON2_8 Pin=CON2-8
+Added Pin To Net: NetName=NetCON2_8 Pin=CON3-8
+Added Pin To Net: NetName=NetCON2_8 Pin=U1-9
+Added Net: Name=NetCON2_8
+Added Pin To Net: NetName=NetCON7_1 Pin=CON7-1
+Added Pin To Net: NetName=NetCON7_1 Pin=CON7-2
+Added Pin To Net: NetName=NetCON7_1 Pin=CON7-3
+Added Pin To Net: NetName=NetCON7_1 Pin=CON7-4
+Added Pin To Net: NetName=NetCON7_1 Pin=CON7-5
+Added Pin To Net: NetName=NetCON7_1 Pin=CON7-6
+Added Pin To Net: NetName=NetCON7_1 Pin=CON7-7
+Added Pin To Net: NetName=NetCON7_1 Pin=CON7-8
+Added Net: Name=NetCON7_1
+Added Class: Name=Sheet1
+Added Room: Name=Sheet1

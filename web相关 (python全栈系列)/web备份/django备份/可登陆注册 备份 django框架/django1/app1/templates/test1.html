@@ -1,0 +1,83 @@
+{% extends "base.html" %} {% block head %}
+<link href="/static/jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+<link href="/static/jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+<link href="/static/jQueryAssets/jquery.ui.button.min.css" rel="stylesheet" type="text/css">
+	
+<link href="/static/test1.css" rel="stylesheet" type="text/css">
+
+<script src="/static/jQueryAssets/jquery-1.11.1.min.js"></script>
+<script src="/static/jQueryAssets/jquery.ui-1.10.4.button.min.js"></script>
+{% endblock %}
+
+{% block body %}
+ <br> <br> <br> <br> <br> <br>
+<center>
+<button id="Button1">类别1</button>
+	
+<button id="Button2">类别2</button>
+ <br> <br> <br> <br> <br> <br>
+<script type="text/javascript">
+$(function() {
+	$( "#Button1" ).button(); 
+});
+$(function() {
+	$( "#Button2" ).button(); 
+});
+	
+
+$("#Button1").click(function(){
+ 	add_table("1");
+});
+	
+$("#Button2").click(function(){
+// 	console.log("123");
+	add_table("2");
+});
+	
+function add_table(para){
+	$('#add_content').empty();
+	var param={"kind":para};
+	$.get("http://127.0.0.1:8000/test/",param,function(data,status){
+      console.log(data);
+		for(var ii=0;ii<Object.keys(data).length;ii++){
+			console.log(data[ii]["_id"].toString());
+			var max_line_num=1;
+			$('#add_content').append(
+        "<tr id='line" + ii.toString() + "'>" +
+            "<td class='td_Item'>" + data[ii]["date"] + "</td>" +
+            "<td class='td_Item'>" + data[ii]["time"] + "</td>" +
+            "<td class='td_Item'>" +
+                "<span onclick= \"to_page1('" + data[ii]["_id"].toString() + "')\" ><a href=\"javascript:void(0)\">详情</a></span> " +
+            "</td>" +
+        "</tr>");
+		}
+    });
+    
+}
+	
+function to_page1(para){
+//	id = para.split("(")[1].split(")")[0];
+	console.log(para);
+};
+</script>
+	
+	
+	
+	
+    <table>
+        <tr>
+          <td class="td_Item">
+                序号
+          </td>
+          <td class="td_Item">
+                步骤名称
+          </td>
+            <td class="td_Item">
+                相关操作 
+            </td>
+      </tr>
+</table>
+    <table id="add_content">
+    </table>
+	</center>
+{% endblock %}
