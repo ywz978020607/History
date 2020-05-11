@@ -6,6 +6,8 @@ from machine import Pin, SPI
 from xpt2046 import XPT2046
 from time import sleep
 
+##blk是背光引脚，可以默认悬空不接，其他引脚接上即可
+
 #6个引脚
 spi = SPI(miso=Pin(12), mosi=Pin(13, Pin.OUT), sck=Pin(14, Pin.OUT))  #240*320 
 #or add : scroll = True ->scroll 320*240
@@ -23,7 +25,7 @@ cs2 = Pin(2,Pin.OUT)
 cs2.off()
 
 # spi = SPI(1, baudrate=1000000)
-xpt = XPT2046(spi)
+xpt = XPT2046(spi)  #上述描述=spi1的接线定义，但是为软串口，也可以替换为硬串口，都能用
 
 while True:
     p = xpt.get_touch(raw=True)
