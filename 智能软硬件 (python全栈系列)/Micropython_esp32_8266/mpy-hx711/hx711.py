@@ -30,7 +30,7 @@ class HX711(object):
     READY_TIMEOUT_SEC = const(5)
     SLEEP_DELAY_USEC = const(80)
 
-    def __init__(self, d_out: int, pd_sck: int, channel: int = CHANNEL_A_128):
+    def __init__(self, d_out, pd_sck, channel: int = CHANNEL_A_128):
         self.d_out_pin = Pin(d_out, Pin.IN)
         self.pd_sck_pin = Pin(pd_sck, Pin.OUT, value=0)
         self.channel = channel
