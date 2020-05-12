@@ -14,7 +14,7 @@ import time
 
 
 class matkey():
-    _map={2:4,3:7,4:10,5:2,6:5,7:8,8:10,9:3,10:6,11:9}
+    _map={2:4,3:7,4:10,5:2,6:5,7:8,8:11,9:3,10:6,11:9}
     def __init__(self):  
         # self.key_list = key_list
         self.key_list_name = ["PD0","PD1","PD2","PD3","PD4","PD5","PD6","PD7"]
