@@ -1,6 +1,6 @@
 import network
 from machine import Pin
-import _thread,time 
+import time 
 
 class WIFI():
     def __init__(self,SSID='ywzywz',PASS='12345678',check = 0): 
