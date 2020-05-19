@@ -36,3 +36,6 @@ while 1:
   time.sleep_ms(100)
   print(gps_values) #本地调试，可删除
   print(rtc)#可删除[/font][/align][align=left][font=宋体]
+  
+  
+  
