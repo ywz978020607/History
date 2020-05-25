@@ -1,6 +1,10 @@
 # 面向中学生及新手的物联网快速上手教学专题（远程控制教学 / 教学视频篇）
 *三小时学会手机远程遥控单片机等功能*
 
+详情请看 https://www.cnblogs.com/sharklet/p/12543620.html
+
+b站记录 https://space.bilibili.com/250616280/video
+
 ## 1. 基础项目
 
  - 功能：家居物联网手机远程控制
