@@ -8,7 +8,7 @@ if argv_len==3:
 else:
     url = input("downloads_url:")
     name = input("filename_to_save:")
-os.system("wget -c '"+url+"' -O "+name)
+os.system("wget -c '"+url+"' --header 'Cookie:allow-download=1' -O "+name)
 
 #eg: python bhpan.py 'https://p300s.buaa.edu.cn:10002/bhpan_bucket/7f451e0dxxxx'  test.rar
 #    or
