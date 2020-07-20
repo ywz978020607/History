@@ -1,11 +1,11 @@
-function up_click() {
+function upclick() {
 	var data0 = document.getElementById('my_file');
 	//  console.log(data0.files[0].name);
 	var data= new FormData();
 	data.append(data0.files[0].name, data0.files[0]);
 	// console.log(data);
 	$.ajax({
-		url: 'http://39.105.218.125:80/upfile/',
+		url: '/upfile/',
 		type: 'POST',
 		data: data,
 		dataType:"json",
@@ -125,7 +125,7 @@ function upload(){
 	 var data=Dragfiles(); //获取formData
 	console.log(data);
 	$.ajax({
-		url: 'http://39.105.218.125:80/upfile/',
+		url: '/upfile/',
 		type: 'POST',
 		data: data,
 		dataType:"json",
