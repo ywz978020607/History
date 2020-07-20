@@ -2,7 +2,7 @@ import sys
 sys.path.append('/var/www/django1_nginx/app1')
 
 from django.shortcuts import render
-from django.http import HttpResponse,JsonResponse
+from django.http import HttpResponse,JsonResponse,HttpResponseRedirect
 import config
 import os
 
@@ -12,7 +12,12 @@ def demo(request):
     print(request.GET['id'])
     return HttpResponse("success")
 def home(request):
-    return render(request,'home.html')
+    # return render(request,'home.html')
+    return HttpResponseRedirect('/sharklet')
+    
+def app1(request):
+    # return render(request,'home.html')
+    return HttpResponse("123")
 
 
 def data1(request):
@@ -63,7 +68,7 @@ def upfile(request):
             with open(file_path,'wb') as f:
                 f.write(data.read())
 
-    response = JsonResponse({"status":'39.104.218.125:80/files/data/'})
+    response = JsonResponse({"status":'/files/data/'})
     return response
 
 #客户1

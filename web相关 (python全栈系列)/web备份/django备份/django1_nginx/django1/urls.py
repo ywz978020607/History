@@ -26,8 +26,8 @@ from app1 import views_led
 from app1 import views_hgd
 
 urlpatterns = [
-    path(r'',views.demo,name='demo'),
-    path(r'app1/',views.home,name='home'),
+    path(r'',views.home,name='home'),
+    path(r'app1/',views.app1,name='app1'),
     path(r'test1/',views.test1,name='test1'),
     path(r'data1/',views.data1,name='data1'), 
     
