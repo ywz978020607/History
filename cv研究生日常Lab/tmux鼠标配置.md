@@ -22,3 +22,8 @@ source-file ~/.tmux.conf
 
 
 
+小技巧：
+
+按住shift再滚轮
+
+按住shift选中复制
