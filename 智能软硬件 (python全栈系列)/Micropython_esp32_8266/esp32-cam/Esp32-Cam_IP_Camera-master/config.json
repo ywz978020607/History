@@ -1,0 +1,5 @@
+{
+    "WIFI_SSID": "Wifi_example_ssid",
+    "WIFI_PASSWORD": "Wifi_example_password",
+    "apikey": "esp32Camera"
+}

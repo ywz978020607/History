@@ -1,0 +1,1 @@
+execfile('main.py')
