@@ -1,1 +1,1 @@
-execfile('main.py')
+# execfile('main.py')

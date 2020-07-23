@@ -1,14 +1,15 @@
 from machine import Pin
-#import mywifi
+import time
 
-s = Pin(15,Pin.OUT)
+
+led = Pin(2,Pin.OUT)
+led.on()
+time.sleep(2)
+s = Pin(0,Pin.OUT)
 s.on()
 
 if s.value() == 1:
-   # w = mywifi.WIFI()
     execfile('/task1.py')
 else:
     pass
     #download
-
-    
