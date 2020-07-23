@@ -2,7 +2,7 @@ import network
 import time 
 
 class WIFI():
-    def __init__(self,SSID='ywzywz',PASS='12345678',check = 0): 
+    def __init__(self,SSID='FAST_1721A6',PASS='23456789',check = 0): 
         self.mywifi = None 
         self.SSID = SSID
         self.PASS = PASS
