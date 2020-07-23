@@ -65,6 +65,9 @@ def upfile(request):
             data=request.FILES.get(file)
             file_path=os.path.join(dir_path,file)
             print(file_path)
+            #覆盖
+            if os.path.exists(file_path):
+                os.system('rm '+file_path)
             with open(file_path,'wb') as f:
                 f.write(data.read())
 

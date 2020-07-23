@@ -1,3 +1,39 @@
+function upclick() {
+	var data0 = document.getElementById('my_file');
+	//  console.log(data0.files[0].name);
+	var data= new FormData();
+	data.append(data0.files[0].name, data0.files[0]);
+	// console.log(data);
+	$.ajax({
+		url: '/upfile/',
+		type: 'POST',
+		data: data,
+		dataType:"json",
+		async: true,
+		cache: false,
+		contentType: false,
+		processData: false,
+		success: function (msg) {
+			alert(msg.status)  //可以替换为自己的方法
+			//closeModal();
+			//data.deleteAll(); //清空formData
+			//$('.tbody').empty(); //清空列表
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+alert(XMLHttpRequest.status);
+alert(XMLHttpRequest.readyState);
+alert(textStatus);
+} 
+		
+		
+		
+		//error: function (returndata) {
+			//alert('finished!')  //可以替换为自己的方法
+		//}
+	});
+
+}
+
 function showModal() {  //打开上传框
 	var modal = document.getElementById('modal');
 	var overlay = document.getElementsByClassName('overlay')[0];
@@ -86,9 +122,10 @@ function upload(){
 		setTimeout(blink,200);
 		return false;
 	}
-	var data=Dragfiles(); //获取formData
+	 var data=Dragfiles(); //获取formData
+	console.log(data);
 	$.ajax({
-		url: 'http://39.105.218.125:80/upfile/',
+		url: '/upfile/',
 		type: 'POST',
 		data: data,
 		dataType:"json",

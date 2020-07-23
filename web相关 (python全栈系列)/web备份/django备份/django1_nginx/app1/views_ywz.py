@@ -10,7 +10,7 @@ import json
 def copy_pass(request):
     try:
         name_id = str(request.GET['id'])
-        c=config.config('/home/test/data/ywz_copy_pass.ini')
+        c=config.config('ywz_copy_pass.ini')
         ret = c.readAll()
         if name_id=='0':
             #print(ret)

@@ -10,7 +10,7 @@
 		//刷新
 	function refresh(){
 		 var param = {"id":0,"val":0};
-		    $.get("http://39.105.218.125:80/copy_pass",param,function(data,status){
+		    $.get("/copy_pass",param,function(data,status){
         $("#div0").text(data[0]);
 		$("#div1").text(data[1]);
         $("#div2").text(data[2]);
@@ -28,7 +28,7 @@
 	//按键
     function button_send(data1,data2){
     	    var param = {"id":$(data1).attr("id"),"val":$(data2).val()};
-    $.get("http://39.105.218.125:80/copy_pass",param,function(data,status){
+    $.get("/copy_pass",param,function(data,status){
         refresh();
     })
     
