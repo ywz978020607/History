@@ -5,10 +5,15 @@ import urequests
 from machine import Pin
 import mywifi 
 #########################################
-
+# # check if the device woke from a deep sleep
+# if machine.reset_cause() == machine.DEEPSLEEP_RESET:
+#     print('woke from a deep sleep')
 
 ###
 def task1():
+    rtc = machine.RTC()
+    rtc.irq(trigger=rtc.ALARM0, wake=machine.DEEPSLEEP)
+    
     mywifi.WIFI()
     ##########################
     out = Pin(2,Pin.OUT)
@@ -35,7 +40,7 @@ def task1():
         rp = urequests.post(url, headers=headers, data=json.dumps(data))
         rp.close()
     #update
-    upload()
+    # upload()
 
     ###
     def down():
@@ -48,6 +53,7 @@ def task1():
     #####
     while 1:
         try:
+            print("start")
             down()
             if data_value[0] >0 :
                 print("open")
@@ -59,7 +65,13 @@ def task1():
                 upload()
         except:
             print("error")
-        time.sleep(60)
+        # time.sleep(60)
+        # set RTC.ALARM0 to fire after 60 seconds (waking the device)
+        rtc.alarm(rtc.ALARM0, 60000)
+
+        # put the device to sleep
+        machine.deepsleep()
+
 ##########################################
 ## __main__
 time.sleep(2)

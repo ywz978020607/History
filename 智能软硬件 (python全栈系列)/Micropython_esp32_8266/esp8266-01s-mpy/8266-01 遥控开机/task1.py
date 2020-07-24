@@ -34,7 +34,7 @@ def upload():
     rp = urequests.post(url, headers=headers, data=json.dumps(data))
     rp.close()
 #update
-upload()
+# upload()
 
 ###
 def down():
