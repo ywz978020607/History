@@ -4,7 +4,7 @@ vim ~/.bashrc
 
 export PATH=~/anaconda3/bin:$PATH
 
-
+#或是 export PATH=/usr/local/bin:$PATH  #无conda时
 
 重启环境变量：
 
