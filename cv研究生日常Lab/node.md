@@ -13,6 +13,12 @@ sudo cnpm install n -g
 
 sudo n stable
 
+如果遇到不存在等报错，尝试
+
+cd /usr/local/n/ 
+
+sudo rm -rf versions
+
 ###
 
 
