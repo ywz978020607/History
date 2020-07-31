@@ -1,7 +1,7 @@
 from machine import Pin
 import time
 
-print("start!!!!!!!!!!!!!!!!!!")
+#print("start!!!!!!!!!!!!!!!!!!")
 
 led = Pin(2,Pin.OUT)
 sw = Pin(0,Pin.OUT)
@@ -14,10 +14,12 @@ def open():
     sw.off()
     led.on()
 
+while 1:
+    open()
+    time.sleep(60)
+    close()
+    time.sleep(4)
 
-open()
-time.sleep(10)
-close()
 
 
 

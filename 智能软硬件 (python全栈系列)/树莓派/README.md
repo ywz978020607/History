@@ -204,3 +204,24 @@ python连接mongodb
 
 #######################################
 
+# GPIO python3
+
+> import RPi.GPIO as GPIO
+
+####  改变GPIO模式
+
+> GPIO.setmode(GPIO.BCM)
+
+### 拿2号GPIO做实例 
+
+#### #设置2管脚为输出 
+
+> GPIO.setup(2,GPIO.OUT)
+
+#### #设置GPIO2为高电平
+
+> GPIO.output(2,GPIO.HIGH)
+
+#### #设置GPIO2为低电平
+
+> GPIO.output(2,GPIO.LOW)
