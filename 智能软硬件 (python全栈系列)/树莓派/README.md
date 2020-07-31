@@ -1,4 +1,15 @@
+# 图形界面与命令行
+
+命令行ssh内切换
+
+sudo init 5 #show #or: sudo startx #show
+
+sudo init 3 #close
+
+
+
 ## 原生系统版：
+
 烧录后，在boot目录下添加"ssh"文件，自动开启ssh
 
 sudo raspi-config
