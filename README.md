@@ -37,6 +37,10 @@
 
 
 
+[旧版github链接（已停止更新） ](https://github.com/just-4-f-u-n/History)
+
+
+
 *如果有开发需要或有意思的想法，欢迎联系qq 978020607*
 
 
