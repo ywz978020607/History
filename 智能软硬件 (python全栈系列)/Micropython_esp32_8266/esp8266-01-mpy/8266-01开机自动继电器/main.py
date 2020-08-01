@@ -16,7 +16,7 @@ def open():
 
 while 1:
     open()
-    time.sleep(60)
+    time.sleep(30)
     close()
     time.sleep(4)
 
