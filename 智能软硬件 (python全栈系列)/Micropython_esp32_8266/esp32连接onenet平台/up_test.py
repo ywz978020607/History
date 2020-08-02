@@ -16,7 +16,7 @@ import socket
 import json
 import urequests,machine
 
-url="http://api.heclouds.com/devices//datapoints"
+url="http://api.heclouds.com/devices/**/datapoints"
 headers={'api-key':'gjU2173SbsvrSi4OpLyK8IXW3tc='}
 
 r=urequests.get(url,headers=headers)
