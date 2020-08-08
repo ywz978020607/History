@@ -3,7 +3,8 @@ import time
 import json
 import urequests
 from machine import Pin
-import mywifi 
+# import mywifi 
+import wifimgr
 #########################################
 # # check if the device woke from a deep sleep
 # if machine.reset_cause() == machine.DEEPSLEEP_RESET:
@@ -11,18 +12,22 @@ import mywifi
 
 ###
 def task1():
-    rtc = machine.RTC()
-    rtc.irq(trigger=rtc.ALARM0, wake=machine.DEEPSLEEP)
+    # rtc = machine.RTC()
+    # rtc.irq(trigger=rtc.ALARM0, wake=machine.DEEPSLEEP)
     
-    mywifi.WIFI()
+    # mywifi.WIFI()
+    wlan = wifimgr.get_connection()
     ##########################
-    out = Pin(2,Pin.OUT)
+    out = Pin(2,Pin.OUT,Pin.PULL_UP)
+    out0 = Pin(0,Pin.OUT,Pin.PULL_UP)
     def open():
         # global out
-        out.off()
+        out.on()
+        out0.off()
     def close():
         # global out
-        out.on()
+        out.off()
+        out0.on()
     close()
     #####
     #upload
@@ -65,21 +70,14 @@ def task1():
                 upload()
         except:
             print("error")
-        # time.sleep(60)
+        time.sleep(60)
+        machine.reset()
         # set RTC.ALARM0 to fire after 60 seconds (waking the device)
-        rtc.alarm(rtc.ALARM0, 60000)
+        # rtc.alarm(rtc.ALARM0, 10000)
 
         # put the device to sleep
-        machine.deepsleep()
+        # machine.deepsleep()
 
 ##########################################
 ## __main__
-time.sleep(2)
-s = Pin(0,Pin.OUT)
-s.on()
-
-if s.value() == 1:
-    task1()
-else:
-    pass
-    #download
+task1()

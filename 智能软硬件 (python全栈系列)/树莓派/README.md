@@ -193,12 +193,12 @@ auth = true
 命令行依次输入：
 1.mongo
 2.use admin
-3.db.addUser('sxq', 'sxq')
+3.db.addUser('ywz', 'ywz')
 4.quit()
 python连接mongodb
 使用 pymongo==3.2
 命令行输入：
-	sudo pip3 install  pymongo==3.2
+	sudo pip3 install  pymongo==3.2  # 树莓派32位系统必须用3.2，高了不行
 
 #树莓派32位系统数据库支持2G
 

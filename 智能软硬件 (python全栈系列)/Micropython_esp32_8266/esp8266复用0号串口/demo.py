@@ -1,4 +1,5 @@
 # https://docs.micropython.org/en/latest/esp8266/quickref.html#
+# UART0:UART0 is on Pins 1 (TX) and 3 (RX)
 
 # When UART0 is attached to the REPL, 
 # all incoming chars on UART(0) go straight to stdin so uart.read() 
