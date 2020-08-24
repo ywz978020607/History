@@ -1,0 +1,59 @@
+Change Component Designator: OldDesignator=? NewDesignator=3.3
+Change Component Designator: OldDesignator=C? NewDesignator=C0
+Change Component Designator: OldDesignator=C? NewDesignator=C1
+Change Component Designator: OldDesignator=GND? NewDesignator=gnd2
+Change Component Designator: OldDesignator=P? NewDesignator=5v
+Change Component Designator: OldDesignator=P? NewDesignator=gnd
+Change Component Designator: OldDesignator=R? NewDesignator=R0
+Change Component Designator: OldDesignator=R? NewDesignator=R1
+Change Component Designator: OldDesignator=VR? NewDesignator=ams
+Added Component: Designator=P0(HDR1X8)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P1(HDR1X8)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=R2(LC-0805_R)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "供应商链接"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.szlcsc.com/product/details_18102.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "LC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SuppliersPartNumber"; Value = "C17414"; VariantName = "[No Variations]"
+Added Component: Designator=R3(LC-0805_R)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "供应商链接"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.szlcsc.com/product/details_18102.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier"; Value = "LC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SuppliersPartNumber"; Value = "C17414"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Net?_1 Pin=P0-8
+Added Pin To Net: NetName=NetC?_1 Pin=P1-8
+Added Pin To Net: NetName=Net?_1 Pin=R2-2
+Added Pin To Net: NetName=NetC?_1 Pin=R3-2
+Change Net Name : Old Net Name=Net?_1 New Net Name=Net3.3_1
+Change Net Name : Old Net Name=NetC?_1 New Net Name=Netams_1
+Change Net Name : Old Net Name=NetC?_2 New Net Name=Net5v_1
+Added Pin To Net: NetName=NetP0_3 Pin=P0-3
+Added Pin To Net: NetName=NetP0_3 Pin=R0-1
+Added Net: Name=NetP0_3
+Added Pin To Net: NetName=NetP1_5 Pin=P1-5
+Added Pin To Net: NetName=NetP1_5 Pin=R2-1
+Added Net: Name=NetP1_5
+Added Pin To Net: NetName=NetP1_6 Pin=P1-6
+Added Pin To Net: NetName=NetP1_6 Pin=R1-1
+Added Net: Name=NetP1_6
+Added Pin To Net: NetName=NetP1_7 Pin=P1-7
+Added Pin To Net: NetName=NetP1_7 Pin=R3-1
+Added Net: Name=NetP1_7
+Added Member To Class: ClassName=Sheet1 Member=Component C1 10uF (106) 10% 10V
+Added Member To Class: ClassName=Sheet1 Member=Component gnd Header 2
+Added Member To Class: ClassName=Sheet1 Member=Component P0 Header 8
+Added Member To Class: ClassName=Sheet1 Member=Component P1 Header 8
+Added Member To Class: ClassName=Sheet1 Member=Component R0 10KΩ (1002) ±1%
+Added Member To Class: ClassName=Sheet1 Member=Component R2 10KΩ (1002) ±1%
+Added Member To Class: ClassName=Sheet1 Member=Component R3 10KΩ (1002) ±1%

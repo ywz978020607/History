@@ -1,0 +1,18 @@
+Added Component: Designator=U1(ESPCAM_BOARD)
+Added Pin To Net: NetName=NetCON1_8 Pin=U1-1
+Added Pin To Net: NetName=NetCON1_7 Pin=U1-2
+Added Pin To Net: NetName=NetCON1_6 Pin=U1-3
+Added Pin To Net: NetName=NetCON1_5 Pin=U1-4
+Added Pin To Net: NetName=NetCON1_4 Pin=U1-5
+Added Pin To Net: NetName=NetCON1_3 Pin=U1-6
+Added Pin To Net: NetName=GND Pin=U1-7
+Added Pin To Net: NetName=+5 Pin=U1-8
+Added Pin To Net: NetName=VCC Pin=U1-9
+Added Pin To Net: NetName=NetCON2_7 Pin=U1-10
+Added Pin To Net: NetName=NetCON2_6 Pin=U1-11
+Added Pin To Net: NetName=GND Pin=U1-12
+Added Pin To Net: NetName=NetCON2_4 Pin=U1-13
+Added Pin To Net: NetName=NetCON2_3 Pin=U1-14
+Added Pin To Net: NetName=NetCON2_2 Pin=U1-15
+Added Pin To Net: NetName=GND Pin=U1-16
+Added Member To Class: ClassName=Sheet1 Member=Component U1 ESP32_CAM

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hello, World</title>
+<style type="text/css">
+html{height:100%}
+body{height:100%;margin:0px;padding:0px}
+#container{height:100%}
+</style>
+<!-- v3.0版本的引用方式：src="http://api.map.baidu.com/api?v=3.0&ak=您的密钥" -->
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=CwqECi3qpXxC8unBV05p0hiG7A8ut480"></script>
+<!-- 在页面的头部应用点聚合工具开源库的文件 -->
+<script type="text/javascript" src="http://api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay_min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/MarkerClusterer/1.2/src/MarkerClusterer_min.js"></script>
+</script>
+</head>
+
+<body>
+<div id="container"></div>
+<script type="text/javascript">
+
+    // 创建地图实例
+    var gpsmarkers = [];
+    var markers = [];
+    var pointArr=[];
+    var pt = null;
+
+    navigator.geolocation.getCurrentPosition(geo_success, geo_error,{
+        // 指示浏览器获取高精度的位置，默认为false
+        enableHighAcuracy: true,
+        // 指定获取地理位置的超时时间，默认不限时，单位为毫秒
+        timeout: 5000,
+        // 最长有效期，在重复获取地理位置时，此参数指定多久再次获取位置。
+        maximumAge: 1000
+    });
+
+    function geo_success(position) {
+      // console.log(position.coords.latitude, position.coords.longitude);
+
+        pt =new BMap.Point(position.coords.longitude,position.coords.latitude);
+        // alert(position.coords.longitude);
+
+        var convertor = new BMap.Convertor();
+        pointArr.push(pt);
+        convertor.translate(pointArr, 1, 5, translateCallback);
+    }
+
+    function geo_error(msg) {
+      console.log(msg.code, msg.message);
+      alert(定位失败,请打开手机GPS);
+    }
+    //坐标转换完之后的回调函数
+    translateCallback = function (data){
+      if(data.status === 0) {
+            alert("经度:"+data.points[0].lng);//输出百度坐标的经度
+            alert("纬度:"+data.points[0].lat);//输出百度坐标的纬度
+            var map = new BMap.Map("container");
+            var point = new BMap.Point(120.196878, 35.975994);
+            map.centerAndZoom(point,15);
+            var marker = new BMap.Marker(data.points[0]);//创建小红点
+            map.addOverlay(marker);//将小红点放到地图上
+            var label = new BMap.Label("123",{offset:new BMap.Size(20,-10)});//label
+            //设置lebel样式
+            label.setStyle({
+                width: "120px",
+                color: '#fff',
+                background: '#ff8355',
+                border: '1px solid "#ff8355"',
+                borderRadius: "5px",
+                textAlign: "center",
+                height: "26px",
+                lineHeight: "26px"
+            });
+            marker.setLabel(label); //添加百度label
+            map.centerAndZoom(data.points[0],18);
+
+            //设置精度圈
+            var circle = new BMap.Circle(data.points[0],100); //创建圆
+            //设置圆形的边线颜色
+            circle.setStrokeColor("#00CCFF");
+            //设置圆形的填充颜色
+            circle.setFillColor("#00CCFF");
+            //设置圆形的填充透明度，取值范围0 - 1
+            circle.setFillOpacity(0.1);
+            //设置圆形的边线透明度，取值范围0 - 1
+            circle.setStrokeOpacity(0.01);
+            //设置圆形边线的宽度，取值为大于等于1的整数
+            circle.setStrokeWeight(1);
+            map.addOverlay(circle);            //增加圆
+            
+            ///
+                //开启鼠标滚轮缩放
+                map.enableScrollWheelZoom(true);
+                //添加平移缩放控件
+                var opts = {type: BMAP_NAVIGATION_CONTROL_SMALL}
+                map.addControl(new BMap.NavigationControl(opts));
+                //添加比例尺控件
+                map.addControl(new BMap.ScaleControl());
+                //添加缩略地图控件
+                map.addControl(new BMap.OverviewMapControl());
+                //// 仅当设置城市信息时，MapTypeControl的切换功能才能可用
+                map.addControl(new BMap.MapTypeControl());
+                // map.setCurrentCity("青岛");
+
+                //修改地图风格
+                //清新蓝风格(light)
+                //黑夜风格(dark)
+                //自然绿风格(grassgreen)
+                //精简风格(googlelite)
+                //默认地图样式(normal)
+                var mapStyle={  style : "normal" }
+                map.setMapStyle(mapStyle);
+
+        }
+    }
+
+
+
+    // 编写自定义函数,创建标注
+    // function addMarker(point,label){
+    //  var marker = new BMap.Marker(point);
+    //  map.addOverlay(marker);
+    //  marker.setLabel(label);
+    // }
+    // 随机向地图添加25个标注
+    // var bounds = map.getBounds();
+    // var sw = bounds.getSouthWest();
+    // var ne = bounds.getNorthEast();
+    // var lngSpan = Math.abs(sw.lng - ne.lng);
+    // var latSpan = Math.abs(ne.lat - sw.lat);
+    // for (var i = 0; i < 90; i++) {
+    //  var point = new BMap.Point(sw.lng + lngSpan * (Math.random() * 0.7), ne.lat - latSpan * (Math.random() * 0.7));
+    //  var label = new BMap.Label("我是id="+i,{offset:new BMap.Size(20,-10)});
+    //  addMarker(point,label);
+    // }
+    // function deletePoint(){
+    //  var allOverlay = map.getOverlays();
+    //  for (var i = 0; i < allOverlay.length -1; i++){
+    //      if(allOverlay[i].getLabel().content == "我是id=1"){
+    //          map.removeOverlay(allOverlay[i]);
+    //          return false;
+    //      }
+    //  }
+    // }
+
+
+    //创建小狐狸
+    // var pt = new BMap.Point(116.417, 39.909);
+    // var myIcon = new BMap.Icon("http://lbsyun.baidu.com/jsdemo/img/fox.gif", new BMap.Size(300,157));
+    // var marker2 = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
+    // map.addOverlay(marker2);              // 将标注添加到地图中
+
+    //设置弹跳的动画
+    // var map = new BMap.Map("container");
+    // var point = new BMap.Point(116.404, 39.915);
+    // map.centerAndZoom(point, 15);
+    // var marker = new BMap.Marker(point);  // 创建标注
+    // map.addOverlay(marker);               // 将标注添加到地图中
+    // marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
+
+    // var marker = new BMap.Marker(point);      // 创建标注
+    // map.addOverlay(marker);                       // 将标注添加到地图中
+
+    // var opts = {
+    //     width : 200,     // 信息窗口宽度
+    //     height: 20,     // 信息窗口高度
+    //     title : "李百成"  // 信息窗口标题
+    // }
+    // var infoWindow = new BMap.InfoWindow("World", opts);  // 创建信息窗口对象
+    // map.openInfoWindow(infoWindow, map.getCenter());      // 打开信息窗口
+
+
+    //浏览器定位
+    // var geolocation = new BMap.Geolocation();
+    // geolocation.getCurrentPosition(function(r){
+    //  if(this.getStatus() == BMAP_STATUS_SUCCESS){
+    //      var mk = new BMap.Marker(r.point);
+    //      map.addOverlay(mk);
+    //      map.panTo(r.point);
+    //      alert('您的位置：'+r.point.lng+','+r.point.lat);
+    //  }
+    //  else {
+    //      alert('failed'+this.getStatus());
+    //  }
+    // });
+
+    //根据用户IP 返回城市级别的定位结果
+    // function myFun(result){
+    //  var cityName = result.name;
+    //  map.setCenter(cityName);
+    //  alert("当前定位城市:"+cityName);
+    // }
+    // var myCity = new BMap.LocalCity();
+    // myCity.get(myFun);
+
+</script>
+</body>
+</html>

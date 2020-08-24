@@ -1,0 +1,12 @@
+{
+    "python.autoComplete.extraPaths": [
+        "C:\\Users\\ywzsu\\.vscode\\extensions\\rt-thread.rt-thread-micropython-0.2.2\\microExamples\\code-completion"
+    ],
+    "files.associations": {
+        ".mpyproject.json": "jsonc"
+    },
+    "python.linting.pylintArgs": [
+        "--init-hook",
+        "import sys; sys.path.append('C:/Users/ywzsu/.vscode/extensions/rt-thread.rt-thread-micropython-0.2.2/microExamples/code-completion')"
+    ]
+}

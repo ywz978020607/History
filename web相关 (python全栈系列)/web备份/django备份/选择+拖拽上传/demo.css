@@ -1,0 +1,102 @@
+.overlay{
+    z-index: 99;
+    position:fixed;
+    display: none;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    opacity:0.5;
+}
+.dropbox{
+    z-index: 100;
+    display: none;
+    position: fixed;
+    width:500px;
+    height:520px;
+    margin:auto;
+    top:0;
+    right:0;
+    bottom: 0;
+    left:0;
+    background-color: #fff;
+    border-radius:6px;
+    transition-duration: 0.9s;
+    -webkit-transition-duration: 0.9s;
+    overflow:hidden;
+    text-align: center;
+}
+.items-container{
+    padding: 10px;
+}
+.content{
+    border: 3px dashed gray;
+    border-radius: 10px;
+    margin: 10px 20px;
+    height:400px;
+    overflow: auto;
+    padding:2px 8px;
+}
+
+.head{
+    margin:0px;
+    font-size:30px;
+    color:#aaa;
+}
+.footer{
+    margin:5px auto
+}
+.btn{
+    border-radius: 20px;
+    box-sizing: border-box;
+    border-width: 2px;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 7px 18px
+}
+/*画一个叉号，表示推出界面*/
+.css-close{display:inline-block; width:15px; height:2px; background:#000; font-size:0; line-height:0;vertical-align:middle;-webkit-transform: rotate(45deg);}
+.css-close:after { content:'.'; display:block; width:15px; height:2px; background:#000;-webkit-transform: rotate(90deg);}
+
+/*表格样式*/
+.table{
+    width:100%;
+    border-collapse: collapse;
+}
+#content tr:first-child td{
+    border-top-width: 0px;
+}
+#content tr td:last-child{
+    cursor: pointer;
+    color: red;
+}
+#content tr td{
+    padding: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    border-top:1px solid #9A9A9A;
+}
+#content tr:hover{
+    background-color: #d5d5d5;
+}
+#content tr:active{
+    background-color: #9A9A9A;
+}
+a:link{
+	color:blue;
+}
+a:visited{
+	color:blue;
+}
+a:hover{
+	color:blue;
+}
+a:active{
+	color:red;
+}
+
+
+

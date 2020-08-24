@@ -1,0 +1,6 @@
+#!/bin/sh
+
+su - pi -c "/usr/bin/uwsgi -d --ini /var/www/django1_nginx/uwsgi.ini"
+su - pi -c "rm /home/pi/data/PHTunnel.log"
+su - pi -c "/home/pi/data/phtunnel --appid 12175 --appkey 278579a0d16a7cb5 -l /home/pi/data/PHTunnel.log -d"
+su - pi -c "python3 /home/pi/data/up_pic.py"

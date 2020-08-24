@@ -1,0 +1,3 @@
+fp=os.popen("ping "+url+" -t")
+fpread=fp.read()
+#用于创建和查看cmd 不同于os.system 返回调试信息

@@ -1,0 +1,41 @@
+{"mac":"b8:27:eb:c7:98:f9","time":"20200802174317","sign":"258f3b25b34536db819d908f42814dba"}
+
+[2020-08-02 17:43:17.914][INFO] [http] response:
+{"sn":"PHD2d4e676177399","password":"hi0{+C'|kN9'Eb~%"}
+
+[2020-08-02 17:43:17.914][INFO] [main] register ok, sn: PHD2d4e676177399
+[2020-08-02 17:43:17.914][ERRR] [config] load config file "" failed
+[2020-08-02 17:43:17.914][ERRR] [config] save config file "" failed
+[2020-08-02 17:43:17.924][INFO] [main] get token
+[2020-08-02 17:43:17.924][INFO] [main:flushtoken] device mac: b8:27:eb:c7:98:f9
+[2020-08-02 17:43:17.925][INFO] [http_call] use keepalive stream. hsk-embed.oray.com/devices/authorization
+[2020-08-02 17:43:17.925][INFO] [http] requesting: 
+POST /devices/authorization HTTP/1.1
+Accept: */*
+Host: hsk-embed.oray.com
+Content-Type: application/json
+User-Agent: HSKEMD/1.1.5.1 (v:kcp,ssl,udp;appid:12175;appkey:278579a0d16a7cb5;)
+Accept-HskModules: udp;ssl
+Content-Length: 81
+
+{"mac":"b8:27:eb:c7:98:f9","sn":"phd2d4e676177399","password":"hi0{+C'|kN9'Eb~%"}
+
+[2020-08-02 17:43:18.232][INFO] [http] response:
+{"token":"bb885ec7a01f7df476aad82477bd9176","phsl":"phsle5-std01.oray.net:6061","qrcode":"https:\/\/cphapi.oray.net\/qrcode\/173ae8dd6b2e3153","qrcodeimg":"https:\/\/cphapi.oray.net\/qrcode\/img\/173ae8dd6b2e3153.png","deskey":"95de6007","expires":1596361697,"ttl":300}
+
+[2020-08-02 17:43:18.232][INFO] [stream] disconnected, error(0)
+[2020-08-02 17:43:18.233][INFO] [main] token get ok: bb885ec7a01f7df476aad82477bd9176
+[2020-08-02 17:43:18.233][INFO] [ora][login] connecting server phsle5-std01.oray.net:6061 with 
+[2020-08-02 17:43:18.288][INFO] [ora][login] connected to 47.111.2.207
+[2020-08-02 17:43:18.288][INFO] [ora][login] sending remote login header to phsle5-std01.oray.net:6061.
+[2020-08-02 17:43:18.372][INFO] [ora][online] login begin
+[2020-08-02 17:43:18.456][INFO] [ora][online] phturn is logoff.
+[2020-08-02 17:43:18.456][INFO] [ora][online] ok.
+[2020-08-02 17:43:18.456][INFO] [47.111.2.207][multiplex_handler] disconnected(115).
+[2020-08-02 17:43:18.457][INFO] [47.111.2.207][multiplex_handler] disconnected(115).
+[2020-08-02 17:43:18.457][INFO] [47.111.2.207][multiplex_handler] disconnected(115).
+[2020-08-02 17:43:18.457][INFO] [47.111.2.207][multiplex_handler] disconnected(115).
+[2020-08-02 17:43:18.465][INFO] [ora][online] received name.
+[2020-08-02 17:43:18.587][INFO] [ora][ctrl] local ip -> 192.168.1.119
+[2020-08-02 17:43:18.629][INFO] [ora][fw] receive tunnel request forward2, peer: 112.42.162.229:18058, use TCP
+[2020-08-02 17:43:18.674][INFO] [phfw] connected with 47.111.2.207

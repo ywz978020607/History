@@ -1,0 +1,53 @@
+a:hover{
+	color:#0151B0;
+}
+h1{
+	text-align: center;
+	margin: 20px auto;
+	font-size: 25px;
+}
+h2{
+	margin-top:0;
+	line-height: 35px;
+}
+
+
+.mainbody{
+	overflow: auto;
+}
+
+.bodyleft{
+	width: 200px;
+	margin-right: 100px;
+	float: left;
+}
+.bodyleft .photo{
+	width:100%;
+}
+.bodyright{
+	width: 900px;
+	margin: auto;
+	float:left;
+}
+.brief{
+	margin: 20px auto 50px 20px;
+	line-height: 30px;
+	text-align: justify;
+}
+.profile{
+	width:880px;
+	margin-left: 20px;
+	border-collapse: collapse;
+	
+}
+.profile tr{
+	height: 50px;
+	border-bottom: solid 1px #aaa;
+}
+.profile .item{
+	width: 180px;
+	font-weight: bold;
+}
+.profile .tbcontent{
+	width: 260px;
+}
