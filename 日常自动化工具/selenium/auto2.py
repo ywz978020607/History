@@ -51,7 +51,7 @@ def get_ip():
 
     # 这里填写芝麻代理api地址，num参数必须为1，每次只请求一个IP地址
     # url = 'http://webapi.http.zhimacangku.com/getip?num=1&type=1&pro=&city=0&yys=0&port=1&pack=62814&ts=0&ys=0&cs=0&lb=1&sb=0&pb=4&mr=1&regions='                 #ip接口
-    url = "http://api.hailiangip.com:8422/api/getIp?type=1&num=1&pid=-1&unbindTime=60&cid=-1&orderId=O20082420204307158894&time=1598272064&sign=4138d59c57eccddccce02984a9ebef58&noDuplicate=1&dataType=1&lineSeparator=0&singleIp=0"
+    url = "http://api.hailiangip.com:8422/api/getIp?type=1&num=1&pid=-1&unbindTime=60&cid=-1&orderId=O20082423165717527608&time=1598282950&sign=7e36e212c7be518f9a9809604b5c7c2e&noDuplicate=1&dataType=1&lineSeparator=0&singleIp=0"
 
     response = requests.get(url)
     ip = response.text
@@ -64,11 +64,8 @@ while 1:
         headers = get_UA()
         proxy = get_ip()
         # proxy = "118.31.3.239:20249"
-        try:
-            chrome_options = webdriver.ChromeOptions()
-        except:
-            time.sleep(3)
-            chrome_options = webdriver.ChromeOptions()
+        chrome_options = webdriver.ChromeOptions()
+
         # 无界面
         chrome_options.add_argument('--headless')
 
@@ -79,11 +76,11 @@ while 1:
 
         # 使用设置初始化webdriver
         driver = webdriver.Chrome(chrome_options=chrome_options)
-        print("输出当前的ip地址".format(proxy))
+        # print("输出当前的ip地址".format(proxy))
 
         try:
             print("1",end = '')
-            driver.get('https://www.bilibili.com/video/BV13C4y1t75q/')
+            driver.get('https://www.bilibili.com/video/BV13t4y1Q77g/')
             time.sleep(3)
             driver.find_element_by_id("bilibiliPlayer").click()
             time.sleep(20) #视频播放时间
