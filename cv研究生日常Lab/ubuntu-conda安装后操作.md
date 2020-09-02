@@ -15,3 +15,32 @@ source ~/.bashrc
 source activate
 ```
 
+
+
+
+
+# 环境导出与导入 迁移机器
+
+激活进入到所要导出的环境中
+
+activate python36  python36为要导出的环境名称
+
+导出环境 到yml文件， 文件名为 python36_20190106.yml
+
+```python
+conda env export --file python36_20190106.yml
+```
+
+将yml文件复制到B机器中，执行以下命令导入
+
+```
+conda env create -f  d:\python36_20190106.yml
+```
+
+
+
+# 删除环境
+
+```csharp
+conda remove -n mm --all
+```
