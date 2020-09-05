@@ -64,7 +64,9 @@ cat /usr/local/cuda/version.txt
 
 - 安装cuda 更正版：
 
-​		https://blog.csdn.net/qq_32408773/article/details/84112166
+​		https://blog.csdn.net/qq_32408773/article/details/84112166 （10.0版）
+
+​		https://www.cnblogs.com/zmbreathing/p/CUDA.html   （10.1版）
 
 ​	sudo sh cuda_10.0.130_410.48_linux.run  不独立安装驱动  （单独安装驱动比较好）
 
@@ -146,3 +148,10 @@ visudo
 
 
 
+
+
+## 如果使用anaconda的pytorch等，装完CUDA匹配对应版本即可
+
+https://blog.csdn.net/weixin_43839245/article/details/108274605
+
+（10.0换10.1时，仅重装了cuda，而cudnn没动，估计是不需要

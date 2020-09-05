@@ -1,0 +1,6 @@
+ffmpeg -i xx.y4m -vsync 0 xx.yuv  -y
+
+//yuvtoy4m: ffmpeg -s 1920x1080 -i xx.yuv -vsync 0 xx.y4m -y
+y4mtobmp: ffmpeg -i xx.y4m -vsync 0 test/%3d.bmp -y
+
+
