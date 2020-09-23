@@ -37,6 +37,7 @@ x = transforms.ToTensor()(img).unsqueeze(0) #1,3,768,1024  #[batch,channels,H,W]
   from PIL import Image
   from torchvision import transforms
   image = cv2.imread('myimage.jpg')  # numpy数组格式(H,W,C=3)，通道顺序（B,G,R) #768,1024,3
+  # 重要，想一样的话，建议直接加: img1 = cv2.cvtColor(img1, cv2.COLOR_BGR2RGB)
   image2 = Image.open('myimage.jpg')  # PIL的JpegImageFile格式(size=(H,W))
   print(image.shape)  # (H,W,3)
   print(image2.size)  # (H,W)
@@ -58,6 +59,15 @@ reimage = x_hat.cpu().clone()
 reimage = reimage.squeeze(0)
 reimage = transforms.ToPILImage()(reimage) #PIL格式
 reimage.save(out_path)
+```
+
+- cv2
+
+```
+img_1 = img1.numpy()*255
+img_1 = img_1.astype('uint8')
+img_1 = np.transpose(img_1, (1,2,0))
+cv2.imshow('img_1.png', img_1)
 ```
 
 

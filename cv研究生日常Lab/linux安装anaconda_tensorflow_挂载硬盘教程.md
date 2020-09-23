@@ -118,24 +118,13 @@ conda config --set show_channel_urls yes
 
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
 
-conda install pytorch torchvision cudatoolkit=9.0
+conda install pytorch torchvision cudatoolkit=10.1
+
+or
+
+conda install pytorch==1.6.0 torchvision cudatoolkit=10.1
 
 安装完毕
 
 
-
-#################################
-
-- 挂载硬盘
-
-```python
-	#挂载硬盘
-	sudo fdisk -l #查看磁盘位置，假设/dev/sdd1
-	sudo mkdir /media/usr/DiskName 
-	sudo mount /dev/sdd1 /media/usr/DiskName #挂载到指定路径DiskName
-	
-	#卸载硬盘
-	sudo umount /media/usr/DiskName
-
-```
 

@@ -112,7 +112,36 @@ https://www.cnblogs.com/dereen/p/dl_env.html
 
 7. 内核版本 5.0.0-23-generic （自动升级如果找不到后需要降级）
 
-   如果自动升级，可能会显卡报错，解决方法是查看uname -r 以及到grub配置文件中，将0改为"1>2" #对应1是高级选项，2是第三行的二级目录选项，update grub后重启即可。
+   grep menuentry /boot/grub/grub.cfg
+
+   修改grub:
+   sudo vim /etc/default/grub
+   
+   如果自动升级，可能会显卡报错，解决方法是查看uname -r 以及到grub配置文件中，将0改为"1>2" #对应1是高级选项，2是第三行的二级目录选项，update-grub后重启即可。
+   
+   或禁用内核升级：
+   
+   ```
+   sudo dpkg --get-selections | grep linux
+   uname -a
+   sudo apt-mark hold linux-image-5.0.0-23-generic
+   sudo apt-mark hold linux-image-extra-5.0.0-23-generic
+   ##启用
+   sudo apt-mark unhold linux-image-5.0.0-23-generic
+   sudo apt-mark unhold linux-image-extra-5.0.0-23-generic
+   ```
+   
+   
+   
+8. 另一种重新后因为自动升级导致内核和显卡驱动不匹配的解决方法：
+
+   重新编译内核
+
+   https://blog.csdn.net/weixin_40678288/article/details/103326340?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param
+
+   ```
+   sudo update-initramfs -c -k 5.0.0-23-generic
+   ```
 
    
 
@@ -155,3 +184,26 @@ visudo
 https://blog.csdn.net/weixin_43839245/article/details/108274605
 
 （10.0换10.1时，仅重装了cuda，而cudnn没动，估计是不需要
+
+
+
+
+
+# 多用户不同版本cuda
+
+
+vim ~/.bashrc #修改配置文件（如果你用的是zsh，则需要修改 ~/.zshrc文件）
+
+1. **#在文件结尾处添加**
+2. export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
+3. export PATH=$PATH:/usr/local/cuda/bin
+4. export CUDA_HOME=$CUDA_HOME:/usr/local/cuda
+
+把cuda可以用ln -s链接，也可以直接换成对应版本(/usr/local/cuda9.0)
+
+source ~/.bashrc
+
+source activate
+
+
+
