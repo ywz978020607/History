@@ -79,3 +79,43 @@ def compute_psnr(a, b):
     mse = torch.mean((a - b)**2).item()
     return -10 * math.log10(mse)
 ```
+
+
+
+## numpy 存储导入
+
+```
+import numpy as np
+
+a = [1, 2, 3]
+b = [4, 5, 6]
+
+ab = {'a': a, 'b': b}
+np.save('data.npy', ab)
+
+data = np.load('data.npy', allow_pickle=True)
+a = data.item()['a'] 
+b = data.item()['b']
+
+np.save('a', a = a)
+data = np.load('a.npy')
+a = data['a']
+
+np.savez('a', a=a, b=b)
+data = np.load('a.npz')
+a = data['a']
+b = data['b']
+```
+
+
+
+```
+np.save('a', a = a)
+data = np.load('a.npy')
+a = data['a']
+
+np.savez('a', a=a, b=b)
+data = np.load('a.npz')
+a = data['a']
+b = data['b']
+```

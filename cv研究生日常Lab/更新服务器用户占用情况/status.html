@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>服务器状态</title>
+
+
+<style type="text/css">
+  textarea{
+    	border:0;
+  	background-color:transparent;
+  	/*scrollbar-arrow-color:yellow;
+  	scrollbar-base-color:lightsalmon;
+  	overflow: hidden;*/
+  	color: #666464;
+  	height: auto;
+  }
+</style>
+
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script> 
+<script>
+$(function(){
+setInterval(function() {
+$("#content3").load('status.txt');
+},1000);
+
+
+
+});
+</script>
+</head>
+<body>
+<textarea  id="content3"  cols="50" rows="40" readonly>
+</textarea >
+<!-- <input type="text"  id="textbox" /> -->
+</body>
+</html>

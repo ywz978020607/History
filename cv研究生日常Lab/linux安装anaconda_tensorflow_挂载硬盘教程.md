@@ -104,7 +104,7 @@ sudo python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple tensorflo
 
 ###########################
 
-pytorch-gpu
+# pytorch-gpu
 
 实验室给配了个rtx2070s的电脑，在win10中装pytorch
 
@@ -128,3 +128,17 @@ conda install pytorch==1.6.0 torchvision cudatoolkit=10.1
 
 
 
+**检查PyTorch版本**
+
+- torch.**version** # PyTorch version
+- torch.version.cuda # Corresponding CUDA version
+- torch.backends.cudnn.version() # Corresponding cuDNN version
+- torch.cuda.get_device_name(0) # GPU type
+
+**更新PyTorch**
+
+- conda update pytorch torchvision -c pytorch
+
+
+
+conda remove -n mm --all  删除环境

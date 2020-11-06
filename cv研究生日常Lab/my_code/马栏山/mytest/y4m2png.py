@@ -62,7 +62,7 @@ def func0(dir_name = "test_damage_B"):
             print(png_path_index3)
             #输出png
             os.system("ffmpeg -i "+y4m_temp_path + " -vsync 0 "+ png_path_index3 +"/%4d.png -y")
-
+            # ffmpeg -y -s 512x512 -i /home/sharklet/database/aftercut512_yuv/test/0.yuv /home/sharklet/database/aftercut512_yuv/test/%4d.png
 
 ################################################################
      

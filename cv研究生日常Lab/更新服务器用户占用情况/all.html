@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>服务器状态</title>
+
+
+<style type="text/css">
+  textarea{
+    	border:0;
+  	background-color:transparent;
+  	/*scrollbar-arrow-color:yellow;
+  	scrollbar-base-color:lightsalmon;
+  	overflow: hidden;*/
+  	color: #666464;
+  	height: auto;
+  }
+</style>
+
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script> 
+<script>
+$(function(){
+setInterval(function() {
+$("#content1").load('http://10.134.162.251/status.txt');
+$("#content2").load('http://10.134.162.126/status.txt');
+
+},1000);
+
+
+
+});
+</script>
+</head>
+<body>
+<textarea  id="content1"  cols="50" rows="40" readonly>
+</textarea >
+<textarea  id="content2"  cols="50" rows="40" readonly>
+</textarea >
+<!-- <input type="text"  id="textbox" /> -->
+
+
+<br><br>
+
+<a href="http://buaamc2.net:81">返回IRC后台页面</a>
+
+</body>
+</html>

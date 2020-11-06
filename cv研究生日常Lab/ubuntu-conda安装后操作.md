@@ -1,8 +1,12 @@
+sh Anaconda.sh 进行安装
+
+=========
+
 vim ~/.bashrc
 
 在最后添加：
 
-export PATH=~/anaconda3/bin:$PATH
+export PATH=~/anaconda3/bin:$PATH   #还没效果的话再加一句source activate
 
 #或是 export PATH=/usr/local/bin:$PATH  #无conda时
 
@@ -43,4 +47,16 @@ conda env create -f  d:\python36_20190106.yml
 
 ```csharp
 conda remove -n mm --all
+```
+
+
+
+## 重命名环境
+
+```bash
+conda create -n tf --clone rcnn
+```
+
+```csharp
+conda remove -n rcnn --all
 ```
