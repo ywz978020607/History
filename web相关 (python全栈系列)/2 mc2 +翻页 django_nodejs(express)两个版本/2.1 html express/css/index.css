@@ -1,0 +1,87 @@
+/*
+ * 初始化
+ */
+			header{z-index: 10!important;/*调整层级(10优先级绝对)*/}
+		/*版心*/	
+		.w1200{width: 1200px;min-width: 1200px;margin: 0 auto;}
+		
+		/*轮播的css样式*/
+		.banner{position: relative;width: 100%;height: 350px;margin:0px auto;margin-top:60px ;}
+        .banner .b_main{position: relative;width: 100%;height: 100%;}
+        .banner .b_main .b_m_pic{position: relative;width: 100%;height: 100%;}
+        .b_main .b_m_pic li{position: absolute;width: 100%;height: 100%;top: 0;left: 0;}
+		.b_list ul{position:absolute;right: 40px;bottom: 30px;}
+        .b_list ul li{width: 20px;height: 20px;float: left;background: #333;margin-left: 20px;border-radius: 50px;border:2px solid white;}
+        /*，是多选*/
+        .b_list ul .l_hover,.b_list ul .l_click{border:2px solid #333;background: white}
+        .b_btn div{position: absolute;width: 40px;height: 40px;background: rgba(0,0,0,0.3);font-size: 30px;color: white;text-align: center;line-height: 40px;top: 50%;margin-top: -40px;cursor: pointer;}
+        .b_btn .b_left{left:0;border-radius: 50%}
+        .b_btn .b_right{right:0;border-radius: 50%}
+        #les,#nex{display: inline-block;width: 80px;height: 30px;font-size: 20px;margin-left: 10px;margin-right: 10px;color:white;background: cornflowerblue;border-radius: 10px;line-height: 30px;text-align: center;margin-top: 10px;}
+        /*h_3 p_3 h_4是轮播上面的文字，你可以看到的首个值Z-index是控制堆叠顺序的
+         */
+        .h_3{z-index: 3;position: absolute;left: 50%;top: 50%;font-size: 60px;margin-left:-190px ;color: white;margin-top: -120px;}
+        .p_3{z-index: 3;position: absolute;left: 50%;top: 50%;font-size: 30px;margin-left:-360px ;color: #ccc;margin-top: -20px;}
+        .h_4{z-index: 3;position: absolute;left: 50%;top: 50%;font-size: 45px;margin-left:-120px ;color: white;margin-top: 50px;}
+        /*  *号是通配符选择器 */
+*{
+	margin: 0;
+	padding: 0;
+}
+/*元素选择器*/
+html,body{
+	width: 100%;
+	font-family: "Microsoft YaHei UI",sans-serif;
+	font-size: 16px;
+	color:#222;
+}
+a{
+	text-decoration: none;
+	color: #222;
+}
+ul,li{
+	list-style:none;
+}
+/*
+ * 公共样式*
+ */
+/*这里是兼容性写法同样的操作js里也有就是点击事件，谷歌火狐啥的和ie里的监听属性值不一样*/
+*{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+
+
+h1{
+	text-align: center;
+	margin: auto;
+	line-height: 100px;
+}
+
+.thisBrief{
+	width: 1200px;
+	margin: auto;
+	text-align: justify;
+	line-height: 35px;
+}
+
+.news{
+	border-top-color: #aaa;
+	border-top-width: thin;
+	border-top-style: solid;
+}
+.news li{
+	text-indent: -6.95em;
+	margin-left: 6.95em;
+	padding: 0.5em 0;
+	border-bottom-color: #aaa;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+}
+
+.news li a{
+	text-decoration: none;
+	color: #0151B0;
+}

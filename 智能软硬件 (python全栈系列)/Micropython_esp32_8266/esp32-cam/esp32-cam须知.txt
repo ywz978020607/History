@@ -1,0 +1,12 @@
+Pin 4是led
+
+IO 0 -gnd  插入烧录固件
+
+下载方法：ttl-usb模块  多余脚悬空
+vcc-vcc gnd-gnd，TXD-UOR，RXD-UOT  （ttl模块 -- esp32-cam）
+
+
+
+开发后，15引脚接低插入进入开发模型，悬空/置高是运行模式
+
+

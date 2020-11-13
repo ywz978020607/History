@@ -1,0 +1,22 @@
+# num of parameters: 222859 #
+step 2 - epoch  1 - imp PSNR: 0.009 - ori PSNR: 29.548
+step 2 - epoch  1 - imp PSNR: 0.028 - ori PSNR: 29.824
+step 2 - epoch  2 - imp PSNR: 0.054 - ori PSNR: 29.548
+step 2 - epoch  2 - imp PSNR: 0.093 - ori PSNR: 29.824
+step 2 - epoch  3 - imp PSNR: 0.072 - ori PSNR: 29.548
+step 2 - epoch  3 - imp PSNR: 0.116 - ori PSNR: 29.824
+step 2 - epoch  4 - imp PSNR: 0.101 - ori PSNR: 29.548
+step 2 - epoch  4 - imp PSNR: 0.133 - ori PSNR: 29.824
+step 2 - epoch  5 - imp PSNR: 0.105 - ori PSNR: 29.548
+step 2 - epoch  5 - imp PSNR: 0.132 - ori PSNR: 29.824
+step 2 - epoch  6 - imp PSNR: 0.115 - ori PSNR: 29.548
+step 2 - epoch  6 - imp PSNR: 0.158 - ori PSNR: 29.824
+step 2 - epoch  7 - imp PSNR: 0.128 - ori PSNR: 29.548
+step 2 - epoch  7 - imp PSNR: 0.170 - ori PSNR: 29.824
+step 2 - epoch  8 - imp PSNR: 0.140 - ori PSNR: 29.548
+step 2 - epoch  8 - imp PSNR: 0.178 - ori PSNR: 29.824
+step 2 - epoch  9 - imp PSNR: 0.148 - ori PSNR: 29.548
+step 2 - epoch  9 - imp PSNR: 0.189 - ori PSNR: 29.824
+step 2 - epoch 10 - imp PSNR: 0.160 - ori PSNR: 29.548
+step 2 - epoch 10 - imp PSNR: 0.199 - ori PSNR: 29.824
+##### Training completes! #####

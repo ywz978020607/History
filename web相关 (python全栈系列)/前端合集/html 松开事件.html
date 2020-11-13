@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+    <meta charset="utf-8">
+    <title>JS实现按下按键触发点击事件</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+</head>
+ <body>
+      <div>
+         <!-- <button type="button" onclick="click1()">点击我</button> -->
+         <button type="button" onmousedown="click1()" onmouseup="click2()">点击我</button>
+      </div>
+      <script>
+    $(function() {
+        
+    })
+    function click1() {
+        console.log("pushed")
+    }
+    function click2() {
+        console.log("release")
+    }
+    
+        
+      
+     </script>
+    
+<body>
+</html>

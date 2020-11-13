@@ -1,0 +1,3 @@
+dPSNR: 0.222 - dSSIM: 0.007 - nfs:  141
+dPSNR: 0.305 - dSSIM: 0.011 - nfs:  359
+dPSNR: 0.282 - dSSIM: 0.010 - nfs:  500 - BasketballPass_416x240_500

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>MC^2 Lab</title>
+		<style type="text/css">
+
+        </style>
+        
+		<link rel="stylesheet" href="css/index.css" />
+		<!-- <script src="js/jquery-3.2.1.min.js"></script> -->
+        <script type="text/javascript" src="js/head.js"></script>
+    
+        <script src="js/jQueryAssets/jquery-1.11.1.min.js"></script>
+        <script src="js/jQueryAssets/jquery.ui-1.10.4.button.min.js"></script>
+        <link href="js/jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+        <link href="js/jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+        <link href="js/jQueryAssets/jquery.ui.button.min.css" rel="stylesheet" type="text/css">
+        
+	</head>
+	<body>
+		<div class="banner">
+	<h3 class="h_3">Welcome to</h3>
+	<p class="p_3">Multimedia Computing Towards Communications</p>
+	<h3 class="h_4">(MC2) Lab</h3>
+			<div class="b_main">
+             <div class="b_m_pic">
+                 <ul>
+                     <li>
+                             <img src="img/banner.png" width="100%" height="100%"/>
+                         </a>
+                     </li>
+                     <!-- <li> -->
+                             <!-- <img src="img/banner.jpg" width="100%" height="100%"/> -->
+                         <!-- </a> -->
+                     <!-- </li> -->
+                     <!-- <li> -->
+                             <!-- <img src="img/banner-2.jpg" width="100%" height="100%"/> -->
+                         <!-- </a> -->
+                     <!-- </li> -->
+                     <!--<li>增加图片修改img地址复制这个框把汉字都删掉就可以，这一步做完在b_list里面加一个li，li是图片右下角显示的点，js里有扩展不要动js只改这几个就ok。
+                             <img src="img/banner-2.jpg"img里面是图片地址 width="100%" height="100%"这些是宽高给百分之百就可以占满盒子/>
+                         </a>
+                     </li>-->
+                     
+                 </ul>
+			</div>
+		</div>
+		
+         <div class="b_list">
+             <ul>
+                 <li class="l_click"></li>
+                 <!-- <li></li> -->
+                 <!-- <li></li> -->
+                 <!--<li>增加一张图片增加一个点</li>-->
+             </ul>
+         </div>
+         <div class="b_btn">
+             <div class="b_left">&lt</div>
+             <div class="b_right">&gt</div>
+         </div>
+     </div>
+		<div class="thisBrief">  
+			<h1>Lab Introduction</h1>
+			
+			The MC<sup>2</sup> lab targets at improving the efficiency of multimedia communication by developing multimedia computing approaches, benefiting from the success of computer vision and machine learning techniques. Specifically, along with the explosion of multimedia content, multimedia communications have become increasingly prominent in communication networks, affecting the daily life of billions of citizens and millions of businesses in the world. The popularity, as a consequence, inceases the amount of data over networks, which is expected to grow almost 40-fold in the next five years. Given the limited spectrum, multimedia applications have encountered the bandwidth-hungry bottleneck. On one hand, high spectral efficiency has been an ongoing request in communication development. On the other hand, pioneering research on delivering the perceived content of human is relieving the bandwidth-hungry issue from the perspective of perceptual compression and coding, in which computer vision and machine learning techniques have been actively studies. This is, however, what the MC<sup>2</sup> is focusing on, that is, incorporating the state-of-the-art computer vision and machine learning methodologies into image/video compression and transmission to improve the efficiency of multimedia communications.
+			
+            <h1>News Update</h1>
+            <div  align="right">
+                Keyword search(Case Insensitive):
+                <input class="ui-button-text" style="border:1px solid #378888;border-radius:5px;font-size:18px;" type="text" id="input1"/>
+                <button id="Button0" onclick="click0();" style="border-radius:25px; font-size: 15px; " >Search</button>
+                
+            </div>
+            <ul class=news id="show_news">
+                
+            </ul>
+            
+            <center id="center1">
+                <button id="Button1" onclick="click1();" style="font-size: 13px;" >Home Page</button>
+                <button id="Button2" onclick="click2();" style="font-size: 13px;" >&lt Last</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span id="temp_page" style="font-size: 13px;" >Page 1 </span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="Button3" onclick="click3();" style="font-size: 13px;" >Next &gt</button>
+                <button id="Button4" onclick="click4();" style="font-size: 13px;">End Page</button>&nbsp;&nbsp;
+                Jump: <input type="text" id="input_page" style="width:40px;" οnkeypress="jump_page();" /> of <span id="all_pages"></span>
+            </center>
+            <br><br><br>
+        </div>
+        <script>
+        
+        </script>
+
+    </body>
+    
+    
+    <script type="text/javascript" src="js/foot.js"></script> 
+</html>
+	<!--把功能模块尽可能往下放，不然先读到程序没读到jq或者vue就会报错，ajax是单独封装的而要往前方，一般顺序是jq，vue，ajax，然后是自己的，规范写法头部插入css外部样式，底部按顺序插入外部js-->
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Publications</title>
+		<link rel="stylesheet" href="../css/normal.css" />
+		<script type="text/javascript" src="../js/head2.js"></script>
+
+		<script src="../js/jQueryAssets/jquery-1.11.1.min.js"></script>
+        <script src="../js/jQueryAssets/jquery.ui-1.10.4.button.min.js"></script>
+        <link href="../js/jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+        <link href="../js/jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+        <link href="../js/jQueryAssets/jquery.ui.button.min.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="banner" style="color:white; text-align: center;font-size: 45px;font-weight: bold;">
+			Publications
+		</div>
+		<div class="mainbody">
+			<h2>Journal Publications (since 2012)</h2>
+			
+			<div  align="right">
+                Keyword search(Case Insensitive):
+                <input class="ui-button-text" style="border:1px solid #378888;border-radius:5px;font-size:18px;" type="text" id="input1"/>
+                <button id="Button0" onclick="click0();" style="border-radius:25px; font-size: 15px; " >Search</button>
+			</div>
+			<hr/>
+			<ul class="pubul" id="show_news">
+                    
+			</ul>
+			<center id="center1">
+                <button id="Button1" onclick="click1();" style="font-size: 13px;" >Home Page</button>
+                <button id="Button2" onclick="click2();" style="font-size: 13px;" >&lt Last</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span id="temp_page" style="font-size: 13px;" >Page 1 </span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="Button3" onclick="click3();" style="font-size: 13px;" >Next &gt</button>
+                <button id="Button4" onclick="click4();" style="font-size: 13px;">End Page</button>&nbsp;&nbsp;
+                Jump: <input type="text" id="input_page" style="width:40px;" οnkeypress="jump_page();" /> of <span id="all_pages"></span>
+            </center>
+			<br><br><br>
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/foot2.js"></script>
+</html>
+<script src="../js/publish.js" type="text/javascript" charset="utf-8"></script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="css/head.css" />
+		<script src="js/jquery-3.2.1.min.js"></script>
+	</head>
+		<header>
+			<div class="container">
+				<div class="logo">
+					<p>MC<sup>2</sup></p>
+				</div>
+				<nav>
+					<div class="header_list">
+						<div class="header_list_">
+							<div class="header_list_tit">
+							<a href="index.html">HOME</a>
+							</div>
+						</div>
+						<div class="header_list_">
+							<div class="header_list_tit">
+								<a>RESEARCH</a>
+							</div>
+							<div style="width:250px;" class="list_children">
+									<a href = 'html/Perception.html'>Video or Image Perception</a>
+								<br/>
+									<a href = 'html/Compression.html'>Video Compression</a>
+								<br/>
+									<a href = 'html/VAR.html'>Virtual/Augmented Reality</a>
+								<br/>
+									<a href = 'html/Communication.html'>Multimedia Communication</a>
+							</div>
+						</div>
+						<div class="header_list_">
+							<div class="header_list_tit">
+							<a href="html/Publications.html">PUBLICATIONS</a>
+							</div>
+						</div>
+						<div class="header_list_">
+							<div class="header_list_tit">
+							<a href="html/Databases_Codes.html">DATABASES&amp;CODES</a>
+							</div>
+							<!--<div class="list_children">
+								<p>Imagey Preion1</p>
+								<p>Image/ Salition2</p>
+								<p>Image/Vidiction3</p>
+								<p>Image/Video on4</p>
+							</div>-->
+						</div>
+						<div class="header_list_">
+							<div class="header_list_tit header_list_tit_last">
+							<a href= 'html/Members.html'>MEMBERS</a>
+							</div>
+							<div class="list_children">
+								<a href = 'html/Members.html#faculty'>Faculty</a>
+								<br/>
+								<a href = 'html/Members.html#phd'>Ph.D Students</a>
+								<br/>
+								<a href = 'html/Members.html#master'>Master Students</a>
+								<br/>
+								<a href = 'html/Members.html#under'>Undergraduates</a>
+								<br/>
+								<a href = 'html/Members.html#alumni'>Alumni</a>
+							</div>
+						</div>
+					</div>
+					
+				</nav>
+			</div>
+
+		</header>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			$(".header_list_").mouseover(function(){
+			    $(this).children(".list_children").slideDown(300);
+			});
+			$(".header_list_").mouseleave(function(){
+			    $(this).children(".list_children").slideUp(300);
+			});
+		})
+	</script>
+</html>

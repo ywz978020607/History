@@ -1,0 +1,9 @@
+﻿  Astar.cpp
+e:\desktop\two_stage\two_stage\astar.cpp(251): warning C4018: “>”: 有符号/无符号不匹配
+e:\desktop\two_stage\two_stage\astar.cpp(252): warning C4018: “>”: 有符号/无符号不匹配
+  正在生成代码
+  2 of 356 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+  two_stage.vcxproj -> E:\Desktop\two_stage\Release\two_stage.exe

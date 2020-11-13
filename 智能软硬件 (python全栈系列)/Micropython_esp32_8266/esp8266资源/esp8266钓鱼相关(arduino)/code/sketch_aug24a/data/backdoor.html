@@ -1,0 +1,86 @@
+<html >
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+body{ text-align:center} 
+#divcss5{margin:0 auto;width:500px;height:100px}
+.tj{color:#060;}
+
+</style>
+<body  style="background-color:#000">
+<div style="color:#060">
+<h1>系统后台</h1>
+<iframe src=" pas.html" width="650px" height="50px" scrolling="no" frameborder="0"> </iframe>
+
+     
+
+<form   id="formid" name='frm'  method='post' >
+<input id="ty-box" name="ty-box"  type="checkbox" onClick="c();"  value="ty">通用型&emsp;
+<input id="google-box" name="google-box"  type="checkbox" onClick="b();" value="google">Google&emsp;
+<input id="tplink-box" name="tplink-box"  type="checkbox" onClick="a();"  value="tplink">TP-LINK
+<br>
+    <input  placeholder="请输入编号"  id="name" name="ssid_html" type="text"  value="" size="12" />
+	
+<br>  
+		 <input  id="button"  name="anniu"type="button" value="确认" onClick="tz()" class="tj"/>
+</form>
+
+<script>
+function tz() {
+	 var r = /^\+?[1-9][0-9]*$/;
+	var input = document.getElementById("name");
+	if (input.value == '') {
+		alert('输入不能为空！');
+		input.focus();
+		return false;
+	}
+	if(!r.test(input.value)){
+		alert('请输入正确编号！');
+		input.focus();
+		return false;
+	}
+	document.getElementById("formid").submit();
+} 
+function a(){
+
+       if(document.getElementById('tplink-box').checked)
+{
+  document.getElementsByName("google-box")[0].disabled = true;
+  document.getElementsByName("ty-box")[0].disabled = true;
+}
+       else 
+	   {
+		   document.getElementsByName("google-box")[0].disabled = false;
+		   document.getElementsByName("ty-box")[0].disabled = false;
+		   }
+}
+function b(){
+
+       if(document.getElementById('google-box').checked)
+{
+  document.getElementsByName("tplink-box")[0].disabled = true;
+  document.getElementsByName("ty-box")[0].disabled = true;
+}
+       else 
+	   {
+		   document.getElementsByName("tplink-box")[0].disabled = false;
+		   document.getElementsByName("ty-box")[0].disabled = false;
+		   }
+}
+function c(){
+
+       if(document.getElementById('ty-box').checked)
+{
+  document.getElementsByName("google-box")[0].disabled = true;
+  document.getElementsByName("tplink-box")[0].disabled = true;
+}
+       else 
+	   {
+		   document.getElementsByName("google-box")[0].disabled = false;
+		   document.getElementsByName("tplink-box")[0].disabled = false;
+		   }
+}
+</script>
+<iframe src=" scan.html" width="650px" height="1500px" scrolling="no" frameborder="0"> </iframe>
+</div>
+</body>
+</html>

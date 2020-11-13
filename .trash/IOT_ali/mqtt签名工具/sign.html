@@ -1,0 +1,74 @@
+<html>
+
+    <head>
+        <script type="text/javascript" src="hex_hmac_sha1.js"></script>
+        <script type="text/javascript" src="hex_md5.js"></script>
+    </head>
+    
+    <body>
+        <div>
+            <h3>填入设备信息：</h3>
+            productKey:<input type="text" id="productKey" name="productKey"></input><br/>
+            deviceName:<input type="text" id="deviceName" name="deviceName"></input><br/>
+            deviceSecret:<input type="text" id="deviceSecret" name="deviceSecret" style="width:300px"></input><br/>
+            timestamp:<input type="text" id="timestamp" name="timestamp"></input><br>
+            clientId:<input type="text" id="clientId" name="clientId" style="width:300px"></input><br/>
+            method:<select id="signMethod" name="signMethod">
+                <option value="hmacmd5">hmacmd5</option>
+                <option value="hmacsha1" selected>hmacsha1</option>
+            </select><br/><br/>
+            点击这里：<button id="submit" name="submit" onclick="onSign()">Generate</button>
+            <br/>
+            <h3>签名结果：</h3>
+            password:  <input type="text" id="password" name="password" style="width:600px"></input>
+        </div>
+    </body>
+
+    <script>
+    function onSign() {
+        var pk = document.getElementById("productKey").value;
+        var dn = document.getElementById("deviceName").value;
+        var ds = document.getElementById("deviceSecret").value;
+        var ts = document.getElementById("timestamp").value;
+        var ci = document.getElementById("clientId").value;
+        var sm = document.getElementById("signMethod").value;
+        var pw = document.getElementById("password");
+        if (pk == null || pk == "" || dn == null || dn == "" 
+                || ds == null || ds == "" || ci == null || ci == "") {
+            alert("productKey,deviceName,deviceSecret,clientId can not be empty");
+            return;
+        }
+        var options = {
+            productKey: pk,
+            deviceName: dn,
+            timestamp: ts,
+            clientId: ci
+        }
+        if (ts == null || ts == "") {
+            options = {
+                productKey: pk,
+                deviceName: dn,
+                clientId: ci
+            }
+        }
+        var keys = Object.keys(options).sort();
+        // 按字典序排序
+        keys = keys.sort();
+        var list = [];
+        keys.forEach(function(key) {
+            list.push(key + options[key]);
+        });
+        var contentStr = list.join('');
+        var sign="";
+        if (sm == "hmacmd5") {
+            sign = hex_hmac_md5(ds, contentStr);
+        } else if (sm == "hmacsha1") {
+            sign = hex_hmac_sha1(ds, contentStr);
+        } else {
+            alert("method is invalid");
+        }
+        pw.value = sign.toUpperCase();
+    }
+    </script>
+
+</html>

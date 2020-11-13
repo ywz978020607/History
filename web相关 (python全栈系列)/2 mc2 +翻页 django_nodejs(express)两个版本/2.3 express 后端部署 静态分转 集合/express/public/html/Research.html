@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Research</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			a{
+				text-decoration: none;
+			}
+			header{
+				width: 100%;
+				height: 50px;
+				
+				background: #888;
+				position: fixed;
+				padding: 0 20%;
+				box-sizing: border-box;
+			}
+			header .members_tit{
+				width: 20%;
+				height: 50px;
+				float: left;
+				text-align: center;
+				line-height: 50px;
+				font-size: 18px;
+			}
+			article{
+				width: 1200px;
+				
+				
+			}
+			article .researchList{
+				width: 350px;
+				margin: 10px 25px;
+				height: 250px;
+				float: left;
+			}
+			article .researchList img{
+				width: 350px;
+				height: 100px;
+			}
+			article .researchList .tit{
+				width: 350px;
+				height: 20px;
+				
+			}
+			article .researchList .brief{
+				width: 350px;
+				
+				word-wrap : break-word ;
+			}
+			
+			.members_tit1:hover{
+				background: #000;
+				color: #fff;
+			}.members_tit2:hover{
+				background: #000;
+				color: #fff;
+			}
+			.members_tit3:hover{
+				background: #000;
+				color: #fff;
+			}
+			.members_tit4:hover{
+				background: #000;
+				color: #fff;
+			}
+			.members_tit5:hover{
+				background: #000;
+				color: #fff;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="members_tit members_tit1">Home</div>
+			<div class="members_tit members_tit2">Research</div>
+			<div class="members_tit members_tit3">Publications</div>
+			<div class="members_tit members_tit4">Databases</div>
+			<div class="members_tit members_tit5">Members</div>
+		</header>
+		<article>
+			<div style="width: 1200px;height: 100px;"></div>
+			<div class="researchList">
+				<img src="../img/chenli.jpg" />
+				<p class="tit">title</p>
+				<p class="brief">brief</p>
+				<a href="#">join</a>
+			</div>
+			<div class="researchList">
+				<img src="../img/chenli.jpg" />
+				<p class="tit">title</p>
+				<p class="brief">brief</p>
+				<a href="#">join</a>
+			</div>
+			<div class="researchList">
+				<img src="../img/chenli.jpg" />
+				<p class="tit">title</p>
+				<p class="brief">brief</p>
+				<a href="#">join</a>
+			</div>
+			<div class="researchList">
+				<img src="../img/chenli.jpg" />
+				<p class="tit">title</p>
+				<p class="brief">brief</p>
+				<a href="#">join</a>
+			</div>
+			<div class="researchList">
+				<img src="../img/chenli.jpg" />
+				<p class="tit">title</p>
+				<p class="brief">brief</p>
+				<a href="#">join</a>
+			</div>
+			<div class="researchList">
+				<img src="../img/chenli.jpg" />
+				<p class="tit">title</p>
+				<p class="brief">brief</p>
+				<a href="#">join</a>
+			</div>
+			<div class="researchList">
+				<img src="../img/chenli.jpg" />
+				<p class="tit">title</p>
+				<p class="brief">brief</p>
+				<a href="#">join</a>
+			</div>
+			<div class="researchList">
+				<img src="../img/chenli.jpg" />
+				<p class="tit">title</p>
+				<p class="brief">brief</p>
+				<a href="#">join</a>
+			</div>
+		</article>
+		<script type="text/javascript">
+			var header_list_tit = document.getElementsByClassName('members_tit');
+			header_list_tit[2].onclick = function(){
+				window.location.href = "Publications.html";
+			}
+			header_list_tit[0].onclick = function(){
+				window.location.href = "../index.html";
+			}
+			header_list_tit[3].onclick = function(){
+				window.location.href = "Database.html";
+			}
+			
+			header_list_tit[4].onclick = function(){
+				window.location.href = "Members.html";
+			}
+		</script>
+	</body>
+</html>

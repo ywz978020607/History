@@ -1,0 +1,7 @@
+Change Component Designator: OldDesignator= NewDesignator=deep sleep
+Added Pin To Net: NetName=Netdeep sleep_1 Pin=deep sleep-1
+Added Pin To Net: NetName=Netdeep sleep_2 Pin=deep sleep-2
+Added Pin To Net: NetName=Netdeep sleep_1 Pin=R4-1
+Added Pin To Net: NetName=Net3.3_1 Pin=R4-2
+Added Member To Class: ClassName=Sheet1 Member=Component deep sleep Header 2
+Added Room: Name=Sheet1

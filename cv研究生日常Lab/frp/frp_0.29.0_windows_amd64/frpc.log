@@ -1,0 +1,6 @@
+2020/11/12 00:04:06 [E] [proxy.go:552] [desktop_http] connect to local service [127.0.0.1:8000] error: dial tcp 127.0.0.1:8000: connectex: No connection could be made because the target machine actively refused it.
+2020/11/12 00:04:28 [E] [proxy.go:552] [desktop_http] connect to local service [127.0.0.1:8000] error: dial tcp 127.0.0.1:8000: connectex: No connection could be made because the target machine actively refused it.
+2020/11/12 00:58:00 [I] [service.go:234] login to server success, get run id [a13858450ab4bcea], server udp port [7001]
+2020/11/12 00:58:00 [I] [proxy_manager.go:144] [a13858450ab4bcea] proxy added: [desktop_http]
+2020/11/12 00:58:00 [I] [service.go:119] admin server listen on 127.0.0.1:7400
+2020/11/12 00:58:00 [I] [control.go:153] [desktop_http] start proxy success
