@@ -30,7 +30,7 @@ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
 3. 创建环境
 
 比如我们可以创建环境，名为HUAWEI，那么指令如下：
-conda create -n HUAWEI python=3
+conda create -n HUAWEI python=3.7
 
 4. 激活该环境
 

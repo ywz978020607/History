@@ -65,3 +65,40 @@ wget -r -np -nd http://example.com/packages/  #`-np` 的作用是不遍历父目
 
 #`--accept=iso` 选项，这指示 wget 仅下载 i386 目录中所有扩展名为 iso 的文件
 
+
+
+# scp
+
+scp -r filepath user@10.134.xxx:/home/user/path
+
+
+
+# sudo users
+
+更改文件夹所属：
+
+```
+chown -R username:users Document/
+```
+
+https://www.cnblogs.com/vincedotnet/p/4017574.html
+
+cat /etc/passwd
+
+cat /etc/group
+
+\3. 修改用户的密码
+
+sudo passwd wyx
+
+\4. 删除一个用户
+
+sudo userdel wyx
+
+\5. 为该用户添加sudo权限
+
+sudo usermod -a -G adm wyx
+
+sudo usermod -a -G sudo wyx
+
+ 

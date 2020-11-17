@@ -6,7 +6,9 @@ vim ~/.bashrc
 
 在最后添加：
 
-export PATH=~/anaconda3/bin:$PATH   #还没效果的话再加一句source activate
+export PATH=~/anaconda3/bin:$PATH
+
+source activate
 
 #或是 export PATH=/usr/local/bin:$PATH  #无conda时
 
