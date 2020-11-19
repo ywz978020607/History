@@ -102,3 +102,11 @@ sudo usermod -a -G adm wyx
 sudo usermod -a -G sudo wyx
 
  
+
+# 查看当前文件夹下各文件夹的大小
+
+du --max-depth=1 -h
+
+
+
+df -h
