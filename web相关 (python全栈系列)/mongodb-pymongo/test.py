@@ -1,4 +1,4 @@
-# import pymongo
+import pymongo
 from pymongo import MongoClient
 #如使用mongodb创建了test数据库和test:123456的账户
 db_host = '127.0.0.1'
@@ -8,10 +8,15 @@ db_username = 'test'
 db_password = '123456'
 
 #raspi
-db_host = '45.32.60.237' 
-db_port = 37017 #44193  #buaamc2: 37017
-# db_host = 'http://27b2a24926.qicp.vip'
-# db_port = 44193  
+db_host = 'xxxxx7' 
+db_host = 'xxxx2.net' 
+db_port = 27017
+db_host = 'xxxxx.net' 
+db_port = 37017 
+
+# db_host = 'xxxxx.vip' 
+# db_port = 31258  
+
 db_name = 'test'
 db_username = 'test'
 db_password = '123456'
@@ -19,6 +24,12 @@ db_password = '123456'
 client = MongoClient(db_host, db_port)
 db = client[db_name]
 db.authenticate(db_username, db_password)  #连接到数据库
+
+
+myclient = pymongo.MongoClient("mongodb://fxxxxx:27017/")
+db = myclient['test']  #test数据库  可以有很多表
+db.authenticate('test', '123456')  # 连接到数据库
+
 
 ############################
 #以下为自动创建

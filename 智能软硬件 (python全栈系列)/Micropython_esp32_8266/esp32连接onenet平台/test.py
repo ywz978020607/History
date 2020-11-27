@@ -5,8 +5,8 @@ import urequests,machine
 url="http://api.heclouds.com/devices/589854375/datapoints"
 headers={'api-key':'gjU2173SbsvrSi4OpLyK8IXW3tc='}
 
-
-
+# data={'limit':limit_num} #可缺省
+# receive = requests.get(url,headers = headers,params = data).text
 r=urequests.get(url,headers=headers)
 out = r.json()['data']['datastreams'][0]['datapoints'][0]['value']
 r.close()  #esp32的urequest，记得关 close !!!

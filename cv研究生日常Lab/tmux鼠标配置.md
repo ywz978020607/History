@@ -12,6 +12,11 @@ vim ~/.tmux.conf
 
 ```
 set-option -g mouse on
+
+# set default path of create new windows or panne
+bind '%' split-window -h -c '#{pane_current_path}'  # Split panes horizontal
+bind '"' split-window -v -c '#{pane_current_path}'  # Split panes vertically
+bind c new-window -c '#{pane_current_path}' # Create new window
 ```
 
 ctrl+b  :

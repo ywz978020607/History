@@ -117,7 +117,9 @@ https://www.cnblogs.com/dereen/p/dl_env.html
    修改grub:
    sudo vim /etc/default/grub
    
-   如果自动升级，可能会显卡报错，解决方法是查看uname -r 以及到grub配置文件中，将0改为"1>2" #对应1是高级选项，2是第三行的二级目录选项，update-grub后重启即可。
+   如果自动升级，可能会显卡报错，解决方法是查看uname -r 以及到grub配置文件中，将0改为"1>2" #对应1是高级选项，2是第三行的二级目录选项，
+   
+   sudo update-grub后重启即可。
    
    或禁用内核升级：
    
