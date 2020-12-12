@@ -2,17 +2,27 @@ https://www.jianshu.com/p/4d48d8547c5e
 
 系统为ubuntu 18.04.3
 
+# 禁用系统自动更新
+
+修改 /etc/apt/apt.conf.d/10periodic
+
+#0是关闭 1是开启，把1改成0
+
+或者在图形界面中系统-首选项-启动应用程序-更新提示-从不更新，把勾打掉
+
+
+
 1. 卸载nouveau（必须）
 
    ```undefined
    sudo vim /etc/modprobe.d/blacklist-nouveau.conf
-   
+   ##以下为内容
    blacklist nouveau
    blacklist lbm-nouveau
    options nouveau modeset=0
    alias nouveau off
    alias lbm-nouveau off
-   
+   ##返回命令行
    echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
    sudo update-initramfs -u
    sudo reboot
@@ -28,7 +38,18 @@ https://www.jianshu.com/p/4d48d8547c5e
 
    sudo apt-get purge nvidia* #卸载驱动
 
-3. 安装nvidia-smi  必须版本对应!   对照表如下
+3. 安装nvidia-smi
+
+   方法一：
+   sudo ubuntu-drivers devices
+
+   sudo ubuntu-drivers autoinstall
+
+   完成后重启 就可完成安装NVIDIA驱动
+
+    方法二：
+
+   对照表如下
 
    (装显卡驱动时，CUDA决定了最低版本，而cat /proc/driver/nvidia/version 决定了支持的最高版本，区间内即可)
 
@@ -114,7 +135,7 @@ https://www.cnblogs.com/dereen/p/dl_env.html
 
    grep menuentry /boot/grub/grub.cfg
 
-   修改grub:
+   ## 修改grub:
    sudo vim /etc/default/grub
    
    如果自动升级，可能会显卡报错，解决方法是查看uname -r 以及到grub配置文件中，将0改为"1>2" #对应1是高级选项，2是第三行的二级目录选项，

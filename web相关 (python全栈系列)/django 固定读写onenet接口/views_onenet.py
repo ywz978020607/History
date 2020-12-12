@@ -39,7 +39,7 @@ def onenet_write(request):
     id = recv["id"]
     password = recv["password"]
     
-    data_name = recv['data_name']
+    data_name = recv['data_name']   #js端要用JSON.stringify([val]) 代替直接字典映射数组[val]
     data_name = json.loads(data_name)
     data_value = recv['data_value']
     data_value = json.loads(data_value)

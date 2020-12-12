@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+<script src="../vue.global.js"></script>
+<script src="../axios.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>网站列表</h1>
+    <div
+      v-for="site in info"
+    >
+      {{ site.name }}
+    </div>
+  </div>
+
+
+<div id="conditional-rendering">
+<span v-if="seen">现在你看到我了</span>
+</div>
+<div id="list-rendering">
+    <ol> 
+      <li v-for="todo in todos">
+        {{ todo.text }}
+      </li>
+    </ol>
+
+    <ul> 
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ul>
+  </div>
+
+<script>
+const ListRendering = {
+  data() {
+    return {
+      todos: [
+        { text: 'Learn JavaScript' },
+        { text: 'Learn Vue' },
+        { text: 'Build something awesome' }
+      ]
+    }
+  }
+}
+
+Vue.createApp(ListRendering).mount('#list-rendering')
+
+///////////////////////////////////////
+
+const ConditionalRenderingApp = {
+  data() {
+    return {
+      seen: true
+    }
+  }
+}
+
+Vue.createApp(ConditionalRenderingApp).mount('#conditional-rendering')
+
+///////////////////////////////////////
+const testAPP = {
+  data () {
+    return {
+      info: null
+    }
+  },
+  mounted () {
+    // axios
+    //   .get('https://www.runoob.com/try/ajax/json_demo.json')
+    //   .then(response => (this.info = response.data.sites))
+    //   .catch(function (error) { // 请求失败处理
+    //     console.log(error);
+    //   });
+
+    $.get("http://401_http.sharklet.buaamc2.net/status.txt",
+    {
+      userId:1
+    },
+    function(data,status){
+    console.log(data)}
+    )
+
+  }
+}
+Vue.createApp(testAPP).mount('#app')
+</script>
+
+
+</body>
+</html>

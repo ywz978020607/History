@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+<script src="../vue.global.js"></script>
+</head>
+<body>
+
+<div id="conditional-rendering">
+<span v-if="seen">现在你看到我了</span>
+</div>
+<div id="list-rendering">
+    <ol> 
+      <li v-for="todo in todos">
+        {{ todo.text }}
+      </li>
+    </ol>
+
+    <ul> 
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ul>
+  </div>
+
+<script>
+const ListRendering = {
+  data() {
+    return {
+      todos: [
+        { text: 'Learn JavaScript' },
+        { text: 'Learn Vue' },
+        { text: 'Build something awesome' }
+      ]
+    }
+  }
+}
+
+Vue.createApp(ListRendering).mount('#list-rendering')
+
+const ConditionalRenderingApp = {
+  data() {
+    return {
+      seen: true
+    }
+  }
+}
+
+Vue.createApp(ConditionalRenderingApp).mount('#conditional-rendering')
+</script>
+
+
+</body>
+</html>
