@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/ywz_index.css" %}" >
+
+<!--    <link rel="icon" href="{% static "img/logo.ico" %}">-->
+<!--    <script src="{% static "js/hw_index.js" %}"></script>-->
+    {% block head %}{% endblock %}
+</head>
+<body>
+<!-- 页面顶部 -->
+<!-- 顶部容器 ：width:100% -->
+<header id="top">
+    <!-- 内容显示区域 ：width : 1211px -->
+    <div id="top_box">
+        <ul class="lf">
+            <li><a href="#">欢迎</a></li>
+            <li><a href="#">Welcome!</a></li>
+        </ul>
+        <ul class="rt">
+            {% if username %}
+                <li>用户名: {{ username }}</li>
+                <li><a href="{% url 'logout' %}">退出登录</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">登录</a></li>
+                <li><a href="{% url 'register' %}">注册</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</header>
+
+
+{% block body %}{% endblock %}
+</body>
+</html>

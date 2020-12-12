@@ -8,6 +8,14 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 </head>
 <body>
+
+  <div id="all">
+
+  <div id="list-rendering-pre">
+    <p>put a button here for testApp</p>
+    <p>{{todos }}</p>
+  </div>
+
   <div id="app">
     <h1>网站列表</h1>
     <div
@@ -21,6 +29,7 @@
 <div id="conditional-rendering">
 <span v-if="seen">现在你看到我了</span>
 </div>
+
 <div id="list-rendering">
     <ol> 
       <li v-for="todo in todos">
@@ -35,7 +44,24 @@
       </ul>
   </div>
 
+<!-- all -->
+</div>
+
 <script>
+
+  ///////////////////////////////////////
+
+const ConditionalRenderingApp = {
+  data() {
+    return {
+      seen: true //true
+    }
+  }
+}
+
+Vue.createApp(ConditionalRenderingApp).mount('#conditional-rendering')
+
+///////////////////////////////////////////
 const ListRendering = {
   data() {
     return {
@@ -49,18 +75,9 @@ const ListRendering = {
 }
 
 Vue.createApp(ListRendering).mount('#list-rendering')
+// Vue.createApp(ListRendering).mount('#all')  #用all的话必须放在最后，不然新变量加载不进去 建议还是用一个all，或者几个独立的，不要重复覆盖
 
-///////////////////////////////////////
 
-const ConditionalRenderingApp = {
-  data() {
-    return {
-      seen: true
-    }
-  }
-}
-
-Vue.createApp(ConditionalRenderingApp).mount('#conditional-rendering')
 
 ///////////////////////////////////////
 const testAPP = {
