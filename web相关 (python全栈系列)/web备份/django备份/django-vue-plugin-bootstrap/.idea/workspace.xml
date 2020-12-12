@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f023d1b4-1e26-4a26-a31e-b2c43aa0e5e4" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../django1.rar" beforeDir="false" afterPath="$PROJECT_DIR$/../django1.rar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../django1.rar" beforeDir="false" afterPath="$PROJECT_DIR$/../django1.rar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +64,7 @@
       <workItem from="1607666312879" duration="4022000" />
       <workItem from="1607742713454" duration="8795000" />
       <workItem from="1607753390892" duration="54000" />
+      <workItem from="1607754299706" duration="286000" />
     </task>
     <servers />
   </component>

@@ -95,10 +95,22 @@ const App1 = {
 
 methods:{
       fresh(){
+          var param = {"limit_num":1,"id":"657447170","password":"dYzr8wSChJQIGCByNO3=8w85frU="};
+          //way1
+        //   val = 0;
+        // $.ajaxSettings.async = false;  //修改为同步请求！！！
+        // $.get("/onenet_check/",param,function(data,status) {
+        //     val = data;
+        //     console.log(val);
+        // })
+          //way2
           val = show();
-          console.log(val);
-          this.val[0] = val['datastreams'][1]['datapoints'][0]['value']
-          this.val[1] = val['datastreams'][0]['datapoints'][0]['value']
+        console.log(val);
+
+        ///
+        this.val[0] = val['datastreams'][1]['datapoints'][0]['value']
+        this.val[1] = val['datastreams'][0]['datapoints'][0]['value']
+
       },
     // 定时刷新数据函数
       dataRefresh(){
