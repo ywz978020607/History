@@ -1,0 +1,35 @@
+# frpzh.buaamc2.net
+
+[common]
+# A literal address or host name for IPv6 must be enclosed
+# in square brackets, as in "[::1]:80", "[ipv6-host]:http" or "[ipv6-host%zone]:80" 122.51.75.53
+bind_addr = 0.0.0.0
+bind_port = 9001
+
+# udp port to help make udp hole to penetrate nat
+; bind_udp_port = 7001
+
+# udp port used for kcp protocol, it can be same with 'bind_port'
+# if not set, kcp is disabled in frps
+; kcp_bind_port = 7000
+
+# specify which address proxy will listen for, default value is same with bind_addr
+# proxy_bind_addr = 127.0.0.1
+
+# if you want to support virtual host, you must set the http port for listening (optional)
+# Note: http port and https port can be same with bind_port
+vhost_http_port = 9003
+; vhost_https_port = 443
+
+# response header timeout(seconds) for vhost http server, default is 60s
+# vhost_http_timeout = 60
+
+# set dashboard_addr and dashboard_port to view dashboard of frps
+# dashboard_addr's default value is same with bind_addr
+# dashboard is available only if dashboard_port is set
+dashboard_addr = 0.0.0.0
+dashboard_port = 9002
+
+# dashboard user and passwd for basic auth protect, if not set, both default value is admin
+dashboard_user = admin
+dashboard_pwd = admin

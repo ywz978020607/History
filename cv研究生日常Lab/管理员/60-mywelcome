@@ -1,0 +1,8 @@
+#!/bin/sh
+printf "========================================================\n"
+printf "Welcome to IRC-Computing-Server!" 
+printf $USER 
+printf "\n"
+printf "You are accessing server 207.\n"
+printf "Large files are recommended to be placed under /home2/[your_username]/ .\n"
+printf "========================================================\n"

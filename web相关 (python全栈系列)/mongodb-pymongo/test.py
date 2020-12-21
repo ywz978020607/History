@@ -26,7 +26,7 @@ db = client[db_name]
 db.authenticate(db_username, db_password)  #连接到数据库
 
 
-myclient = pymongo.MongoClient("mongodb://fxxxxx:27017/")
+myclient = pymongo.MongoClient("mongodb://122.51.xx:9005/")
 db = myclient['test']  #test数据库  可以有很多表
 db.authenticate('test', '123456')  # 连接到数据库
 

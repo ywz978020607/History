@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="db" uuid="3fa5d288-ae7a-4402-9536-fcd12ade304d">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\Desktop\folder\History\web相关 (python全栈系列)\web备份\django备份\可登陆注册 备份 django框架\django1\db.sqlite3</jdbc-url>
+    </data-source>
+  </component>
+</project>

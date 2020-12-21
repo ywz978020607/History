@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo /home/sharklet/usbreset /dev/bus/usb/001/005 
+#sudo echo "DATE:" $(date +"%Y-%m-%d %H:%M:%S") >> /usr/startup.txt
+/home/sharklet/anaconda3/bin/python /home/sharklet/data/pySrun4k_BeihangLogin-master/Login.py login sy2002220 ywz19980316
+

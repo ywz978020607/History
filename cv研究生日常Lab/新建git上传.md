@@ -10,4 +10,4 @@
 
    git remote  add origin  https://github.com/ywz978020607/phddns_arm64_or_others_onenet.git
 
-   git push origin master
+   git push origin master  # -f #强制push

@@ -1,0 +1,19 @@
+### 放置要连接的ip地址  并预先在服务器的~/.ssh/authorized_keys添加对应的密钥，参考readme
+local:
+    root: /mnt/pass
+    temp: #CompressAI-client #{root}/{temp}目录递归更新、单向上下传
+
+s401:
+    user: ywz
+    port: '22'
+    ip: 10.134.163.80
+    root: /home/ywz/remote
+s402:
+    user: ywz
+    port: '22'
+    ip: 10.130.159.225
+    root: /home/ywz/remote
+
+#s207:
+#    user: ywz
+#    ip: 10.130.159.225

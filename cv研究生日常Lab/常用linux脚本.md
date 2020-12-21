@@ -8,6 +8,10 @@ ls -l ./|grep "^-"|wc -l
 
 du -h --max-depth=0
 
+## 查看用户占用空间
+
+sudo du -sh /home/*
+
 
 
 ## 根据PID查找用户
@@ -55,7 +59,7 @@ watch -n 1 -d nvidia-smi
 
 mesg n
 
-
+可以添加在~/.profile里
 
 # wget
 
