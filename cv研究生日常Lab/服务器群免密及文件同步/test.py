@@ -26,6 +26,7 @@ def trans(mode): #'0':全部传输 ;; '1'：只传输.py 文件;;
         print(iplist[ii])
 
         temp_user = ipdict[iplist[ii]]["user"]
+        temp_passwd = ipdict[iplist[ii]]["passwd"]
         temp_port = ipdict[iplist[ii]]["port"]
         temp_ip = ipdict[iplist[ii]]["ip"]
         temp_remote_root =ipdict[iplist[ii]]["root"]
@@ -43,8 +44,8 @@ def trans(mode): #'0':全部传输 ;; '1'：只传输.py 文件;;
             temp_remote_path = os.path.join(temp_remote_path,"")
             print(temp_remote_path)
 
-            print("scp -P "+temp_port+" -r "+local_path+" "+temp_user+"@"+temp_ip+":"+temp_remote_path)
-            os.system("scp -P "+temp_port+" -r "+local_path+" "+temp_user+"@"+temp_ip+":"+temp_remote_path)
+            print("sshpass -p "+ temp_passwd +" scp -P "+temp_port +" -r "+local_path+" "+temp_user+"@"+temp_ip+":"+temp_remote_path)
+            os.system("sshpass -p "+ temp_passwd +" scp -P "+temp_port +" -r "+local_path+" "+temp_user+"@"+temp_ip+":"+temp_remote_path)
 
 
         elif mode=='1': #只同步.py文件
@@ -63,7 +64,7 @@ def trans(mode): #'0':全部传输 ;; '1'：只传输.py 文件;;
                 # print(
                 #     "scp -P " + temp_port + " " + local_file_path + " " + temp_user + "@" + temp_ip + ":" + temp_remote_file_path)
                 os.system(
-                    "scp -P " + temp_port + " " + local_file_path + " " + temp_user + "@" + temp_ip + ":" + temp_remote_file_path)
+                    "sshpass -p "+ temp_passwd +" scp -P " + temp_port + " " + local_file_path + " " + temp_user + "@" + temp_ip + ":" + temp_remote_file_path)
                 # print(p.read()) #搭配os.popen()
 
 if __name__=="__main__":

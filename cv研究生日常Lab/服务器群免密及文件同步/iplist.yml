@@ -4,16 +4,26 @@ local:
     root: /mnt/remote
     temp: CompressAI-client/ywz #{root}/{temp}目录递归更新、单向上下传
 
-s401:
+F518WSL:
     user: ywz
+    passwd: 'y'
     port: '22'
-    ip: 10.134.163.80
-    root: /home/ywz/remote
-s402:
-    user: ywz
-    port: '22'
-    ip: 10.130.159.225
-    root: /home/ywz/remote
+    ip: 10.136.30.17
+    root: /mnt/remote
+
+
+#s401:
+#    user: ywz
+#    passwd: 'y' #加上引号确保解析为str
+#    port: '22'
+#    ip: 10.134.163.80
+#    root: /home/ywz/remote
+#s402:
+#    user: ywz
+#    passwd: 'y'
+#    port: '22'
+#    ip: 10.130.159.225
+#    root: /home/ywz/remote
 
 #s207:
 #    user: ywz

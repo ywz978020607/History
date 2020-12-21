@@ -2,7 +2,8 @@
 
 pip install pyyaml
 
-## 1. 先设置服务器间密钥，用于免密认证 
+##### 设置服务器间密钥，用于免密认证--可忽略
+
 A向B传
 
 https://www.pianshen.com/article/37241854365/
@@ -18,6 +19,10 @@ scp （-P 端口号）  id_rsa.pub B服务器登录用户名@B服务器IP:~/.ssh
 cat id_rsa.pub >>~/.ssh/authorized_keys
 多个服务器C\D\E等类似，继续将这个文件cat追加到C\D\E的authorized_keys文件中即可。
 
+## 1. 安装sshpass
+
+sudo apt install sshpass  #中心机安装即可
+
 
 ## 2.单向文件同步 scp+ssh
 https://www.cnblogs.com/6b7b5fc3/p/12716237.html
@@ -28,7 +33,7 @@ python test.py #即为默认全部递归上传一次
 
 python test.py 1 #即为只递归上传.py文件
 
-
+本代码采用密码写入yml配置方式实现更方便的连接，免去客户端笔记本ip改变后不需要重新导入证书的操作。
 
 ## 3. 单向文件同步 rsync+inotify
 
@@ -42,6 +47,9 @@ https://www.cnblogs.com/shengulong/p/6760605.html
 # 补充
 windows主机可以通过应用商店安装wsl子系统，进入后安装ssh实现同样的功能，win下的目录会自动挂载到/mnt/c,d,e盘下
 
+如果遇到ssh无法开启情况，可以尝试 sudo ssh-keygen -A
+
 
 
 ![image-20201221152834284](demo.png)
+
