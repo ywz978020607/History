@@ -41,3 +41,7 @@ https://www.cnblogs.com/shengulong/p/6760605.html
 
 # 补充
 windows主机可以通过应用商店安装wsl子系统，进入后安装ssh实现同样的功能，win下的目录会自动挂载到/mnt/c,d,e盘下
+
+
+
+![image-20201221152834284](D:\Desktop\folder\History\cv研究生日常Lab\服务器群免密及文件同步\demo.png)

@@ -40,6 +40,7 @@ def trans(mode='1'): #'0':全部传输 ;; '1'：只传输.py 文件;;
         ####
         #开始同步
         if mode=='0': #直接递归同步
+            print("scp -P "+temp_port+" -r "+local_path+" "+temp_user+"@"+temp_ip+":"+temp_remote_path)
             p = os.popen("scp -P "+temp_port+" -r "+local_path+" "+temp_user+"@"+temp_ip+":"+temp_remote_path)
             print(p.read())
 
