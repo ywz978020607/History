@@ -2,7 +2,7 @@ import yaml # pip install pyyaml
 import os,glob,sys
 
 
-def trans(mode='1'): #'0':全部传输 ;; '1'：只传输.py 文件;;
+def trans(mode): #'0':全部传输 ;; '1'：只传输.py 文件;;
     # print(mode)
     # 用open方法打开直接读取
     f = open('iplist.yml', 'rb')
@@ -23,6 +23,8 @@ def trans(mode='1'): #'0':全部传输 ;; '1'：只传输.py 文件;;
     for ii in range(len(iplist)):
         if iplist[ii]=='local':
             continue
+        print(iplist[ii])
+
         temp_user = ipdict[iplist[ii]]["user"]
         temp_port = ipdict[iplist[ii]]["port"]
         temp_ip = ipdict[iplist[ii]]["ip"]
@@ -31,22 +33,38 @@ def trans(mode='1'): #'0':全部传输 ;; '1'：只传输.py 文件;;
         if local_append_path!=None:
             temp_remote_path = os.path.join(temp_remote_root,local_append_path)
 
-        #最后的名字相同，因为是文件夹，则取消remote_path的名字，留出/表示，否则会自动补/
-        if os.path.basename(temp_remote_path)==os.path.basename(local_path):
-            temp_remote_path = os.path.dirname(temp_remote_path)
-        temp_remote_path = os.path.join(temp_remote_path,"")
-        print(temp_remote_path)
-
         ####
         #开始同步
-        if mode=='0': #直接递归同步
+        if mode=='0': #直接递归同步 文件夹传输
+
+            #最后的名字相同，因为是文件夹，则取消remote_path的名字，留出/表示，否则会自动补/
+            if os.path.basename(temp_remote_path)==os.path.basename(local_path):
+                temp_remote_path = os.path.dirname(temp_remote_path)
+            temp_remote_path = os.path.join(temp_remote_path,"")
+            print(temp_remote_path)
+
             print("scp -P "+temp_port+" -r "+local_path+" "+temp_user+"@"+temp_ip+":"+temp_remote_path)
-            p = os.popen("scp -P "+temp_port+" -r "+local_path+" "+temp_user+"@"+temp_ip+":"+temp_remote_path)
-            print(p.read())
+            os.system("scp -P "+temp_port+" -r "+local_path+" "+temp_user+"@"+temp_ip+":"+temp_remote_path)
+
 
         elif mode=='1': #只同步.py文件
-            pass
-
+            #先列出所有文件
+            temp_all_file_list = []
+            for root, dirs, files in os.walk(local_path):
+                for file in files:
+                    if ".py" in file: #后缀.py
+                        temp_all_file_list.append(os.path.join(root, file))
+            # print(temp_all_file_list)
+            for jj in range(len(temp_all_file_list)):
+                local_file_path = temp_all_file_list[jj]
+                temp_remote_file_path = local_file_path.replace(local_path,temp_remote_path)
+                # print(local_file_path)
+                print(temp_remote_file_path)
+                # print(
+                #     "scp -P " + temp_port + " " + local_file_path + " " + temp_user + "@" + temp_ip + ":" + temp_remote_file_path)
+                os.system(
+                    "scp -P " + temp_port + " " + local_file_path + " " + temp_user + "@" + temp_ip + ":" + temp_remote_file_path)
+                # print(p.read()) #搭配os.popen()
 
 if __name__=="__main__":
     mode = '0'
