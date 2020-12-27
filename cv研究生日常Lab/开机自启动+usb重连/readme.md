@@ -1,4 +1,4 @@
-# ubuntu18 配置rc.local
+# ubuntu18 配置/etc/rc.local
 
 https://blog.csdn.net/a912952381/article/details/81205095
 

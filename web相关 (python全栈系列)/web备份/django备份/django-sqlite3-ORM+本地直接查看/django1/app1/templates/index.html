@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/hw_index.css" %}" >
+    <link rel="icon" href="{% static "img/hw.ico" %}">
+    <script src="{% static "js/hw_index.js" %}"></script>
+</head>
+<body>
+<!-- 页面顶部 -->
+<!-- 顶部容器 ：width:100% -->
+<header id="top">
+    <!-- 内容显示区域 ：width : 1211px -->
+    <div id="top_box">
+        <ul class="lf">
+            <li><a href="#">华为官网</a></li>
+            <li><a href="#">华为荣耀</a></li>
+        </ul>
+        <ul class="rt">
+            {% if username %}
+                <li>用户名: {{ username }}</li>
+                <li><a href="{% url 'logout' %}">退出登录</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">登录</a></li>
+                <li><a href="{% url 'register' %}">注册</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</header>
+<!-- logo 和 搜索框 -->
+<div id="top_main">
+    <div class="lf  top_main_left">
+        <img src="{% static "img/newLogo.png" %}" alt="" />
+    </div>
+    <div class="lf search_box">
+        <div class="search">
+            <input type="text" class="text" id="txtSearch"/>
+            <input type="button" class="button" value="搜索"/>
+        </div>
+        <div class="hot_words">
+            <span>热门搜索：</span>
+            <a href="#"> 5C</a>
+            <a href="#"> HUAWEI P9</a>
+            <a href="#"> 5X</a>
+            <a href="#">荣耀7</a>
+            <a href="#"> Mate 8</a>
+
+        </div>
+    </div>
+    <div class="lf" id="my_hw">我的商城</div>
+    <div class="lf" id="settle_up">我的购物车</div>
+
+</div><!--top_main-->
+
+<!-- 导航 -->
+<nav id="nav">
+    <div id="category">
+        <a href="#">全部商品</a>
+    </div>
+    <ul id="nav_items" class="lf">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">华为专区</a></li>
+        <li><a href="#">荣耀专区</a></li>
+    </ul>
+</nav>
+<!-- banner 广告 -->
+<div id="banner">
+    <ul id="cate_box" class="lf">
+        {% for type in type_list %}
+        <li>
+            <h3><a href="#">{{ type.type }}</a></h3>
+            <p>
+                {% for name in name_list %}
+                    {% if name.type == type.type %}
+                        <span>{{ name.name }}</span>
+                    {% endif %}
+                {% endfor %}
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+    <!--图片轮播 -->
+    <form>
+        <div class="slider">
+            <img id="slider_img" class="img_slider" src="{% static "img/slide01.png" %}" alt=""/>
+        </div>
+    </form>
+</div>
+<div class="hr-2"></div>
+<!-- 网页主体 -->
+<section id="main">
+    <div class="layout">
+        <div class="fl u-4-3 lf">
+            <ul>
+                <li class="channel-pro-item">
+                    <!--<i class="p-tag"><img src="img/new_ping.png" style="padding-left: 0" alt=""/></i>-->
+                    <div class="p-img">
+                        <img src="{% static "img/phone01.png" %}" alt=""/>
+                    </div>
+                    <div class="p-name lf"><a href="#">HUAWEI P9 Plus</a></div>
+                    <div class="p-shining">
+                        <div class="p-slogan">一上手，就爱不释手</div>
+                        <div class="p-promotions">5月6日10:08 火爆开售</div>
+                    </div>
+                    <div class="p-price">
+                        <em>¥</em>
+                        <span>3988</span>
+                    </div>
+                    <div class="p-button lf">
+                        <a href="#">立即抢购</a>
+                    </div>
+                </li>
+                <li class="channel-pro-item" style="background-color:#E2F9FB"><!--荣耀畅玩5C-->
+                    <!--<i class="p-tag"><img src="img/new_ping02.png" alt=""/></i>-->
+                    <div class="p-img">
+                        <img src="{% static "img/phone02.png" %}" alt=""/>
+                    </div>
+                    <div class="p-name lf"><a href="#">荣耀畅玩5C</a></div>
+                    <div class="p-shining">
+                        <div class="p-slogan">16纳米8核芯千元普及风暴</div>
+                        <div class="p-promotions">5月10日10:08震撼开售</div>
+                    </div>
+                    <div class="p-price">
+                        <em>¥</em>
+                        <span>899</span>
+                    </div>
+                    <div class="p-button lf">
+                        <a href="#">立即抢购</a>
+                   </div>
+                </li>
+                <div class="hr-2"></div>
+                <li class="channel-pro-item" style="background-color:#FFFCE7"><!--荣耀畅玩5C-->
+                    <!--<i class="p-tag"><img src="img/hot_but.png" alt=""/></i>-->
+                    <div class="p-img">
+                        <img src="{% static "img/phone05.png" %}" alt=""/>
+                    </div>
+                    <div class="p-name lf"><a href="#">荣耀7</a></div>
+                    <div class="p-shining">
+                        <div class="p-slogan">智灵键，创新语音控制</div>
+                        <div class="p-promotions">移动增强版原价1999直降200</div>
+                    </div>
+                    <div class="p-price">
+                        <em>¥</em>
+                        <span>1799</span>
+                    </div>
+                    <div class="p-button lf">
+                        <a href="#">立即抢购</a>
+                    </div>
+                </li>
+                <li class="channel-pro-item" style="background-color:#FFECEF"><!--荣耀畅玩5C-->
+                    <!--<i class="p-tag"><img src="img/hot_but.png" alt=""/></i>-->
+                    <div class="p-img">
+                        <img src="{% static "img/phone06.png" %}" alt=""/>
+                    </div>
+                    <div class="p-name lf"><a href="#">荣耀畅玩5X</a></div>
+                    <div class="p-shining">
+                        <div class="p-slogan">腾讯视频VIP特权免费领</div>
+                        <div class="p-promotions">5月4日至8日 每天10:08/20:00准点开售</div>
+                    </div>
+                    <div class="p-price">
+                        <em>¥</em>
+                        <span>899</span>
+                    </div>
+                    <div class="p-button lf">
+                        <a href="#">立即抢购</a>
+                    </div>
+                </li>
+            </ul>
+        </div><!-- u-4-3结束-->
+        <div class="lf fr u-4-1">
+            <div class="channel-sale">
+                <img src="{% static "img/phone03.jpg" %}" alt=""/>
+            </div>
+            <div class="hr-2"></div>
+            <ul class="h-tab">
+                <li class="current" id="tab-notice">
+                    <a href="#">公告</a>
+                </li>
+                <li id="tab-news" class="">
+                    <a href="#">评测 </a>
+                </li>
+                <div class="b">
+                    <ul id="tab-notice-content" style="display:block;">
+                        <li>
+                            <a href="#">HUAWEI G9 青春版震撼首发，全款预订赢好礼</a>
+                        </li>
+                        <li>
+                            <a href="#">荣耀畅玩5C，真芯不怕！ 5月5日10:08震撼首发！</a>
+                        </li>
+                        <li>
+                            <a href="#">参与互动赢荣耀畅玩5C，与“胖红”一起怒FUN！</a>
+                        </li>
+                        <li>
+                            <a href="#">【中奖名单】HUAWEI WATCH星月系列购机抽奖</a>
+                        </li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+        <div class="hr-2"></div>
+        <div class="banner">
+            <img class="rt" src="{% static "img/vip.jpg" %}" alt=""/>
+            <div class="hr-2"></div>
+        </div>
+    </div><!--layout HUAWEI P9 Plus结束-->
+</section>
+
+
+   <div class="hr-2"></div>
+       <div id="banner_img">
+        <div class="banner-slideshow">
+            <img src="{% static "img/p9.jpg" %}" width="100%" alt=""/>
+            </div>
+        </div>
+    </div>
+   <div class="hr-2"></div>
+     <div class="hr-40"></div>
+
+   <div class="slogan">
+       <ul>
+           <li class="s1"><i>500强企业 品质保证</i></li>
+           <li class="s1"><i>7天退货 15天换货 </i></li>
+           <li class="s1"><i>99元起免运费</i></li>
+           <li class="s1"><i>448家维修网点 全国联保</i></li>
+       </ul>
+   </div>
+
+</body>
+</html>

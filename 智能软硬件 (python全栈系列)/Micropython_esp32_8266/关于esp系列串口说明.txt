@@ -12,3 +12,15 @@ UART1 is on Pins 2 (TX) and 8 (RX) however Pin 8 is used to connect the flash ch
 esp均可以使用webrepl进行调试上下传文件，当复用0号串口时，可以改用webrepl
 
 详见webrepl、8266复用0号串口和826-01-mpy/复用0号串口文件夹
+
+
+#另一种使用0号串口的思路：  保留repl功能不变，动态执行
+开机后先sleep 5s 把开机自动输出的输出完，然后串口清空一下
+在esp端main中只定义函数，然后无操作
+其余操作均在电脑端等连接esp的python执行，通过pyserial一类，try扫描打开串口
+q="nonv('%s','%s')\r" % (aa,cc)
+ser.write(q.encode())
+类似上述方式，相当于动态调用板子执行相关函数
+https://github.com/maysrp/esp32-mon
+优点：调试方便、不用担心死机重烧固件，且不用担心两个终端串口栈各自刷新频率匹配和过滤问题
+缺点：需要发送前将函数参数转为一致的字符串，连函数名一同发送；接收时要清空上电输出的乱码；所有print内容均作为回传信息
