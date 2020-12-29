@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>欢迎来到跳转页面</title>
+
+    <link rel="stylesheet" href="css/index.css" id="css" />
+</head>
+
+<body>
+    <div class="load" id="load">
+        <div class="container circle">
+            <div class="box1 circle center"></div>
+            <div class="box2 circle center"></div>
+            <div class="box3 circle center"></div>
+            <div class="box4 circle center"></div>
+            <div class="box5 circle center"></div>
+            <div class="box6 circle">
+                <div class="coil" style="--i: 0"></div>
+                <div class="coil" style="--i: 1"></div>
+                <div class="coil" style="--i: 2"></div>
+                <div class="coil" style="--i: 3"></div>
+                <div class="coil" style="--i: 4"></div>
+                <div class="coil" style="--i: 5"></div>
+                <div class="coil" style="--i: 6"></div>
+                <div class="coil" style="--i: 7"></div>
+            </div>
+        </div>
+
+        <div class="center">
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <h2>Loading...</h2>
+        </div>
+
+    </div>
+
+    <!-- 设置为一开始不显示 -->
+    <div class="ywzbg" id="main" style="display: none;">
+        <div class="ywzbox" align="center">
+            <h1>github网址</h1><a href="https://github.com/ywz978020607/History">全栈式开发记录github跳转链接，欢迎star</a>
+            <br>
+            <div>👆⬆求GitHub互star~⬆👆</div>
+
+            <br>
+            <h3>自娱自乐小工具</h3>
+            <h3>· 临时自搭网盘</h3>
+            <a href="/upload">上传链接跳转</a>
+            <br><br>
+            <a href="/files">查看链接跳转</a>
+
+
+            <br>
+            <h3>· 临时跨设备文字通信</h3>
+            <a href="/files/copy_pass.html">一次性记忆留言墙转</a>
+
+            <h3>· 个人网站入口 </h3>
+            <a href="http://sharklet9000.frp.lu8.win/">个人网站入口</a>
+
+            <h3>· 个人博客含教学内容入口</h3>
+            <a href="https://www.cnblogs.com/sharklet/">博客园 sharklet</a>
+            <h3>· bilibili视频集链接含公开课</h3>
+            <a href="https://space.bilibili.com/250616280">B站 摸鱼大鸽</a>
+            <h3>· 闲鱼(代做说明及散落装备)ID: 因无伤不香</h3>
+            <h3>qq 978020607</h3>
+            <h3>微信 ywz978020607</h3>
+
+            <h3>👇⬇有开发学习需求的客户请点下面~⬇👇</h3>
+            <a href="https://github.com/ywz978020607/History/blob/master/%E4%BB%A3%E5%81%9A%E4%BD%9C%E5%93%81%E5%90%88%E8%BE%91%E5%B1%95%E7%A4%BA/README.md">物联网软硬件相关代做开发说明及联系方式</a>
+
+        </div>
+    </div>
+
+
+    <!-- 动态修改body-css -->
+    <script>
+        function change() {
+            //   location='vx.html';  
+            var obj = document.getElementById("css");
+            obj.setAttribute("href", "css/index2.css");
+
+            //隐藏加载的
+            document.getElementById("load").style.display = "none";
+
+            document.getElementById("main").style.display = ""; //显
+            // document.getElementById("main").style.display = "none"; //隐
+        }
+        // setTimeout('change()', 1000);
+
+        document.onreadystatechange = subSomething;
+
+        function subSomething() {
+            //当页面加载状态
+            if (document.readyState == "complete") {
+                //延迟xx ms关闭loading
+                // $('.load').delay(700).hide(0);
+                // $('.load').delay(700).fadeOut('slow'); //不用jquery方式，换用原生方式
+                setTimeout('change()', 700);
+            }
+
+        }
+    </script>
+</body>
+
+</html>
