@@ -1,0 +1,1 @@
+0 6 * * *    python2 /root/py2/main.py
