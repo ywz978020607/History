@@ -34,3 +34,21 @@ v2ray start/stop/restart/status/log
 
 v2ray #管理
 
+
+
+如果想用多种协议-》添加端口，成功后便可选择，如果用ss，加密方式推荐chacha20
+
+
+
+# 带后台面板版本
+
+```
+bash <(curl -Ls https://blog.sprov.xyz/v2-ui.sh)
+```
+
+https://www.monopo.cn/archives/3042
+
+https://github.com/sprov065/v2-ui
+
+
+
