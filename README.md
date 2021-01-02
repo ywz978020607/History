@@ -10,16 +10,20 @@
   - django
   - express(node.js)
   - vue
+  - nginx
+  - jquery
+  - sqlite、mongodb等小型化数据库简易上手
+  - wechat交互
 
-- 办公效率工具
+- 日常自动化工具
 
-  *使用python加速日常表格等工作处理*
+  *使用python加速日常表格等工作处理，win32api脚本*
 
-- 合辑展示
+- cv研究生日常Lab
 
-  *物联网相关作品集合*
-
-- 图像处理
+  - 内网穿透脚本教程
+  - 一键梯子教程/内网二级梯子/校园网免流量
+  - 日常脚本/linux运维
 
 - 桌面端
 
@@ -34,14 +38,18 @@
     *Micropython及fpga的电赛相关，提供了很多MPY版本的驱动模块*
   
   - esp32/esp8266/8266-01/01s@micropython物联网固件、开发工具、例程集合
+  
+- 合辑展示
 
+  *物联网相关作品集合*
 
+  
 
 [旧版github链接（已停止更新） ](https://github.com/just-4-f-u-n/History)
 
 
 
-*如果有开发需要或有意思的想法，欢迎联系qq 978020607*
+*如果有开发需要或有意思的想法，欢迎联系qq 978020607*  vx ywz978020607
 
 
 
