@@ -12,5 +12,11 @@ https://toutyrater.github.io/advanced/vps_relay.html
 
 
 
+内网梯子功能：
 
+1. 实现校园网免流量(不论国内外)
+2. 搭配外网梯子，实现自动识别国外ip代理上网
 
+性能测评如下图：
+
+![](test.png)
