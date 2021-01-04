@@ -6,9 +6,9 @@
 
 
 
-此处5V如果接USB等，焊接AMS1117-3.3
+此处5V如果接USB等，焊接AMS1117-3.3比较稳
 
-若接3.7V~4.2V锂电池，则换用[TC1262](https://www.dgzj.com/dianzi/96906.html)芯片
+若接3.7V~4.2V锂电池，则换用[TC1262](https://www.dgzj.com/dianzi/96906.html)芯片，同时依旧可以用5V输入
 
 封装均为SO-T223
 
