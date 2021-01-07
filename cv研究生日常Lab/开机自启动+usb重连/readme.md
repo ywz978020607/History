@@ -40,3 +40,11 @@ sudo ./usbreset /dev/bus/usb/002/003
 
 
 
+# service一类的开机自启动
+
+如nginx等服务类 [Linux服务器，服务管理--systemctl命令详解，设置开机自启动 - 大自然的流风 - 博客园 (cnblogs.com)](https://www.cnblogs.com/zdz8207/p/linux-systemctl.html)
+
+```
+sudo systemctl enable nginx
+sudo systemctl enable supervisor
+```
