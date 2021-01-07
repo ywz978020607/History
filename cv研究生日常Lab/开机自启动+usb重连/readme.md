@@ -2,11 +2,25 @@
 
 https://blog.csdn.net/a912952381/article/details/81205095
 
+1）将 /lib/systemd/system/rc-local.service 链接到 /etc/systemd/system/ 目录下面来：
 
+ln -fs /lib/systemd/system/rc-local.service /etc/systemd/system/rc-local.service
 
-记得 755 权限赋值
+sudo vim /etc/systemd/system/rc-local.service
 
+在文件末尾添加
 
+```
+[Install]
+WantedBy=multi-user.target
+Alias=rc-local.service
+```
+
+sudo touch /etc/rc.local
+
+chmod 755 /etc/rc.local
+
+写rc.local文件即可 开头 #!/bin/bash
 
 
 
@@ -23,3 +37,6 @@ chmod +x usbreset
 #lsusb  eg: -> Bus 002 Device 003: ID 0fe9:9010 DVICO 
 
 sudo ./usbreset /dev/bus/usb/002/003 
+
+
+
