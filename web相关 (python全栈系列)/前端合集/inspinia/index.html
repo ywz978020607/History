@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IRC-Zone</title>
+    <meta charset="utf-8">
+    
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+
+<script src="js/vue.global.js"></script>
+
+</head>
+<body>
+
+
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <span>
+                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                        </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear">
+                                <span class="block m-t-xs">
+                                    <strong class="font-bold"> <div id="username"></div></strong>
+                                </span> <span class="text-muted text-xs block">admin</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="logo-element">
+                        IN+
+                    </div>
+                </li>
+                <!-- ///////////////// -->
+                
+                <li>
+                    
+                    <!-- <a href="javascript:void(0);"><span class="nav-label">退出登录</span></a> -->
+                    <a href="javascript:void(0);" @click="button1"><span class="nav-label">群查看</span></a>
+                    <a href="javascript:void(0);" @click="button2"><span class="nav-label">透</span></a>
+                    <a href="javascript:void(0);" @click="button3"><span class="nav-label">上</span></a>
+                    <a href="javascript:void(0);" @click="button4"><span class="nav-label">公板</span></a>
+                    
+                    <a href="https://github.com/ywz978020607/History/tree/master/cv%E7%A0%94%E7%A9%B6%E7%94%9F%E6%97%A5%E5%B8%B8Lab/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%BE%A4%E5%85%8D%E5%AF%86%E5%8F%8A%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5" ><span class="nav-label">多端同步</span></a>
+                    
+                    
+                    <li class="divider"></li>
+                </li>
+                <br><br>
+                <li id="add_nav"></li>
+                
+                
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    <form role="search" class="navbar-form-custom" action="search_results.html">
+                        <div class="form-group">
+                            <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <span class="m-r-sm text-muted welcome-message">Welcome to Lab-Zone.</span>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-messages">
+                            <li>
+                                <div class="dropdown-messages-box">
+                                    <a href="profile.html" class="pull-left">
+                                        <img alt="image" class="img-circle" src="img/a7.jpg">
+                                    </a>
+                                    <div class="media-body">
+                                        <small class="pull-right">46h ago</small>
+                                        <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
+                                        <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="dropdown-messages-box">
+                                    <a href="profile.html" class="pull-left">
+                                        <img alt="image" class="img-circle" src="img/a4.jpg">
+                                    </a>
+                                    <div class="media-body ">
+                                        <small class="pull-right text-navy">5h ago</small>
+                                        <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
+                                        <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="dropdown-messages-box">
+                                    <a href="profile.html" class="pull-left">
+                                        <img alt="image" class="img-circle" src="img/profile.jpg">
+                                    </a>
+                                    <div class="media-body ">
+                                        <small class="pull-right">23h ago</small>
+                                        <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
+                                        <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="text-center link-block">
+                                    <a href="mailbox.html">
+                                        <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                <a href="mailbox.html">
+                                    <div>
+                                        <i class="fa fa-envelope fa-fw"></i> You have 16 messages
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="profile.html">
+                                    <div>
+                                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                        <span class="pull-right text-muted small">12 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="grid_options.html">
+                                    <div>
+                                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="text-center link-block">
+                                    <a href="notifications.html">
+                                        <strong>See All Alerts</strong>
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i> Log out
+                        </a>
+                    </li>
+                </ul>
+
+                
+                
+
+            </nav>
+        </div>
+
+
+        <div class="wrapper wrapper-content animated fadeInRight" >
+            <center>
+                
+            <div id="right-row" class="row" v-if="seen[0]">
+                <div style="font-size:20px">
+                    <!-- {{todos[0].text}} -->
+                
+<br><br><br>
+- 服务器<br><br>
+
+<br><br><br>
+
+<table border="1" style="text-align:center;">
+    <tr>
+      <td>标识号</td>
+      <td>内网ip+链接</td>
+      <td>外网链接</td>
+    </tr>
+    
+  </table>
+
+<br><br>
+Win10桌面端版本：
+<a href="http://buaamc2.net:81/gpuwatcher.rar">点击下载解压后运行exe</a><br> 
+
+<br><br>
+                </div>
+            </div>
+
+            <div id="right-row" class="row" v-if="seen[1]">
+                <div style="font-size:20px">
+                    <!-- {{todos[1].text}} -->
+
+
+<br><br><br>
+<h2 style="color: blue;">ip地址：</h2>
+
+                </div>
+            </div>
+
+            <div id="right-row" class="row" v-if="seen[2]">
+                <div style="font-size:20px">
+                    <!-- {{todos[2].text}} -->
+<h2 style="color: blue;">1.1获取</h2>
+
+<br>
+                </div>
+            </div>
+            
+            <div id="right-row" class="row" v-if="seen[3]">
+                <div style="font-size:20px">
+<h1>信息</h1>
+<h2 style="color: blue;">网站</h2>  
+
+<br>
+    
+                </div>
+            </div>
+            
+            
+            
+            </center>
+        </div>
+
+
+        <div class="footer">
+            <div class="pull-right">
+                <a href="http://">主站链接</a>
+            </div>
+            <div>
+                <strong>IRC-Lab</strong> 
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    const App = {
+  data() {
+    return {
+        seen:[true,false,false,false],
+        todos: [
+        { text: 'Learn JavaScript' },
+        { text: 'Learn Vue' },
+        { text: 'Build something awesome' }
+      ]
+    }
+  },
+  methods:{
+      button1(event){
+          console.log("button1")
+          this.seen=[true,false,false,false]
+      },
+      button2(event){
+          console.log("button2")
+          this.seen=[false,true,false,false]
+      },
+      button3(event){
+          console.log("button3")
+          this.seen=[false,false,true,false]
+      },
+      button4(event){
+          console.log("button4")
+          this.seen=[false,false,false,true]
+      },
+      
+      hello(){
+        <!-- 欢迎 -->
+        now = new Date(),hour=now.getHours();
+        <!-- alert(hour); -->
+        if(hour<6){
+        alert("打工人凌晨好！");
+        }
+        else if(hour<11){
+        alert("新的一天开始啦~加油！");
+        }
+        else if(hour<13){
+        alert("按时吃饭，适当午休，补充体力~");
+        }
+        else if(hour<17){
+        alert("多喝热水多喝热水多喝热水");
+        }
+        else if(hour<22){
+        alert("劳逸结合，记得锻炼身体！");
+        }
+        else if(hour<24){
+        alert("时候不早啦，早点休息吧~");
+        }
+      }
+  },
+  mounted(){
+    this.hello()
+  }
+}
+
+Vue.createApp(App).mount('#wrapper')
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
