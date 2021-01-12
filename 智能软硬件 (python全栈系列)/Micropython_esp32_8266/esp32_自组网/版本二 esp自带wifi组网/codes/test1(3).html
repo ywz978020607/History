@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>查看系统</title>
+<style type="text/css">
+html{height:100%}
+body{height:100%;margin:0px;padding:0px}
+
+.container{height:80%;width:60%;margin-right: auto;
+margin-left: auto;}/* margin-left:100px;} */
+</style>
+<!-- v3.0版本的引用方式：src="http://api.map.baidu.com/api?v=3.0&ak=您的密钥" -->
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=CwqECi3qpXxC8unBV05p0hiG7A8ut480"></script>
+<!-- 在页面的头部应用点聚合工具开源库的文件 -->
+<script type="text/javascript" src="http://api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay_min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/MarkerClusterer/1.2/src/MarkerClusterer_min.js"></script>
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</script>
+</head>
+
+<body>
+    
+    <center>
+        <h1>查看系统</h1><br>
+
+        <table border="1">
+            <tr>
+              <td>名称</td>
+              <td>数值</td>
+            </tr>
+            <tr>
+              <td id="name0">温度 ℃</td>
+              <td id="value0">0</td>
+            </tr>
+            <tr>
+              <td id="name1">湿度 RH</td>
+              <td id="value1">0</td>
+            </tr>
+            <tr>
+              <td id="name2">海拔 m</td>
+              <td id="value2">0</td>
+            </tr>
+            <tr>
+              <td id="name3">pm2.5 </td>
+              <td id="value3">0</td>
+            </tr>
+            <tr>
+              <td id="name4">霍尔传感</td>
+              <td id="value4">0</td>
+            </tr>
+            </table>
+
+    </center>
+    <br><br><br><br>
+    
+    
+    <div class="container" id="container"></div>
+
+
+<script type="text/javascript">
+    $(function(){
+    setInterval(function(){
+         show();
+     },5000);
+
+    //show();
+    });
+    
+    var param = {"limit_num":1,"id":"590874363","password":"gjU2173SbsvrSi4OpLyK8IXW3tc="};
+    function show(data){
+        $.get("http://39.105.218.125:80/onenet_check/",param,function(data,status){
+        console.log(data);
+        //温度，湿度，气压，pm2.5，霍尔
+        $("#value0").text(data['datastreams'][1]['datapoints'][0]['value']);  
+        $("#value1").text(data['datastreams'][0]['datapoints'][0]['value']);   
+        $("#value2").text(data['datastreams'][2]['datapoints'][0]['value']); 
+        $("#value3").text(data['datastreams'][5]['datapoints'][0]['value']); 
+        $("#value4").text(data['datastreams'][4]['datapoints'][0]['value']);  
+        
+        //gps:lng-3,lat-6
+        
+        // $("#text2").text(data['end']);    
+        lng = parseFloat(data['datastreams'][3]['datapoints'][0]['value']);
+        lat = parseFloat(data['datastreams'][6]['datapoints'][0]['value']);
+        console.log(lng);
+        console.log(lat);
+        location_data = {"lng":lng,"lat":lat};
+        show_map(location_data);
+
+        }) 
+    };
+
+    ///
+    function show_map(para){ //para={"lng":120.5,"lat":40.7} //经度，纬度
+        // alert("经度:"+para.lng);//输出百度坐标的经度
+        //     alert("纬度:"+para.lat);//输出百度坐标的纬度
+            var map = new BMap.Map("container");
+            var point = new BMap.Point(para.lng,para.lat);
+            map.centerAndZoom(point,15);
+            var marker = new BMap.Marker(para);//创建小红点
+            map.addOverlay(marker);//将小红点放到地图上
+            var label = new BMap.Label("123",{offset:new BMap.Size(20,-10)});//label
+            //设置lebel样式
+            label.setStyle({
+                width: "120px",
+                color: '#fff',
+                background: '#ff8355',
+                border: '1px solid "#ff8355"',
+                borderRadius: "5px",
+                textAlign: "center",
+                height: "26px",
+                lineHeight: "26px"
+            });
+            marker.setLabel(label); //添加百度label
+            map.centerAndZoom(para,18);
+
+            //设置精度圈
+            var circle = new BMap.Circle(para,100); //创建圆
+            //设置圆形的边线颜色
+            circle.setStrokeColor("#00CCFF");
+            //设置圆形的填充颜色
+            circle.setFillColor("#00CCFF");
+            //设置圆形的填充透明度，取值范围0 - 1
+            circle.setFillOpacity(0.1);
+            //设置圆形的边线透明度，取值范围0 - 1
+            circle.setStrokeOpacity(0.01);
+            //设置圆形边线的宽度，取值为大于等于1的整数
+            circle.setStrokeWeight(1);
+            map.addOverlay(circle);            //增加圆
+
+                    
+            //开启鼠标滚轮缩放
+            map.enableScrollWheelZoom(true);
+            //添加平移缩放控件
+            var opts = {type: BMAP_NAVIGATION_CONTROL_SMALL}
+            map.addControl(new BMap.NavigationControl(opts));
+            //添加比例尺控件
+            map.addControl(new BMap.ScaleControl());
+            //添加缩略地图控件
+            map.addControl(new BMap.OverviewMapControl());
+            //// 仅当设置城市信息时，MapTypeControl的切换功能才能可用
+            map.addControl(new BMap.MapTypeControl());
+            // map.setCurrentCity("青岛");
+
+            //修改地图风格
+            //清新蓝风格(light)
+            //黑夜风格(dark)
+            //自然绿风格(grassgreen)
+            //精简风格(googlelite)
+            //默认地图样式(normal)
+            var mapStyle={  style : "normal" }
+            map.setMapStyle(mapStyle);
+
+    }
+
+
+
+
+</script>
+</body>
+</html>
