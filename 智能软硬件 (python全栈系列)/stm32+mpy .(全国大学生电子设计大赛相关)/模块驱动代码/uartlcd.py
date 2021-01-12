@@ -5,6 +5,10 @@ import struct
 #get_cmd=b'\xee\xb1\x11\x00\x00\00\x02\xff\xfc\xff\xff'
 #m.split(b'\xee')[-1].split(b'\xff\xfc\xff\xff')[0]
 
+#切换到画面1：EE B1 00 00 01 FF FC FF FF 
+#文本框滚动：EE B1 16 00 01 00 01 00 32 FF FC FF FF  其中32对应速度
+
+
 class UARTLCD():
 
     def __init__(self,com=1,baudrate=9600):
