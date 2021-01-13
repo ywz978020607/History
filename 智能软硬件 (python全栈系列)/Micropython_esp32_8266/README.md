@@ -68,4 +68,12 @@
      val = adc.read()          # read an analog value
      ```
 
-  3. 
+
+
+
+
+
+## 再推荐一个micropython的库集合
+
+https://github.com/mcauser/awesome-micropython
+
