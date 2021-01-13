@@ -1,5 +1,0 @@
-A9--RX
-A10--TX
-
-B0--VCC
-B1--GND
