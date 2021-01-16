@@ -105,7 +105,25 @@ sudo usermod -a -G adm wyx
 
 sudo usermod -a -G sudo wyx
 
- 
+
+
+# 设置默认文件夹位置
+
+vim  /etc/passwd   
+
+找到用户对应的行，将文件路径修改即可
+
+修改文件夹所属用户
+
+ chown username:username -R /home/user_dir 
+
+并赋权限700  （-R可选)
+
+chmod 700 /home/user_dir 
+
+或批量赋值  chmod 700 xxx/* #所有子文件夹
+
+
 
 # 查看当前文件夹下各文件夹的大小
 

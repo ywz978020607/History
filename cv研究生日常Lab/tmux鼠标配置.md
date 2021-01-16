@@ -27,10 +27,6 @@ source-file ~/.tmux.conf
 
 
 
-或：ctrl+b后输入:set-option -g mouse on 即可
-
-
-
 小技巧：
 
 按住shift再滚轮
