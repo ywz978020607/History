@@ -14,7 +14,7 @@ import wifimgr
 
 ###
 def task1():
-    u=UART(1,9600) #only tx can be used = Pin(0)
+    u=UART(1,9600) #only tx can be used = Pin(2)
     c=config('data.ini')
     # u.read() #UART(1) can't read
     ret = c.readAll()
