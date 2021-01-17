@@ -67,8 +67,8 @@
      adc = machine.ADC(0)        # create an ADC object
      val = adc.read()          # read an analog value
      ```
-
-
+  
+  3. 8266-01的UDP只能监听、不能发送！！
 
 
 
