@@ -113,9 +113,11 @@ vim  /etc/passwd
 
 找到用户对应的行，将文件路径修改即可
 
+-R 可选 ： 高层级低权限即可
+
 修改文件夹所属用户
 
- chown username:username -R /home/user_dir 
+ chown username:username  /home/user_dir 
 
 并赋权限700  （-R可选)
 
