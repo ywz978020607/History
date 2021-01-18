@@ -67,12 +67,15 @@
      adc = machine.ADC(0)        # create an ADC object
      val = adc.read()          # read an analog value
      ```
-  
+     
+     
+     
+  3. **使用socket通信时，wifi开启/连接后加while循环等待真正连上后再创建socket~**
 
 
 
 
-## 再推荐一个micropython的库集合
+## **再推荐一个micropython的库集合**
 
 https://github.com/mcauser/awesome-micropython
 
