@@ -10,7 +10,7 @@ https://www.jianshu.com/p/4d48d8547c5e
 
 或者在图形界面中系统-首选项-启动应用程序-更新提示-从不更新，把勾打掉
 
-
+或sudo apt-mark hold linux-image-5.4.0-60-generic *#禁止内核更新，需要时间检验*
 
 1. 卸载nouveau（必须）
 
@@ -36,8 +36,12 @@ https://www.jianshu.com/p/4d48d8547c5e
 
    ​    #与sudo init 3 作用同， 关闭图形界面，才能安装！
 
-   sudo apt-get purge nvidia* #卸载驱动
+   sudo nvidia-uninstall
 
+   sudo apt-get remove --purge nvidia-\*
+   
+   sudo apt-get purge nvidia* #卸载驱动
+   
 3. 安装nvidia-smi
 
    方法一：
@@ -156,19 +160,14 @@ https://www.cnblogs.com/dereen/p/dl_env.html
    sudo apt-mark unhold linux-image-extra-5.0.0-23-generic
    ```
    
-   
-   
-8. 另一种重新后因为自动升级导致内核和显卡驱动不匹配的解决方法：
 
-   重新编译内核
 
-   https://blog.csdn.net/weixin_40678288/article/details/103326340?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param
 
-   ```
-   sudo update-initramfs -c -k 5.0.0-23-generic
-   ```
+## 退回内核 内核管理
 
-   
+[(14条消息) Ubuntu 16.04 内核降级_u013431916的博客-CSDN博客_ubuntu内核降级](https://blog.csdn.net/u013431916/article/details/82530523)
+
+
 
 # 创建新用户
 
