@@ -169,6 +169,28 @@ https://www.cnblogs.com/dereen/p/dl_env.html
 
 
 
+## 重启后nvidia-smi无法通信解决方案：
+
+1. 首先重启，重新autoinstall尝试是否掉固件
+
+2. 考虑内核自动升级，建议用上述grub默认内核修改默认启动项用旧一版的内核版本
+
+3. 依然nvidia-smi，考虑gcc版本过低，升级gcc到8
+
+   ```
+   sudo apt-get install gcc-8
+   cd /usr/bin
+   ls -l gcc*  #查看所有gcc版本
+   sudo mv gcc gcc.bak  #备份
+   sudo ln -s gcc-8 gcc #新建软连接
+   gcc -v   #成功
+   # 参考https://blog.csdn.net/boblee12qq/article/details/109300121
+   ```
+
+   
+
+
+
 # 创建新用户
 
 sudo su
