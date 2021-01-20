@@ -142,3 +142,14 @@ conda install pytorch==1.6.0 torchvision cudatoolkit=10.1
 
 
 conda remove -n mm --all  删除环境
+
+
+
+# 测试pytorch-cuda
+
+```
+import torch
+import torchvision
+print(torch.cuda.is_available())
+```
+
