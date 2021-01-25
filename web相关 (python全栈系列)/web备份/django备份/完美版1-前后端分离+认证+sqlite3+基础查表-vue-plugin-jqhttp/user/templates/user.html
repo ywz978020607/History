@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://unpkg.com/mobi.css/dist/mobi.min.css">
+</head>
+<body>
+<div class="flex-center">
+    <div class="container">
+    <div class="flex-center">
+    <div class="unit-1-2 unit-1-on-mobile">
+        <h1>MyDjango Auth</h1>
+            {% if tips %}
+        <div>--------{{ tips }}---------------</div>
+            {% endif %}
+        <form class="form" action="" method="post">
+            {% csrf_token %}
+            <div>用户名:<input type="text" name='username'></div>
+            <div>密 码:<input type="password" name='password'></div>
+            {% if register_mode %}
+                <div>确认密码:<input type="password" name='password2'></div>
+            {% endif %}
+            {% if new_password %}
+                <div>新密码:<input type="password" name='new_password'></div>
+            {% endif %}
+            <button type="submit" class="btn btn-primary btn-block">确定</button>
+        </form>
+        <div class="flex-left top-gap text-small">
+            <div class="unit-2-3">
+                <a href="{{ unit_2 }}">{{ unit_2_name }}</a>
+            </div>
+            <div class="unit-1-3 flex-right">
+                <a href="{{ unit_1 }}">{{ unit_1_name }}</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>
