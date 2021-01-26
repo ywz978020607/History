@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>
+闹钟控制系统
+</title>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+
+function show(data){
+    $("#text1").text(data['start']);
+    $("#text2").text(data['end']);    
+};
+
+function refresh(){
+	var param = {"write_enable":0};
+	    $.get("http://39.105.218.125:80/ywz_clock/",param,function(data,status){
+        show(data);
+     }) 
+};
+
+$(document).ready(function(){
+	refresh();
+});
+
+$(document).ready(function(){
+$("#btn1").click(function(){
+    var param = {"write_enable":1,"start":$("#input1").val(),"end":$("#input2").val()};
+    $.get("http://39.105.218.125:80/ywz_clock/",param,function(data,status){
+        show(data);
+     }) 
+    });
+    })
+
+</script>
+
+<style type="text/css">
+	body{
+		font-weight:bold;
+		background-color:gray;
+	}
+</style>
+
+
+</head>
+
+<body>
+
+<center>
+
+<h2>杨文哲的无声闹钟</h2>
+
+
+<table border="1">
+<tr>
+  <td>傍晚开灯时间:</td>
+  <td><input id="input1"></input></td>
+  <td><text id="text1"> </text></td>
+</tr>
+<tr>
+  <td>早晨闭灯时间:</td>
+  <td><input id="input2"></input></td>
+  <td><text id="text2"> </text></td>
+</tr>
+</table>
+<br>
+<button id="btn1" type="button">更改时间</button>
+
+</center>
+
+</body>
+
+
+</html>
