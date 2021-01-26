@@ -26,6 +26,5 @@ urlpatterns = [
     path('',views.index),
     path('test/',views.test),
     path('api/',views.api),  #认证
-    path('user/',include('user.urls')), #ywz
 
 ]

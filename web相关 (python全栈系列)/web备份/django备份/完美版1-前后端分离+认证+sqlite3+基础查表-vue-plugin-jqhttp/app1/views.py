@@ -83,7 +83,7 @@ def api(request):
 	elif mode=='3':
 		logout(request)
 		ret['status'] = 'ok'
-		
+
 	return JsonResponse(ret)
 ##
 #######
