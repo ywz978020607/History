@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>消息传输</title>
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+	
+	<script>
+		//刷新
+	function refresh(){
+		 var param = {"id":0,"val":0};
+		    $.get("http://39.105.218.125:80/copy_pass",param,function(data,status){
+        $("#div0").text(data[0]);
+		$("#div1").text(data[1]);
+        $("#div2").text(data[2]);
+        $("#div3").text(data[3]);
+        $("#div4").text(data[4]);
+        $("#div5").text(data[5]);
+        $("#div6").text(data[6]);
+        $("#div7").text(data[7]);
+        $("#div8").text(data[8]);
+        $("#div9").text(data[9]);
+        $("#diva").text(data["a"]);		
+    })
+	}
+		
+	//按键
+    function button_send(data1,data2){
+    	    var param = {"id":$(data1).attr("id"),"val":$(data2).val()};
+            console.log(param);
+    $.get("http://39.105.218.125:80/copy_pass",param,function(data,status){
+        refresh();
+    })
+    
+    }
+	
+	//开启刷新
+			$(document).ready(function(){
+			 refresh();
+    });	
+	</script>
+</head>
+
+<body>
+<main>
+  <H2> 文本/网址复制记录工具 &nbsp;跨设备临时使用工具</H2>
+  <p>&nbsp;</p>
+	
+    
+    #0<br>
+	<input type="text" id="input0" size=80 />
+	<button id="btn0" onclick = button_send("#btn0","#input0")>Set</button>
+	<br>
+	<div id = "div0"></div>
+	<br>
+    
+        #1<br>
+	<input type="text" id="input1" size=80 />
+	<button id="btn1" onclick = button_send("#btn1","#input1")>Set</button>
+	<br>
+	<div id = "div1"></div>
+	<br>
+    
+        #2<br>
+	<input type="text" id="input2" size=80 />
+	<button id="btn2" onclick = button_send("#btn2","#input2")>Set</button>
+	<br>
+	<div id = "div2"></div>
+	<br>
+	        #3<br>
+	<input type="text" id="input3" size=80 />
+	<button id="btn3" onclick = button_send("#btn3","#input3")>Set</button>
+	<br>
+	<div id = "div3"></div>
+	<br>
+	        #4<br>
+	<input type="text" id="input4" size=80 />
+	<button id="btn4" onclick = button_send("#btn4","#input4")>Set</button>
+	<br>
+	<div id = "div4"></div>
+	<br>
+	        #5<br>
+	<input type="text" id="input5" size=80 />
+	<button id="btn5" onclick = button_send("#btn5","#input5")>Set</button>
+	<br>
+	<div id = "div5"></div>
+	<br>
+	        #6<br>
+	<input type="text" id="input6" size=80 />
+	<button id="btn6" onclick = button_send("#btn6","#input6")>Set</button>
+	<br>
+	<div id = "div6"></div>
+	<br>
+	        #7<br>
+	<input type="text" id="input7" size=80 />
+	<button id="btn7" onclick = button_send("#btn7","#input7")>Set</button>
+	<br>
+	<div id = "div7"></div>
+	<br>
+	        #8<br>
+	<input type="text" id="input8" size=80 />
+	<button id="btn8" onclick = button_send("#btn8","#input8")>Set</button>
+	<br>
+	<div id = "div8"></div>
+	<br>
+	        #9<br>
+	<input type="text" id="input9" size=80 />
+	<button id="btn9" onclick = button_send("#btn9","#input9")>Set</button>
+	<br>
+	<div id = "div9"></div>
+	<br>
+	        #10<br>
+	<input type="text" id="inputa" size=80 />
+	<button id="btna" onclick = button_send("#btna","#inputa")>Set</button>
+	<br>
+	<div id = "diva"></div>
+	<br>
+	
+	
+</main>
+</body>
+</html>

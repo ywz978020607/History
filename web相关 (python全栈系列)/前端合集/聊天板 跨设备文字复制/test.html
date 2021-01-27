@@ -12,14 +12,14 @@
 
 <body>
     <div id="app">
-        <h2>文本/网址复制记录工具 跨设备临时使用工具</h2>
+        <h2>文本/网址复制记录工具 跨设备临时使用工具2.0 --基于Vue</h2>
         <!-- {{data_dict}} {{input_list}} -->
         <div v-for="(value,key,index) in data_dict">
             #{{index}}<br>
             <input v-model="input_list[index]" @keyup.enter="fresh(index)" />
             <button @click="fresh(index)">Set</button>
             <br>
-            <a href={{value}}>{{value}}</a>
+            <a :href="value">{{value}}</a>
             <br><br>
         </div>
     </div>

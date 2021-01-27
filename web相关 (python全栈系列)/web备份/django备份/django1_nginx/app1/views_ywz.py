@@ -21,21 +21,27 @@ class Logger(object):
         pass
         
 def copy_pass(request):
-    try:
-        name_id = str(request.GET['id'])
-        c=config.config('ywz_copy_pass.ini')
-        ret = c.readAll()
-        if name_id=='0':
-            #print(ret)
-            return JsonResponse(ret) 
-        else:
-            val = str(request.GET['val'])
-            ret[name_id[-1]] = val
-            c.writeConfig(ret)
-            return HttpResponse(name_id[-1] + ' write ok')
+    name_id = str(request.GET['id'])
+    c=config.config('ywz_copy_pass.ini')
+    # try:
+    if not os.path.exists('ywz_copy_pass.ini'):
+        ret = {}
+        for ii in range(11):
+            ret[str(ii)] = ""
+        c.writeConfig(ret)
+        return HttpResponse("reset ini ok")
+    ret = c.readAll()
+    if name_id=='-1':
+        #print(ret)
+        return JsonResponse(ret) 
+    else:
+        val = str(request.GET['val'])
+        ret[name_id] = val
+        c.writeConfig(ret)
+        return HttpResponse(name_id + ' write ok')
 
-    except:
-        print('cannot open')
+    # except:
+        # print('cannot open')
     return HttpResponse('nothing deal with')
     
 def utf2gb2312(request):
