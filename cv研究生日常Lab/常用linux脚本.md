@@ -134,3 +134,11 @@ du --max-depth=1 -h
 
 
 df -h
+
+
+
+# 动态监控文件输出--高级版cat
+
+tail -n 尾部行数 -f 文件名
+
+eg  tail -f -n 20 temp.log 或  tail -n 20 -f temp.log
