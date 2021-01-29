@@ -25,7 +25,7 @@ class config():
             return 0            
     def writeConfig(self,dict):
         f = open(self.fileName,'w')     
-        data = json.dumps(dict)       
+        data = json.dumps(dict,indent=1) #indent=1可视化显示，不然会一行全放
         f.write(data)                   
         f.close()                  
 
