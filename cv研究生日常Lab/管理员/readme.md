@@ -27,3 +27,16 @@ fi
 ```
 
 保存即可
+
+
+
+# 定时关机
+
+vim /etc/crontab
+
+假设 要每天的22点定时关机 命令如下
+
+00 22 * * *  root    /sbin/shutdown -h now
+
+#55 23 * * * root /sbin/shutdown -r 08:00 #实现23:00定时关机且8:00定时开机
+
