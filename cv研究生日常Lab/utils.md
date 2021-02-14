@@ -1,3 +1,5 @@
+pip install opencv-contrib-python==3.4.2.16 #或者3.4.2.17
+
 # 命令行中的复制
 
 ```
