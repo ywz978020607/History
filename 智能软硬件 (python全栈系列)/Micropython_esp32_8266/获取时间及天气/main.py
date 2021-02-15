@@ -30,7 +30,7 @@ def trans(data):
 
 
 # url="http://way.jd.com/jisuapi/weather?cityid=1&appkey=bdd6ac75dcc20348545fe95cbba6eb41"
-url = 'http://32972j9s45.qicp.vip/weather/'
+url = 'http://27b2a24926.qicp.vip/weather/'
 data = b'\xe5\x8c\x97\xe4\xba\xac'
 r=urequests.get(url,data=data)
 recv=r.json()
