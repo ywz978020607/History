@@ -16,7 +16,7 @@ ws.run "wsl -d Ubuntu -u root /etc/init.wsl start", vbhide
 最后在WSL系统内新建编辑 /etc/init.wsl 文件
 
 ```
-#! /bin/sh
+#!/bin/sh
 /etc/init.d/ssh $1
 /etc/init.d/supervisor $1
 ```
