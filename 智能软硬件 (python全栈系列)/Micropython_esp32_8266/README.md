@@ -50,6 +50,8 @@
 
 5. 扩展SD有两种方式：SDIO或SPI，而8266只有SPI方式。
 
+6. 多线程： import _thread     def test():xxx    运行： _thread.start_new_thread(test,())
+
 
 
 
