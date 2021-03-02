@@ -3,7 +3,7 @@ Pin 4是led
 IO 0 -gnd  插入烧录固件
 
 下载方法：ttl-usb模块  多余脚悬空
-vcc-vcc gnd-gnd，TXD-UOR，RXD-UOT  （ttl模块 -- esp32-cam）
+板子vcc-3.3V/（5V-5V） gnd-gnd，TXD-UOR，RXD-UOT  （ttl模块 -- esp32-cam）
 
 
 
