@@ -149,7 +149,6 @@ conda remove -n mm --all  删除环境
 
 ```
 import torch
-import torchvision
 print(torch.cuda.is_available())
 ```
 

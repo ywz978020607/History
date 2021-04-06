@@ -137,7 +137,7 @@ https://www.cnblogs.com/dereen/p/dl_env.html
 
 7. 内核版本 5.0.0-23-generic （自动升级如果找不到后需要降级）
 
-   #查看所有内核版本启动项
+   ## 查看所有内核版本启动项
 
    grep menuentry /boot/grub/grub.cfg
    
