@@ -47,3 +47,35 @@ sudo iwconfig wlan0 txpower on #打开WiFi网络
 4）验证是否成功连接网络
 
 ifconfig wlan0  #确认是否已经成功连接上网络。如果inet addr中已经有地址了，说明树莓派成功连接上了网络。如果没有，请检查你的密码和ESSID是否正确。
+
+-----------------
+
+首次使用不用显示屏
+
+ windows看到的TF卡变成了空间很小的名为boot的盘，我们在此目录下新建一个名为`wpa_supplicant.conf`空白文件 
+
+```
+country=GB
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+network={
+	ssid="WiFi名字，不删除引号,不能有中文"
+	psk="WiFi密码，不删除引号"
+	priority=将我替换成数字，数字越大代表优先级越高
+}
+```
+
+
+
+----------------------
+
+创建热点
+
+ 1.git clone [https://github.com/oblique/create_ap.git](http://jump.bdimg.com/safecheck/index?url=rN3wPs8te/r8jfr8YhogjfUWFoMgIRa8gmEfnfh3bF7/5yMFkkUiUowA0wIei9q7vZuLXXQ5XbpibHRw/0CV3/G+ZXSNVg8H/NVbSGovfJqXNbENAVozRW92wnbyB7iOGn4202Kl3jhNgHUaKJ1uuFX3ZMCahZXTMDxm7iZ2BjQ=)
+2.cd create_ap
+3.sudo make install就这样安装好了
+4.接下来安装依赖库sudo apt-get install util-linux procps hostapd iproute2 iw haveged dnsmasq
+5.就这么简单几个命令就能安装好全部环境
+6.接下来保证你的网线插在pi3上并且能上网就行了。输入下面的命令启动无线AP：
+sudo create_ap wlan0 eth0 热点名 密码 
+
