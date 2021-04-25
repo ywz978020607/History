@@ -208,19 +208,23 @@ def test(request):
 				temp_iter = all_list[0]
 				temp_iter.password = newpassword
 				temp_iter.save()
-			ret['status'] = "ok"
+				ret['status'] = "ok"
+			else:
+				ret['status'] = 'fail'
 		except:
-			ret['status'] = 'ok'
+			ret['status'] = 'fail'
 		return JsonResponse(ret)
 	elif kind=='003':#注册
 		temp_name = recv['name']
 		newpassword = str(recv['newpasswd'])
 		all_list = User.objects.filter(username = temp_name)
+		ret['status'] = 'fail'
 		if len(all_list)>0:
 			ret['status'] = 'fail'
 		else:
-			User.objects.create(username=temp_name,password=newpassword)
-			ret['status'] = "ok"
+			if temp_name!="":
+				User.objects.create(username=temp_name,password=newpassword)
+				ret['status'] = "ok"
 		return JsonResponse(ret)
 	####
 	#插入
@@ -394,15 +398,20 @@ def esp32_up(request):
 			newnumid = len(AlertLog.objects.filter())
 			AlertLog.objects.create(productname=res.name, productnumid=res.numid, numid=newnumid, type=2,
 									comments="alert")  # 0表示入库，1表示正常出库,2表示异常出库
-			ret['status'] = 'ok'
-			return JsonResponse(ret)
-		else:
-			#报警
-			# try:
-			res1 = Products.objects.filter(cardid=cardid)
 			try:
-				send(cardid)
+				send(str(cardid)+":"+str(res.name))
 			except:
 				print("send error")
+
+			ret['status'] = 'ok'
+			return JsonResponse(ret)
+		# else:
+		# 	#报警
+		# 	# try:
+		# 	res1 = Products.objects.filter(cardid=cardid)
+		# 	try:
+		# 		send(cardid)
+		# 	except:
+		# 		print("send error")
 	ret['status'] = 'fail'
 	return JsonResponse(ret)
