@@ -1,0 +1,30 @@
+@charset "utf-8";
+ table
+        {
+            border: black solid 1px;
+            border-collapse: collapse;
+        }
+        td
+        {
+            border: black solid 1px;
+            padding: 3px;
+        }
+        .td_Num
+        {
+            width: 60px;
+            text-align: center;
+        }
+        .td_Item
+        {
+            width: 160px;
+            text-align: center;
+        }
+        .td_Oper
+        {
+            width: 120px;
+            text-align: center;
+        }
+        .td_Oper span
+        {
+            cursor: pointer;
+        }

@@ -1,0 +1,328 @@
+{% extends "base.html" %} {% block head %}
+
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/static/css/table.css">
+
+<script src="/static/js/vue.global.js" />
+<script src="/static/js/axios.min.js"></script>
+
+<script src="/static/jQueryAssets/jquery-1.11.1.min.js"></script>
+
+{% endblock %} {% block body %} {% verbatim %}
+
+<center>
+    <!--可以挂多个vue，但不太方便-->
+    <div id="App1">
+        <br> <br>
+        <center>
+            <button id="Button1" class="btn btn-primary" @click="this.seen_id=0">入库操作</button> &nbsp;&nbsp;&nbsp;&nbsp;
+            <button id="Button2" class="btn btn-primary" @click="this.seen_id=1; this.seen_table1=0;">商品查询</button> &nbsp;&nbsp;&nbsp;&nbsp;
+            <!-- <button id="Button2" class="btn btn-primary" @click="button2">出入库记录</button> -->
+            <button id="Button3" class="btn btn-primary" @click="button3">出入库记录</button> &nbsp;&nbsp;&nbsp;&nbsp;
+            <button id="Button4" class="btn btn-primary" @click="button4">下载记录</button> &nbsp;&nbsp;&nbsp;&nbsp;
+
+            <br> <br> <br>
+
+            <div v-if="seen_id==0">
+
+                <h2>入库操作表单</h2>
+
+                <table border="1">
+                    <tr>
+                        <td>货物名称</td>
+                        <td>
+                            <input v-model="input_val[0]" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>货物价格</td>
+                        <td>
+                            <input v-model="input_val[1]" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>操作人姓名</td>
+                        <td>
+                            <input v-model="input_val[2]" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>防盗卡id号</td>
+                        <td>
+                            <input v-model="input_val[3]" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>备注信息</td>
+                        <td>
+                            <input v-model="input_val[4]" />
+                        </td>
+                    </tr>
+                </table>
+                <br><br>
+                <button class="btn btn-primary" @click="click1">确认入库</button>
+                </v-if>
+            </div>
+            <!----->
+
+            <div v-if="seen_id==1">
+                <input v-model="input_val[0]" style="border:0.5px solid #378888" />&nbsp;&nbsp;
+                <button class=" btn btn-primary " @click="button21 ">查询流水号信息</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-primary " @click="button22 ">查询所有在库商品</button>
+                <br><br>
+                <table border="1" v-if="seen_table1==1">
+                    <tr>
+                        <td>货物名称</td>
+                        <td>流水号</td>
+                        <td>卡号</td>
+                        <td>价格</td>
+                        <td>操作员</td>
+                        <td>当前状态</td>
+                        <td>入库时间</td>
+                        <td>出库时间</td>
+                    </tr>
+                    <tr v-for="(each,index) in res_data">
+                        <td v-for="(data,index2) in each">
+                            <p v-text="data"></p>
+                        </td>
+                        <!--<td v-text="each[0]"></td>-->
+                    </tr>
+                </table>
+            </div>
+
+            <!----->
+
+            <div v-if="seen_id==2">
+                <table border="1" v-if="seen_table1==1">
+                    <tr>
+                        <td>货物名称</td>
+                        <td>货物流水号</td>
+                        <td>记录类型</td>
+                        <td>记录时间</td>
+                        <td>记录备注</td>
+                    </tr>
+                    <tr v-for="(each,index) in res_data">
+                        <td v-for="(data,index2) in each">
+                            <p v-text="data"></p>
+                        </td>
+                        <!--<td v-text="each[0]"></td>-->
+                    </tr>
+                </table>
+            </div>
+    </div>
+
+    <script>
+        function test() {
+            console.log("test ");
+        }
+
+        // var param = {
+        //     "limit_num ": 1,
+        //     "id ": "657447170 ",
+        //     "password ": "dYzr8wSChJQIGCByNO3=8w85frU="
+        // };
+
+        function show() {
+            val = 0;
+            $.ajaxSettings.async = false; //修改为同步请求！！！
+            $.get(" /onenet_check/ ", param, function(data, status) {
+                // console.log(data);
+                val = data;
+                // $("#value0 ").text(data['datastreams'][1]['datapoints'][0]['value']);
+                // $("#value1 ").text(data['datastreams'][0]['datapoints'][0]['value']);
+            })
+            return val;
+            // $("#text2 ").text(data['end']);
+        };
+        /////////////////////////////////////////////////////////////////////////////////////////
+        const App1 = {
+            data() {
+                return {
+                    intervalId: null,
+                    seen_id: 0,
+                    seen_table1: 0,
+                    //////////////
+                    val: [
+                        0, 1
+                    ],
+                    //// 
+                    input_val: [null, null, null, null, null, null, null, null], //初始8个null
+                    res_data: [],
+
+                }
+            },
+
+            methods: {
+                fresh() {
+                    console.log("fresh ")
+                },
+                // 定时刷新数据函数
+                dataRefresh() {
+                    // 计时器正在进行中，退出函数
+                    if (this.intervalId != null) {
+                        return;
+                    }
+                    // 计时器为空，操作
+                    this.intervalId = setInterval(() => {
+                        console.log("刷新 " + new Date());
+                        this.fresh(); //加载数据函数
+                    }, 5000);
+                },
+                // 停止定时器
+                clear() {
+                    clearInterval(this.intervalId); //清除计时器
+                    this.intervalId = null; //设置为null
+                },
+                //入库操作--button1
+                click1(event) {
+                    console.log(event); //可同时获得按钮信息
+                    console.log("入库")
+                    console.log(this.input_val);
+                    // 提交到后端
+                    $.ajaxSettings.async = false; //修改为同步请求！！！
+                    var param = {
+                        "kind": "0", //kind=0
+                        "data": JSON.stringify(this.input_val) //数组转json，必须经过此操作！
+                    }
+                    $.get("/test/", param, function(data, status) {
+                        console.log("get back.")
+                        console.log(data);
+                        if (data.status == 'ok') {
+                            alert("此商品id标识号为:" + data.id);
+                        } else {
+                            alert("请补充必要信息，重新提交")
+                        }
+
+                    })
+                },
+
+                ////////////自定义
+                //button21 查询
+                button21(event) {
+                    console.log("button21.")
+                    that = this; //注意，http请求后的函数中，this的指向为副本的局部，无法真正修改！！所以要用that先复制指针，用that改值
+                    console.log("button22.")
+                        // 提交到后端
+                    $.ajaxSettings.async = false; //修改为同步请求！！！
+                    // that.input_val[0] = null;
+                    var param = {
+                        "kind": "1", //kind=1
+                        "data": JSON.stringify(this.input_val) //数组转json，必须经过此操作！
+                    }
+                    console.log(param);
+                    $.get("/test/", param, function(data, status) {
+                        if (data['status'] == "ok") {
+                            console.log("get back.")
+                            console.log(data);
+                            newlist = data.data;
+                            // console.log(data.data[0][0])
+                            //数组触发刷新
+                            that.res_data = data.data;
+                            that.seen_table1 = 1;
+                        } else {
+                            alert("无此流水号")
+                        }
+                    })
+
+                },
+                //button22 查询 查全部
+                button22(event) {
+                    that = this; //注意，http请求后的函数中，this的指向为副本的局部，无法真正修改！！所以要用that先复制指针，用that改值
+                    console.log("button22.")
+                        // 提交到后端
+                    $.ajaxSettings.async = false; //修改为同步请求！！！
+                    that.input_val[0] = null;
+                    var param = {
+                        "kind": "1", //kind=1
+                        "data": JSON.stringify(this.input_val) //数组转json，必须经过此操作！
+                    }
+                    console.log(param);
+                    $.get("/test/", param, function(data, status) {
+                        console.log("get back.")
+                        console.log(data);
+                        newlist = data.data;
+                        // console.log(data.data[0][0])
+                        //数组触发刷新
+                        that.res_data = data.data;
+                        that.seen_table1 = 1;
+                    })
+                },
+                //button3
+                button3(event) {
+                    that = this; //注意，http请求后的函数中，this的指向为副本的局部，无法真正修改！！所以要用that先复制指针，用that改值
+                    that.seen_id = 2;
+
+                    console.log("button3.")
+                        // 提交到后端
+                    $.ajaxSettings.async = false; //修改为同步请求！！！
+                    var param = {
+                        "kind": "2", //kind=2
+                        "data": JSON.stringify(this.input_val) //数组转json，必须经过此操作！
+                    }
+                    console.log(param);
+                    $.get("/test/", param, function(data, status) {
+                        console.log("get back.")
+                        console.log(data);
+                        newlist = data.data;
+                        // console.log(data.data[0][0])
+                        //数组触发刷新
+                        that.res_data = data.data;
+                        that.seen_table1 = 1;
+                    })
+                },
+                //下载
+                button4(event){
+
+                    that = this; //注意，http请求后的函数中，this的指向为副本的局部，无法真正修改！！所以要用that先复制指针，用that改值
+                    
+                    this.button3();
+
+                    console.log("button4.")
+                        // 提交到后端
+                    $.ajaxSettings.async = false; //修改为同步请求！！！
+                    var param = {
+                        "kind": "3", //kind=3
+                        "data": JSON.stringify(this.input_val) //数组转json，必须经过此操作！
+                    }
+                    console.log(param);
+
+                    $.get("/test/",param,function(data,status){
+                        console.log(data);
+                        // 创建隐藏的可下载链接
+                        var eleLink = document.createElement('a');
+                        eleLink.download = "temp.txt";
+                        eleLink.style.display = 'none';
+                        // 字符内容转变成blob地址
+                        var blob = new Blob([data]);
+                        eleLink.href = URL.createObjectURL(blob);
+                        // 触发点击
+                        document.body.appendChild(eleLink);
+                        eleLink.click();
+                        // 然后移除
+                        document.body.removeChild(eleLink);
+                    })
+                },
+
+
+            },
+
+            mounted() {
+                //加载时先刷新一下
+                this.fresh();
+            },
+            //定时器
+            created() {
+                // this.dataRefresh();
+            },
+            destroyed() {
+                // 在页面销毁后，清除计时器
+                this.clear();
+            }
+
+        }
+        Vue.createApp(App1).mount('#App1')
+    </script>
+
+
+    </center>
+    {% endverbatim %} {% endblock %}
