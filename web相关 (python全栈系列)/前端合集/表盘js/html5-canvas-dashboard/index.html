@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML5 Canvas实现各种炫酷的仪表盘动画DEMO演示02</title>
+
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/zzsc-demo.css">
+
+<style type="text/css">
+	body {
+		padding: 0;
+		margin: 0;
+		background: #fff
+		}
+		.btn-container{
+			padding: 1em 0;
+			text-align: center;
+		}
+	.container{
+		width: 700px;
+		margin: 50px auto;
+	}
+</style>
+
+<script src="js/gauge.min.js"></script>
+
+</head>
+<body>
+<div class="zzsc-container">
+	<header class="zzsc-header">
+		<div class="zzsc-demo center">
+		  <a href="index.html" class="current">radial</a>
+		  <a href="radial-component.html">radial-component</a>
+		  <a href="linear-component.html">linear-component</a>
+		  <a href="issue-63.html">issue-63</a>
+		  <a href="async.html">async</a>
+		  <a href="scripted.html">scripted</a>
+		</div>
+	</header>
+	<div style="text-align:center;clear:both">
+<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+<script src="/follow.js" type="text/javascript"></script>
+</div>
+	<div class="btn-container">
+		<button onclick="animateGauges()">Animate</button>
+		<button onclick="stopGaugesAnimation()">Stop animation</button>
+	</div>
+	<div class="container">
+	<canvas  data-type="radial-gauge"
+				 data-min-value="0"
+				 data-max-value="360"
+				 data-major-ticks="N,NE,E,SE,S,SW,W,NW,N"
+				 data-minor-ticks="22"
+				 data-ticks-angle="360"
+				 data-start-angle="180"
+				 data-stroke-ticks="false"
+				 data-highlights="false"
+				 data-color-plate="#222"
+				 data-color-major-ticks="#f5f5f5"
+				 data-color-minor-ticks="#ddd"
+				 data-color-numbers="#ccc"
+				 data-color-needle="rgba(240, 128, 128, 1)"
+				 data-color-needle-end="rgba(255, 160, 122, .9)"
+				 data-value-box="false"
+				 data-value-text-shadow="false"
+				 data-color-circle-inner="#fff"
+				 data-color-needle-circle-outer="#ccc"
+				 data-needle-circle-size="15"
+				 data-needle-circle-outer="false"
+				 data-needle-type="line"
+				 data-needle-start="75"
+				 data-needle-end="99"
+				 data-needle-width="3"
+				 data-borders="true"
+				 data-border-inner-width="0"
+				 data-border-middle-width="0"
+				 data-border-outer-width="10"
+				 data-color-border-outer="#ccc"
+				 data-color-border-outer-end="#ccc"
+				 data-color-needle-shadow-down="#222"
+				 data-animation-target="plate"
+				 data-animation-duration="1500"
+				 data-animation-rule="linear"
+				 data-width="300"
+				 data-height="300"
+				 data-units="ᵍ"
+				 data-value="0"
+		></canvas>
+
+		<canvas data-type="radial-gauge"
+				data-width="300"
+				data-height="300"
+				data-min-value="0"
+				data-max-value="360"
+				data-major-ticks="N,NE,E,SE,S,SW,W,NW,N"
+				data-minor-ticks="22"
+				data-ticks-angle="360"
+				data-start-angle="180"
+				data-stroke-ticks="false"
+				data-highlights="false"
+				data-color-plate="#33a"
+				data-color-major-ticks="#f5f5f5"
+				data-color-minor-ticks="#ddd"
+				data-color-numbers="#ccc"
+				data-color-needle="rgba(240, 128, 128, 1)"
+				data-color-needle-end="rgba(255, 160, 122, .9)"
+				data-value-box="false"
+				data-value-text-shadow="false"
+				data-color-circle-inner="#fff"
+				data-color-needle-circle-outer="#ccc"
+				data-needle-circle-size="15"
+				data-needle-circle-outer="false"
+				data-animation-rule="linear"
+				data-needle-type="line"
+				data-needle-start="75"
+				data-needle-end="99"
+				data-needle-width="3"
+				data-borders="true"
+				data-border-inner-width="0"
+				data-border-middle-width="0"
+				data-border-outer-width="10"
+				data-color-border-outer="#ccc"
+				data-color-border-outer-end="#ccc"
+				data-color-needle-shadow-down="#222"
+				data-border-shadow-width="0"
+				data-animation-target="plate"
+				data-units="ᵍ"
+				data-title="DIRECTION"
+				data-font-title-size="19"
+				data-color-title="#f5f5f5"
+				data-animation-duration="1500"
+				data-value="45"
+				data-animate-on-init="true"
+		></canvas>
+	</div>
+</div>
+
+<script>
+if (!Array.prototype.forEach) {
+	Array.prototype.forEach = function(cb) {
+		var i = 0, s = this.length;
+		for (; i < s; i++) {
+			cb && cb(this[i], i, this);
+		}
+	}
+}
+
+document.fonts && document.fonts.forEach(function(font) {
+	font.loaded.then(function() {
+		if (font.family.match(/Led/)) {
+			document.gauges.forEach(function(gauge) {
+				gauge.update();
+			});
+		}
+	});
+});
+
+var timers = [];
+
+function animateGauges() {
+	document.gauges.forEach(function(gauge) {
+		timers.push(setInterval(function() {
+			gauge.value = Math.random() *
+				(gauge.options.maxValue - gauge.options.minValue) / 4 +
+				gauge.options.minValue / 4;
+		}, gauge.animation.duration + 50));
+	});
+}
+
+function stopGaugesAnimation() {
+	timers.forEach(function(timer) {
+		clearInterval(timer);
+	});
+}
+</script>
+
+</body>
+</html>
