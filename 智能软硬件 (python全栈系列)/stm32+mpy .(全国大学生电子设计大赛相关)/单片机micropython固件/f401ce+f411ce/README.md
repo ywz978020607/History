@@ -18,6 +18,10 @@ internal rom表示免焊接外置flash即可使用，推荐
 
 烧录后  mpy的repl对应UART1，需要用串口连接，如果使用USB-HID等自动变为板载USB（UART6）
 
+另：烧录后发现不用UART1接ttl模块，只用usb接电脑也可以进入repl
+
+
+
 -----                              如何进入ISP模式                               -----
 
 -----                                                                            -----
