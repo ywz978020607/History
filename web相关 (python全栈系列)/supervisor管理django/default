@@ -52,7 +52,8 @@ server {
 		try_files $uri $uri/ =404;
 	}
     
-    location  /F46059/ {
+    #用小写！与html前端路径区分开
+    location  /f46059/ {
         proxy_pass http://localhost:8001/;
         proxy_redirect  off;
         proxy_set_header Host $host;
