@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="lt-ie10" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ECCV Demo MFQE</title>
+  <link href="css/foundation.css" rel="stylesheet" type="text/css" />
+  <link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
+  <link href="video-js/video-js.css" rel="stylesheet" type="text/css">
+  <script src="video-js/video.js"></script>
+  <script src="jquery-3.3.1.js"></script>
+
+  <script>
+      videojs.options.flash.swf = "video-js/video-js.swf";
+  </script>
+
+</head>
+  <body>
+     <p align="center">
+        <img src="logo.png">
+   <br>
+<br>
+<br>
+         <img src="title.png">
+     </p>
+   <br>
+<br>
+<br>
+     <h2 style=" text-align:center;">  Video Demo</h2>
+
+     <p style=" text-align:center;"> Original (HEVC LDP QP = 37) &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;After Enhancement</p>
+     <p align="center">
+
+     <video id="my_video_1" class="video-js vjs-default-skin" controls  autoplay  loop="true" preload="auto" width="882" height="240" data-setup="{}">
+     <source src="concat.mp4" type='video/mp4'> 
+      </video>
+      </p>
+    <p style=" text-align:center;"> Original (HEVC LDP QP = 45) &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;After Enhancement</p>
+
+<p align="center">
+
+     <video id="my_video_2" class="video-js vjs-default-skin" controls  autoplay loop="true"  preload="auto" width="882" height="240" data-setup="{}">
+     <source src="demo_v2.mp4" type='video/mp4'> 
+      </video>
+      </p>
+   <br>
+<br>
+<br>
+     <h2 style=" text-align:center;"> Selected Frames</h2>
+    <div class="row" style="margin-top: 2em;">
+      <div class="large-4 columns">
+        <h3>BasketballPass</h3>
+        <p>HEVC (HM16.0) QP = 37, Frame 95</p>
+      </div>
+      <div class="large-8 columns">
+        <div class="twentytwenty-container" data-orientation="vertical">
+          <img src="img/pass37_after.bmp" />
+          <img src="img/pass37_before.bmp" />
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="row" style="margin-top: 2em; margin-bottom: 2em;">
+      <div class="large-4 columns">
+        <h3>Vidyo1</h3>
+        <p>HEVC (HM16.0) QP = 37, Frame 287</p>
+      </div>
+      <div class="large-8 columns">
+        <div class="twentytwenty-container" data-orientation="vertical">
+          <img src="img/man_after.png" />
+          <img src="img/man_before.png" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 2em; margin-bottom: 2em;">
+      <div class="large-4 columns">
+        <h3>MotherAndDaughter</h3>
+        <p>HEVC (HM16.0) QP = 42, Frame 179</p>
+      </div>
+      <div class="large-8 columns">
+        <div class="twentytwenty-container">
+          <img src="img/180_mf.bmp" />
+          <img src="img/180_hevc.bmp" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 2em; margin-bottom: 2em;">
+      <div class="large-4 columns">
+        <h3>TunnelFlag</h3>
+        <p>HEVC (FFMPEG) QP = 45, Frame 286</p>
+      </div>
+      <div class="large-8 columns">
+        <div class="twentytwenty-container">
+          <img src="img/2.png" />
+          <img src="img/1.png" />
+        </div>
+      </div>
+    </div>
+
+   
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+    <script src="js/jquery.event.move.js"></script>
+    <script src="js/jquery.twentytwenty.js"></script>
+    <script>
+    $(function(){
+      $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.7});
+      $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.3, orientation: 'vertical'});
+    });
+    </script>
+  </body>
+</html>
