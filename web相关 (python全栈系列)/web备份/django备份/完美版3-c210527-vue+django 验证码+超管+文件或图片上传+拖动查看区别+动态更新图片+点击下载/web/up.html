@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>文件上传表单</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="css/foundation.css" rel="stylesheet" type="text/css" />
+    <link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
+
+    <script src="js/jquery-3.2.1.js"></script>
+
+</head>
+
+<body>
+    <h3>文件上传：</h3>
+    选择一个文件上传: <br />
+    <p><input type="file" name="image" id="input1" size="50" /> <button class="btn" onclick="upclick()">点击上传</button> </p>
+
+
+    <div class="large-8 columns">
+        <div class="twentytwenty-container">
+            <img src="img/2.png" id="img1" />
+            <img src="img/1.png" id="img2" />
+        </div>
+    </div>
+
+    <img src="" class="img" id="img1" />
+
+    <script src="js/jquery.event.move.js"></script>
+    <script src="js/jquery.twentytwenty.js"></script>
+    <script>
+        $("#input1").change(function() {
+            $("#img1").attr("src", URL.createObjectURL($(this)[0].files[0]));
+        });
+        $(function() {
+            $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({
+                default_offset_pct: 0.7
+            });
+            $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({
+                default_offset_pct: 0.3,
+                orientation: 'vertical'
+            });
+        });
+    </script>
+
+</body>
+
+
+
+</html>

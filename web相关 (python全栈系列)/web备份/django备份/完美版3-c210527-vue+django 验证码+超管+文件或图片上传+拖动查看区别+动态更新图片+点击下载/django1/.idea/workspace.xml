@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f023d1b4-1e26-4a26-a31e-b2c43aa0e5e4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../c210513-esp32+uniapp-床头灯-账号邮箱与设备分离+超管/unitest3/pages/first/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../c210513-esp32+uniapp-床头灯-账号邮箱与设备分离+超管/unitest3/pages/first/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-esp32+web 物联网控制传感报警系统-B43076-1100/django1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../c210527-esp32+web 物联网控制传感报警系统-B43076-1100/django1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/c33889.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/.idea/dataSources/28f45a8d-76f8-4b40-a6ab-a7aee8c2422c.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/.idea/django1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0002_auto_20191113_1541.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0003_auto_20191113_1555.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0004_auto_20201227_1809.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0005_products.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0006_auto_20210124_1427.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0007_auto_20210124_1442.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0008_auto_20210124_1535.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0009_alertlog.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0010_alertlog_comments.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0011_products_cardid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0012_auto_20210124_1728.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0013_auto_20210124_1731.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0014_park_sharelog.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0015_auto_20210301_2243.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0016_auto_20210302_0905.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0017_park_temptime.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0018_auto_20210311_1001.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0019_auto_20210315_2325.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0020_auto_20210315_2340.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0021_status_leavetime.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0022_auto_20210316_0044.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0023_auto_20210316_0045.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0024_status_alerttime.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0025_auto_20210316_2329.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0026_auto_20210316_2332.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0027_status_comments.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0028_auto_20210317_0014.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0029_status_alerttime.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0030_auto_20210416_1901.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0031_status_alertmail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0032_status_autostatus.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0033_auto_20210417_1126.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0034_auto_20210417_1129.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/0035_auto_20210417_1140.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/sq_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/css/hw_index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/css/mobi.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/css/table.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/css/ywz_index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/data/th.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/img/hw.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/img/newLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/img/p9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/img/phone01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/img/phone02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/img/phone03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/img/phone05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/img/phone06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/img/slide01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/img/slide02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/img/slide03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/img/slide04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/img/slide05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/img/vip.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/images/animated-overlay.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/images/ui-bg_diagonals-thick_18_b81900_40x40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/images/ui-bg_diagonals-thick_20_666666_40x40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/images/ui-bg_flat_10_000000_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/images/ui-bg_glass_100_f6f6f6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/images/ui-bg_glass_100_fdf5ce_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/images/ui-bg_gloss-wave_35_f6a828_500x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/images/ui-bg_highlight-soft_75_ffe45c_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/images/ui-icons_228ef1_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/images/ui-icons_ef8c08_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/images/ui-icons_ffd27a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/images/ui-icons_ffffff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/jquery-1.11.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/jquery.ui-1.10.4.button.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/jquery.ui.button.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/jquery.ui.core.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/jQueryAssets/jquery.ui.theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/js/axios.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/js/hw_index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/js/vue.global.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/test1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/static/th.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/templates/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/templates/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/templates/test1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/templates/test1v copy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/templates/test1v.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/app1/views_onenet.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/color_17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/django1/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/django1/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/django1/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/down_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/public_static/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/sq_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/temp.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/up_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/css/hw_index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/css/mobi.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/css/table.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/css/ywz_index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/data/th.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/img/hw.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/img/newLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/img/p9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/img/phone01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/img/phone02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/img/phone03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/img/phone05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/img/phone06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/img/slide01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/img/slide02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/img/slide03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/img/slide04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/img/slide05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/img/vip.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/images/animated-overlay.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/images/ui-bg_diagonals-thick_18_b81900_40x40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/images/ui-bg_diagonals-thick_20_666666_40x40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/images/ui-bg_flat_10_000000_40x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/images/ui-bg_glass_100_f6f6f6_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/images/ui-bg_glass_100_fdf5ce_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/images/ui-bg_gloss-wave_35_f6a828_500x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/images/ui-bg_highlight-soft_75_ffe45c_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/images/ui-icons_228ef1_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/images/ui-icons_ef8c08_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/images/ui-icons_ffd27a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/images/ui-icons_ffffff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/jquery-1.11.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/jquery.ui-1.10.4.button.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/jquery.ui.button.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/jquery.ui.core.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/jQueryAssets/jquery.ui.theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/js/axios.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/js/hw_index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/js/vue.global.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/test1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/static/th.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/templates/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/templates/First.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/templates/Login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/templates/b1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/django1/web/templates/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/css/foundation.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/css/hw_index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/css/mobi.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/css/table.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/css/twentytwenty-no-compass.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/css/twentytwenty.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/css/ywz_index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/img/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/img/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/img/gray_17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/img/red1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/img/red2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/img/up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/img/up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/js/axios.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/js/jquery-1.11.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/js/jquery-3.2.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/js/jquery.event.move.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/js/jquery.twentytwenty.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/js/vue.global.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/up.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/vueup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/web/ywz.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c210527-vue+django 文件或图片上传+拖动查看区别+动态更新图片+点击下载-c33889-500/微信图片_20210527222001.jpg" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1TXuh6WlP6Si7Pemk9uAFBe08od" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Desktop\folder\factory\ORM-sqlite3+注册-views+mqtt\django1\app1" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Desktop\folder\factory\ORM-sqlite3+注册-views+mqtt\django1" />
+      <recent name="D:\Desktop\folder\django\django1\app1\static" />
+      <recent name="D:\Desktop\folder\django\django1\app1\templates" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="sq_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="django1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app1" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app1/sq_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.sq_test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f023d1b4-1e26-4a26-a31e-b2c43aa0e5e4" name="Default Changelist" comment="" />
+      <created>1573618883109</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573618883109</updated>
+      <workItem from="1608016678738" duration="959000" />
+      <workItem from="1608081791743" duration="1957000" />
+      <workItem from="1609062832180" duration="6116000" />
+      <workItem from="1611590084980" duration="5423000" />
+      <workItem from="1614583591937" duration="5983000" />
+      <workItem from="1614607421064" duration="4353000" />
+      <workItem from="1614645155656" duration="10121000" />
+      <workItem from="1614673080818" duration="2855000" />
+      <workItem from="1614688075984" duration="4398000" />
+      <workItem from="1614696055171" duration="1529000" />
+      <workItem from="1615005093626" duration="1709000" />
+      <workItem from="1615425955772" duration="6470000" />
+      <workItem from="1615603028695" duration="4260000" />
+      <workItem from="1615821765179" duration="5662000" />
+      <workItem from="1615855103332" duration="816000" />
+      <workItem from="1615907175165" duration="5472000" />
+      <workItem from="1615912759007" duration="467000" />
+      <workItem from="1615943272125" duration="254000" />
+      <workItem from="1615951559560" duration="576000" />
+      <workItem from="1615972482313" duration="573000" />
+      <workItem from="1615973426624" duration="3512000" />
+      <workItem from="1616049618375" duration="803000" />
+      <workItem from="1618413162461" duration="62000" />
+      <workItem from="1618555124036" duration="6431000" />
+      <workItem from="1618629559068" duration="1497000" />
+      <workItem from="1618655257473" duration="3304000" />
+      <workItem from="1618727503119" duration="428000" />
+      <workItem from="1622122714119" duration="2040000" />
+      <workItem from="1622278754825" duration="4316000" />
+      <workItem from="1622537850274" duration="599000" />
+      <workItem from="1622544432328" duration="545000" />
+      <workItem from="1622546537972" duration="929000" />
+      <workItem from="1622548771985" duration="10041000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="664" y="242" width="896" height="726" key="search.everywhere.popup" timestamp="1618658874367">
+      <screen x="0" y="0" width="2048" height="1122" />
+    </state>
+    <state x="664" y="242" width="896" height="726" key="search.everywhere.popup/-1920.358.1536.834/0.0.2048.1122@0.0.2048.1122" timestamp="1618658874367" />
+    <state x="498" y="180" width="672" height="539" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1615828932693" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/django1$sq_test.coverage" NAME="sq_test Coverage Results" MODIFIED="1609065670097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app1" />
+  </component>
+</project>
