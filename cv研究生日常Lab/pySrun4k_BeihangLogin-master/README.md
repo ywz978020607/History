@@ -1,5 +1,12 @@
 # pySrun4k
+
+
+## 自动监控重登改进版 见autorec.py（填入账号密码），用supervisor自动管理配置文件见pylogin.conf
+
+
+
 ## 简介
+
 pySrun4k是一个模仿Srun4k认证客户端协议，用Python3实现的认证客户端。
 
 实现了登录，检查在线状态，登出当前终端，登出所有终端功能。
@@ -43,3 +50,5 @@ request
 
 ### 登出所有终端
 ```python Login.py logout_all <username> <password>```
+
+
