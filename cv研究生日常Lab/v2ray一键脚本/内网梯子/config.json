@@ -143,7 +143,6 @@
         "type": "field",
         "domain": [
           "geosite:cn",
-          "github.com",
           "buaa.edu.cn"
         ],
         "outboundTag": "direct"
