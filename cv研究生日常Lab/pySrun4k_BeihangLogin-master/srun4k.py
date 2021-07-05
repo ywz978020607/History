@@ -1,3 +1,4 @@
+# coding=utf-8
 import password
 import requests
 from requests.packages import urllib3

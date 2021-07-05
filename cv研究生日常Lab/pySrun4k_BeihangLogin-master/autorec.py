@@ -1,3 +1,4 @@
+# coding=utf-8
 from srun4k import *
 import os,time
 url = "https://gw.buaa.edu.cn"
@@ -10,7 +11,7 @@ while 1:
 
     if status['online']==False:
         print("reconnect")
-        os.system("python Login.py login usrname pwd")
+        os.system("/home/ywz/anaconda3/bin/python Login.py login sy2002220 ywz19980316")
 
     time.sleep(5)
 #使用supervisor部署，开机自动运行监控此循环脚本，见pylogin.conf
