@@ -17,7 +17,15 @@ c2=config('status.ini')
 ret2 = c2.readAll()
 u.read()
 
-
+change = Pin(23,Pin.IN)
+if change.value()==1:
+    #反转
+    if ret2['flag']=='0':
+        ret2['flag']='1'
+    else:
+        ret2['flag']='0'
+    c2.writeConfig(ret2)
+##################################
 mydht = dht.DHT11(Pin(5))
 mydht.measure()
 temp = mydht.temperature()
