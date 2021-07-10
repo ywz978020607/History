@@ -33,3 +33,11 @@ git config --global --unset https.proxy
 查看已有配置
 
 git config --global -l 
+
+
+
+
+
+## 删除本地分支所有修改，同步远程 master 到本地，使用 git reset --hard origin/master
+
+ 
