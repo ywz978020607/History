@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>管理界面</title>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static " css/ywz_index.css " %}"> -->
+    <link rel="stylesheet" type="text/css" href="../static/css/ywz_index.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/table.css">
+
+    <script src="../static/js/vue.global.js" />
+    <script src="../static/js/axios.min.js"></script>
+
+    <script src="../static/jQueryAssets/jquery-1.11.1.min.js"></script>
+
+</head>
+
+<body>
+    <!-- 页面顶部 -->
+    <!-- 顶部容器 ：width:100% -->
+    <!--可以挂多个vue，但不太方便-->
+    <div id="App1">
+
+        <header id="top">
+            <!-- 内容显示区域 ：width : 1211px -->
+            <div id="top_box">
+                <ul class="lf">
+                    <li><a href="#">欢迎</a></li>
+                    <li><a href="#">Welcome!</a></li>
+                </ul>
+                <ul class="rt">
+                    <li>用户名: {{ username }}</li>
+                    <li><a @click="quit">退出登录</a></li>
+
+                </ul>
+            </div>
+        </header>
+        <!-- body-block -->
+
+        <center>
+            <br> <br>
+            <center>
+                <button class="btn btn-primary" @click="this.seen_id=0">查询系统</button> &nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-primary" @click="this.seen_id=1;">修改信息</button> &nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- <button v-if="username.slice(0,4)=='host'" class="btn btn-primary" @click="this.seen_id=2; ">个人停车场设置</button> &nbsp;&nbsp;&nbsp;&nbsp;-->
+                <br> <br> <br>
+
+                <div v-if="seen_id==0">
+                    <p>当前时间{{res_time}}</p>
+                    <br>
+                    <h2>查询系统</h2>
+                    <br>
+                    <div v-for="(each,index) in res_data1">
+
+
+                        <p>设备号: {{each[0]}}</p>
+                        <p>更新时间: {{each[1].slice(0,10)+' ' +each[1].slice(11,19)}}</p>
+                        <hr style="width: 25%; size: 3em;" />
+                        <p>温度/℃: {{each[2]}} &nbsp;&nbsp;&nbsp;&nbsp; 温度阈值: {{each[3]}} </p>
+                        <p>温度状态:
+                            <span v-if="each[4]==0">正常&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                            <spanp v-else>报警&nbsp;&nbsp;&nbsp;&nbsp; 时间：{{each[12].slice(0,10)+' ' +each[12].slice(11,19)}}</span>
+                        </p>
+                        <hr style="width: 25%; size: 3em;" />
+                        <p>湿度/%: {{each[5]}} &nbsp;&nbsp;&nbsp;&nbsp; 湿度阈值: {{each[6]}} </p>
+                        <p>湿度状态:
+                            <span v-if="each[7]==0">正常&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                            <spanp v-else>报警&nbsp;&nbsp;&nbsp;&nbsp; 时间：{{each[12].slice(0,10)+' ' +each[12].slice(11,19)}}</span>
+                        </p>
+                        <hr style="width: 25%; size: 3em;" />
+                        <p>光照强度: {{each[8]}} &nbsp;&nbsp;&nbsp;&nbsp; 光强阈值: {{each[9]}} </p>
+                        <p>光强状态:
+                            <span v-if="each[10]==0">正常&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                            <spanp v-else>报警&nbsp;&nbsp;&nbsp;&nbsp; 时间：{{each[12].slice(0,10)+' ' +each[12].slice(11,19)}}</span>
+                        </p>
+                        <hr style="width: 25%; size: 3em;" />
+                        <p>空气质量: {{each[15]}} &nbsp;&nbsp;&nbsp;&nbsp; 空气质量阈值: {{each[16]}} </p>
+                        <p>空气质量状态:
+                            <span v-if="each[17]==0">正常&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                            <spanp v-else>报警&nbsp;&nbsp;&nbsp;&nbsp; 时间：{{each[12].slice(0,10)+' ' +each[12].slice(11,19)}}</span>
+                        </p>
+                        <hr style="width: 25%; size: 3em;" />
+                        <p v-if="each[11]==0">继电器: 关闭&nbsp;&nbsp;&nbsp;&nbsp; <button class="btn btn-primary" @click="send(each[0],0)">手动开启</button></p>
+                        <p v-else>继电器: 开启&nbsp;&nbsp;&nbsp;&nbsp; <button class="btn btn-primary" @click="send(each[0],0)">手动关闭</button></p>
+                        <hr style="width: 25%; size: 3em;" />
+                        <p v-for="(each,index) in res_data1">报警邮箱: {{each[13]}} </p>
+                        <br><br>
+                        <button class="btn btn-primary" @click="click1">查询</button>
+                    </div>
+
+                </div>
+                <!----->
+
+                <div v-if="seen_id==1">
+
+                    <p>
+                        <p>设备号 <input v-model="input_val[0]"></p>
+                    </p>
+                    <p>温度阈值 <input v-model="input_val[1]"></p>
+                    <p>湿度阈值 <input v-model="input_val[2]"></p>
+                    <p>光强阈值 <input v-model="input_val[3]"></p>
+                    <p>空气质量阈值 <input v-model="input_val[4]"></p>
+
+                    <p>
+                        <p>通知邮箱 <input v-model="input_val[5]"></p>
+                    </p>
+
+                    </table>
+                    <br><br>
+
+                    <button class="btn btn-primary" @click="change">修改</button>
+                </div>
+
+                <!----->
+
+                <div v-if="seen_id==2">
+                </div>
+    </div>
+
+    <script>
+        function test() {
+            console.log("test ");
+        }
+
+        function show() {
+            that = this;
+            val = 0;
+            $.ajaxSettings.async = false; //修改为同步请求！！！
+            $.get(that.direction + "/onenet_check/", param, function(data, status) {
+                // console.log(data);
+                val = data;
+                // $("#value0 ").text(data['datastreams'][1]['datapoints'][0]['value']);
+                // $("#value1 ").text(data['datastreams'][0]['datapoints'][0]['value']);
+            })
+            return val;
+            // $("#text2 ").text(data['end']);
+        };
+        /////////////////////////////////////////////////////////////////////////////////////////
+        const App1 = {
+            data() {
+                return {
+                    username: "",
+                    intervalId: null,
+                    seen_id: 0,
+                    seen_table1: 0,
+                    //////////////
+                    val: [
+                        0, 1
+                    ],
+                    //// 
+                    input_val: [null, null, null, null, null, null, null, null], //初始8个null
+                    res_data: [],
+                    res_data1: [],
+                    res_time: "",
+                    res_show1: [],
+                    res_data2: [],
+
+                    direction: "http://127.0.0.1:8000"
+
+                }
+            },
+
+            methods: {
+                quit(event) {
+                    localStorage.removeItem('loggedname');
+                    window.location.href = "Login.html";
+                },
+                fresh() {
+                    console.log("fresh ")
+                    this.click1();
+                },
+                // 定时刷新数据函数
+                dataRefresh() {
+                    // 计时器正在进行中，退出函数
+                    if (this.intervalId != null) {
+                        return;
+                    }
+                    // 计时器为空，操作
+                    this.intervalId = setInterval(() => {
+                        console.log("刷新 " + new Date());
+                        this.fresh(); //加载数据函数
+                    }, 5000);
+                },
+                // 停止定时器
+                clear() {
+                    clearInterval(this.intervalId); //清除计时器
+                    this.intervalId = null; //设置为null
+                },
+                //操作--button1
+                click1(event) {
+                    that = this;
+                    console.log(event); //可同时获得按钮信息
+                    // console.log(this.input_val);
+                    // 提交到后端
+                    $.ajaxSettings.async = false; //修改为同步请求！！！
+                    var param = {
+                        "kind": "2", //kind=0
+                        //"data": JSON.stringify(this.input_val) //数组转json，必须经过此操作！
+                    }
+                    $.get(that.direction + "/test/", param, function(data, status) {
+                        console.log("get back.")
+                        console.log(data);
+                        that.res_data1 = data['data'];
+                        that.res_time = data['time'];
+                        // that.res_show1 = []
+                        // for (var ii = 0; ii < data['data'][0][2]; ii++) {
+                        //     if (ii < data['data'][0][1]) {
+                        //         that.res_show1.push(1);
+                        //     } else {
+                        //         that.res_show1.push(0);
+                        //     }
+                        // }
+                    })
+                },
+                send(a, b, index = 0) {
+                    console.log("send", a, b);
+                    that = this;
+                    console.log(event); //可同时获得按钮信息
+                    // console.log(this.input_val);
+                    // 提交到后端
+                    $.ajaxSettings.async = false; //修改为同步请求！！！
+                    var param = {
+                        "kind": "1", //button
+                        "id": a.toString(),
+                        "info": b.toString(), //指向 0灯光 1安防 2定时开关 3窗帘
+                        //"data": JSON.stringify(this.input_val) //数组转json，必须经过此操作！
+                    }
+                    console.log(param);
+                    $.get(that.direction + "/test/", param, function(data, status) {
+                        console.log("get back.")
+                        console.log(data);
+                        that.click1();
+                        alert("已提交")
+                    })
+                },
+                //修改
+                change() {
+                    that = this;
+                    console.log(event); //可同时获得按钮信息
+                    // console.log(this.input_val);
+                    // 提交到后端
+                    $.ajaxSettings.async = false; //修改为同步请求！！！
+                    var param = {
+                        "kind": "3", //kind=0
+                        "data": JSON.stringify(this.input_val) //数组转json，必须经过此操作！
+                    }
+                    $.get(that.direction + "/test/", param, function(data, status) {
+                        console.log("get back.")
+                        console.log(data);
+                        alert("完毕")
+                    })
+                },
+
+                //////////////////////////////////////
+                //下载
+                download(event) {
+
+                    that = this; //注意，http请求后的函数中，this的指向为副本的局部，无法真正修改！！所以要用that先复制指针，用that改值
+                    // 提交到后端
+                    $.ajaxSettings.async = false; //修改为同步请求！！！
+                    var param = {
+                        "kind": "3", //kind=3
+                        "parkid": that.input_val[0],
+                        // "data": JSON.stringify(this.input_val) //数组转json，必须经过此操作！
+                    }
+                    console.log(param);
+
+                    $.get(that.direction + "/test/", param, function(data, status) {
+                        console.log(data);
+                        // 创建隐藏的可下载链接
+                        var eleLink = document.createElement('a');
+                        eleLink.download = "temp.txt";
+                        eleLink.style.display = 'none';
+                        // 字符内容转变成blob地址
+                        var blob = new Blob([data]);
+                        eleLink.href = URL.createObjectURL(blob);
+                        // 触发点击
+                        document.body.appendChild(eleLink);
+                        eleLink.click();
+                        // 然后移除
+                        document.body.removeChild(eleLink);
+                    })
+                },
+
+
+            },
+
+            mounted() {
+                //确认登录
+                if (localStorage.getItem('loggedname')) {
+                    this.username = localStorage.getItem('loggedname');
+                } else {
+                    window.location.href = "Login.html"
+                }
+                //加载时先刷新一下
+                this.fresh();
+                this.click1();
+            },
+            //定时器
+            created() {
+                this.dataRefresh();
+            },
+            destroyed() {
+                // 在页面销毁后，清除计时器
+                this.clear();
+            }
+
+        }
+        Vue.createApp(App1).mount('#App1')
+    </script>
+
+
+    </center>
+</body>
+
+</html>
