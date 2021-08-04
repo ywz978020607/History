@@ -1,0 +1,114 @@
+page {
+	background: #F4F5F6;
+	width: 750upx;
+	overflow-x: hidden;
+}
+
+.qiun-padding {
+	padding: 2%;
+	width: 96%;
+}
+
+.qiun-wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.qiun-rows {
+	display: flex;
+	flex-direction: row !important;
+}
+
+.qiun-columns {
+	display: flex;
+	flex-direction: column !important;
+}
+
+.qiun-common-mt {
+	margin-top: 10upx;
+}
+
+.qiun-common-border-bottom {
+	border-bottom: 1px solid #E9E9E9;
+}
+
+.qiun-bg-white {
+	background: #FFFFFF;
+}
+
+.qiun-title-bar {
+	width: 96%;
+	padding: 10upx 2%;
+	flex-wrap: nowrap;
+}
+
+.qiun-title-dot-light {
+	border-left: 10upx solid #0ea391;
+	padding-left: 10upx;
+	font-size: 32upx;
+	color: #000000
+}
+
+.qiun-textarea {
+	height: 400upx;
+	font-size: 34upx;
+	box-sizing: border-box;
+	line-height: 50upx;
+	width: 100%;
+	background-color: #FFFFFF;
+}
+
+.qiun-text-tips {
+	font-size: 28upx;
+	color: #dc2626;
+	line-height: 40upx;
+	padding: 6upx;
+}
+
+.qiun-button {
+	background: #2fc25b;
+	color: #FFFFFF;
+	margin: 20upx;
+}
+
+/* 通用样式 */
+.qiun-charts {
+	width: 750upx;
+	height: 500upx;
+	background-color: #FFFFFF;
+}
+
+.charts {
+	width: 750upx;
+	height: 500upx;
+	background-color: #FFFFFF;
+}
+
+/* 横屏样式 */
+.qiun-charts-rotate {
+	width: 700upx;
+	height: 1100upx;
+	background-color: #FFFFFF;
+	padding: 25upx;
+}
+
+.charts-rotate {
+	width: 700upx;
+	height: 1100upx;
+	background-color: #FFFFFF;
+}
+
+/* 圆弧进度样式 */
+.qiun-charts3 {
+	width: 750upx;
+	height: 250upx;
+	background-color: #FFFFFF;
+	position: relative;
+}
+
+.charts3 {
+	position: absolute;
+	width: 250upx;
+	height: 250upx;
+	background-color: #FFFFFF;
+}
