@@ -52,10 +52,15 @@ def get_ip():
     return ip
 ############################################
 count = 0
+need_newip = 1
 while 1:
-    # try:
-    headers = get_UA()
-    proxy = get_ip()
+    if need_newip == 1:
+        # try:
+        headers = get_UA()
+        proxy = get_ip()
+    
+    need_newip = 1
+
     # proxy = "118.31.3.239:20249"
     chrome_options = webdriver.ChromeOptions()
 
@@ -83,7 +88,7 @@ while 1:
         count+=1
     except:
         print("cannot access 1")
-        break
+        need_newip = 0 #还用原来的
     # except:
     #     print("error")
     #     time.sleep(3)
