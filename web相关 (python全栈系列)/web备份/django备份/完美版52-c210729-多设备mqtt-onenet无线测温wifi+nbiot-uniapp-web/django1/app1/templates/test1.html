@@ -1,0 +1,96 @@
+{% extends "base.html" %} {% block head %}
+<link href="/static/jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+<link href="/static/jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+<link href="/static/jQueryAssets/jquery.ui.button.min.css" rel="stylesheet" type="text/css">
+	
+<link href="/static/test1.css" rel="stylesheet" type="text/css">
+
+<script src="/static/jQueryAssets/jquery-1.11.1.min.js"></script>
+<script src="/static/jQueryAssets/jquery.ui-1.10.4.button.min.js"></script>
+
+
+
+{% endblock %}
+
+{% block body %}
+ <br> <br> <br> <br> <br> <br>
+<center>
+<button id="Button1">修改示例1</button>
+	
+<button id="Button2">修改示例1</button>
+ <br> <br> <br> <br> <br> <br>
+<script type="text/javascript">
+$(function() {
+	$( "#Button1" ).button(); 
+});
+$(function() {
+	$( "#Button2" ).button(); 
+});
+$("#Button1").click(function(){
+    write("10.5");
+});
+	
+$("#Button2").click(function(){
+	write("13.6");
+});
+
+
+$(function(){
+  setInterval(function(){
+    show();
+},5000);
+});
+
+var param = {"limit_num":1,"id":"657447170","password":"dYzr8wSChJQIGCByNO3=8w85frU="};
+function show(){
+    $.get("/onenet_check/",param,function(data,status){
+      console.log(data);
+      return data;
+      $("#value0").text(data['datastreams'][1]['datapoints'][0]['value']);
+      $("#value1").text(data['datastreams'][0]['datapoints'][0]['value']);
+     })
+    // $("#text2").text(data['end']);
+};
+
+function write(val){
+    var param1 = {"limit_num":1,"id":"657447170","password":"dYzr8wSChJQIGCByNO3=8w85frU="};
+    param1['data_name'] = JSON.stringify(['data2']) //可以多个
+    param1['data_value'] = JSON.stringify([val]) //可以多个
+
+    console.log(param1);
+    $.get("/onenet_write/",param1,function(data,status){
+      console.log(data);
+      alert("changed ok.");
+      show();
+     })
+    // $("#text2").text(data['end']);
+};
+
+$(document).ready(function() {
+    show();
+});
+
+</script>
+	
+	
+	
+
+<h2>远程查看系统界面</h2>
+
+<table border="1">
+<tr>
+  <td>名称</td>
+  <td>数值</td>
+</tr>
+<tr>
+  <td id="name0">data1</td>
+  <td id="value0">0</td>
+</tr>
+<tr>
+  <td id="name1">data2</td>
+  <td id="value1">0</td>
+</tr>
+</table>
+
+	</center>
+{% endblock %}
