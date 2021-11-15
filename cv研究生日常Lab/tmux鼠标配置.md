@@ -32,3 +32,5 @@ source-file ~/.tmux.conf
 按住shift再滚轮
 
 按住shift选中复制
+
+注意：规范使用：ctrl+b : +w是切换窗格，+s才是切换会话   有些系统中用w看不到其他会话

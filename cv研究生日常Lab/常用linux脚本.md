@@ -142,3 +142,5 @@ df -h
 tail -n 尾部行数 -f 文件名
 
 eg  tail -f -n 20 temp.log 或  tail -n 20 -f temp.log
+
+tailf 等同于tail -f -n 10
