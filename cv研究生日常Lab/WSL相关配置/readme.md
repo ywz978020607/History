@@ -1,5 +1,9 @@
 # win开机后自动开启WSL并执行ssh/supervisor等服务
 
+sudo su
+
+ssh-keygen -A
+
 打开win10的启动文件夹（win+r后输入shell:startup）
 
 新建ubuntuxx.vbs脚本文件

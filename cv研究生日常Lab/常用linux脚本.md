@@ -101,9 +101,9 @@ sudo userdel wyx
 
 \5. 为该用户添加sudo权限
 
-sudo usermod -a -G adm wyx
+sudo usermod -a -G adm ywz
 
-sudo usermod -a -G sudo wyx
+sudo usermod -a -G sudo ywz
 
 
 
@@ -144,3 +144,16 @@ tail -n 尾部行数 -f 文件名
 eg  tail -f -n 20 temp.log 或  tail -n 20 -f temp.log
 
 tailf 等同于tail -f -n 10
+
+
+
+
+
+# supervisor不正常启动
+
+```
+ps ax | grep supervisord
+kill -9 PID号   结束进程
+supervisorctl reload #最后重新载入配置
+```
+

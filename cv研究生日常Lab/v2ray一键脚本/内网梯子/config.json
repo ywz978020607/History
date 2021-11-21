@@ -65,12 +65,12 @@
       "settings": {
         "vnext": [
           {
-            "address": "korea1.buaamc2.net",
-            "port": 16596,
+            "address": "104.255.64.218",
+            "port": 57998,
             "users": [
               {
-                "id": "1c9d874a-7fdf-11eb-88db-0114b308a39d",
-                "alterId": 0,
+                "id": "5e468ac8-016e-416f-861b-2d34707c1c3f",
+                "alterId": 8,
                 "email": "t@t.tt",
                 "security": "auto"
               }
@@ -81,21 +81,12 @@
         "response": null
       },
       "streamSettings": {
-        "network": "ws",
-        "security": "tls",
-        "tlsSettings": {
-          "allowInsecure": true,
-          "serverName": "www.baidu.com"
-        },
+        "network": "tcp",
+        "security": null,
+        "tlsSettings": null,
         "tcpSettings": null,
         "kcpSettings": null,
-        "wsSettings": {
-          "connectionReuse": true,
-          "path": "/7QP28Eyb/",
-          "headers": {
-            "Host": "www.baidu.com"
-          }
-        },
+        "wsSettings": null,
         "httpSettings": null,
         "quicSettings": null
       },
