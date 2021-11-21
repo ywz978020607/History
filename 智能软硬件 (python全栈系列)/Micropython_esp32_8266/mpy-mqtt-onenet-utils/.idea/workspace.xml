@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14b12c4b-74c3-4243-a64c-4d4f6214173d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/单片机esp32封装类简化/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/单片机esp32封装类简化/test1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/后端对接读数据发命令/example.py" beforeDir="false" afterPath="$PROJECT_DIR$/后端对接读数据发命令/example.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

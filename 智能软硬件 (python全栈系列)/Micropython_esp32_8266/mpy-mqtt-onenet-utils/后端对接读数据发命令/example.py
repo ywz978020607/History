@@ -10,14 +10,14 @@ apiKey = '2kJV69exxxxxx'
 product = "857129375"
 limit = 2  #要获取最新的数据时间节点数量
 
-resDict = getVal(product,apiKey,limit) #返回所有键值对
+resDict = getVal(product,apiKey,limit) #返回所有键值对 按名称作为key, 整理为{ Name1:[[val1,time1],[val2,time2],...] }字典格式
 print(resDict)
 
 cmdDict = {"mode":1,"other":False} #下发命令最好也是字典格式 方便处理
 putCMD(product,apiKey,cmdDict) 
 """
 ## 获取onenet的历史数据
-##返回为 { Name:[[val,time],...] }字典格式
+##返回为 { Name1:[[val1,time1],[val2,time2],...] }字典格式
 def getVal(product,apiKey,limit=1):
     convert_dict = {}
     url = "http://api.heclouds.com/devices/" + product + "/datapoints"
