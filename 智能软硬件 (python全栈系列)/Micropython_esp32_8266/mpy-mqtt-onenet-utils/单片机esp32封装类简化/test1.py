@@ -3,7 +3,7 @@ from T1 import *
 ###############################################
 CLIENT_ID = "857129375"
 username='234533'
-password='2kJV69eUrcMgCLjkyOzT8k1WY0Y='
+password='2kJV69eUrcMgCxxxxxx'
 ###############################################
 myMQTT = T1(CLIENT_ID,username,password)
 #wifi

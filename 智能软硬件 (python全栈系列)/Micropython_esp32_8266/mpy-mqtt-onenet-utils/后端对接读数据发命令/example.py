@@ -6,7 +6,7 @@ import json
 """
 from example import *
 
-apiKey = '2kJV69eUrcMgCLjkyOzT8k1WY0Y='
+apiKey = '2kJV69exxxxxx'
 product = "857129375"
 limit = 2  #要获取最新的数据时间节点数量
 
