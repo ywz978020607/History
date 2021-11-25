@@ -15,6 +15,12 @@ temp=${temp//\//\\} #\是转义字符  /是替换一个 //是替换所有
 #调用win下的git -- 用wsl配置的git也可以 都能完成同步--不同的是WSL下会对所有脚本的结束符重构,看起来像全部重新更新一样
 /mnt/e/software/Git/git-cmd.exe
 
+#如果出现couldn't set refs之类错误
+git gc --prune=now
+git remote prune origin
+git pull
+
+
 #3)win->wsl
 wsl
 ```
