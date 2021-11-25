@@ -61,6 +61,6 @@ class T1():
     def sub_cb(self,topic, msg):
         print((topic, msg))
         self.get_data = json.loads(msg)
-        print(self.get_data)
-        return self.get_data
+        # print(self.get_data)
+        # return self.get_data
 
