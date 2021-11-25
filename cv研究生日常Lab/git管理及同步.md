@@ -36,6 +36,16 @@ git config --global -l
 
 删除本地分支所有修改，同步远程 master 到本地，使用 git reset --hard origin/master
 
+## prune
+使用git pull拉取代码的时候，无法拉取最新代码，报"unable to update local ref"错误。
+
+除了重新clone一份代码外，还可以使用如下解决方案：
+
+1、切换到之前clone代码目录下，执行命令git gc --prune=now
+
+2、再执行命令git remote prune origin
+
+3、再次使用git pull
 
 
 ## 查看所有分支
