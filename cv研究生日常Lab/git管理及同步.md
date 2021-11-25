@@ -72,6 +72,7 @@ git checkout dev
 git merge master
 
 再将合并后的本地分支提交到云端分支
+git push 
 git push origin dev
 
 ## 分支汇入master(管理员)

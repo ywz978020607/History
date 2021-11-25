@@ -29,7 +29,7 @@ class T1():
         self.c.check_msg() #检测接收并调用sub_cb
         # c.wait_msg() #阻塞直到收到一次结束阻塞
     
-    #整理上传格式
+    #整理上传格式--如果$dp主题
     def pubdata(self,data_name=[],data_value=[]):
         #arr是onenet的$dp主题
         # data = {'datastreams':[{'id':'temp','datapoints':[{'value':str(state)}] } ]}
@@ -46,12 +46,16 @@ class T1():
         arr[2] = j_l % 256      # json数据长度 低位字节
         arr[3:] = j_d.encode('ascii') # json数据
         return arr
-        # data = {'name':'001','data':[10.46,35.4,0,1]}
-        # j_d = json.dumps(data)
-        # return j_d
+        # return j_d  
+      
     #上传-默认$dp主题
-    def publish(self,TOPIC='$dp',data_name=[],data_value=[]):
-        self.c.publish(TOPIC,self.pubdata(data_name,data_value))
+    def publish(self,TOPIC='$dp',mydict={}):
+        if TOPIC=='$dp':
+            data_name = list(mydict.keys())
+            data_value = list(mydict.values())
+            self.c.publish(TOPIC,self.pubdata(data_name,data_value))
+        else:
+            self.c.publish(TOPIC,json.dumps(mydict))
 
     #订阅并返回json--保存到self.get_data -- 调用使用Class.c.check_msg() 或wait_msg()
     def sub_cb(self,topic, msg):

@@ -16,7 +16,7 @@ print(resDict)
 cmdDict = {"mode":1,"other":False} #下发命令最好也是字典格式 方便处理
 putCMD(product,apiKey,cmdDict) 
 """
-## 获取onenet的历史数据
+## 获取onenet的历史数据--如果采用非$dp主题 则不需要getVal
 ##返回为 { Name1:[[val1,time1],[val2,time2],...] }字典格式
 def getVal(product,apiKey,limit=1):
     convert_dict = {}
