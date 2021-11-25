@@ -40,13 +40,14 @@ git config --global -l
 使用git pull拉取代码的时候，无法拉取最新代码，报"unable to update local ref"错误。
 
 除了重新clone一份代码外，还可以使用如下解决方案：
-
-1、切换到之前clone代码目录下，执行命令git gc --prune=now
-
-2、再执行命令git remote prune origin
-
-3、再次使用git pull
-
+1、切换到之前clone代码目录下，执行命令
+2、再执行命令
+3、再次使用
+```
+git gc --prune=now
+git remote prune origin
+git pull
+```
 
 ## 查看所有分支
 
