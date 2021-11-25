@@ -12,6 +12,9 @@ temp=${temp#*folder}
 temp=${temp//\//\\} #\是转义字符  /是替换一个 //是替换所有
 /mnt/c/Windows/System32/cmd.exe /K "cd /d $root$temp"
 
+#再启动win下的git
+start"""%PROGRAMFILES%\Git\bin\sh.exe" --login
+
 #3)win->wsl
 wsl
 ```
