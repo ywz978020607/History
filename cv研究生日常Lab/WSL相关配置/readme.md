@@ -12,7 +12,7 @@ temp=${temp#*folder}
 temp=${temp//\//\\} #\是转义字符  /是替换一个 //是替换所有
 /mnt/c/Windows/System32/cmd.exe /K "cd /d $root$temp"
 
-
+#调用win下的git -- 用wsl配置的git也可以 都能完成同步
 /mnt/e/software/Git/git-cmd.exe
 
 #3)win->wsl
