@@ -30,6 +30,8 @@ class WS2812:
         * intensity = light intensity (float up to 1)
         """
         self.led_count = led_count
+        self.data=[(0,0,0) for ii in range(16) ] #red
+
         self.intensity = intensity
 
         # prepare SPI data buffer (4 bytes for each color)
@@ -44,7 +46,11 @@ class WS2812:
             return
 
         # turn LEDs off
-        self.show([])
+        self.show(self.data)
+
+    def set_color(self,index=0,color=(255,255,255)):
+        self.data[index] = color
+        self.show(self.data)
 
     def show(self, data):
         """
