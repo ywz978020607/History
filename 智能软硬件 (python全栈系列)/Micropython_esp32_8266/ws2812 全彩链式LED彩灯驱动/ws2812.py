@@ -51,6 +51,11 @@ class WS2812:
     def set_color(self,index=0,color=(255,255,255)):
         self.data[index] = color
         self.show(self.data)
+    
+    def set_all(self,color=(255,255,255)):
+        for ii in range(len(self.data)):
+            self.data[ii] = color
+        self.show(self.data)
 
     def show(self, data):
         """

@@ -36,6 +36,16 @@ git config --global -l
 
 删除本地分支所有修改，同步远程 master 到本地，使用 git reset --hard origin/master
 
+## 忽略本地修改，强拉
+
+```
+git fetch --all
+
+git reset --hard origin/dev
+
+git pull
+```
+
 ## prune--解决pull报错问题
 使用git pull拉取代码的时候，无法拉取最新代码，报"unable to update local ref"错误。
 
