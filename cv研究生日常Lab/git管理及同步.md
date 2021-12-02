@@ -36,6 +36,41 @@ git config --global -l
 
 删除本地分支所有修改，同步远程 master 到本地，使用 git reset --hard origin/master
 
+
+
+## 配置git及多环境
+
+https://juejin.cn/post/6844904180633600007
+
+```bash
+ssh-keygen -t rsa -f ~/.ssh/id_rsa.gitee -C "你的邮箱"
+
+#ssh-agent bash
+#ssh-add ~/.ssh/id_rsa.github
+#ssh-add ~/.ssh/id_rsa.gitee	
+
+#~/.ssh/config
+# gitee
+Host gitee.com
+HostName gitee.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa.gitee
+
+# github
+Host github.com
+HostName github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa.github
+```
+
+## rebase -常用
+
+无法拉也无法推时
+
+```git
+git pull origin xxx --rebase   #xxx为分支名
+```
+
 ## 忽略本地修改，强拉
 
 ```
