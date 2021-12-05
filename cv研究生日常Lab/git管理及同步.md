@@ -61,6 +61,9 @@ Host github.com
 HostName github.com
 PreferredAuthentications publickey
 IdentityFile ~/.ssh/id_rsa.github
+
+#test
+ssh -T git@github.com
 ```
 
 ## rebase -常用
