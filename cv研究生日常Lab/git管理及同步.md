@@ -1,4 +1,5 @@
 ## 将现有的一个文件夹强制提交到git仓库
+
 ```
 1. github注册仓库获得链接
 2. 文件夹中打开bash
@@ -23,7 +24,7 @@ ssh-keygen -t rsa -f ~/.ssh/id_rsa.gitee -C "你的邮箱"
 
 #ssh-agent bash
 #ssh-add ~/.ssh/id_rsa.github
-#ssh-add ~/.ssh/id_rsa.gitee	
+#ssh-add ~/.ssh/id_rsa.gitee
 
 #~/.ssh/config
 # gitee
@@ -37,11 +38,15 @@ Host github.com
 HostName github.com
 PreferredAuthentications publickey
 IdentityFile ~/.ssh/id_rsa.github
+ProxyCommand connect -S 127.0.0.1:10808 -a none %h %p #win-dns解析失败时设置走本机socks代理
+####################
 
-#test
+#test in cmd-shell
 ssh -T git@github.com
 ```
+
 ## 一个工程项目同时推送github和gitee两个平台
+
 ```
    1. 机器需要配置两组密钥 并在~/.ssh/config文件中添加
       # gitee
@@ -55,14 +60,16 @@ ssh -T git@github.com
       HostName github.com
       PreferredAuthentications publickey
       IdentityFile ~/.ssh/id_rsa.github
+      #ProxyCommand connect -S 127.0.0.1:10808 -a none %h %p #win-dns解析失败时设置走本机socks代理
 
    2. 在正常配置一个git项目内
-      git remote set-url --add origin 
+      git remote set-url --add origin xxxx
       或修改.git/config中的origin中新增一行
       url = git@gitee.com:xxxxx 
 ```
 
-## github使用本地翻墙socks代理
+## github使用本地翻墙socks代理 -- 不推荐，建议在ssh-config添加代理
+
 ```
 git config --global http.https://github.com.proxy socks5://127.0.0.1:10808
 
@@ -83,8 +90,8 @@ git config --global -l
 ```
 
 ## 删除本地分支所有修改，同步远程 master 到本地，
-`使用 git reset --hard origin/master`
 
+`使用 git reset --hard origin/master`
 
 ## rebase -常用
 
@@ -105,12 +112,14 @@ git pull
 ```
 
 ## prune--解决pull报错问题
+
 使用git pull拉取代码的时候，无法拉取最新代码，报"unable to update local ref"错误。
 
 除了重新clone一份代码外，还可以使用如下解决方案：
 1、切换到之前clone代码目录下，执行命令
 2、再执行命令
 3、再次使用
+
 ```
 git gc --prune=now
 git remote prune origin
@@ -118,9 +127,11 @@ git pull
 ```
 
 ## 查看所有分支
+
 `git branch`
 
 ## 多机同步流程
+
 ```
 先git clone
 
@@ -140,6 +151,7 @@ git remote -v
 ```
 
 ## master修改内容后更新到各个分支
+
 ```
 本机仍然有一个master分支 用来时刻与主master保持同步
 git checkout master
@@ -155,7 +167,9 @@ git merge master
 git push 
 git push origin dev
 ```
+
 ## 分支汇入master(管理员)
+
 ```
 同上 merge时使用
 git merge dev
