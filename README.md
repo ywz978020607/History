@@ -31,7 +31,7 @@
 
     *Micropython及fpga的电赛相关，提供了很多MPY版本的驱动模块*
   - esp32/esp8266/8266-01/01s@micropython物联网固件、开发工具、例程集合
-  - 最新物联网架构--[软硬件解耦, 前后端分离](https://www.bilibili.com/read/cv14295263) 欢迎有前后端vue+django开发经验同学来有偿合作开发~
+  - 最新迭代演进到物联网敏捷全栈开发架构--[软硬件解耦, 前后端分离](https://www.bilibili.com/read/cv14295263) 欢迎有前后端vue+django开发经验同学来有偿合作开发~
 - 合辑展示
 
   *物联网相关作品集合, 后续只更新bilibili视频*
