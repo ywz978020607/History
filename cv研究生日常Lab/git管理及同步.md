@@ -195,7 +195,10 @@ git merge send
 
    ```
    git checkout send
-   git rebase receive #将本分支send分支更改续到receive后:完全线性
+
+   #将本分支send分支更改续到receive后:完全线性,如果需要冲突默认策略,可以在rebase后加参数-X theirs等
+   git rebase receive
+
    git checkout receive
    git merge send
    ```
