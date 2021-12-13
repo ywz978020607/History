@@ -202,6 +202,10 @@ git merge send
    git checkout receive
    git merge send
    ```
-3. 冲突时 -- vim删除当前行快捷键 `dd`
 
-* [ ]
+   - 冲突时 -- vim删除当前行快捷键 `dd`
+   - git pull = fetch + merge
+
+## 回滚提交
+
+1. 恢复到某一次的提交 git reset
