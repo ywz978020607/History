@@ -1,6 +1,5 @@
 ## [git可视化练习网站](http://git-school.github.io/visualizing-git/)
 
-
 ## 将现有的一个文件夹强制提交到git仓库
 
 ```
@@ -178,3 +177,28 @@ git push origin dev
 git merge dev
 再提交即可
 ```
+
+
+
+## 合并策略
+
+*send->合到reveive分支*
+
+1. 直接merge -- 会有岔路
+
+```
+git checkout receive
+git merge send
+```
+
+2. 使用rebase -- 完全线性记录
+
+   ```
+   git checkout send
+   git rebase receive #将本分支send分支更改续到receive后:完全线性
+   git checkout receive
+   git merge send
+   ```
+3. 冲突时 -- vim删除当前行快捷键 `dd`
+
+* [ ]
