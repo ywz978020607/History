@@ -1,5 +1,10 @@
 ## [git可视化练习网站](http://git-school.github.io/visualizing-git/)
 
+## 快速拉取--只拉取某个分支的某个版本
+```
+git clone --single-branch -b <分支名> --depth 1 http://your-site.com/your-group/your-repo.git
+```
+
 ## 将现有的一个文件夹强制提交到git仓库
 
 ```
