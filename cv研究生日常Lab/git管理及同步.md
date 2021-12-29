@@ -133,6 +133,11 @@ git remote prune origin
 git pull
 ```
 
+## 拉取远程的某分支并创建本地对应新分支
+```
+git fetch origin dev:dev
+```
+
 ## 查看所有分支
 
 `git branch`
