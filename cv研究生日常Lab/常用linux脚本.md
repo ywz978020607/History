@@ -111,19 +111,18 @@ du --max-depth=1 -h
 
 df -h
 
-# 动态监控文件输出--高级版cat
-
-tail -n 尾部行数 -f 文件名
-
+# 监控文件输出--高级版cat
+添加-f后为循环读取  
+tail -n 尾部行数 -f 文件名  
 eg  tail -f -n 20 temp.log 或  tail -n 20 -f temp.log
 
 tailf 等同于tail -f -n 10
 
 # grep
 
-关键词查询  `xxxx | grep keywords`
-
-找出关键词相邻的10行   `tail -n 50 temp.log | grep "ERROR" -C 10`
+关键词查询  `xxxx | grep keywords`  
+反向选择  `grep -v keywords`  
+找出关键词相邻的10行   `tail -n 50 temp.log | grep "ERROR" -C 10`  
 
 
 # supervisor不正常启动
