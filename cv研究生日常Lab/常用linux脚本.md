@@ -132,3 +132,16 @@ ps ax | grep supervisord
 kill -9 PID号   结束进程
 supervisorctl reload #最后重新载入配置
 ```
+# alias用法
+可以在sh文件中设置alias别名  
+`alias s509=""ssh ywz@10.134.xxxx -J ywz@4678xxxx:32xxx""`  
+执行. env.sh后 即可在shell中执行s509  
+打印查看别名： `type s509` 或 `alias s509`  
+
+# scp+跳板机
+方法一：通过ssh -N -L 将远程端口转发到本机，再进行scp  
+方法二：scp+进行跳板机命令，以本地文件$local_path上传到远程为例  
+`scp -o ProxyCommand='ssh -q 用户名@A.A.A.A -W %h:%p' helloWord-1.0-SNAPSHOT.jar 用户名@B.B.B.B:/home/worker/`  
+用户名@A.A.A.A : ssh 登录relay是的用户名和relay机器地址  
+用户名@B.B.B.B : scp 到目标服务器的用户名和服务器地址  
+
