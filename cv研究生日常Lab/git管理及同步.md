@@ -219,3 +219,24 @@ git merge send
 ## 回滚提交
 
 1. 恢复到某一次的提交 git reset
+
+
+## 设定.gitignore
+重置git状态  
+```
+git rm -r --cached .
+git add .
+git commit -m 'update .gitignore'
+```  
+
+设定ignore规则  
+```
+#.gitignore
+# 忽略所有文件
+*
+# 不忽略目录
+!*/
+# 不忽略文件.gitignore和*.foo
+!.gitignore
+!*.foo
+```
