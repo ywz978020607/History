@@ -19,6 +19,14 @@ PriorityQueue<int[]> pq = new PriorityQueue<int[]>(new Comparator<int[]>() {
 //or simply version.
 PriorityQueue<Integer> cur = new PriorityQueue<>( (a,b)->b[0]-a[0] );//改成降序-最大堆
 链接：https://leetcode-cn.com/problems/hua-dong-chuang-kou-de-zui-da-zhi-lcof/solution/hua-dong-chuang-kou-de-zui-da-zhi-by-lee-ymyo/
+
+//遍历优先队列-迭代器
+//使用iterator()方法
+Iterator<Integer> iterate = numbers.iterator();
+while(iterate.hasNext()) {
+    System.out.print(iterate.next());
+    System.out.print(", ");
+}
 ```
 
 ###### Arrays.sort-实现基本类型降序排序-自定义Comparator
@@ -258,6 +266,10 @@ public static void main(String[] args){
 list.set(index,val);
 //排序
 Collections.sort(list); 
+
+//二维List添加-一行版
+List<List<Integer>> res = new ArrayList<>();
+res.add(new ArrayList<>(Arrays.asList(1,2)));
 ```
 
 
