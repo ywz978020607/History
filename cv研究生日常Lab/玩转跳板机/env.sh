@@ -12,7 +12,7 @@ if [ x$1 != x ];then
         echo "nojump";
     else
         temp=`eval echo '$'"jump$1"` #字符串-eval->变量
-        jump=$temp
+        jump=" -J $temp"
         echo $jump
     fi
 else
@@ -53,7 +53,10 @@ mapping(){
     then
         config="0.0.0.0:$3:$1:$2"
     fi
-    ssh -L $config ${jump/:/ -p } #ywz@467830y6j3.zicp.vip -p 32027;
+    mapcmd="ssh -L $config ${jump/:/ -p }" #ywz@467830y6j3.zicp.vip -p 32027;
+    mapcmd=${mapcmd/-J/}
+    echo $mapcmd
+    $mapcmd
 }
 
 
