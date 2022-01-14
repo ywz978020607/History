@@ -40,10 +40,9 @@ alias sywz="ssh ywz@$ipywz $jump"
 
 
 # 端口映射 scp跳板机-将本机端口 通过跳板机映射到某个机器ip上的某个端口
-#ssh -L 0.0.0.0:9000:10.130.159.113:22 ywz@467830y6j3.zicp.vip -p 32027
-
-# 参考eg:$>mapping 10.130.159.113 9050 或者eg:$>mapping $ip518 9050
+# ssh -L 0.0.0.0:9000:10.130.159.113:22 ywz@467830y6j3.zicp.vip -p 32027
 # alias mapping='_a(){ ssh -L 0.0.0.0:$2:$1:22 ywz@467830y6j3.zicp.vip -p 32027; }; _a'
+# 参考eg:$>mapping 10.130.159.113 9050 或者eg:$>mapping $ip518 9050
 # 又或eg: $>mapping $ip518 22 9050 #将$ip518:22 映射到本机9050端口
 # 参数说明: mapping [内网机器-ip] [内网机器-端口-默认22] [自定义映射到本机的端口]
 mapping(){
