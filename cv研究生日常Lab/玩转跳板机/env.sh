@@ -1,17 +1,29 @@
 # ssh ywz@467830y6j3.zicp.vip -p 32027
-# --------外网----------
-alias j207="ssh ywz@467830y6j3.zicp.vip -p 32027"
-alias j3090="ssh ywz@467830y6j3.zicp.vip -p 57009"
-alias j509="ssh ywz@370581k45d.wicp.vip -p 57526"
-alias s220="ssh yangwenzhe@183.129.176.220"
+# --------跳板机配置-------
+jump1="ywz@467830y6j3.zicp.vip:32027"
+jump2="ywz@467830y6j3.zicp.vip:57009"
+jump3="ywz@370581k45d.wicp.vip:57526"
 
 # 跳板机-ssh-输入额外参数则表示不选择跳板机而使用内网
-if [ x$1 != x ];then 
-    #有参数$1  eg:$>. env.sh nojump #注意输入". "
-    jump=""
+# 默认1号跳板机 可输入参数 #eg:$>. env.sh nojump/1/2/3 #注意输入". "
+if [ x$1 != x ];then
+    if [ $1 == "nojump" ];then
+        jump=""
+        echo "nojump";
+    else
+        temp=`eval echo '$'"jump$1"` #字符串-eval->变量
+        jump=$temp
+        echo $jump
+    fi
 else
-    jump=" -J ywz@467830y6j3.zicp.vip:32027"
+    jump=" -J $jump1" #默认
 fi
+# ----外网&跳板机直连----
+alias s220="ssh yangwenzhe@183.129.176.220"
+alias j207="ssh ${jump1/:/ -p }"
+alias j3090="ssh ${jump2/:/ -p }"
+alias j509="ssh ${jump3/:/ -p }"
+
 
 
 # --------内网----------
@@ -27,11 +39,24 @@ alias sdyf="ssh dyf@$ipdyf $jump"
 alias sywz="ssh ywz@$ipywz $jump"
 
 
-# scp跳板机-将本机端口$2通过跳板机映射到某个机器ip:$1上的某个端口-port:22
+# 端口映射 scp跳板机-将本机端口 通过跳板机映射到某个机器ip上的某个端口
 #ssh -L 0.0.0.0:9000:10.130.159.113:22 ywz@467830y6j3.zicp.vip -p 32027
-alias local='_a(){ ssh -L 0.0.0.0:$2:$1:22 ywz@467830y6j3.zicp.vip -p 32027; }; _a'
-# 参考eg:$>local 10.130.159.113 9000
-# 或者eg:$>local $ip518 9050
+
+# 参考eg:$>mapping 10.130.159.113 9050 或者eg:$>mapping $ip518 9050
+# alias mapping='_a(){ ssh -L 0.0.0.0:$2:$1:22 ywz@467830y6j3.zicp.vip -p 32027; }; _a'
+# 又或eg: $>mapping $ip518 22 9050 #将$ip518:22 映射到本机9050端口
+# 参数说明: mapping [内网机器-ip] [内网机器-端口-默认22] [自定义映射到本机的端口]
+mapping(){
+    if [ $# == 2 ]
+    then
+        config="0.0.0.0:$2:$1:22"
+    elif [ $# == 3 ]
+    then
+        config="0.0.0.0:$3:$1:$2"
+    fi
+    ssh -L $config ${jump/:/ -p } #ywz@467830y6j3.zicp.vip -p 32027;
+}
+
 
 # ---------git----------
 # git同步命令
