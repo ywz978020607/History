@@ -1,0 +1,60 @@
+#-------------jump-server-----------
+#跳板机名称，可以随便取
+Host phddns-207
+  #跳板机ip
+  HostName 467830y6j3.zicp.vip
+  #登入的用户名，可以不是root
+  User ywz
+  #上文提到的sshd服务端口
+  Port 32027
+
+Host phddns-3090
+  #跳板机ip
+  HostName 467830y6j3.zicp.vip
+  #登入的用户名，可以不是root
+  User ywz
+  #上文提到的sshd服务端口
+  Port 32027
+
+# Host phddns-509
+#   HostName cn-hn-dx-1.natfrp.cloud
+#   User ywz
+#   Port 56603
+
+#--------------host--------------
+Host s518
+  HostName 10.135.6.78
+  User ywz
+  Port 22
+  ProxyCommand ssh -W %h:%p phddns-207
+
+Host s509
+  HostName 10.134.162.159
+  User ywz
+  Port 22
+  ProxyCommand ssh -W %h:%p phddns-207
+
+Host dyf
+  HostName 10.130.156.238
+  User dyf
+  Port 22
+  ProxyCommand ssh -W %h:%p phddns-207
+
+Host s220
+  HostName 183.129.176.220
+  User yangwenzhe
+  Port 22
+
+#-----------git-------------
+# gitee
+Host gitee.com
+HostName gitee.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa.gitee
+
+# github
+Host github.com
+HostName github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa.github
+ProxyCommand connect -S 127.0.0.1:10808 -a none %h %p #win-dns解析失败时设置走本机socks代理
