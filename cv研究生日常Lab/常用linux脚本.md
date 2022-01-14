@@ -144,6 +144,7 @@ supervisorctl reload #最后重新载入配置
 HostA(本机)$ ssh -L 0.0.0.0:PortA:HostC:PortC  user@HostB -p port
 ```  
 这时访问 HostA:PortA 相当于访问 HostC:PortC。  
+例如：`ssh -L 0.0.0.0:9000:10.130.159.113:22 ywz@467830y6j3.zicp.vip -p 32027`  
 
 方法二：scp+进行跳板机命令，以本地文件$local_path上传到远程为例  
 `scp -o ProxyCommand='ssh -q 用户名@A.A.A.A -W %h:%p' helloWord-1.0-SNAPSHOT.jar 用户名@B.B.B.B:/home/worker/`  
