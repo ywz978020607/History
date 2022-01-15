@@ -1,3 +1,13 @@
+## 控制台输出同时输出日志
+`<command> 2>&1 | tee <logfile>`
+加入-a参数表示追加  
+## 仅输出到日志
+`<command> 2>&1 >/dev/null | tee logfile`
+加入-a参数表示追加  
+
+## 打印时间
+date +%Y%m%d-%H:%M:%S  
+
 ## 查看当前目录下的文件个数：
 
 ls -l ./|grep "^-"|wc -l

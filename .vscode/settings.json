@@ -11,5 +11,6 @@
     ],
     "python.analysis.extraPaths": [
         "C:\\Users\\ywzsu\\.vscode\\extensions\\rt-thread.rt-thread-micropython-0.2.2\\microExamples\\code-completion"
-    ]
+    ],
+    "files.eol": "\n"
 }
