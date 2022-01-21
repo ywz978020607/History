@@ -1,0 +1,1 @@
+wsl sh ~/s.sh
