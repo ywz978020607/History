@@ -71,6 +71,37 @@ mapping(){
 alias sync="git add -A && git commit -m 'up' && git push origin master"
 
 
+
+# ----------使用帮助--------
+help(){
+    echo """
+    #建议看env.sh代码及注释
+    #1.初始化配置(必须)
+    . env.sh        #使用默认1号跳板机
+    . env.sh 3      #使用3号跳板机
+    . env.sh nojump #不使用跳板机，如已经在内网中可使用此项
+
+    #2.直接连接跳板机本身(可选)
+    j2      #ssh连接2号跳板机
+    s220    #ssh连接到本身可公网直连的服务器
+
+    #3.连接内网机器(可选)
+    s518    #第一步中选择的跳板机/无跳板机进行内网机器ssh连接
+
+    #4.映射内网机器端口(可选)
+    # mapping函数主要用来端口映射，方便scp/sftp/打开浏览器查看面板等高级操作
+    mapping $ip518 22 9050 #将内网机器的22端口(默认 可缺省) 映射到本机的9050端口
+
+
+    #5.查看配置的内网机器ip(可选)
+    echo $ip518
+
+    #6.查看使用说明(可选)
+    help
+    """
+}
+
+
 # 参考
 # alias j1="ssh ${jump1/:/ -p }" => ssh ywz@467830xxx3.zicp.vip -p 32xxx
 # ssh ywz@10.135.6.78 -J ywz@467830y6j3.zicp.vip:32027
