@@ -38,7 +38,7 @@ help
 
 ## 3. mobaxterm-配置-仅限win用户
 ### 3.1端口映射  
-<img src=".img/chuantou.png" style="zoom:50%;" /><br>  
+<img src=".img/chuantou.png" style="zoom:30%;" /><br>  
 原理参考env.sh中端口映射mapping函数，改为图形化操作：将本地端口映射到远程内网机ip+端口  
 
 ### 3.2跳板机代理ssh  
