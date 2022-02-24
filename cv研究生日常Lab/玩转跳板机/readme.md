@@ -3,7 +3,7 @@
 ## 1. vscode版配置
 见[config](./config)，将vscode的远程配置进行参考修改，再远程即可  
 
-## 2. 类linux-命令行版配置
+## 2. 类linux-命令行版配置 -- 多机器推荐
 见[env.sh](./env.sh)  
 兼容IPAD/IOS-iSH软件(Alphine系统)，安卓-AidLux/Termux，以及WIN-WSL，MACOS等  
 具体ip请根据各自情况修改配置，建议看env.sh注释  
