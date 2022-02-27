@@ -6,7 +6,7 @@ help(){
     #1.初始化配置(必须)
     . env.sh        #使用默认1号跳板机
     . env.sh 3      #使用3号跳板机
-    . env.sh nojump #不使用跳板机，如已经在内网中/需要多个跳板机时建议使用此项
+    . env.sh nojump #不使用跳板机，如已经在内网中/需要多级跳板可使用此项
 
     #2.直接连接跳板机本身(可选)
     j2      #ssh连接2号跳板机
@@ -15,14 +15,15 @@ help(){
     #3.连接内网机器(可选)
     s518    #第一步中选择的跳板机/无跳板机进行内网机器ssh连接
     ###多级跳板ssh[注意规则]
-    s518 ,$jump2,$jump3 #第一跳为第一步选择的跳板机 之后的跳板机输命令时按需要的顺序即可
-    ssh ywz@$ip518 -J $jump1,$jump2,$jump3 #与上一句命令效果相同(假设第一步选择的jump1)
+    s518 -J $jump2,$jump3 #第一步选择nojump参数  跳接顺序: jump2->jump3->ip518
+    s518 ,$jump2,$jump3 #第一跳为第一步选择的跳板机(非空, 假设选择jump1) 之后的跳板机输命令时按需要的顺序即可
+    ssh ywz@$ip518 -J $jump1,$jump2,$jump3 #与上一句命令效果相同 顺序为: jump1->jump2->jump3->ip518
 
     #4.映射内网机器端口(可选)
     # mapping函数主要用来端口映射，方便scp/sftp/打开浏览器查看面板等高级操作 搭配本机ip固定127.0.0.1进一步使用
     mapping $ip518 22 9050 #将内网机器的22端口(默认ssh端口) 映射到本机的9050端口
     ###多级跳板后映射机器端口[注意规则]
-    mapping $ip518 22 9050 $jump1,$jump2 #端口映射多级跳转规则: mapping的第四个参数为优先跳板列表, 最后再以第一步中选择的跳板机为最后一跳
+    mapping $ip518 22 9050 $jump2,$jump3 #端口映射多级跳转规则, 第一跳为第一步选择的跳板机,之后的跳板机输命令时按需要的顺序即可
 
     #5.查看配置的内网机器ip(可选)
     echo $ip518
@@ -92,15 +93,33 @@ mapping(){
     then
         config="0.0.0.0:$3:$1:$2" #config="0.0.0.0:$2:$1:22"
         mapcmd="ssh -L $config ${jump/:/ -p }" #ywz@467830y6j3.zicp.vip -p 32027;
+        mapcmd=${mapcmd/-J/}
     elif [ $# == 4 ]
     then
         config="0.0.0.0:$3:$1:$2"
-        mapcmd="ssh -L $config ${jump/:/ -p } -J $4" #ywz@467830y6j3.zicp.vip -p 32027;
+        str="$4"  
+        arr=(${str//,/ })  
+        concatjump="$jump"
+        concatjump=${concatjump/-J/}
+        for(( i=0;i<${#arr[@]}-1;i++ ))  
+        do  
+            echo ${arr[i]}  
+            concatjump="$concatjump,${arr[i]}"
+        done
+        finalone="${arr[${#arr[@]}-1]}"
+        if [ $concatjump=="" ]
+        then
+            mapcmd="ssh -L $config ${finalone/:/ -p }"
+        else
+            mapcmd="ssh -L $config ${finalone/:/ -p } -J $concatjump"
+        fi
     fi
-    mapcmd=${mapcmd/-J/}
     echo $mapcmd
     $mapcmd
 }
+
+
+
 
 
 # ---------git----------
