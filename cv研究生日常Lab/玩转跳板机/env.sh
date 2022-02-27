@@ -91,9 +91,15 @@ alias sdyf="ssh dyf@$ipdyf $jump"
 mapping(){
     if [ $# == 3 ]
     then
-        config="0.0.0.0:$3:$1:$2" #config="0.0.0.0:$2:$1:22"
-        mapcmd="ssh -L $config ${jump/:/ -p }" #ywz@467830y6j3.zicp.vip -p 32027;
-        mapcmd=${mapcmd/-J/}
+        if [ $jump=="" ]
+        then
+            mapcmd=""
+            echo "need one jumper at least in mapping!"
+        else
+            config="0.0.0.0:$3:$1:$2" #config="0.0.0.0:$2:$1:22"
+            mapcmd="ssh -L $config ${jump/:/ -p }" #ywz@467830y6j3.zicp.vip -p 32027;
+            mapcmd=${mapcmd/-J/}
+        fi
     elif [ $# == 4 ]
     then
         config="0.0.0.0:$3:$1:$2"
