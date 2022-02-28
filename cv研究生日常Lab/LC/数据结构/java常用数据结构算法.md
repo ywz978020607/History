@@ -79,11 +79,11 @@ java中使用`>>>1`  c++中用unsigned int
 ###### Random
 
 Math.random()  返回double[0,1)
+(int)(start + Math.random()*length); // [start, start + length)
 
 或
 
 Random rand = new Random(25); //25是种子，随便给
-
 rand.nextInt(100); //返回0-100的整数，不包括100
 
 ###### 调试手段 -- playground
