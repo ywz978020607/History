@@ -6,7 +6,8 @@ public class SortMethods {
         if (start>=end){
             return;
         }
-        int mid = (start+end)/2;
+        // int mid = (start+end)/2;
+        int mid = start + (int)(Math.random() * (end - start)); //随机快排
         int sel_val = nums[mid];
         nums[mid] = nums[end];
         nums[end] = sel_val;
