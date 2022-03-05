@@ -5,11 +5,9 @@ import psutil
 file_name = '/var/www/html/status.txt'
 
 def task1():
-    
-
     out_cpu = psutil.cpu_percent(1)
     out_mem = psutil.virtual_memory().percent
-    
+
     p = os.popen('nvidia-smi')
 
     out = p.read()
@@ -52,33 +50,33 @@ def task1():
 
     # print(all_data)
     # print(gpu_data)
-
+    write_out = ""
     #write
     f= open(file_name,'w')
-    f.write(str(time.asctime( time.localtime(time.time()) ))+"\n")
-    f.write("============================\n")
-    f.write("Server Name:\t509\n")
-    f.write("============================\n")
-    f.write("CPU:"+str(out_cpu)+"%\tMEM:"+str(out_mem)+"%\n")
-    f.write("============================\n")
-    
+    write_out += (str(time.asctime( time.localtime(time.time()) ))+"\n")
+    write_out += ("============================\n")
+    write_out += ("Server Name:\t509\n")
+    write_out += ("============================\n")
+    write_out += ("CPU:"+str(out_cpu)+"%\tMEM:"+str(out_mem)+"%\n")
+    write_out += ("============================\n")
     for ii in range(len(gpu_data)):
         for jj in range(len(gpu_data[ii])):
             if jj!=0:
-                f.write('\t')
-            f.write(gpu_data[ii][jj])
-        f.write('\n')
-    f.write("============================\n")
-    f.write("============================\n")
+                write_out += ('\t')
+            write_out += (gpu_data[ii][jj])
+        write_out += ('\n')
+    write_out += ("============================\n")
+    write_out += ("============================\n")
     keys1 = list(all_data.keys())
     for ii in range(len(keys1)):
-        f.write(keys1[ii]+":\n")
+        write_out += (keys1[ii]+":\n")
         keys2 = list(all_data[keys1[ii]])
         for jj in range(len(keys2)):
-            f.write('\t'+keys2[jj]+"--"+str(all_data[keys1[ii]][keys2[jj]])+"MiB\n")
-        f.write("----------------------------\n")
+            write_out += ('\t'+keys2[jj]+"--"+str(all_data[keys1[ii]][keys2[jj]])+"MiB\n")
+        write_out += ("----------------------------\n")
+    f.write_out(write_out)
     f.close()
-
+    # print(write_out)
 
 ############
 while 1:
