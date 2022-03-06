@@ -1,5 +1,20 @@
-# 使用命令行管理蓝牙设备断开/链接
+# 使用命令行管理蓝牙设备连接/断开
 
+## 效果
+```
+    help()      #使用帮助
+
+    . bt.sh     #默认设备自动开/关  
+
+    . bt.sh a   #airpods自动开/关  
+    . bt.sh x   #xm3自动开/关  
+
+    . bt.sh x q #xm3进行查询  
+    . bt.sh x 1 #xm3进行开  
+    . bt.sh x 0 #xm3进行关  
+```
+
+## 步骤
 1. 安装工具 http://bluetoothinstaller.com/bluetooth-command-line-tools/  
 2. 使用安装好的command line tools进入后查看对应设备的地址btdiscovery
 ```
