@@ -1,6 +1,10 @@
 # python watch_alert.py 4.5 ywzsunny@buaa.edu.cn all  # 阈值/G 邮箱 监控显卡
 # python watch_alert.py 8 ywzsunny@buaa.edu.cn all xxxx # 阈值/G 邮箱 监控显卡 自定义额外通知内容xxxx
 
+# 用法二：
+#可嵌入任何脚本结束
+# [python xxx(你的脚本) ]   && python -c "from watch_alert import alert; alert('978020607@qq.com')"
+
 import os
 import time
 # import psutil
@@ -9,27 +13,6 @@ from smtplib import SMTP, SMTP_SSL # pip install PyEmail
 from email.header import Header
 from email.mime.text import MIMEText
 
-free_shreshold = 8 #G
-if len(sys.argv) > 1:
-    free_shreshold = float(sys.argv[1])
-print("free_shreshold/G:",str(free_shreshold))
-
-user_email = "ywzsunny@buaa.edu.cn"
-if len(sys.argv) > 2:
-    user_email = str(sys.argv[2])
-print("user_email:",user_email)
-
-watch_gpu = "all"
-if len(sys.argv) > 3:
-    watch_gpu = str(sys.argv[3])
-print("watch_gpu:",watch_gpu)
-
-append_alert_context = ""
-if len(sys.argv) > 4:
-    append_alert_context = "\n" + str(sys.argv[4])
-    print("append_alert_context:",append_alert_context)
-
-# file_name = '/var/www/html/status.txt'
 
 def task1():
     # out_cpu = psutil.cpu_percent(1)
@@ -61,7 +44,7 @@ def task1():
                 return True
     return False
 
-def alert(receiver, alert_context="显卡已空闲！"):
+def alert(receiver, alert_context="服务器脚本提醒-"):
 	# 请自行修改下面的邮件发送者和接收者
 	sender = '978020607@qq.com'  # 发送者的邮箱地址
 	receivers = [receiver]  # 接收者的邮箱地址
@@ -79,6 +62,26 @@ def alert(receiver, alert_context="显卡已空闲！"):
 
 ############
 if __name__ == "__main__":
+    free_shreshold = 8 #G
+    if len(sys.argv) > 1:
+        free_shreshold = float(sys.argv[1])
+        print("free_shreshold/G:",str(free_shreshold))
+
+    user_email = "ywzsunny@buaa.edu.cn"
+    if len(sys.argv) > 2:
+        user_email = str(sys.argv[2])
+        print("user_email:",user_email)
+
+    watch_gpu = "all"
+    if len(sys.argv) > 3:
+        watch_gpu = str(sys.argv[3])
+        print("watch_gpu:",watch_gpu)
+
+    append_alert_context = ""
+    if len(sys.argv) > 4:
+        append_alert_context = "\n" + str(sys.argv[4])
+        print("append_alert_context:",append_alert_context)
+
     while 1:
         status = task1()
         if status:

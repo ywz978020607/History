@@ -37,6 +37,12 @@ CPU:96.2%       MEM:88.6%
 # python watch_alert.py 4.5 ywzsunny@buaa.edu.cn all  # 阈值/G 邮箱 监控显卡
 ```
 
+# 监控命令结束后发送通知（脚本同上）
+```
+#可嵌入任何脚本结束
+# [python xxx(你的脚本) ]   && python -c "from watch_alert import alert; alert('978020607@qq.com')"
+```
+
 
 # 集群逐个配置保存文件&nginx反代，一次性查看所有服务器的情况（运维版）
 
