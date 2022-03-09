@@ -30,6 +30,12 @@ CPU:96.2%       MEM:88.6%
 
 ```
 
+# 监控显卡情况并发送邮件提醒（个人版）
+```
+# python email_watch.py 4.5 ywzsunny@buaa.edu.cn all  # 阈值/G 邮箱 监控显卡
+```
+
+
 # 集群逐个配置保存文件&nginx反代，一次性查看所有服务器的情况（运维版）
 
 default: nginx配置文件
