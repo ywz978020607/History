@@ -42,8 +42,8 @@ def task1():
     
     #deal free
     for ii in range(len(gpu_data)):
-        gpu_id = str(gpu_data[0]).strip()
-        catstr = "".join(gpu_data[1:]).strip().upper().replace("MIB","") #xxx / xxx
+        gpu_id = str(gpu_data[ii][0]).strip()
+        catstr = "".join(gpu_data[ii][1:]).strip().upper().replace("MIB","") #xxx / xxx
         size_list = catstr.split("/")
         used_size = float(size_list[0].strip())
         all_size = float(size_list[-1].strip())
