@@ -1,4 +1,5 @@
 # python watch_alert.py 4.5 ywzsunny@buaa.edu.cn all  # 阈值/G 邮箱 监控显卡
+# python watch_alert.py 8 ywzsunny@buaa.edu.cn all xxxx # 阈值/G 邮箱 监控显卡 自定义额外通知内容xxxx
 
 import os
 import time
@@ -23,6 +24,10 @@ if len(sys.argv) > 3:
     watch_gpu = str(sys.argv[3])
 print("watch_gpu:",watch_gpu)
 
+append_alert_context = ""
+if len(sys.argv) > 4:
+    append_alert_context = "\n" + str(sys.argv[4])
+    print("append_alert_context:",append_alert_context)
 
 # file_name = '/var/www/html/status.txt'
 
@@ -77,6 +82,6 @@ if __name__ == "__main__":
     while 1:
         status = task1()
         if status:
-            alert(receiver = user_email)
+            alert(receiver = user_email, alert_context = "显卡已空闲！" + append_alert_context)
             break
         time.sleep(20)
