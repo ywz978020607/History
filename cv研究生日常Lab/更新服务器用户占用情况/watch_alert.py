@@ -94,6 +94,10 @@ if __name__ == "__main__":
     while 1:
         status = task1()
         if status:
-            alert(receiver = user_email, alert_context = "显卡已空闲！" + append_alert_context)
-            break
-        time.sleep(20)
+            #延时校验
+            time.sleep(30)
+            status = task1()
+            if status:
+                alert(receiver = user_email, alert_context = "显卡已空闲！" + append_alert_context)
+                break
+        time.sleep(30)
