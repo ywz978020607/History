@@ -3,7 +3,7 @@
 
 # 用法二：
 #可嵌入任何脚本结束
-# [python xxx(你的脚本) ]   && python -c "from watch_alert import alert; alert('978020607@qq.com')"
+# [python xxx(你的脚本) ]   && python /xxxx/watch_alert.py xxxx@qq.com xxxx
 
 import os
 import time
@@ -64,8 +64,17 @@ def alert(receiver, alert_context="服务器脚本提醒-"):
 if __name__ == "__main__":
     free_shreshold = 8 #G
     if len(sys.argv) > 1:
-        free_shreshold = float(sys.argv[1])
-        print("free_shreshold/G:",str(free_shreshold))
+        if '@' in str(sys.argv[1]):
+            # 参数1为邮箱-> 附在脚本后直接通知的用法
+            last_append = ""
+            if len(sys.argv) > 2:
+                last_append = str(sys.argv[2])
+            alert(str(sys.argv[1]),"脚本运行结束" + last_append)
+            sys.exit() #end
+        else:
+            #显卡监听模式--normal
+            free_shreshold = float(sys.argv[1])
+            print("free_shreshold/G:",str(free_shreshold))
 
     user_email = "ywzsunny@buaa.edu.cn"
     if len(sys.argv) > 2:

@@ -39,8 +39,8 @@ CPU:96.2%       MEM:88.6%
 
 # 监控命令结束后发送通知（脚本同上）
 ```
-#可嵌入任何脚本结束
-# [python xxx(你的脚本) ]   && python -c "from watch_alert import alert; alert('978020607@qq.com')"
+#可嵌入任何脚本结束  追加watch_alert.py(非同级可用绝对路径)、邮箱、追加信息(可选)
+# [python xxx(你的脚本) ]   && python /xxxx/watch_alert.py xxxx@qq.com xxxx
 ```
 
 
