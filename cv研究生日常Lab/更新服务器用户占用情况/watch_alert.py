@@ -1,9 +1,10 @@
-# python email_watch.py 4.5 ywzsunny@buaa.edu.cn all  # 阈值/G 邮箱 监控显卡
+# python watch_alert.py 4.5 ywzsunny@buaa.edu.cn all  # 阈值/G 邮箱 监控显卡
+
 import os
 import time
 # import psutil
 import sys
-from smtplib import SMTP, SMTP_SSL
+from smtplib import SMTP, SMTP_SSL # pip install PyEmail
 from email.header import Header
 from email.mime.text import MIMEText
 

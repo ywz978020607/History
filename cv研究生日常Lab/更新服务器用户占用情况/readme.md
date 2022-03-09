@@ -32,7 +32,9 @@ CPU:96.2%       MEM:88.6%
 
 # 监控显卡情况并发送邮件提醒（个人版）
 ```
-# python email_watch.py 4.5 ywzsunny@buaa.edu.cn all  # 阈值/G 邮箱 监控显卡
+# 安装email包   pip install PyEmail
+# 执行demo
+# python watch_alert.py 4.5 ywzsunny@buaa.edu.cn all  # 阈值/G 邮箱 监控显卡
 ```
 
 
