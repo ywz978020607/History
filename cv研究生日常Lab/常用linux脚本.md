@@ -161,3 +161,8 @@ HostA(本机)$ ssh -L 0.0.0.0:PortA:HostC:PortC  user@HostB -p port
 用户名@A.A.A.A : ssh 登录relay是的用户名和relay机器地址  
 用户名@B.B.B.B : scp 到目标服务器的用户名和服务器地址  
 
+
+# 走win的代理
+export ALL_PROXY=socks5://10.136.150.144:10808
+curl cip.cc #测试
+unset ALL_PROXY #取消代理
