@@ -10,5 +10,6 @@ def auto_import(arg_dict={}, argv_str=""):
     parser = argparse.ArgumentParser()
     for key in arg_dict:
         parser.add_argument('--'+key.replace("_","-"), type=type(arg_dict[key]), default=arg_dict[key])
+        parser.add_argument('--'+key, type=type(arg_dict[key]), default=arg_dict[key])
     args = parser.parse_args(argv_str)
     return vars(args)
