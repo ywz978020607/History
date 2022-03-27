@@ -166,3 +166,10 @@ HostA(本机)$ ssh -L 0.0.0.0:PortA:HostC:PortC  user@HostB -p port
 export ALL_PROXY=socks5://10.136.150.144:10808
 curl cip.cc #测试
 unset ALL_PROXY #取消代理
+
+# 默认开机开启/关闭图形界面
+#临时方式可以用init 3/5 #cmd/UI
+#默认下次开机后cmd
+sudo systemctl set-default multi-user.target
+#默认下次开机后UI
+sudo systemctl set-default graphical.target
