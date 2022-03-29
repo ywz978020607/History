@@ -1,5 +1,10 @@
 
 # 1.用户操作
+
+不同cuda的docker版本和拉取链接参考  
+https://hub.docker.com/r/nvidia/cuda/tags
+
+
 ```
 查看mydocker/build.sh 填补需要的命令和修改对应的路径名等信息
 . env.sh
@@ -22,9 +27,6 @@ apt-get update
 apt-get install -y nvidia-docker2
 apt-get install -y docker-compose
 ```
-
-不同cuda的docker版本和拉取链接参考  
-https://hub.docker.com/r/nvidia/cuda/tags
 
 ## docker命令权限设置
 1、需要先允许所有人执行docker命令  
