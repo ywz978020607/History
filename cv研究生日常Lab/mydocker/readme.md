@@ -1,4 +1,16 @@
-# 宿主机部分
+
+# 1.用户操作
+```
+查看mydocker/build.sh 填补需要的命令和修改对应的路径名等信息
+. env.sh
+build
+#运行容器-见env.sh封装
+start/debug/site
+```
+
+
+# 2.配置完整过程，非管理员可忽略  
+## 宿主机安装
 显卡驱动装最新版本，不需要管cuda和cudnn  
 安装好docker,之后安装nvidia-docker和docker-compose  
 ```
@@ -14,8 +26,7 @@ apt-get install -y docker-compose
 不同cuda的docker版本和拉取链接参考  
 https://hub.docker.com/r/nvidia/cuda/tags
 
-# docker
-## 1. 管理员操作
+## docker命令权限设置
 1、需要先允许所有人执行docker命令  
 sudo groupadd docker  
 2、把用户添加进docker组中  
@@ -25,11 +36,3 @@ sudo service docker restart
 4、如果普通用户执行docker命令，如果提示get …… dial unix /var/run/docker.sock权限不够，则修改/var/run/docker.sock权限
 使用root用户执行如下命令，即可
 sudo chmod a+rw /var/run/docker.sock
-
-## 2. 用户操作
-查看mydocker/build.sh 填补需要的命令和修改对应的路径名等信息
-. env.sh
-build
-#运行容器-见env.sh封装
-start/debug/site
-
