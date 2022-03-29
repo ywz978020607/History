@@ -1,4 +1,10 @@
 
+# *.docker改造目的
+- 保证数据安全性
+- 快速支持多版本cuda
+- 支持跨机器环境迁移
+- 方便管理和用户隔离
+
 # 1.用户操作
 
 不同cuda的docker版本和拉取链接参考  
@@ -21,6 +27,13 @@ docker attach [CONTAINER_NAME or CONTAINER_ID]
 #热芝士:退出时，使用[ctrl + D]，这样会结束docker当前线程，容器结束，可以使用[ctrl + P][ctrl + Q]退出而不终止容器运行
 ```
 
+- 迁移docker-兼容性较好，可打包镜像直接迁到其他机器运行容器
+```
+#如果替换可以不输[:标签]
+docker commit -m="描述信息" -a="username" 容器名称|容器ID 生成的镜像名[:标签名]
+docker save -o savePathName_xxx.tar 镜像名[:标签] 
+docker load -i xxxx.tar
+```
 
 # 2.配置完整过程，非管理员可忽略  
 ## 宿主机安装
