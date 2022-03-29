@@ -6,11 +6,15 @@ https://hub.docker.com/r/nvidia/cuda/tags
 
 
 ```
+（可选）推荐在Dockefile-编译镜像不执行build.sh以最小化镜像, 在进入容器后手动执行sh /tmp/build.sh  
+
 查看mydocker/build.sh 填补需要的命令和修改对应的路径名等信息
 . env.sh
 build
 #运行容器-见env.sh封装
 start/debug/site  
+
+sh /tmp/build.sh #在此处进行环境搭建，最小化镜像
 
 #重新连接  
 docker attach [CONTAINER_NAME or CONTAINER_ID]
