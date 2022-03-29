@@ -11,6 +11,8 @@ https://hub.docker.com/r/nvidia/cuda/tags
 build
 #运行容器-见env.sh封装
 start/debug/site
+
+#热芝士:退出时，使用[ctrl + D]，这样会结束docker当前线程，容器结束，可以使用[ctrl + P][ctrl + Q]退出而不终止容器运行
 ```
 
 
@@ -38,3 +40,4 @@ sudo service docker restart
 4、如果普通用户执行docker命令，如果提示get …… dial unix /var/run/docker.sock权限不够，则修改/var/run/docker.sock权限
 使用root用户执行如下命令，即可
 sudo chmod a+rw /var/run/docker.sock
+#恢复则刷660
