@@ -10,8 +10,10 @@ https://hub.docker.com/r/nvidia/cuda/tags
 . env.sh
 build
 #运行容器-见env.sh封装
-start/debug/site
+start/debug/site  
 
+#重新连接  
+docker attach [CONTAINER_NAME or CONTAINER_ID]
 #热芝士:退出时，使用[ctrl + D]，这样会结束docker当前线程，容器结束，可以使用[ctrl + P][ctrl + Q]退出而不终止容器运行
 ```
 
