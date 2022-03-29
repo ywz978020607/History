@@ -1,0 +1,11 @@
+version: '3'
+services:
+  ywz_cuda11_1:
+    build: .
+    container_name: ywz_cuda11.1
+    command: ./dev_start.sh
+    volumes:
+      - /home/ywz/test:/src
+    # expose:
+    #   - "8000"
+    restart: always
