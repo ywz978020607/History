@@ -1,5 +1,7 @@
 
-# *.docker改造目的
+# 炼丹炉容器化隔离改造
+
+# 0.改造目的
 - 保证数据安全性
 - 快速支持多版本cuda
 - 支持跨机器环境迁移
@@ -16,7 +18,7 @@ https://hub.docker.com/r/nvidia/cuda/tags
 
 #推荐在Dockefile-编译镜像不执行build.sh以最小化镜像, 在进入容器后手动执行sh /tmp/build.sh, 使用如下  
 ```
-修改Dockefile基础镜像名字、.yml文件的生成镜像名、挂载本机对应的路径名等信息后
+根据hub.docker.com找到需要的基础镜像名字，修改Dockefile第一行即可
 . env.sh # 可选加入自定义镜像前缀, eg:. env.sh ywz_cuda11_1 或 . env.sh ywz111
 build # docker images 查看当前所有镜像
 #初次运行容器-见env.sh封装 
