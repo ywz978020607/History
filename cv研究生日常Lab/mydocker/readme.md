@@ -15,9 +15,8 @@ https://hub.docker.com/r/nvidia/cuda/tags
 修改Dockefile基础镜像名字、.yml文件的生成镜像名、挂载本机对应的路径名等信息后
 . env.sh
 build
-#运行容器-见env.sh封装
-start/debug/site  
-
+#初次运行容器-见env.sh封装 
+start  #or site
 
 #...配置自己的环境，如安装anaconda/pytorch/tensorflow等，如果可以写到build.sh，也可以手动装
 sh /tmp/build.sh #在此处进行环境搭建，最小化镜像

@@ -5,6 +5,6 @@ services:
     container_name: ywz_cuda11.1
     volumes:
       - /home/ywz/test:/src
-    # expose:
-    #   - "8000"
+    expose:
+      - "8000"
     restart: always
