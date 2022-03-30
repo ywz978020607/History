@@ -74,7 +74,7 @@ sudo vim /etc/docker/daemon.json
    "default-runtime": "nvidia",  #添加这一句
    "runtimes": {
       "nvidia": {
-         "path": "/usr/bin/nvidia-container-runtime",
+         "path": "/usr/bin/nvidia-container-runtime", #保持默认不用改
          "runtimeArgs": []
       }
    },
