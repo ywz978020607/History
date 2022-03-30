@@ -4,6 +4,7 @@ services:
     build: .
     # container_name: use_it_or_not
     working_dir: /home/ywz #path in container
+    ipc: host
     volumes:
       #path in host: path in container
       - /home/ywz:/media
