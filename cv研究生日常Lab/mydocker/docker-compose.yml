@@ -11,5 +11,5 @@ services:
       - /home/ywz/test/mybackup:/home/ywz/mybackup
       - /home/ywz/test/mybackup:/root/mybackup
       - /home2/ywz/database:/home/ywz/database
-    ports:
-      # - "8000:8000"
+    # ports:
+    #   - "8000:8000"
