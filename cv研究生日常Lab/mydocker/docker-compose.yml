@@ -2,11 +2,10 @@ version: '3'
 services:
   ldl:
     build: .
-    # container_name: use_it_or_not
     working_dir: /home/ywz #path in container
     ipc: host
+    #(path/ports in host: path/ports in container)
     volumes:
-      #path in host: path in container
       - /home/ywz:/media
       - /home/ywz/test/mybackup:/home/ywz/mybackup
       - /home/ywz/test/mybackup:/root/mybackup
