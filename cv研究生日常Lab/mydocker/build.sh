@@ -11,5 +11,5 @@ pip3 install -r /tmp/requirements.txt
 # pip install pytorch or tensorflow here~
 # https://pytorch.org/get-started/previous-versions/
 # or
-# conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch #指明cuda版本即可
+# conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
 # pip3 install tensorflow
