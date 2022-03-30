@@ -78,3 +78,12 @@ sudo service docker restart
 4、如果普通用户执行docker命令，如果提示get …… dial unix /var/run/docker.sock权限不够，则修改/var/run/docker.sock权限
 使用root用户执行如下命令，即可
 sudo chmod a+rw /var/run/docker.sock #恢复则刷660
+
+## 管理员docker命令
+```
+docker ps -a
+docker ps -a -q
+#停止/删除所有容器
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+```
