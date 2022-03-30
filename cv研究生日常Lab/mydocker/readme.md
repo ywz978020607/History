@@ -79,7 +79,7 @@ sudo vim /etc/docker/daemon.json
       }
    },
    "registry-mirrors":[], #docker镜像源-可选
-   "data-root": "/temp_disk2/dockerdata", #docker镜像路径
+   "data-root": "/temp_disk2/dockerdata"   #docker镜像路径
 }
 #
 # 重启docker服务即可生效
