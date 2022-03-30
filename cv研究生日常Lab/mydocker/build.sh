@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 apt-get update
 apt-get install -y ssh git gcc g++ make tmux vim net-tools
+apt-get install -y libsm6 libxext6 libxrender-dev
 # wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.11-Linux-x86_64.sh
 
 apt-get install -y python3-pip
