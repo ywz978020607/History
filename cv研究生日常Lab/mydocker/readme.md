@@ -14,7 +14,7 @@ https://hub.docker.com/r/nvidia/cuda/tags
 ```
 （可选）推荐在Dockefile-编译镜像不执行build.sh以最小化镜像, 在进入容器后手动执行sh /tmp/build.sh  
 
-查看mydocker/build.sh 填补需要的命令和修改对应的路径名等信息
+修改Dockefile基础镜像名字、.yml文件的生成镜像名、挂载本机对应的路径名等信息后
 . env.sh
 build
 #运行容器-见env.sh封装
@@ -43,11 +43,30 @@ docker load -i xxxx.tar
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
    && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
    && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-接下来在您的主机上安装nvidia-docker2软件包：
-apt-get update
-apt-get install -y nvidia-docker2
-apt-get install -y docker-compose
+#接下来在您的主机上安装nvidia-docker2软件包：
+sudo apt-get update
+sudo apt-get install -y nvidia-docker2
+sudo apt-get install -y docker-compose
 ```
+之后修改sudo vim /etc/docker/daemon.json 
+```
+sudo vim /etc/docker/daemon.json 
+#
+{
+"default-runtime": "nvidia"  #添加这一句
+"runtimes": {
+   "nvidia": {
+      "path": "/usr/bin/nvidia-container-runtime",
+      "runtimeArgs": []
+   }
+}
+}
+#
+# 重启docker服务即可生效
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
 
 ## docker命令权限设置
 1、需要先允许所有人执行docker命令  
@@ -58,5 +77,4 @@ sudo gpasswd -a ${USER} docker
 sudo service docker restart  
 4、如果普通用户执行docker命令，如果提示get …… dial unix /var/run/docker.sock权限不够，则修改/var/run/docker.sock权限
 使用root用户执行如下命令，即可
-sudo chmod a+rw /var/run/docker.sock
-#恢复则刷660
+sudo chmod a+rw /var/run/docker.sock #恢复则刷660
