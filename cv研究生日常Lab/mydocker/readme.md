@@ -22,7 +22,7 @@ https://hub.docker.com/r/nvidia/cuda/tags
 ```
 #预处理:
 a.根据hub.docker.com找到需要的基础镜像名字，修改Dockefile第一行。
-b.根据自己的挂载需要，修改docker-compose.yml的volumes和ports(宿主机:容器)
+b.根据自己的挂载需要，修改docker-compose.yml的volumes和ports(宿主机:容器) -- 一般挂载一个代码文件和模型文件夹即可
 #
 
 . env.sh # 可选加入自定义镜像前缀, eg:. env.sh ywz_cuda11_1 或 . env.sh ywz111
