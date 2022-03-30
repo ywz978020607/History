@@ -4,7 +4,7 @@ services:
     build: .
     # container_name: use_it_or_not
     volumes:
-      - /home/ywz/test:/src
+      - /home/ywz:/src
     ports:
       - "8000:8000"
     restart: always
