@@ -3,6 +3,7 @@ services:
   ywz_cuda11_1:
     build: .
     container_name: ywz_cuda11.1
+    runtime: nvidia
     volumes:
       - /home/ywz/test:/src
     # expose:
