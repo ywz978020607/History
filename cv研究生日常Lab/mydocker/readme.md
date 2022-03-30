@@ -26,7 +26,9 @@ b.根据自己的挂载需要，修改docker-compose.yml的volumes和ports(宿�
 #
 
 . env.sh # 可选加入自定义镜像前缀, eg:. env.sh ywz_cuda11_1 或 . env.sh ywz111
-build # docker images 查看当前所有镜像
+# docker images 查看当前所有镜像
+# build # 重新编译构造镜像，谨慎
+
 #初次运行容器-见env.sh封装 
 site
 
