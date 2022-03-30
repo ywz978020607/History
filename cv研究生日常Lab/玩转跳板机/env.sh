@@ -14,16 +14,14 @@ help(){
 
     #3.连接内网机器(可选)
     s518    #第一步中选择的跳板机/无跳板机进行内网机器ssh连接
-    ###多级跳板ssh[注意规则]
-    s518 -J $jump2,$jump3 #第一步选择nojump参数  跳接顺序: jump2->jump3->ip518
-    s518 ,$jump2,$jump3 #第一跳为第一步选择的跳板机(非空, 假设选择jump1) 之后的跳板机输命令时按需要的顺序即可
-    ssh ywz@$ip518 -J $jump1,$jump2,$jump3 #与上一句命令效果相同 顺序为: jump1->jump2->jump3->ip518
+    ### 多级跳板ssh[注意规则]-无视默认选择
+    ssh ywz@$ip518 -J $jump1,$jump2,$jump3 #跳板顺序为: jump1->jump2->jump3->ip518
 
     #4.映射内网机器端口(可选)
     # mapping函数主要用来端口映射，方便scp/sftp/打开浏览器查看面板等高级操作 搭配本机ip固定127.0.0.1进一步使用
-    mapping $ip518 22 9050 #将内网机器的22端口(默认ssh端口) 映射到本机的9050端口
-    ###多级跳板后映射机器端口[注意规则]
-    mapping $ip518 22 9050 $jump2,$jump3 #端口映射多级跳转规则, 第一跳为第一步选择的跳板机,之后的跳板机输命令时按需要的顺序即可
+    mapping $ip518 22 9050 #将内网机器的22端口(默认ssh端口) 映射到本机的9050端口，使用默认跳板机
+    ### 多级跳板后映射机器端口[注意规则]-无视默认选择，但至少输入一个跳板机
+    mapping $ip518 22 9050 $jump1 $jump2 $jump3 #端口映射多级跳转规则, jump1->jump2->jump3->ip518
 
     #5.查看配置的内网机器ip(可选)
     echo $ip518
@@ -41,10 +39,11 @@ help(){
 alias s220="ssh yangwenzhe@183.129.176.220"
 
 # -------------跳板机配置--------------
-jumpnum=5
-jump1="ywz@467830y6j3.zicp.vip:32027" #207
-jump2="ywz@467830y6j3.zicp.vip:57009" #3090
-jump3="ywz@370581k45d.wicp.vip:57526" #509
+jumpnum=6
+jump0="127.0.0.1:22" #自身ssh作为跳板机
+jump1="ywz@467830y6j3.zicp.vip:32027" #30901
+jump2="ywz@467830y6j3.zicp.vip:57009" #30902
+jump3="admin@10.135.115.200:22" #nouse
 jump4="dyf@cn-zz-bgp-7.natfrp.cloud:14775" #ipdyf
 jump5="ywz@cn-hn-dx-1.natfrp.cloud:56603" #ipywz
 # --------跳板机直连[命令eg:>j1]-------
@@ -75,19 +74,33 @@ fi
 
 # -----------内网IP[变量eg:>$ip518 表示ip地址便于端口映射等]----------------
 ip518="10.135.6.78"
-ip509="10.134.162.159"
-ip3090="10.134.162.65"
+ip509="10.135.206.119"
+ip207="10.134.162.162"
+ip401="10.134.162.193"
+ip2080="10.134.162.90"
+ip930="10.134.126.158"
+ip30901="10.130.156.192"
+ip30902="10.130.158.90"
 ipdyf="10.130.157.75"
+iplty="10.135.115.200"
+ipvm="192.168.136.128"
 
 # ------------------常用: 内网跳连SSH[命令eg:>s518]-----------------------
 alias s518="ssh ywz@$ip518 $jump"
 alias s509="ssh ywz@$ip509 $jump"
+alias s207="ssh ywz@$ip207 $jump"
+alias s401="ssh ywz@$ip401 $jump"
+alias s2080="ssh ywz@$ip2080 $jump"
+alias s930="ssh ywz@$ip930 $jump"
+alias s30901="ssh ywz@$ip30901 $jump"
+alias s30902="ssh ywz@$ip30902 $jump"
 alias sdyf="ssh dyf@$ipdyf $jump"
-
+alias slty="ssh ywz@$iplty $jump"
+alias svm="ssh ywz@$ipvm"
 
 # ----------常用: 跳板机端口映射[命令eg:>mapping $ip518 22 9050]----------
 # scp跳板机-将本机端口 通过跳板机映射到某个机器ip上的某个端口
-# 参数说明: mapping [内网机器-ip] [内网机器-端口] [自定义映射到本机的端口]
+# 参数说明: mapping [内网机器-ip] [内网机器-端口] [自定义映射到本机的端口] [$jump1 $jump2 ...]
 mapping(){
     if [ $# == 3 ]
     then
@@ -100,25 +113,19 @@ mapping(){
             mapcmd="ssh -L $config ${jump/:/ -p }" #ywz@467830y6j3.zicp.vip -p 32027;
             mapcmd=${mapcmd/-J/}
         fi
-    elif [ $# == 4 ]
+    elif [ $# != 3 ]
     then
         config="0.0.0.0:$3:$1:$2"
-        str="$4"  
-        arr=(${str//,/ })  
-        concatjump="$jump"
-        concatjump=${concatjump/-J/}
-        for(( i=0;i<${#arr[@]}-1;i++ ))  
-        do  
-            echo ${arr[i]}  
-            concatjump="$concatjump,${arr[i]}"
-        done
-        finalone="${arr[${#arr[@]}-1]}"
-        if [ $concatjump=="" ]
-        then
-            mapcmd="ssh -L $config ${finalone/:/ -p }"
-        else
-            mapcmd="ssh -L $config ${finalone/:/ -p } -J $concatjump"
+        if [ $# != 4 ];then
+            concatjump=`eval echo '$'"4"`
+            for(( i=5;i<=$#-1;i++ ));
+            do  
+                tempcmd=`eval echo '$'"$i"`
+                concatjump="$concatjump,$tempcmd"
+            done
         fi
+        finalone=`eval echo '$'"$#"`
+        mapcmd="ssh -L $config ${finalone/:/ -p } -J $concatjump"
     fi
     echo $mapcmd
     $mapcmd
@@ -133,6 +140,8 @@ mapping(){
 alias sync="git add -A && git commit -m 'up' && git push origin master"
 
 
+# ---------天气预报-------
+alias wea="curl http://wttr.in"
 
 # 参考
 # alias j1="ssh ${jump1/:/ -p }" => ssh ywz@467830xxx3.zicp.vip -p 32xxx
