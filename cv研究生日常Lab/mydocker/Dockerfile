@@ -4,4 +4,3 @@ ENV NVIDIA_VISIBLE_DEVICES ALL
 ADD . /tmp
 # RUN sh /tmp/build.sh
 # RUN mkdir /src
-WORKDIR /root

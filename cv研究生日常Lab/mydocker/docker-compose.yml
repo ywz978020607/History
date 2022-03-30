@@ -3,8 +3,10 @@ services:
   ldl:
     build: .
     # container_name: use_it_or_not
+    working_dir: /home/ywz #path in container
     volumes:
-      - /home/ywz:/media #/src
+      #path in host: path in container
+      - /home/ywz:/media
+      - /home/ywz:/home/ywz
     ports:
       - "8000:8000"
-    restart: always
