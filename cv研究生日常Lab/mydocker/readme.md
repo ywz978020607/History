@@ -4,6 +4,10 @@
 - 快速支持多版本cuda
 - 支持跨机器环境迁移
 - 方便管理和用户隔离
+- 概念扫盲:
+  - dockerhub基础镜像+dockerfile=>镜像文件image(宿主机存储, 安全)   
+  - 镜像文件image + 宿主机路径挂载(实时同步)&docker-compose.yml=>容器container(重启后无状态)
+  - container-执行commit=>镜像文件image(宿主机存储)
 
 # 1.用户操作
 
@@ -14,7 +18,7 @@ https://hub.docker.com/r/nvidia/cuda/tags
 ```
 修改Dockefile基础镜像名字、.yml文件的生成镜像名、挂载本机对应的路径名等信息后
 . env.sh # 可选加入自定义镜像前缀, eg:. env.sh ywz_cuda11_1 或 . env.sh ywz111
-build
+build # docker images 查看当前所有镜像
 #初次运行容器-见env.sh封装 
 site
 
@@ -26,6 +30,7 @@ docker commit -m="描述信息" -a="username" 容器名称|容器ID 生成的镜
 
 
 #重新连接  
+docker ps -a #查看所有容器
 docker attach [CONTAINER_NAME or CONTAINER_ID]
 #热芝士:退出时，使用[ctrl + D]，这样会结束docker当前线程，容器结束，可以使用[ctrl + P][ctrl + Q]退出而不终止容器运行
 ```
