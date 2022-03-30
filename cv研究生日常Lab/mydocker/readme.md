@@ -13,10 +13,10 @@ https://hub.docker.com/r/nvidia/cuda/tags
 #推荐在Dockefile-编译镜像不执行build.sh以最小化镜像, 在进入容器后手动执行sh /tmp/build.sh, 使用如下  
 ```
 修改Dockefile基础镜像名字、.yml文件的生成镜像名、挂载本机对应的路径名等信息后
-. env.sh
+. env.sh # 可选加入自定义镜像前缀, eg:. env.sh ywz_cuda11_1 或 . env.sh ywz111
 build
 #初次运行容器-见env.sh封装 
-start  #or site
+site
 
 #...配置自己的环境，如安装anaconda/pytorch/tensorflow等，如果可以写到build.sh，也可以手动装
 sh /tmp/build.sh #在此处进行环境搭建，最小化镜像

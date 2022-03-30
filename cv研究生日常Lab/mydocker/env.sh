@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
+if [ x$1 != x ];then
+    export COMPOSE_PROJECT_NAME=$1;
+fi
 
 alias build="docker-compose build"
-
-
 # TODO: 使用脚本，包括初次使用，退出-继续运行/停止，重入等
 # alias start="docker-compose up -d"
 # alias debug="docker-compose up"
-alias start="docker-compose run --service-port ywz_cuda11_1 bash"
-alias site="docker-compose run --rm --service-port ywz_cuda11_1 bash"
+alias site="docker-compose run --service-port ldl bash"
