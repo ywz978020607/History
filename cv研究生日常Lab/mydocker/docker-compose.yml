@@ -7,6 +7,7 @@ services:
     volumes:
       #path in host: path in container
       - /home/ywz:/media
-      - /home/ywz:/home/ywz
+      - /home2/ywz/mybackup:/home/ywz/mybackup
+      - /home2/ywz/database:/home/ywz/database
     ports:
       - "8000:8000"
