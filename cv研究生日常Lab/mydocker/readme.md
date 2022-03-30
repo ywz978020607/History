@@ -10,17 +10,21 @@
 不同cuda的docker版本和拉取链接参考  
 https://hub.docker.com/r/nvidia/cuda/tags
 
-
+#推荐在Dockefile-编译镜像不执行build.sh以最小化镜像, 在进入容器后手动执行sh /tmp/build.sh, 使用如下  
 ```
-（可选）推荐在Dockefile-编译镜像不执行build.sh以最小化镜像, 在进入容器后手动执行sh /tmp/build.sh  
-
 修改Dockefile基础镜像名字、.yml文件的生成镜像名、挂载本机对应的路径名等信息后
 . env.sh
 build
 #运行容器-见env.sh封装
 start/debug/site  
 
+
+#...配置自己的环境，如安装anaconda/pytorch/tensorflow等，如果可以写到build.sh，也可以手动装
 sh /tmp/build.sh #在此处进行环境搭建，最小化镜像
+#注意:首次配置完成后，一定要运行以下命令
+docker commit -m="描述信息" -a="username" 容器名称|容器ID 生成的镜像名
+#将配置好的容器环境提交并替换个人镜像，之后无论容器/宿主机重启，直接进入容器不需要重新配置环境
+
 
 #重新连接  
 docker attach [CONTAINER_NAME or CONTAINER_ID]
@@ -59,7 +63,9 @@ sudo vim /etc/docker/daemon.json
          "path": "/usr/bin/nvidia-container-runtime",
          "runtimeArgs": []
       }
-   }
+   },
+   "registry-mirrors":[], #docker镜像源-可选
+   "data-root": "/temp_disk2/dockerdata", #docker镜像路径
 }
 #
 # 重启docker服务即可生效
