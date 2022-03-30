@@ -11,6 +11,7 @@
   - 镜像文件image + 宿主机路径挂载(实时同步)&docker-compose.yml=>容器container(重启后无状态)
   - container-执行commit=>镜像文件image(宿主机存储)
   - 修改dockerfile需要重新编译build，需改docker-compose.yml不需要重新编译
+  - 宿主机不再需要tmux
 
 # 1.用户操作
 
