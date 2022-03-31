@@ -35,14 +35,17 @@ site
 #...配置自己的环境，如安装anaconda/pytorch/tensorflow等，如果可以写到build.sh，也可以手动装
 sh /tmp/build.sh #在此处进行环境搭建，最小化镜像
 #注意:首次配置完成后，一定要运行以下命令
-docker commit -m="描述信息" -a="username" 容器名称|容器ID 生成的镜像名
+docker commit -m="描述信息" -a="username" 容器名称(或容器ID) 生成的镜像名
 #将配置好的容器环境提交并替换个人镜像，之后无论容器/宿主机重启，直接进入容器不需要重新配置环境
 
 
 #重新连接  
 docker ps -a #查看所有容器
-docker attach [CONTAINER_NAME or CONTAINER_ID]
+docker attach [CONTAINER_NAME or CONTAINER_ID] # 快速命令>attach
 #热芝士:退出时，使用[ctrl + D]，这样会结束docker当前线程，容器结束，可以使用[ctrl + P][ctrl + Q]退出而不终止容器运行
+or
+#新开一个临时bash窗口到容器，结束时ctrl+D/ctrl+P+Q均可，里面需要进tmux跑程序
+docker exec -it [CONTAINER_NAME or CONTAINER_ID] /bin/bash #快速命令>once
 ```
 
 - 迁移docker-兼容性较好，可打包镜像直接迁到其他机器运行容器
