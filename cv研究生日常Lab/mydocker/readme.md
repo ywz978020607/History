@@ -59,13 +59,13 @@ docker load -i xxxx.tar
 # 2.配置完整过程，非管理员可忽略  
 ## 宿主机安装
 显卡驱动装最新版本，不需要管cuda和cudnn  
-安装好docker,之后安装nvidia-docker和docker-compose  
 ```
+sudo apt-get update
+sudo apt-get install -y docker.io
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
    && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
    && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 #接下来在您的主机上安装nvidia-docker2软件包：
-sudo apt-get update
 sudo apt-get install -y nvidia-docker2
 sudo apt-get install -y docker-compose
 ```
