@@ -102,6 +102,14 @@ sudo service docker restart
 使用root用户执行如下命令，即可
 sudo chmod a+rw /var/run/docker.sock #恢复则刷660
 
+```
+sudo groupadd docker  
+sudo gpasswd -a [ywz/dyf/zyt] docker  
+sudo service docker restart  
+sudo chmod a+rw /var/run/docker.sock #恢复则刷660
+```
+
+
 ## 管理员docker命令
 ```
 docker ps -a
