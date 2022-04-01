@@ -15,7 +15,7 @@
 
 # 1.用户操作
 
-不同cuda的docker版本和拉取链接参考  
+不同cuda的docker版本和拉取链接参考，找合适的-devel-ubuntu版本(区别说明: https://blog.csdn.net/u011622208/article/details/113650011)  
 https://hub.docker.com/r/nvidia/cuda/tags
 
 #推荐在Dockefile-编译镜像不执行build.sh以最小化镜像, 在进入容器后手动执行sh /tmp/build.sh, 使用如下  
