@@ -2,6 +2,8 @@
 
 使用nfs，局域网只保留一份数据，各机器采用docker进行部署。
 
+1 server <-> multi clients
+
 https://cloud.tencent.com/developer/article/1626660
 
 可将下面www换成个人名字，再进行配置
@@ -11,7 +13,7 @@ https://cloud.tencent.com/developer/article/1626660
 sudo apt install nfs-kernel-server  
 sudo mkdir -p /srv/nfs4/www
 
-#sudo mount --bind /var/www /srv/nfs4/www
+#sudo mount --bind /home2/www /srv/nfs4/www
 #持久化挂载
 sudo vim /etc/fstab
 #add
@@ -33,11 +35,11 @@ sudo exportfs -v #查看
 sudo apt install nfs-common
 sudo mkdir -p /srv/www
 
-#sudo mount -t nfs -o vers=4 192.168.33.xx:/www /srv/www
+#sudo mount -t nfs -o vers=4 10.134.126.158:/www /srv/www
 #持久化挂载
 sudo vim /etc/fstab
 #add
-192.168.33.10:/www /srv/www       nfs   defaults,timeo=900,retrans=5,_netdev	0 0
+10.134.126.158:/www /srv/www       nfs   defaults,timeo=900,retrans=5,_netdev	0 0
 #
 
 df -h
