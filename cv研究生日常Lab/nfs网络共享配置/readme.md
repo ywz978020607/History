@@ -6,41 +6,37 @@
 
 https://cloud.tencent.com/developer/article/1626660
 
-可将下面www换成个人名字，再进行配置
 
 ## server
 ```
 sudo apt install nfs-kernel-server  
-sudo mkdir -p /srv/nfs4/www
 
-#sudo mount --bind /home2/www /srv/nfs4/www
-#持久化挂载
-sudo vim /etc/fstab
-#add
-/var/www     /srv/nfs4/www      none   bind   0   0
-#
-
-#导出文件系统时, 允许所有ip访问
 sudo vim /etc/exports
-#add
-/srv/nfs4         *(rw,sync,no_subtree_check,crossmnt,fsid=0)
-#
+//在文件末尾添加一行
+# /path-to-share                *(rw,sync)     //path-to-share是要共享的目录，根据自己情况修改
+/temp_disk2                *(rw,sync)
+#之后重启即可
 
-sudo exportfs -ra #保存文件并导出分享
+sudo service nfs-kernel-server restart
+
 sudo exportfs -v #查看
 ```
 
 ## client
 ```
 sudo apt install nfs-common
-sudo mkdir -p /srv/www
 
-#sudo mount -t nfs -o vers=4 10.134.126.158:/www /srv/www
-#持久化挂载
+showmount -e 10.134.126.158 #查看
+
+sudo mkdir -p /srv/s930
+sudo mount -t nfs -o vers=4 10.134.126.158:/home2 /srv/s930
+#同步修改持久化挂载, 重启自动生效
 sudo vim /etc/fstab
 #add
-10.134.126.158:/www /srv/www       nfs   defaults,timeo=900,retrans=5,_netdev	0 0
+10.134.126.158:/home2 /srv/s930       nfs   defaults 0 0
 #
+#不重启生效:
+#sudo mount -a
 
 df -h
 ```
