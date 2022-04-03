@@ -54,6 +54,7 @@ docker exec -it [CONTAINER_NAME or CONTAINER_ID] /bin/bash #快速命令>once
 docker commit -m="描述信息" -a="username" 容器名称|容器ID 生成的镜像名[:标签名]
 docker save -o savePathName_xxx.tar 镜像名[:标签] 
 docker load -i xxxx.tar
+#如果觉得commit导致文件过大，可以采用export方式，只保留一层镜像
 ```
 
 # 2.配置完整过程，非管理员可忽略  
