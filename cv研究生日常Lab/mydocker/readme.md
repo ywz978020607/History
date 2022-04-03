@@ -30,7 +30,7 @@ b.根据自己的挂载需要，修改docker-compose.yml的volumes和ports(宿�
 # build # 重新编译构造镜像，谨慎
 
 #初次运行容器-见env.sh封装 
-site
+site #自动生成docker账号，自动绑定宿主机执行的用户，密码默认为123456，具有sudo等权限
 
 #...配置自己的环境，如安装anaconda/pytorch/tensorflow等，如果可以写到build.sh，也可以手动装
 sh /tmp/build.sh #在此处进行环境搭建，最小化镜像
