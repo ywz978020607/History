@@ -32,6 +32,17 @@ b.根据自己的挂载需要，修改docker-compose.yml的volumes和ports(宿�
 #初次运行容器-见env.sh封装 
 site
 
+#初次运行首先配置自己的账号，和宿主机账号进行关联!!
+#----- create user when building------
+user="ywz" #ywz 替换为对应真实宿主机账号名字
+uid="1000" #宿主机输入 echo `id ywz` 查看对应的uid并修改 #用户名为ywz时
+
+useradd -u $uid $user  #提示设置密码
+usermod -a -G adm $user
+usermod -a -G sudo $user
+#----- create user when building end------
+
+
 #...配置自己的环境，如安装anaconda/pytorch/tensorflow等，如果可以写到build.sh，也可以手动装
 sh /tmp/build.sh #在此处进行环境搭建，最小化镜像
 #注意:首次配置完成后，一定要运行以下命令
@@ -98,17 +109,19 @@ sudo groupadd docker
 sudo gpasswd -a ${USER} docker  
 3、重启docker  
 sudo service docker restart  
-4、如果普通用户执行docker命令，如果提示get …… dial unix /var/run/docker.sock权限不够，则修改/var/run/docker.sock权限
-使用root用户执行如下命令，即可
-sudo chmod a+rw /var/run/docker.sock #恢复则刷660
-
 ```
 sudo groupadd docker  
 sudo gpasswd -a [ywz/dyf/zyt] docker  
 sudo service docker restart  
-sudo chmod a+rw /var/run/docker.sock #恢复则刷660
 ```
 
+or  
+
+1、如果普通用户执行docker命令，如果提示get …… dial unix /var/run/docker.sock权限不够，则修改/var/run/docker.sock权限
+使用root用户执行如下命令，即可
+```
+sudo chmod a+rw /var/run/docker.sock #恢复则刷660
+```
 
 ## 管理员docker命令
 ```
