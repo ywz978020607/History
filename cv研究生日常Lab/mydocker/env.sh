@@ -9,6 +9,6 @@ alias build="docker-compose build"
 # alias debug="docker-compose up"
 alias siteroot="docker-compose run --rm --service-port ldl bash"
 
-alias site="docker-compose run -u ${USER} --rm --service-port ldl bash"
+alias site="docker-compose run -u $(id -u):$(id -g) --rm --service-port ldl bash"
 alias attach="docker attach ${COMPOSE_PROJECT_NAME}_ldl_run_1"
 alias once="docker exec -it ${COMPOSE_PROJECT_NAME}_ldl_run_1 /bin/bash"
