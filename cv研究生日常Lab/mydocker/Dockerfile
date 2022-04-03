@@ -2,12 +2,11 @@ FROM nvidia/cuda:10.1-base-ubuntu18.04
 ENV PYTHONUNBUFFERED 1
 ENV NVIDIA_VISIBLE_DEVICES ALL
 ADD . /tmp
-
-RUN sh /tmp/build.sh
-
+# RUN sh /tmp/build.sh
 
 #--处理用户名uid一致性且支持迁移---
-RUN useradd --create-home --no-log-init --shell /bin/bash docker \
+RUN apt-get update && apt-get install -y sudo \
+&& useradd --create-home --no-log-init --shell /bin/bash docker \
 && adduser docker sudo \
 && echo 'docker:123456' | chpasswd \
 && usermod -a -G adm docker && usermod -a -G sudo docker
