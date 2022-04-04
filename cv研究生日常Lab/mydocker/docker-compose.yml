@@ -2,13 +2,12 @@ version: '3'
 services:
   ldl:
     build: .
-    working_dir: /home/ywz #path in container
+    working_dir: /home/docker #path in container
     ipc: host
     #(path/ports in host: path/ports in container)
     volumes:
       - /home/ywz:/media
-      - /home/ywz/test/mybackup:/home/ywz/mybackup
-      - /home/ywz/test/mybackup:/root/mybackup
-      - /home2/ywz/database:/home/ywz/database
+      - /home/ywz/test/mybackup:/home/docker/mybackup
+      - /home2/ywz/database:/home/docker/database
     # ports:
     #   - "8000:8000"
