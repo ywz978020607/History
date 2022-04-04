@@ -6,6 +6,7 @@
 - 快速支持多版本cuda
 - 支持跨机器环境迁移
 - 方便管理和用户隔离
+- 实现环境/docker/所有数据->机械硬盘/nfs，使得与宿主机的固态硬盘分离，故障时重做系统更加安全、快速恢复
 - 概念扫盲:
   - dockerhub基础镜像+dockerfile=>镜像文件image(宿主机存储, 安全)   
   - 镜像文件image + 宿主机路径挂载(实时同步)&docker-compose.yml=>容器container(重启后无状态)
