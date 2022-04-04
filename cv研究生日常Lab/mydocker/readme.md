@@ -12,11 +12,13 @@
   - container-执行commit=>镜像文件image(宿主机存储)
   - 修改dockerfile需要重新编译build，需改docker-compose.yml不需要重新编译
   - 宿主机不再需要tmux
+- 补充:
+  - 普通docker部署后进入root，宿主机难以追溯真实使用人，为此加入fixuid，容器内统一自动创建使用docker用户，uid会自动绑定调用者的宿主机下账号的uid，uid统一后能够更好实现权限管理和成本追溯等任务
 
 # 1.用户操作
 
-不同cuda的docker版本和拉取链接参考，找合适的-devel-ubuntu版本(区别说明: https://blog.csdn.net/u011622208/article/details/113650011)  
-https://hub.docker.com/r/nvidia/cuda/tags
+不同cuda的docker版本和拉取链接参考，找合适的-devel-ubuntu版本([区别说明](https://blog.csdn.net/u011622208/article/details/113650011))  
+[Nvidia-docker镜像库](https://hub.docker.com/r/nvidia/cuda/tags)
 
 #推荐在Dockefile-编译镜像不执行build.sh以最小化镜像, 在进入容器后手动执行sh /tmp/build.sh, 使用如下  
 ```
