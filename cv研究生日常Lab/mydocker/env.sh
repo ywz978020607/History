@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 if [ x$1 != x ];then
     export COMPOSE_PROJECT_NAME=$1;
+else
+    project_path=$(pwd);
+    project_name="${project_path##*/}";
+    export COMPOSE_PROJECT_NAME=$project_name;
 fi
 
 alias build="docker-compose build"
