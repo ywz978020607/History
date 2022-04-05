@@ -40,6 +40,9 @@ site #自动生成docker账号，自动绑定宿主机执行的用户，密码�
 #...配置自己的环境，如安装anaconda/pytorch/tensorflow等，如果可以写到build.sh，也可以手动装
 sudo sh /tmp/build.sh #在此处进行环境搭建，最小化镜像
 #注意:首次配置完成后，一定要运行以下命令
+## a.容器内
+sudo rm /var/run/fixuid.ran #删除fixuid运行记录，以便镜像再次site时支持再次fixuid
+## b.容器外(宿主机)
 docker commit -m="描述信息" -a="username" 容器名称(或容器ID) 生成的镜像名
 #将配置好的容器环境提交并替换个人镜像，之后无论容器/宿主机重启，直接进入容器不需要重新配置环境
 
