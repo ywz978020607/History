@@ -98,6 +98,15 @@ sudo systemctl restart docker
 
 
 ## docker命令权限设置
+1、如果普通用户执行docker命令，如果提示get …… dial unix /var/run/docker.sock权限不够，则修改/var/run/docker.sock权限
+使用root用户执行如下命令，即可
+```
+sudo chmod a+rw /var/run/docker.sock #恢复则刷660
+```
+
+or  
+
+(不推荐此种方式，需要频繁重启docker)  
 1、需要先允许所有人执行docker命令  
 sudo groupadd docker  
 2、把用户添加进docker组中  
@@ -108,14 +117,6 @@ sudo service docker restart
 sudo groupadd docker  
 sudo gpasswd -a [ywz/dyf/zyt] docker  
 sudo service docker restart  
-```
-
-or  
-
-1、如果普通用户执行docker命令，如果提示get …… dial unix /var/run/docker.sock权限不够，则修改/var/run/docker.sock权限
-使用root用户执行如下命令，即可
-```
-sudo chmod a+rw /var/run/docker.sock #恢复则刷660
 ```
 
 ## 管理员docker命令
