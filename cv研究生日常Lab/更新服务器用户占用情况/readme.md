@@ -1,3 +1,6 @@
+# 本节功能已封装为docker并上传到MC2的github，见链接:[docker远程批量管理机器的使用占用情况](https://github.com/Archer-Tatsu/MC-2/tree/master/machine/IRCmachinedocker)
+----
+# 非docker旧版记录:
 # nvidia-smi命令升级版，查看当前服务器使用情况（个人版）
 
 ```

@@ -1,5 +1,5 @@
 
-# 炼丹炉容器化隔离改造 [点击下载](https://raw.githubusercontent.com/ywz978020607/History/master/cv%E7%A0%94%E7%A9%B6%E7%94%9F%E6%97%A5%E5%B8%B8Lab/mydocker/mydocker.rar)
+# 炼丹炉容器化隔离改造 [本目录文件打包下载](https://raw.githubusercontent.com/ywz978020607/History/master/cv%E7%A0%94%E7%A9%B6%E7%94%9F%E6%97%A5%E5%B8%B8Lab/mydocker/mydocker.rar)
 
 # 0.改造目的
 - 保证数据安全性
@@ -30,7 +30,7 @@ a.根据hub.docker.com找到需要的基础镜像名字，修改Dockefile第一�
 b.根据自己的挂载需要，修改docker-compose.yml的volumes和ports(宿主机:容器) -- 一般挂载一个代码文件和模型文件夹即可
 #
 
-. env.sh # 可选加入自定义镜像前缀, eg:. env.sh ywz_cuda11_1 或 . env.sh ywz111
+. env.sh # 可选加入自定义镜像前缀, eg>. env.sh ywz111  #建议都加上一个前缀，否则默认使用当前文件夹名
 # docker images 查看当前所有镜像
 # build # 重新编译构造镜像，谨慎
 
@@ -39,14 +39,20 @@ site #自动生成docker账号，自动绑定宿主机执行的用户，密码�
 
 #...配置自己的环境，如安装anaconda/pytorch/tensorflow等，如果可以写到build.sh，也可以手动装
 sudo sh /tmp/build.sh #在此处进行环境搭建，最小化镜像
+```
+#如果后续可能有迁移需求，推荐使用[root安装conda并共享给docker说明](#rootconda)，以支持快速迁移
+
+```
 #注意:首次配置完成后，一定要运行以下命令
 ## a.容器内
 sudo rm /var/run/fixuid.ran #删除fixuid运行记录，以便镜像再次site时支持再次fixuid
 ## b.容器外(宿主机)
 docker commit 容器名称(或容器ID) 生成的镜像名
 #将配置好的容器环境提交并替换个人镜像，之后无论容器/宿主机重启，直接进入容器不需要重新配置环境
+```
 
-
+连接管理
+```
 #重新连接  
 docker ps -a #查看所有容器
 docker attach [CONTAINER_NAME or CONTAINER_ID] # 快速命令>attach
@@ -56,7 +62,7 @@ or
 docker exec -it [CONTAINER_NAME or CONTAINER_ID] /bin/bash #快速命令>once
 ```
 
-- 迁移docker-兼容性较好，可打包镜像直接迁到其他机器运行容器
+迁移docker
 ```
 #如果替换可以不输[:标签]
 docker commit -m="描述信息" -a="username" 容器名称|容器ID 生成的镜像名[:标签名]
@@ -129,4 +135,24 @@ docker ps -a -q
 #停止/删除所有容器
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
+```
+
+----
+
+## <span id="rootconda">容器内部使用root配置conda共享给其他用户/conda迁移</span>
+目的: 通过把conda装到root里再给docker用户使用，在容器迁移时进行fixuid时可自动跳过anaconda3文件夹，避免chown过大文件导致等待时间较长
+```
+#docker内执行！
+sudo su #切换
+cd /root/
+wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.11-Linux-x86_64.sh #下载conda
+sh ./Anaconda3-2021.11-Linux-x86_64.sh #进行安装
+#安装过程省略，默认安装路径/root/anaconda3
+
+#处理权限
+chmod -R 777 ./anaconda3/
+# ln -s anaconda3 /home/docker/
+echo 'export PATH="/root/anaconda3/bin:$PATH"' >> ~/.bashrc
+
+# 重进/打开新窗口(once)/进容器内tmux，即可看到普通账户docker的anaconda已激活
 ```
