@@ -1,5 +1,5 @@
 
-# 炼丹炉容器化隔离改造 [本目录文件打包下载](https://raw.githubusercontent.com/ywz978020607/History/master/cv%E7%A0%94%E7%A9%B6%E7%94%9F%E6%97%A5%E5%B8%B8Lab/mydocker/mydocker.rar)
+# 炼丹炉容器化隔离改造 [本目录文件打包下载](https://raw.githubusercontent.com/ywz978020607/History/master/cv%E7%A0%94%E7%A9%B6%E7%94%9F%E6%97%A5%E5%B8%B8Lab/mydocker/mydocker.zip)
 
 # 0.改造目的
 - 保证数据安全性
@@ -149,7 +149,7 @@ sh ./Anaconda3-2021.11-Linux-x86_64.sh #进行安装
 #处理权限
 chmod -R 777 ./anaconda3/
 # ln -s anaconda3 /home/docker/
-echo 'export PATH="/root/anaconda3/bin:$PATH"' >> ~/.bashrc
+echo 'export PATH="/root/anaconda3/bin:$PATH"' >> /home/docker/.bashrc
 
 # 重进/打开新窗口(once)/进容器内tmux，即可看到普通账户docker的anaconda已激活
 ```
