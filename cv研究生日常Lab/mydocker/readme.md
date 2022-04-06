@@ -147,12 +147,14 @@ sudo su #切换
 cd /root/
 wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.11-Linux-x86_64.sh #下载conda
 sh ./Anaconda3-2021.11-Linux-x86_64.sh #进行安装
-#安装过程省略，默认安装路径/root/anaconda3
+#安装过程省略，安装路径/usr/anaconda3/
+#安装后记得选择yes
 
 #处理权限
-chmod -R 777 ./anaconda3/
-# ln -s anaconda3 /home/docker/
-echo 'export PATH="/root/anaconda3/bin:$PATH"' >> /home/docker/.bashrc
-
-# 重进/打开新窗口(once)/进容器内tmux，即可看到普通账户docker的anaconda已激活
+chmod -R 777 /usr/anaconda3/
+echo 'export PATH="/usr/anaconda3/bin:$PATH"' >> /home/docker/.bashrc
+su docker
+cd /home/docker/
+source ~/.bashrc #临时激活conda
+conda init #激活自动启动
 ```
