@@ -19,9 +19,10 @@ RUN USER=docker && \
     chmod 4755 /usr/local/bin/fixuid && \
     chmod +x /tmp/entrypoint.sh && \
     mkdir -p /etc/fixuid && \
-    printf "user: $USER\ngroup: $GROUP\n" > /etc/fixuid/config.yml
+    printf "user: $USER\ngroup: $GROUP\npaths:\n  - /home/docker\n" > /etc/fixuid/config.yml
 
 USER docker:docker
+
 ENTRYPOINT ["/tmp/entrypoint.sh"]
 # ENTRYPOINT ["fixuid"]
 #--处理uid一致性且支持迁移--done---

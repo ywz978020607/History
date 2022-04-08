@@ -45,9 +45,13 @@ b.根据自己的挂载需要，修改docker-compose.yml的volumes和ports(宿�
 #初次运行容器-见env.sh封装 
 site #自动生成docker账号，自动绑定宿主机执行的用户，密码默认为123456，具有sudo等权限
 
-#...配置自己的环境，如安装anaconda/pytorch/tensorflow等，如果可以写到build.sh，也可以手动装，如anaconda等
+#...配置自己的环境，如安装anaconda/pytorch/tensorflow等，如果可以写到build.sh，也可以手动装
 sudo sh /tmp/build.sh #在此处进行环境搭建，最小化镜像
+```
+#如果后续可能有迁移需求，推荐使用[root安装conda并共享给docker说明](#rootconda)，以支持快速迁移
+#注: 迁移后会自动将/home/docker进行chown递归刷改，其他文件如果有权限问题直接chmod -R 777即可。需要保存在镜像容器内的文件尽量放在其他位置加777权限再软链接到/home/docker/下，可减少迁移时fixuid时间
 
+```
 #注意:首次配置完成后，一定要运行以下命令
 docker commit 容器名称(或容器ID) 生成的镜像名
 #将配置好的容器环境提交并替换个人镜像，之后无论容器/宿主机重启，直接进入容器不需要重新配置环境
@@ -142,3 +146,24 @@ docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
 ```
 
+----
+
+## <span id="rootconda">容器内部使用root配置conda共享给其他用户/conda迁移</span>
+目的: 通过把conda装到root里再给docker用户使用，在容器迁移时进行fixuid时可自动跳过anaconda3文件夹，避免chown过大文件导致等待时间较长
+```
+#docker内执行！
+sudo su #切换
+cd /root/
+wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.11-Linux-x86_64.sh #下载conda
+sh ./Anaconda3-2021.11-Linux-x86_64.sh #进行安装
+#安装过程省略，安装路径/usr/anaconda3/
+#安装后记得选择yes
+
+#处理权限
+chmod -R 777 /usr/anaconda3/
+echo 'export PATH="/usr/anaconda3/bin:$PATH"' >> /home/docker/.bashrc
+su docker
+cd /home/docker/
+source ~/.bashrc #临时激活conda
+conda init #激活自动启动
+```
