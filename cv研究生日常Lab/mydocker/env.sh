@@ -12,7 +12,16 @@ alias build="docker-compose build"
 # alias start="docker-compose up -d"
 # alias debug="docker-compose up"
 alias siteroot="docker-compose run --service-port ldl bash"
-
 alias site="docker-compose run -u $(id -u):$(id -g) --service-port ldl bash"
-alias attach="docker attach ${COMPOSE_PROJECT_NAME}_ldl_run_1"
-alias once="docker exec -it ${COMPOSE_PROJECT_NAME}_ldl_run_1 /bin/bash"
+
+# alias attach="docker attach ${COMPOSE_PROJECT_NAME}_ldl_run_1"
+# alias once="docker exec -it ${COMPOSE_PROJECT_NAME}_ldl_run_1 /bin/bash"
+attach(){
+    tmpcmd="docker attach $1"
+    $tmpcmd
+}
+
+once(){
+    tmpcmd="docker exec -it $1 /bin/bash"
+    $tmpcmd
+}

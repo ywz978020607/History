@@ -60,11 +60,11 @@ docker commit 容器名称(或容器ID) 生成的镜像名
 ```
 #重新连接  
 docker ps -a #查看所有容器
-docker attach [CONTAINER_NAME or CONTAINER_ID] # 快速命令>attach
+docker attach [CONTAINER_NAME or CONTAINER_ID] # 快速命令>attach [容器id前缀即可]
 #热芝士:退出时，使用[ctrl + D]，这样会结束docker当前线程，容器结束，可以使用[ctrl + P][ctrl + Q]退出而不终止容器运行
 or
 #新开一个临时bash窗口到容器，结束时ctrl+D/ctrl+P+Q均可，里面需要进tmux跑程序
-docker exec -it [CONTAINER_NAME or CONTAINER_ID] /bin/bash #快速命令>once
+docker exec -it [CONTAINER_NAME or CONTAINER_ID] /bin/bash #快速命令>once [容器id前缀即可]
 ```
 
 迁移docker
