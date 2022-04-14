@@ -20,8 +20,10 @@ help(){
     #4.映射内网机器端口(可选)
     # mapping函数主要用来端口映射，方便scp/sftp/打开浏览器查看面板等高级操作 搭配本机ip固定127.0.0.1进一步使用
     mapping $ip518 22 9050 #将内网机器的22端口(默认ssh端口) 映射到本机的9050端口，使用默认跳板机
-    ### 多级跳板后映射机器端口[注意规则]-无视默认选择，但至少输入一个跳板机
+    ### 多级跳板后映射机器端口[注意规则]
     mapping $ip518 22 9050 $jump1 $jump2 $jump3 #端口映射多级跳转规则, jump1->jump2->jump3->ip518
+    mapping $ip518 22 9050 ywz@$ip518 #使用目标机本身作为跳板机
+    mapping $ip518 22 9050 #使用. env.sh [xx]选择的默认跳板机
 
     #5.查看配置的内网机器ip(可选)
     echo $ip518
@@ -43,9 +45,7 @@ jumpnum=6
 jump0="127.0.0.1:22" #自身ssh作为跳板机
 jump1="ywz@467830y6j3.zicp.vip:32027" #30901
 jump2="ywz@467830y6j3.zicp.vip:57009" #30902
-jump3="admin@10.135.115.200:22" #nouse
-jump4="dyf@cn-zz-bgp-7.natfrp.cloud:14775" #ipdyf
-jump5="ywz@cn-hn-dx-1.natfrp.cloud:56603" #ipywz
+
 # --------跳板机直连[命令eg:>j1]-------
 for((i=1;i<=$jumpnum;i++));  
 do
@@ -71,10 +71,9 @@ else
 fi
 # ======================================================
 
-
 # -----------内网IP[变量eg:>$ip518 表示ip地址便于端口映射等]----------------
-ip518="10.135.6.78"
-ip509="10.135.206.119"
+ip518="10.135.181.3"
+ip509="10.134.162.159"
 ip207="10.134.162.162"
 ip401="10.134.162.193"
 ip2080="10.134.162.90"
@@ -116,6 +115,7 @@ mapping(){
     elif [ $# != 3 ]
     then
         config="0.0.0.0:$3:$1:$2"
+        concatjump=""
         if [ $# != 4 ];then
             concatjump=`eval echo '$'"4"`
             for(( i=5;i<=$#-1;i++ ));
@@ -125,7 +125,12 @@ mapping(){
             done
         fi
         finalone=`eval echo '$'"$#"`
-        mapcmd="ssh -L $config ${finalone/:/ -p } -J $concatjump"
+        if [[ $concatjump -ne "" ]]
+        then
+            mapcmd="ssh -L $config ${finalone/:/ -p } -J $concatjump"
+        else
+            mapcmd="ssh -L $config ${finalone/:/ -p }"
+        fi
     fi
     echo $mapcmd
     $mapcmd
