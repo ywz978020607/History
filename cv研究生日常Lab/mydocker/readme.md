@@ -77,7 +77,7 @@ docker load/import -i xxxx.tar
 #如果觉得commit导致文件过大，可以采用export方式，只保留一层镜像
 ```
 
-# 2.配置完整过程，非管理员可忽略  
+# 2.管理员配置完整过程[非管理员可忽略]  
 ## 宿主机安装
 显卡驱动装最新版本，不需要管cuda和cudnn  
 ```
@@ -121,29 +121,26 @@ sudo chmod a+rw /var/run/docker.sock #恢复则刷660
 
 or  
 
-(不推荐此种方式，需要频繁重启docker)  
-1、需要先允许所有人执行docker命令  
-sudo groupadd docker  
-2、把用户添加进docker组中  
-sudo gpasswd -a ${USER} docker  
-3、重启docker  
-sudo service docker restart  
 ```
-sudo groupadd docker  
-sudo gpasswd -a [ywz/dyf/zyt] docker  
-sudo service docker restart  
+#(不推荐此种方式，需要频繁重启docker)  
+sudo groupadd docker   #需要先允许所有人执行docker命令  
+sudo gpasswd -a [ywz/dyf/zyt] docker  # 把用户添加进docker组中  
+sudo service docker restart  # 重启docker  
 ```
+
+# 3.其他参考命令
 
 ## 管理员docker命令
 ```
 #镜像清理
 docker image prune
-
 docker ps -a
 docker ps -a -q
 #停止/删除所有容器
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
+#重入容器
+docker attach xx # xx只需要输入id的部分前缀使其唯一即可, 例如7d16dasdaf => docker attach 7d
 ```
 
 ----
