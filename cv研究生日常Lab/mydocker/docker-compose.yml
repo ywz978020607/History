@@ -3,6 +3,7 @@ services:
   ldl:
     build: .
     working_dir: /home/docker #path in container
+    tty: true #up启动后不会立刻退出exit
     ipc: host
     #(path/ports in host: path/ports in container)
     volumes:
