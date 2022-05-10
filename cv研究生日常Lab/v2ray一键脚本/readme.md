@@ -1,25 +1,9 @@
-# 原一键脚本
 
-Ubuntu：
+# 校园网免流/国内外自动切换/socks5&http端口监听 
+见 [内网梯子](./%E5%86%85%E7%BD%91%E6%A2%AF%E5%AD%90/)
 
-带伪装
-
-bash <(curl -sL https://raw.githubusercontent.com/hijkpw/scripts/master/ubuntu_install_v2ray2.sh)
-
-不带伪装
-
-bash <(curl -sL https://raw.githubusercontent.com/hijkpw/scripts/master/ubuntu_install_v2ray.sh)
-
-参考（教程需要翻墙
-
-https://github.com/hijkpw/scripts
-
-卸载 https://blog.csdn.net/shuiyuetianwy/article/details/103024226
-
-
-
-# 另一种版本 推荐！！
-
+# linux服务端配置v2ray作为梯子节点
+## A.命令行版本（常用推荐）
 http://www.xlovett.com/581.html
 
 ```
@@ -34,13 +18,11 @@ v2ray start/stop/restart/status/log
 
 v2ray #管理
 
-
-
 如果想用多种协议-》添加端口，成功后便可选择，如果用ss，加密方式推荐chacha20
 
 
 
-# 带后台面板版本
+## B.带后台面板版本
 
 ```
 bash <(curl -Ls https://blog.sprov.xyz/v2-ui.sh)
@@ -49,6 +31,5 @@ bash <(curl -Ls https://blog.sprov.xyz/v2-ui.sh)
 https://www.monopo.cn/archives/3042
 
 https://github.com/sprov065/v2-ui
-
 
 
