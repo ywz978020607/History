@@ -76,9 +76,9 @@ ip518="10.135.181.3"
 ip509="10.134.162.159"
 ip207="10.134.162.162"
 ip401="10.134.162.193"
-ip2080="10.134.162.90"
+ip2080="10.134.162.215"
 ip930="10.134.126.158"
-ip30901="10.130.156.192"
+ip30901="10.130.157.44"
 ip30902="10.130.158.90"
 ipdyf="10.130.157.75"
 iplty="10.135.115.200"
@@ -106,7 +106,7 @@ mapping(){
         if [ $jump=="" ]
         then
             mapcmd=""
-            echo "need one jumper at least in mapping!"
+            echo "need one jumper at least in mapping! you can input again attach this: userxx@$ipxxx"
         else
             config="0.0.0.0:$3:$1:$2" #config="0.0.0.0:$2:$1:22"
             mapcmd="ssh -L $config ${jump/:/ -p }" #ywz@467830y6j3.zicp.vip -p 32027;
