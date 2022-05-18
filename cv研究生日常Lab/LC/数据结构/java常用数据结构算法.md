@@ -78,14 +78,22 @@ java中使用`>>>1`  c++中用unsigned int
 
 ###### Random
 
+```
+// java.lang.Math.Random，java.lang包下的所有类都是默认加载的，不需要import
 Math.random()  返回double[0,1)
 (int)(start + Math.random()*length); // [start, start + length)
-
+```
 或
-
+```
+// java.util.Random
 Random rand = new Random(25); //25是种子，随便给
-rand.nextInt(100); //返回0-100的整数，不包括100
-
+rand.nextInt(); //Int型随机
+rand.nextInt(100); //[0,100)
+rand.nextBoolean();
+rand.nextDouble(); //[0,1)
+rand.nextFloat(); //[0,1)
+rand.nextLong(); //Long型随机
+```
 ###### 调试手段 -- playground
 
  [未命名 - LeetCode Playground (leetcode-cn.com)](https://leetcode-cn.com/playground/NkvhUsKX/)

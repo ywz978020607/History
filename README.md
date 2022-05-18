@@ -20,8 +20,8 @@
   - sqlite3、mongodb等小型化数据库简易上手
   - wechat小程序交互
 - 日常自动化工具
+  *使用python加速日常表格, 浏览器脚本自动化等工作处理，win32api脚本，[gif图制作(支持透明通道)](./日常自动化工具/convergif.py)*
 
-  *使用python加速日常表格, 浏览器脚本自动化等工作处理，win32api脚本*
 - 桌面端
 
   *QT,PYQT等桌面端开发记录*

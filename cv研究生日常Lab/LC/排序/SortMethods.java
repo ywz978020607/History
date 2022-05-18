@@ -7,7 +7,7 @@ public class SortMethods {
             return;
         }
         // int mid = (start+end)/2;
-        int mid = start + (int)(Math.random() * (end - start)); //随机快排
+        int mid = start + (int)(Math.random() * (end - start)); //随机快排，java.lang包下的所有类都是默认加载的，不需要import
         int sel_val = nums[mid];
         nums[mid] = nums[end];
         nums[end] = sel_val;
