@@ -27,8 +27,10 @@ def cut_frames(frames):
     for idx in range(length):
         img = frames[idx]
     # for idx, img in enumerate(frames):
-        # if idx == 0:
-        #     print(img.size) #(1126, 328)
+        if idx == 0:
+            print(img.size) #(1126, 328)
+            img_size[0] = img.size[0]
+            img_size[1] = img.size[1]
         if img.size[0] > img_size[0] or img.size[1] > img_size[1]:
             img_arr = np.array(img)
             # print(img_arr.shape) #(346, 1126, 4)
