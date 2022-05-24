@@ -70,13 +70,17 @@ else:
         result_dict = {}
         method_passwd, ip_port = (bytes.decode(resultJson)).split("@")
         result_dict["protocol"]="shadowsocks"
-        result_dict["settings"]={}
+        result_dict["settings"]={"vnext": None, "response": None}
         result_dict["settings"]["server"] = [
         {
             "address": ip_port.split(":")[0].strip(),
             "method": method_passwd.split(":")[0].strip(),
             "password": method_passwd.split(":")[1].strip(),
             "port": ip_port.split(":")[1].strip(),
+            "email": None,
+            "ota": False,
+            "level": 1,
+            "users": None,
         }]
         print(result_dict)
         config_json["outbounds"][0].update(result_dict)
