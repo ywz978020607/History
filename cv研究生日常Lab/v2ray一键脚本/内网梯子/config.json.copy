@@ -1,0 +1,217 @@
+{
+  "log": {
+    "access": "/var/log/v2ray/access.log",
+    "error": "/var/log/v2ray/error.log",
+    "loglevel": "info"
+  },
+  "inbounds": [
+    {
+      "tag": "proxy",
+      "port": 10808,
+      "listen": "0.0.0.0",
+      "protocol": "socks",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "ip": null,
+        "address": null,
+        "clients": null
+      },
+      "streamSettings": null
+    },
+    {
+      "tag": "proxyhttp",
+      "port": 10809,
+      "listen": "0.0.0.0",
+      "protocol": "http",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "ip": null,
+        "address": null,
+        "clients": null
+      },
+      "streamSettings": null
+    },
+    {
+      "port": 28656,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "09e233fc-4c2d-11eb-b2f5-18c04d0bde91",
+            "alterId": 0
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "kcp",
+        "security": "none",
+        "tlsSettings": {},
+        "tcpSettings": {},
+        "httpSettings": {},
+        "kcpSettings": {
+          "mtu": 1350,
+          "tti": 50,
+          "uplinkCapacity": 100,
+          "downlinkCapacity": 100,
+          "congestion": false,
+          "readBufferSize": 2,
+          "writeBufferSize": 2,
+          "header": {
+            "type": "srtp"
+          }
+        },
+        "wsSettings": {},
+        "quicSettings": {}
+      },
+      "tag": "A"
+    },
+    {
+      "port": 47042,
+      "protocol": "shadowsocks",
+      "settings": {
+        "method": "aes-256-gcm",
+        "password": "2wqOuoibhm3GlQSN",
+        "network": "tcp,udp"
+      },
+      "tag": "B"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 3217,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "api"
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "shadowsocks",
+      "settings": {
+        "vnext": null,
+        "servers": [
+          {
+            "email": null,
+            "address": "45.7xxxx",
+            "method": "aes-256-gcm",
+            "ota": false,
+            "password": "xxxxxx",
+            "port": 111111,
+            "level": 1,
+            "users": null
+          }
+        ],
+        "response": null
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": null,
+        "tlsSettings": null,
+        "tcpSettings": null,
+        "kcpSettings": null,
+        "wsSettings": null,
+        "httpSettings": null,
+        "quicSettings": null
+      },
+      "mux": {
+        "enabled": false,
+        "concurrency": -1
+      }
+    },
+    {
+      "protocol": "freedom",
+      "tag": "direct",
+      "settings": {}
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {},
+      "tag": "blocked"
+    }
+  ],
+  "routing": {
+    "domainStrategy": "IPOnDemand",
+    "strategy": "rules",
+    "rules": [
+      {
+        "type": "field",
+        "ip": [
+          "0.0.0.0/8",
+          "10.0.0.0/8",
+          "100.64.0.0/10",
+          "169.254.0.0/16",
+          "172.16.0.0/12",
+          "192.0.0.0/24",
+          "192.0.2.0/24",
+          "192.168.0.0/16",
+          "198.18.0.0/15",
+          "198.51.100.0/24",
+          "203.0.113.0/24",
+          "::1/128",
+          "fc00::/7",
+          "fe80::/10"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:cn",
+          "buaa.edu.cn"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "ip": [
+          "geoip:cn"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "inboundTag": [
+          "api"
+        ],
+        "outboundTag": "api",
+        "type": "field"
+      }
+    ]
+  },
+  "stats": {},
+  "api": {
+    "services": [
+      "StatsService"
+    ],
+    "tag": "api"
+  },
+  "policy": {
+    "levels": {
+      "0": {
+        "statsUserDownlink": true,
+        "statsUserUplink": true
+      }
+    },
+    "system": {
+      "statsInboundUplink": true,
+      "statsInboundDownlink": true
+    }
+  }
+}
