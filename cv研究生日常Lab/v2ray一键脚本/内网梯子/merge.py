@@ -75,8 +75,8 @@ else:
         {
             "address": ip_port.split(":")[0].strip(),
             "method": method_passwd.split(":")[0].strip(),
-            "password": ip_port.split(":")[1].strip(),
-            "port": method_passwd.split(":")[1].strip(),
+            "password": method_passwd.split(":")[1].strip(),
+            "port": ip_port.split(":")[1].strip(),
         }]
         print(result_dict)
         config_json["outbounds"][0].update(result_dict)
