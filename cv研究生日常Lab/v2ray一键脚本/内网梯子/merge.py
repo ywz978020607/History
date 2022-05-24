@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
-# 更新外网节点到config.json中 并重启v2ray
+# 更新外网节点到config.json中 运行修改后需重启v2ray restart
 
 # from urllib.request import urlopen
 import urllib.request
