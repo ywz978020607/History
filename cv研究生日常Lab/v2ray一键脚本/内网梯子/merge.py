@@ -51,7 +51,7 @@ else:
             "response": None,
             "vnext":[{
                 "address": get_dict["add"],
-                "port": get_dict["port"],
+                "port": int(get_dict["port"]),
                 "users":[{
                     "id": get_dict["id"],
                     "alterId": get_dict["aid"],
@@ -76,7 +76,7 @@ else:
             "address": ip_port.split(":")[0].strip(),
             "method": method_passwd.split(":")[0].strip(),
             "password": method_passwd.split(":")[1].strip(),
-            "port": ip_port.split(":")[1].strip(),
+            "port": int(ip_port.split(":")[1].strip()),
             "email": None,
             "ota": False,
             "level": 1,
