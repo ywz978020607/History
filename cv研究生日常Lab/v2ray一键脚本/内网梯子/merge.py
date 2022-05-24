@@ -71,7 +71,7 @@ else:
         method_passwd, ip_port = (bytes.decode(resultJson)).split("@")
         result_dict["protocol"]="shadowsocks"
         result_dict["settings"]={"vnext": None, "response": None}
-        result_dict["settings"]["server"] = [
+        result_dict["settings"]["servers"] = [
         {
             "address": ip_port.split(":")[0].strip(),
             "method": method_passwd.split(":")[0].strip(),
