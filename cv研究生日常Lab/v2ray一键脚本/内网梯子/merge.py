@@ -54,7 +54,7 @@ else:
                 "port": int(get_dict["port"]),
                 "users":[{
                     "id": get_dict["id"],
-                    "alterId": get_dict["aid"],
+                    "alterId": int(get_dict["aid"]),
                     "email": "t@t.tt",
                     "security": "auto"
                 }]
