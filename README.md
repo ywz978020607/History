@@ -1,5 +1,9 @@
 # 软硬件相关 全栈式开发记录
 
+
+## 站点
+-   GitHub Pages: https://ywz978020607.github.io/History
+
 [软硬件前后端物联网全栈开发b站视频账号](https://space.bilibili.com/250616280)
 
 - cv研究生日常Lab
