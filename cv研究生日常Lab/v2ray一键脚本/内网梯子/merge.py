@@ -11,12 +11,12 @@ import urllib.parse
 
 # url拉取订阅自动替换 - 推荐
 # python this.py 0/1/2  #选择订阅机场的第几个节点 #share.json需有url信息(url:https://xxxx=> configs:["ss://","ss://"])
+# python this.py 0/1/2 password #使用password对share.json中AESurl信息进行解码作为订阅地址-可以安全同步share.json(密码为组会最常用的房间号)
 # python this.py        #share.json需有nodelink
 
-def refresh_sub(share_json):
+def refresh_sub(subscribe_url):
     ## 获取订阅地址
     headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
-    subscribe_url = share_json["url"]
     req = urllib.request.Request(url=subscribe_url, headers=headers)
     return_content = urllib.request.urlopen(req).read()
     ## 解析订阅地址内容
@@ -36,11 +36,11 @@ def refresh_sub(share_json):
             share_link = "://".join(share_link_list)
             # print(share_link)
             configs.append(share_link)
-        share_json["configs"] = config
-        ## 保存
-        write_json_file = "share.json"
-        with open(write_json_file, 'w') as f:
-            json.dump(share_json, f, indent=2)
+        # share_json["configs"] = config
+        # ## 保存
+        # write_json_file = "share.json"
+        # with open(write_json_file, 'w') as f:
+        #     json.dump(share_json, f, indent=2)
     except:
         print("url check error")
     return configs
@@ -127,8 +127,13 @@ if __name__ == "__main__":
     if len(sys.argv) == 1:
         share_link=share_json["nodelink"]
     else:
+        if len(sys.argv) > 2:
+            from AES import aesDecrypt
+            passwd = str(sys.argv[2])
+            passwd = '%016s' % (passwd)
+            share_json["url"] = aesDecrypt(passwd, share_json["AESurl"])
         select_idx = int(sys.argv[1])
-        configs = refresh_sub(share_json)
+        configs = refresh_sub(share_json["url"])
         print("sub ok:{}".format(configs))
         share_link = configs[select_idx]
     print(share_link)
