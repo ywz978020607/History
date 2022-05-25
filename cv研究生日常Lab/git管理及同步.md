@@ -240,3 +240,6 @@ git commit -m 'update .gitignore'
 !.gitignore
 !*.foo
 ```
+
+如何才能让 git 识别文件名大小写变化
+- 终端中在仓库文件位置输入git config core.ignorecase false即可
