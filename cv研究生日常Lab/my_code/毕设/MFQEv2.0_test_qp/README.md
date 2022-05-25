@@ -74,7 +74,7 @@ Notice that we have only 5 models with QP22, 27, 32, 37, 42, so we should record
 
 **The average delta PSNR and delta SSIM results will be recorded in `record_test.txt`**, which are the same with the results presented in our paper:
 
-![Result](./Result.png)
+![Result](Result.png)
 
 # Notice
 

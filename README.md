@@ -3,13 +3,13 @@
 [软硬件前后端物联网全栈开发b站视频账号](https://space.bilibili.com/250616280)
 
 - cv研究生日常Lab
-  - [面向深度学习的集中管理的多用户docker配置⭐](./cv研究生日常Lab/mydocker)
-  - [玩转跳板机推荐配置](./cv研究生日常Lab/玩转跳板机/readme.md)
-  - [面向深度学习的多机器git使用策略](./cv研究生日常Lab/%E4%B8%AD%E5%BF%83%E5%8C%96%E5%A4%9A%E6%9C%BA%E5%99%A8%E5%BC%80%E5%8F%91%E6%8E%A8%E8%8D%90%E9%85%8D%E7%BD%AE.md)
+  - [面向深度学习的集中管理的多用户docker配置⭐](cv研究生日常Lab/mydocker)
+  - [玩转跳板机推荐配置](cv研究生日常Lab/玩转跳板机/readme.md)
+  - [面向深度学习的多机器git使用策略](cv研究生日常Lab/%E4%B8%AD%E5%BF%83%E5%8C%96%E5%A4%9A%E6%9C%BA%E5%99%A8%E5%BC%80%E5%8F%91%E6%8E%A8%E8%8D%90%E9%85%8D%E7%BD%AE.md)
   - 内网穿透脚本教程
-  - [一键梯子教程/内网二级梯子/校园网免流量等v2ray配置](./cv%E7%A0%94%E7%A9%B6%E7%94%9F%E6%97%A5%E5%B8%B8Lab/v2ray%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC/)/[北航云盘下载脚本](./cv研究生日常Lab/bhpan.py)
-  - 日常各类常用脚本/linux运维/docker/[git使用推荐配置](./cv研究生日常Lab/git%E7%AE%A1%E7%90%86%E5%8F%8A%E5%90%8C%E6%AD%A5.md)等
-  - LC-leetcode编程相关 如 [java常用数据结构算法](./cv研究生日常Lab/LC/数据结构/java常用数据结构算法.md)
+  - [一键梯子教程/内网二级梯子/校园网免流量等v2ray配置](cv%E7%A0%94%E7%A9%B6%E7%94%9F%E6%97%A5%E5%B8%B8Lab/v2ray%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC/)/[北航云盘下载脚本](cv研究生日常Lab/bhpan.py)
+  - 日常各类常用脚本/linux运维/docker/[git使用推荐配置](cv研究生日常Lab/git%E7%AE%A1%E7%90%86%E5%8F%8A%E5%90%8C%E6%AD%A5.md)等
+  - LC-leetcode编程相关 如 [java常用数据结构算法](cv研究生日常Lab/LC/数据结构/java常用数据结构算法.md)
   - 图像处理常用demo
 - web相关
 
@@ -20,7 +20,7 @@
   - sqlite3、mongodb等小型化数据库简易上手
   - wechat小程序交互
 - 日常自动化工具
-  *使用python加速日常表格, 浏览器脚本自动化等工作处理，win32api脚本，[gif图制作(支持透明通道)](./日常自动化工具/convergif.py)*
+  *使用python加速日常表格, 浏览器脚本自动化等工作处理，win32api脚本，[gif图制作(支持透明通道)](日常自动化工具/convergif.py)*
 
 - 桌面端
 
