@@ -1,20 +1,20 @@
-#shellÊäÈë
-pip install jupyter #°²×°jupyter notebook
+#shellè¾“å…¥
+pip install jupyter #å®‰è£…jupyter notebook
 pip install ipython
-pip install jupyterlab #ÔÙ°²×°lab°æ
+pip install jupyterlab #å†å®‰è£…labç‰ˆ
 
-jupyter notebook password #ÉèÖÃÃÜÂë
+jupyter notebook password #è®¾ç½®å¯†ç 
 
-#Éú³ÉlabÅäÖÃÎÄ¼ş
+#ç”Ÿæˆlabé…ç½®æ–‡ä»¶
 jupyter lab --generate-config
-#ÔÚÉú³ÉµÄÎÄ¼ş vim xx.pyÖĞ£¬ÕÒµ½ÏÂÃæÈıĞĞ´úÂë£¬È¡Ïû×¢ÊÍ£¬²¢ĞŞ¸ÄµÈºÅÓÒ²àÎªÒÔÏÂ£º
+#åœ¨ç”Ÿæˆçš„æ–‡ä»¶ vim xx.pyä¸­ï¼Œæ‰¾åˆ°ä¸‹é¢ä¸‰è¡Œä»£ç ï¼Œå–æ¶ˆæ³¨é‡Šï¼Œå¹¶ä¿®æ”¹ç­‰å·å³ä¾§ä¸ºä»¥ä¸‹ï¼š
 	c.NotebookApp.allow_root = True
 	c.NotebookApp.open_browser = False
-	c.NotebookApp.password = '¸Õ²Å¸´ÖÆµÄÊä³öÕ³Ìùµ½ÕâÀïÀ´'
+	c.NotebookApp.password = 'åˆšæ‰å¤åˆ¶çš„è¾“å‡ºç²˜è´´åˆ°è¿™é‡Œæ¥'
 
-#ÔËĞĞÊÔÊÔ
-#µ¥´ÎÔËĞĞ
+#è¿è¡Œè¯•è¯•
+#å•æ¬¡è¿è¡Œ
 jupyter lab --ip=0.0.0.0 --port=9003 
-#ºóÌ¨ÔËĞĞ
+#åå°è¿è¡Œ
 nohup jupyter lab --ip=0.0.0.0 --no-browser --port=9003 &  
 
