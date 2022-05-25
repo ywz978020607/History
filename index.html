@@ -35,9 +35,9 @@
     });
 
     window.$docsify = {
-      name: 'Sharklet',
-      repo: 'ywz978020607/History',
-      logo: '/img/32x32.png',
+      name: 'leetcode',
+      repo: 'ywz978020607/leetcode',
+      logo: '/images/ywz978020607-leetcode.png',
       search: [
         '/' //, '/solution/', '/lcof/', '/lcof2/', '/lcci/', '/lcs/', '/lcp/', '/basic/'
       ],
@@ -108,7 +108,7 @@
 
             const github = `[GitHub](${url})`
             // const gitee = `[Gitee](${url.replace("github", "gitee").replace("doocs.github.io", "doocs")})`
-            const editHtml = !cn ? `:memo: Edit on ${github} \n` : `:memo: 在 ${github} 编辑\n`
+            const editHtml = isEn() ? `:memo: Edit on ${github} \n` : `:memo: 在 ${github} 编辑\n`
             return editHtml + html
           })
 
