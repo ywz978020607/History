@@ -2,7 +2,7 @@
 
 
 
-![pic](../../.pic/TIM截图20190815154847.png)
+![pic](../../img/TIM截图20190815154847.png)
 
 
 
@@ -77,13 +77,13 @@
   链接：https://pan.baidu.com/s/1SR8TCTYnaW8VLTm1_T3D6Q 
   提取码：h5zy
   
-  ![pic](../../.pic/IMG_20190810_134416.jpg)
+  ![pic](../../img/IMG_20190810_134416.jpg)
 
 
 
 
 
-- ![pic](../../.pic/IMG_20190810_134438.jpg)
+- ![pic](../../img/IMG_20190810_134438.jpg)
 
 
 
