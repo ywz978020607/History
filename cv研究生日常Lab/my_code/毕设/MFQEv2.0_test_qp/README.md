@@ -15,7 +15,7 @@
 @ARTICLE{8855019,
 author={Z. {Guan} and Q. {Xing} and M. {Xu} and R. {Yang} and T. {Liu} and Z. {Wang}},
 journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-title={{MFQE} 2.0: A New Approach for Multi-frame Quality Enhancement on Compressed Video},
+title={xx{MFQE} 2.0: A New Approach for Multi-frame Quality Enhancement on Compressed Video},
 year={2019},
 volume={},
 number={},
