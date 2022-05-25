@@ -2,17 +2,18 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <title>Welcome to History by ywz978020607</title>
+  <meta charset="UTF-8">
+  <title>LeetCode & Coding Interview Guide - ywz978020607 Open Source Organization</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="ywz978020607's Home" />
+  <!-- <meta name="keywords"
+    content="doc,docs,ywz978020607,documentation,github,gitee,coding,pages,leetcode,lcof,lcci,lcof2,coding-interview,coding-interview-guide,cracking-the-coding-interview,yanglbme">
+  <meta name="description" content="LeetCode、剑指Offer、程序员面试金典题解"> -->
   <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-  <link rel="stylesheet" href="//fastly.jsdelivr.net/npm/docsify/lib/themes/vue.css" />
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//fastly.jsdelivr.net/npm/docsify/lib/themes/vue.css">
   <link rel="stylesheet" href="//fastly.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css">
-  <link rel="stylesheet" href="//fastly.jsdelivr.net/npm/gitalk/dist/gitalk.css" />
-  <!-- <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" /> -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <style>
     .markdown-section code {
       font-weight: 400;
@@ -21,19 +22,53 @@
 </head>
 
 <body>
-  <nav>
-    <ul>
-      <li><a href="#README_CN">中文</a></li>
-      <li><a href="#">En</a></li>
-    </ul>
-  </nav>
-  <div id="app">欢迎来到Sharklet开源社区</div>
+  <div id="app">History仓库@ywz978020607</div>
   <script>
+    const isEn = () => location.hash.includes('README_EN');
+    const isRoot = () => ['', '#/', '#/README', '#/README_EN'].includes(location.hash);
+    const sidebar = () => isRoot() ? false : (isEn() ? 'summary_en.md' : 'summary.md');
+
+    window.addEventListener('hashchange', () => {
+      window.$docsify.loadSidebar = sidebar();
+      window.$docsify.pagination.previousText = isEn() ? 'PREVIOUS' : '上一题';
+      window.$docsify.pagination.nextText = isEn() ? 'NEXT' : '下一题';
+    });
+
     window.$docsify = {
-      name: "Sharklet",
-      logo: "/img/32x32.png",
+      name: 'Sharklet',
+      repo: 'ywz978020607/History',
+      logo: '/img/32x32.png',
+      search: [
+        '/' //, '/solution/', '/lcof/', '/lcof2/', '/lcci/', '/lcs/', '/lcp/', '/basic/'
+      ],
+      loadSidebar: sidebar(),
       auto2top: true,
-      search: ["/"],
+      subMaxLevel: 2,
+      // alias: {
+      //   '/lcs/.*/summary.md': '/lcs/summary.md',
+      //   '/lcp/.*/summary.md': '/lcp/summary.md',
+      //   '/lcci/.*/summary.md': '/lcci/summary.md',
+      //   '/lcof/.*/summary.md': '/lcof/summary.md',
+      //   '/lcof2/.*/summary.md': '/lcof2/summary.md',
+      //   '/solution/.*/summary.md': '/solution/summary.md',
+      //   '/basic/.*/summary.md': '/basic/summary.md',
+
+      //   '/lcs/.*/summary_en.md': '/lcs/summary_en.md',
+      //   '/lcp/.*/summary_en.md': '/lcp/summary_en.md',
+      //   '/lcci/.*/summary_en.md': '/lcci/summary_en.md',
+      //   '/lcof/.*/summary_en.md': '/lcof/summary_en.md',
+      //   '/lcof2/.*/summary_en.md': '/lcof2/summary_en.md',
+      //   '/solution/.*/summary_en.md': '/solution/summary_en.md',
+      //   '/basic/.*/summary_en.md': '/basic/summary_en.md',
+      // },
+      contributors: {
+        repo: 'ywz978020607/leetcode',
+        ignores: ['/README.md', '/README_EN.md', '/solution/README.md', '/solution/README_EN.md', '/summary.md'],
+        image: {
+          margin: '0.2em',
+          isRound: true
+        }
+      },
       darklightTheme: {
         defaultTheme: 'light',
         siteFont: 'Source Sans Pro,Helvetica Neue,Arial,sans-serif',
@@ -49,10 +84,23 @@
           highlightColor: '#e96900',
         }
       },
+      pagination: {
+        previousText: isEn() ? 'PREVIOUS' : '上一篇',
+        nextText: isEn() ? 'NEXT' : '下一篇',
+        crossChapter: true,
+        crossChapterText: true
+      },
+      tabs: {
+        persist: true,
+        sync: true,
+        theme: 'classic',
+        tabComments: true,
+        tabHeadings: true
+      },
       plugins: [
-        function (hook, vm) {
-          hook.beforeEach(function (html) {
-            const cn = vm.route.file.indexOf('README_CN') != -1
+        (hook, vm) => {
+          hook.beforeEach((html) => {
+            const { file } = vm.route
             const userContent = /githubusercontent\.com/.test(vm.route.file)
             const url = userContent ? vm.route.file
               .replace('raw.githubusercontent.com', 'github.com')
@@ -64,39 +112,47 @@
             return editHtml + html
           })
 
-          hook.afterEach(function (html) {
-            const cn = vm.route.file.indexOf('README_CN') != -1
-            const copyright = cn ? ' 版权所有' : '. All Rights Reserved'
+          hook.afterEach((html) => {
+            const copyright = isEn() ? '. All Rights Reserved' : ' 版权所有'
             const currentYear = new Date().getFullYear()
-            const footer = `<footer><span>Copyright © 2018-${currentYear} <a href="https://github.com/ywz978020607" target="_blank">ywz978020607</a>${copyright}</footer>`
+            const footer = `<footer>Copyright © 2018-${currentYear} <a href="https://github.com/ywz978020607" target="_blank">ywz978020607</a>${copyright}</footer>`
             return html + footer
-          });
+          })
         },
-      ],
-    };
+      ]
+    }
   </script>
   <script src="//fastly.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/prismjs/components/prism-go.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/prismjs/components/prism-sql.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/prismjs/components/prism-cpp.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/prismjs/components/prism-kotlin.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/prismjs@1.15.0/components/prism-javascript.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/prismjs@1.15.0/components/prism-typescript.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/prismjs/components/prism-swift.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/prismjs/components/prism-nim.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/prismjs/components/prism-ruby.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/prismjs/components/prism-rust.min.js"></script>
   <script src="//fastly.jsdelivr.net/npm/docsify-copy-code@2.1.1/dist/docsify-copy-code.min.js"></script>
   <script src="//fastly.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <script src="//fastly.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
   <script src="//fastly.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-  <script src="//fastly.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
-  <script src="//fastly.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/docsify-tabs@1/dist/docsify-tabs.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="//fastly.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"></script>
-  <script>
-    const gitalk = new Gitalk({
-      clientID: "40c714c4209ce7944a93",
-      clientSecret: "2450ed4a601a147b5b7b773b7c22786981b7a538",
-      repo: "ywz978020607.github.io",
-      owner: "ywz978020607",
-      admin: ["ywz978020607"],
-      number: 3,
-      distractionFreeMode: true,
-      labels: ["talk"],
-      title: "Welcome to talk with developers.",
-      perPage: 15,
-    });
-  </script>
+  <script src="//fastly.jsdelivr.net/npm/docsify-contributors@latest/dist/index.min.js"></script>
 </body>
+
+<!-- 
+cdn.jsdelivr.net
+test1.jsdelivr.net
+testingcf.jsdelivr.net
+fastly.jsdelivr.net
+gcore.jsdelivr.net
+ -->
 
 </html>
