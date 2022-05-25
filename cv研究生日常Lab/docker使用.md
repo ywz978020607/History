@@ -32,6 +32,14 @@ docker exec -it xxxx /bin/bash->在container中启动一个bash shell
   ```
 
 
+前缀匹配  
+id原生支持前缀匹配，不需要输入完整id，只要输入到id前缀至无重复即可  
+但对于自动化等脚本，有时需要自动重启对应容器，但id经常改变，容器名也可能有一些杂乱后缀，此时可以根据filter进行过滤：  
+```
+docker ps -a --no-trunc --filter name=prefix123
+# 相应的重启命令为
+docker restart $( docker ps -a --no-trunc --filter name=prefix123 )
+```
 
 
 
