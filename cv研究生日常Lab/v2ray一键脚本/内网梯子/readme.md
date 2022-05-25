@@ -21,7 +21,7 @@
 当境外节点失效时如何替换? 
 # 1.用share.json中url字段的订阅链接（推荐）
 python merge.py 0/1/2 #选择机场的第几个节点，支持ss和vmess
-#若选用公开的AES加密过的url订阅
+#若选用公开的AES加密过的url订阅 #pip3 install pycryptodome==3.14.1
 wget xxx/v2rayconfig.tar
 # tar cvf v2rayconfig.tar AES.py config.json merge.py readme.md share.json
 tar xvf v2rayconfig.tar
