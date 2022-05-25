@@ -7,7 +7,7 @@
 [软硬件前后端物联网全栈开发b站视频账号](https://space.bilibili.com/250616280)
 
 - cv研究生日常Lab
-  - [面向深度学习的集中管理的多用户docker配置⭐](cv研究生日常Lab/mydocker)
+  - [面向深度学习的集中管理的多用户docker配置⭐](cv研究生日常Lab/mydocker/readme.md)
   - [玩转跳板机推荐配置](cv研究生日常Lab/玩转跳板机/readme.md)
   - [面向深度学习的多机器git使用策略](cv研究生日常Lab/%E4%B8%AD%E5%BF%83%E5%8C%96%E5%A4%9A%E6%9C%BA%E5%99%A8%E5%BC%80%E5%8F%91%E6%8E%A8%E8%8D%90%E9%85%8D%E7%BD%AE.md)
   - 内网穿透脚本教程
