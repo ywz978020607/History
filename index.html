@@ -145,6 +145,22 @@
   <script src="//fastly.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <script src="//fastly.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"></script>
   <script src="//fastly.jsdelivr.net/npm/docsify-contributors@latest/dist/index.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//fastly.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+  <script>
+    const gitalk = new Gitalk({
+      clientID: "40c714c4209ce7944a93",
+      clientSecret: "2450ed4a601a147b5b7b773b7c22786981b7a538",
+      repo: "ywz978020607.github.io",
+      owner: "ywz978020607",
+      admin: ["ywz978020607"],
+      number: 3,
+      distractionFreeMode: true,
+      labels: ["talk"],
+      title: "Welcome to talk with developers.",
+      perPage: 15,
+    });
+  </script>
 </body>
 
 <!-- 
