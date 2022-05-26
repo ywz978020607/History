@@ -33,6 +33,10 @@ python merge.py 0/1/2 passwd #passwd为最常用的组会房间号
 # 2.更新share.json中nodelink的节点链接（需手动更新）
 python merge.py
 ```
+一键替换&重启v2ray
+```
+python merge.py 0/1/2/3/4/5 passwd machinepasswd ##passwd为最常用的组会房间号 machinepasswd为机器账号密码(需有sudo权限)
+```
 socks5代理监听端口为服务器的10808  
 http代理监听端口为服务器的10809  
 
