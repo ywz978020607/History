@@ -4,7 +4,7 @@
 #pack:
 tar cvf mydocker.tar build.sh docker-compose.yml Dockerfile entrypoint.sh env.sh fixuid requirements.txt readme.md
 #unpack:
-tar xvf mydockr.tar
+tar xvf mydockr.tar  -C /mydockerxx #解压到mydockerxx目录
 ```
 
 # 0.改造目的
