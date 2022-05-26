@@ -1,7 +1,11 @@
 # 内网梯子(同时作为服务端+客户端)
+
 ## 目前BUAA校内服务器已部署
 - 10808和10809分别对应socks5和http代理(ip保密需私聊, switch等游戏机也可以直接代理自动翻墙加速)
 - 支持校内ss和vmess协议(保密需私聊)
+
+
+## 0.[本节压缩包静态链接下载](https://github.com/ywz978020607/History/raw/master/cv%E7%A0%94%E7%A9%B6%E7%94%9F%E6%97%A5%E5%B8%B8Lab/v2ray%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC/%E5%86%85%E7%BD%91%E6%A2%AF%E5%AD%90/v2rayconfig.tar)
 
 ## 1. 功能
 ```
@@ -21,7 +25,7 @@
 当境外节点失效时如何替换? 
 # 1.用share.json中url字段的订阅链接（推荐）
 python merge.py 0/1/2 #选择机场的第几个节点，支持ss和vmess
-#若选用公开的AES加密过的url订阅 #pip3 install pycryptodome==3.14.1
+#若选用公开的AES加密过的url订阅 #pip3 install pycryptodome==3.14.1 或 pip3 install -r requirements.txt
 wget xxx/v2rayconfig.tar
 # tar cvf v2rayconfig.tar AES.py config.json merge.py readme.md share.json
 tar xvf v2rayconfig.tar

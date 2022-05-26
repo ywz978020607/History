@@ -148,3 +148,6 @@ if __name__ == "__main__":
         share_link = configs[select_idx]
     print(share_link)
     merge(share_link=share_link)
+    if len(sys.argv) > 3:
+        import os
+        os.system("echo {} | sudo v2ray restart".format(str(sys.argv[3])))

@@ -107,19 +107,19 @@
       "protocol": "shadowsocks",
       "settings": {
         "vnext": null,
+        "response": null,
         "servers": [
           {
-            "email": null,
-            "address": "45.7xxxx",
+            "address": "45.78.4.104",
             "method": "aes-256-gcm",
+            "password": "qpXTe6cwmfKrF2qa",
+            "port": 11268,
+            "email": null,
             "ota": false,
-            "password": "xxxxxx",
-            "port": 111111,
             "level": 1,
             "users": null
           }
-        ],
-        "response": null
+        ]
       },
       "streamSettings": {
         "network": "tcp",
