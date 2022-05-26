@@ -17,7 +17,7 @@ services:
     volumes:
       - ..:/src
     ports:
-      - "80:80"
+      - "5432:8000"
     # if use nginx depends_on web
     # expose:
     #   - "8000"
