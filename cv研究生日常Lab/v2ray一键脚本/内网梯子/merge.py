@@ -63,14 +63,24 @@ def merge(share_link):
         net=str.encode(net)
         lens = len(net)
         lenx = lens - (lens % 4 if lens % 4 else 4)
-        print(net)
-        resultJson = base64.decodestring(net)
-        # print(resultJson)
+        try:
+            resultJson = base64.decodestring(net)
+        except:
+            print("base64 decode directly error, try decode-net[:lenx]")
+            resultJson = base64.decodestring(net[:lenx])
+            resultJson = "".join(str(resultJson).split("{")[-1].split("\'")[0].split("\""))
+            pair_list = resultJson.split(",")
+            resultJson = {}
+            for pair in pair_list:
+                resultJson[pair.split(":")[0].strip()] = pair.split(":")[-1].strip()
+            resultJson = json.dumps(resultJson).encode()
+        print(resultJson) #bytes
+        print("+++++")
         if scheme == "vmess":
             result_dict = {}
             result_dict["protocol"]="vmess"
             result_dict["settings"]={}
-            resultJson = base64.decodestring(net)
+            # resultJson = base64.decodestring(net)
             get_dict = json.loads(bytes.decode(resultJson))
             print(get_dict)
             result_dict["settings"]={
