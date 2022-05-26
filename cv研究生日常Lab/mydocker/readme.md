@@ -1,5 +1,11 @@
 
-# 炼丹炉容器化隔离改造 [本目录文件打包下载](https://raw.githubusercontent.com/ywz978020607/History/master/cv%E7%A0%94%E7%A9%B6%E7%94%9F%E6%97%A5%E5%B8%B8Lab/mydocker/mydocker.zip)
+# 炼丹炉容器化隔离改造 [本目录文件打包下载](https://raw.githubusercontent.com/ywz978020607/History/master/cv%E7%A0%94%E7%A9%B6%E7%94%9F%E6%97%A5%E5%B8%B8Lab/mydocker/mydocker.tar)
+```
+#pack:
+tar cvf mydocker.tar build.sh docker-compose.yml Dockerfile entrypoint.sh env.sh fixuid requirements.txt readme.md
+#unpack:
+tar xvf mydockr.tar
+```
 
 # 0.改造目的
 - 保证数据安全性
