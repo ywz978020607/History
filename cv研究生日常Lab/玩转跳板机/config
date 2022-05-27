@@ -7,52 +7,55 @@ Host jump1
   User ywz
   Port 57009
 
+  # ProxyCommand ssh -W %h:%p jump1
+  # ProxyJump jump1, 207
 ######################################
 Host 30901
   HostName 10.130.157.75
   User ywz
   Port 2220
-  # ProxyCommand ssh -W %h:%p jump1
+  # ProxyJump jump1
 
 Host 30902
   HostName 10.130.158.90
   User ywz
-  # ProxyCommand ssh -qW %h:%p 207
+  # ProxyJump jump1
 
 Host 207
   HostName 10.134.162.162
   User ywz
   Port 22
-  # ProxyCommand ssh -qW %h:%p jump1
+  # ProxyJump jump1
 
 Host 930
   HostName 10.134.126.158
   User ywz
   Port 22
-  # ProxyCommand ssh -qW %h:%p jump1
+  # ProxyJump jump1
 
 Host 2080
   HostName 10.134.162.175
   User ywz
   Port 22
-  # ProxyCommand ssh -qW %h:%p jump1
+  # ProxyJump jump1
 
 Host 401
   HostName 10.134.162.193
   User ywz
   Port 22
-  # ProxyCommand ssh -qW %h:%p jump1
+  # ProxyJump jump1
 
 Host 509
   HostName 10.134.162.159
   User ywz
   Port 22
-  # ProxyCommand ssh -qW %h:%p jump1
+  # ProxyJump jump1
+
 Host 518
   HostName 10.135.181.3
   User ywz
   Port 22
-  # ProxyCommand ssh -qW %h:%p jump1
+  # ProxyJump jump1
 
 #-----------git-------------
 # gitee
