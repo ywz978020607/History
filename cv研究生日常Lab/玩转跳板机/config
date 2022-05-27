@@ -7,9 +7,8 @@ Host jump1
   User ywz
   Port 57009
 
-  # ProxyCommand ssh -W %h:%p jump1
-  # ProxyJump jump1, 207
 ######################################
+# ssh 30901 -J jump1,jump2,...
 Host 30901
   HostName 10.130.157.75
   User ywz
