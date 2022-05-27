@@ -1,7 +1,7 @@
 # 跳板机之便捷管理所有远程内网机器-ssh&scp
 
 ## 1. 修改.ssh/config文件 - vscode易用
-范例见[config](config)，将系统ssh config文件(vscode的远程配置端点击配置可自动打开此文件)进行参考修改，再远程即可
+范例见[config](config)，将系统ssh config文件(vscode的远程配置端点击配置可自动打开此文件)进行参考修改，再远程即可  
 BUAA-MC^2 同学可直接参考实时更新的[最新配置](https://raw.githubusercontent.com/Archer-Tatsu/MC-2/master/machine/IRCmachinedocker/code/config): 
 ```
 ssh 30901 
