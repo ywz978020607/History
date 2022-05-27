@@ -78,9 +78,15 @@ docker exec -it [CONTAINER_NAME or CONTAINER_ID] /bin/bash #快速命令>once [�
 ```
 #如果替换可以不输[:标签]
 docker commit -m="描述信息" -a="username" 容器名称|容器ID 生成的镜像名[:标签名]
-docker save/export -o savePathName_xxx.tar 镜像名[:标签] 
-docker load/import -i xxxx.tar
-#如果觉得commit导致文件过大，可以采用export方式，只保留一层镜像
+docker save -o savePathName_xxx.tar 镜像名[:标签] 
+docker load -i xxxx.tar
+#可利用tar.gz方式进一步缩小体积
+docker save -o savePathName_xxx.tar 镜像名[:标签] | gzip > <myimage>.tar.gz
+gunzip -c 文件名.tar.gz | docker load
+
+#如果需要拆分-北航云盘同步有大小限制，可以参考如下切分合并
+split -b 10m mydocker.tar.gz "prefixxx."
+cat prefixxx* > mydocker.tar.gz
 ```
 
 # 2.管理员配置完整过程[非管理员可忽略]  
