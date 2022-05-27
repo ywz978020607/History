@@ -1,3 +1,4 @@
+# 更好的方法：https://github.com/xdedss/dist_bhpan
 #下载北航云盘的文件
 import sys
 import os
