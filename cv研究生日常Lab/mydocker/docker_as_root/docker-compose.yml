@@ -1,0 +1,12 @@
+version: '3'
+services:
+  ldl:
+    build: .
+    working_dir: /root #/home/docker #path in container
+    ipc: host
+    #(path/ports in host: path/ports in container)
+    volumes:
+      - /media/data/minglang:/media/data/minglang
+      - /media/data/liutie:/media/data/liutie
+      - /media/data/ccr:/media/data/ccr
+    #   - "8000:8000"
