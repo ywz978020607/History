@@ -12,3 +12,5 @@ docker-compose build
 
 docker-compose up -d  #you can change the .yml=> /src/files path and rerun this command
 ```
+
+[Click here and you can download this folder.](https://github.com/ywz978020607/History/raw/master/web%E7%9B%B8%E5%85%B3%20(python%E5%85%A8%E6%A0%88%E7%B3%BB%E5%88%97)/docker_nginx_with_Django_AuthUpload/docker_nginx_with_Django_AuthUpload.zip)
