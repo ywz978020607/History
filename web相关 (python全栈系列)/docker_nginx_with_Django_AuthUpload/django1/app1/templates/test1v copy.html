@@ -1,0 +1,185 @@
+{% extends "base.html" %} {% block head %}
+
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css" >
+<link rel="stylesheet" type="text/css" href="/static/css/table.css" >
+
+<script src="/static/js/vue.global.js"/>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="/static/jQueryAssets/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+{% endblock %}
+
+{% block body %}
+{% verbatim %}
+
+<center>
+<!--可以挂多个vue，但不太方便-->
+<div id="App1">
+ <br> <br> <br> <br> <br> <br>
+<center>
+<button id="Button1" class="btn btn-primary" @click="button1">修改示例1</button>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<button id="Button2" class="btn btn-primary" @click="button2">修改示例2</button>
+ <br> <br> <br> <br> <br> <br>
+
+    <h2>远程查看系统界面</h2>
+
+<table border="1">
+<tr>
+  <td>名称</td>
+  <td>数值</td>
+</tr>
+<tr>
+  <td id="name0">data1</td>
+  <td id="value0">{{val[0]}}</td>
+</tr>
+<tr>
+  <td id="name1">data2</td>
+  <td id="value1">{{val[1]}}</td>
+</tr>
+</table>
+
+
+</div>
+
+<script>
+function test(){
+    console.log("test");
+}
+var param = {"limit_num":1,"id":"657447170","password":"dYzr8wSChJQIGCByNO3=8w85frU="};
+function show(){
+      //   //axios 已测试
+      //   axios({
+      //     method:'get',
+      //     url:'/onenet_check/',
+      //     params:{
+      //         "limit_num":1,"id":"657447170","password":"dYzr8wSChJQIGCByNO3=8w85frU="
+      //     }
+      //     // responseType:'stream'
+      //   }).then(response => {
+      //       data = response.data
+      //       console.log("axios::")
+      //     console.log(data)
+      //   }
+      // )
+      // .catch(function (error) { // 请求失败处理
+      //   console.log(error);
+      // });
+    val = 0;
+    $.ajaxSettings.async = false;  //修改为同步请求！！！
+    $.get("/onenet_check/",param,function(data,status){
+      // console.log(data);
+      val = data;
+      // $("#value0").text(data['datastreams'][1]['datapoints'][0]['value']);
+      // $("#value1").text(data['datastreams'][0]['datapoints'][0]['value']);
+     })
+    return val;
+    // $("#text2").text(data['end']);
+};
+function write(val){
+    var param1 = {"limit_num":1,"id":"657447170","password":"dYzr8wSChJQIGCByNO3=8w85frU="};
+    param1['data_name'] = JSON.stringify(['data2']) //可以多个
+    param1['data_value'] = JSON.stringify([val]) //可以多个
+
+    console.log(param1);
+    $.get("/onenet_write/",param1,function(data,status){
+      // console.log(data);
+      alert("changed ok.");
+      show();
+     })
+    // $("#text2").text(data['end']);
+};
+
+/////////////////////////////////////////////////////////////////////////////////////////
+const App1 = {
+  data() {
+    return {
+      intervalId:null,
+      seen:[true,false,false],
+      todos: [
+        { text: 'Learn JavaScript' },
+        { text: 'Learn Vue' },
+        { text: 'Build something awesome' }
+      ],
+
+        val:[
+            0,1
+        ],
+
+    }
+  },
+
+methods:{
+      fresh(){
+          var param = {"limit_num":1,"id":"657447170","password":"dYzr8wSChJQIGCByNO3=8w85frU="};
+          //way1
+        //   val = 0;
+        // $.ajaxSettings.async = false;  //修改为同步请求！！！
+        // $.get("/onenet_check/",param,function(data,status) {
+        //     val = data;
+        //     console.log(val);
+        // })
+          //way2
+          val = show();
+        console.log(val);
+
+        ///
+        this.val[0] = val['datastreams'][1]['datapoints'][0]['value']
+        this.val[1] = val['datastreams'][0]['datapoints'][0]['value']
+
+      },
+    // 定时刷新数据函数
+      dataRefresh(){
+          // 计时器正在进行中，退出函数
+      if (this.intervalId != null) {
+        return;
+      }
+      // 计时器为空，操作
+      this.intervalId = setInterval(() => {
+        console.log("刷新" + new Date());
+        this.fresh(); //加载数据函数
+      }, 5000);
+      },
+        // 停止定时器
+    clear() {
+      clearInterval(this.intervalId); //清除计时器
+      this.intervalId = null; //设置为null
+    },
+
+    ////////////自定义
+      button1(event){
+          console.log("button1")
+          write("10.6");
+          this.fresh();
+      },
+      button2(event){
+          console.log("button2")
+          // this.seen=[false,true,false]
+          write("13.6");
+          this.fresh();
+      },
+
+  },
+
+    mounted(){
+        //加载时先刷新一下
+        this.fresh();
+    },
+    //定时器
+    created(){
+    this.dataRefresh();
+},
+destroyed(){
+    // 在页面销毁后，清除计时器
+    this.clear();
+}
+
+}
+Vue.createApp(App1).mount('#App1')
+</script>
+
+
+</center>
+{% endverbatim %}
+{% endblock %}

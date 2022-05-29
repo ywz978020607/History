@@ -1,0 +1,24 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginxwithupload
+    ports:
+      - "81:80"
+    volumes:
+      - ..:/src
+      - /var/www/html:/src/files #you can change this ori path, be consistent with next one
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - web
+  web:
+    build: .
+    image: backend_common_image
+    container_name: djangoback
+    command: ./dev_start.sh #bash -c "python django1/manage.py runserver 0.0.0.0:8000 > django.log 2>&1"
+    volumes:
+      - ..:/src
+      - /var/www/html:/src/files #you can change this ori path, be consistent with last one
+    expose:
+      - "8000"
+    restart: always

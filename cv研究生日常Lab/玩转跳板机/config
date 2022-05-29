@@ -1,60 +1,8 @@
-Host jump1
-  HostName 467830y6j3.zicp.vip
-  User ywz
-  Port 32027
-Host jump2
-  HostName 467830y6j3.zicp.vip
-  User ywz
-  Port 57009
-
-######################################
-# ssh 30901 -J jump1,jump2,...
-Host 30901
-  HostName 10.130.157.75
-  User ywz
-  Port 2220
-  # ProxyJump jump1
-
-Host 30902
-  HostName 10.130.158.90
-  User ywz
-  # ProxyJump jump1
-
-Host 207
-  HostName 10.134.162.162
-  User ywz
-  Port 22
-  # ProxyJump jump1
-
-Host 930
-  HostName 10.134.126.158
-  User ywz
-  Port 22
-  # ProxyJump jump1
-
-Host 2080
-  HostName 10.134.162.175
-  User ywz
-  Port 22
-  # ProxyJump jump1
-
-Host 401
-  HostName 10.134.162.193
-  User ywz
-  Port 22
-  # ProxyJump jump1
-
-Host 509
-  HostName 10.134.162.159
-  User ywz
-  Port 22
-  # ProxyJump jump1
-
+################
 Host 518
   HostName 10.135.181.3
   User ywz
   Port 22
-  # ProxyJump jump1
 
 #-----------git-------------
 # gitee
@@ -63,9 +11,97 @@ Host gitee.com
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/id_rsa.gitee
 
+Host gitlab.com
+  HostName gitlab.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa.gitlab
+
+# gitlab copy from github
+Host mygitlab.com
+  HostName 127.0.0.1
+  Port 8022
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa.gitlab
+
 # github
 Host github.com
   HostName github.com
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/id_rsa.github
   ProxyCommand connect -S 127.0.0.1:10808 -a none %h %p #win-dns解析失败时设置走本机socks代理
+
+
+Host vps
+  HostName 209.250.237.38
+  User ywz
+#############################################################################################
+#BUAAMC2
+#############################################################################################
+Host 30901
+  # 维修状态: 正常
+  # 机械硬盘(数据盘): /temp_disk2
+  # NFS映射: None
+  HostName 10.130.157.75
+  User liutie
+  Port 2220
+# ==================================== #
+Host 30902
+  # /temp_disk2 
+  HostName 10.130.158.90
+  User ywz
+# ==================================== #
+Host 207
+  # /temp_disk2 & /temp_disk3
+  HostName 10.134.162.162
+  User ywz
+# ==================================== #
+Host 930
+  # /temp_disk2 
+  HostName 10.130.157.75
+  User ywz
+  Port 2222
+# ==================================== #
+Host 2080
+  # /temp_disk2 
+  HostName 10.134.162.175
+  User ywz
+# ==================================== #
+Host 401
+  # /temp_disk2 
+  HostName 10.134.162.193
+  User ywz
+# ==================================== #
+Host 509
+  # /temp_disk2 & /temp_disk3
+  HostName 10.134.162.159
+  User ywz
+  # ProxyJump jump1
+# ==================================== #
+Host 220
+  # /media/
+  # 新建需联系admin
+  HostName 183.129.176.220
+  User yangwenzhe
+# ==================================== #
+Host ali4k
+  # 新建需联系admin
+  HostName 47.111.111.29
+  User ywz
+# ==================================== #
+Host ali8k
+  # 新建需联系admin
+  HostName 47.111.185.214
+  User ywz
+# ==================================== #
+# ==================================== #
+# 跳板机
+Host jump1
+  HostName 467830y6j3.zicp.vip
+  User ywz
+  Port 32027
+# ==================================== #
+Host jump2
+  HostName 467830y6j3.zicp.vip
+  User ywz
+  Port 57009
+# ==================================== #

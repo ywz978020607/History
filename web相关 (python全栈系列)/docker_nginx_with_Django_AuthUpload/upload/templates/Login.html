@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <html lang="zh-cn">
+
+    <head>
+        <meta charset="utf-8">
+        <title>认证界面</title>
+        <link rel="stylesheet" href="../static/css/mobi.min.css">
+
+        <script src="../static/js/vue.global.js" />
+        <script src="../static/js/axios.min.js"></script>
+        <script src="../static/jQueryAssets/jquery-1.11.1.min.js"></script>
+        <script src="../static/js/jquery.cookie.js"></script>
+
+
+    </head>
+</head>
+
+<body background="b1.jpg" style=" background-repeat:no-repeat ;background-size:100% 100%; 
+background-position-x: center;background-position-y: center;background-attachment: fixed;">
+
+    <body>
+        <div id="App1">
+
+            <div class="flex-center">
+                <div class="container">
+                    <div class="flex-center">
+                        <div class="unit-1-2 unit-1-on-mobile">
+                            <h1>查询系统</h1>
+
+                            <div v-if="tips">--------{{ tips }}---------------</div>
+
+                            <div class="form">
+                                <!--  {% csrf_token %} -->
+                                <div>用户名:<input type="text" name='username' v-model="input_val[0]"></div>
+                                <div>密 码:<input type="password" name='password' v-model="input_val[1]"></div>
+
+                                <div style="display:inline;">
+                                    <nobr>验证码<img src="" id="img1" />:&nbsp;&nbsp;&nbsp;<input style="width: auto;display:inline; "  v-model="input_val[4]"></nobr> 
+                                </div>
+
+                                <div v-if="mode==2">确认密码:<input type="password" name='password2' v-model="input_val[2]"></div>
+
+                                <div v-if="mode==1">新密码:<input type="password" name='new_password' v-model="input_val[3]"></div>
+
+                                <button class="btn btn-primary btn-block" @click="button1">确定</button>
+                            </div>
+                            <div class="flex-left top-gap text-small">
+                                <div class="unit-2-3" v-if="mode==0">
+                                    <a @click="this.mode=1">修改密码</a>
+                                </div>
+                                <div class="unit-1-3 flex-right" v-if="mode==0">
+                                    <a @click="this.mode=2">注册</a>
+                                </div>
+
+                                <div class="unit-2-3" v-if="mode==1">
+                                    <a @click="this.mode=0">登录</a>
+                                </div>
+                                <div class="unit-1-3 flex-right" v-if="mode==1">
+                                    <a @click="this.mode=2">注册</a>
+                                </div>
+
+                                <div class="unit-2-3" v-if="mode==2">
+                                    <a @click="this.mode=1">修改密码</a>
+                                </div>
+                                <div class="unit-1-3 flex-right" v-if="mode==2">
+                                    <a @click="this.mode=0">登录</a>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const App1 = {
+                data() {
+                    return {
+                        mytoken: "",
+                        mode: 0, //0登录，1改密，2注册,3退出
+                        tips: "",
+                        input_val: [null, null, null, null, null], //初始5个null
+                        directionprefix: "/uploadapi",
+                        direction: "/uploadapi/auth/"
+                    }
+                },
+
+                methods: {
+                    button1(event) {
+                        that = this; //注意，http请求后的函数中，this的指向为副本的局部，无法真正修改！！所以要用that先复制指针，用that改值
+
+                        console.log(that.input_val)
+                        if (this.mode == 0) {
+                            //登录
+                            console.log("logging.")
+                                // 提交到后端
+                            $.ajaxSettings.async = false; //修改为同步请求！！！
+                            // that.input_val[0] = null;
+                            var param = {
+                                "mytoken": that.mytoken,
+                                "mode": "0",
+                                "data": JSON.stringify(that.input_val)
+                            }
+                            console.log(param);
+                            $.post(that.direction, param, function(data, status) {
+                                    console.log(data);
+
+                                    if (data.tips) {
+                                        that.tips = data.tips;
+                                    }
+
+                                    if (data.status == "ok") {
+
+                                        localStorage.setItem('loggedname', that.input_val[0])
+                                        window.location.href = "First.html"
+                                    } else {
+                                        alert("登陆失败")
+                                    }
+                                }, dataType = "JSON") //不直接显示明文
+                        }
+                        //改密
+                        if (this.mode == 1) {
+                            console.log("changing.")
+                                // 提交到后端
+                            $.ajaxSettings.async = false; //修改为同步请求！！！
+                            // that.input_val[0] = null;
+                            var param = {
+                                "mytoken": that.mytoken,
+                                "mode": "1",
+                                "data": JSON.stringify(that.input_val)
+                            }
+                            console.log(param);
+                            $.post(that.direction, param, function(data, status) {
+                                    console.log(data);
+
+                                    if (data.tips) {
+                                        that.tips = data.tips;
+                                    }
+
+                                    if (data.status == "ok") {
+                                        alert("改密成功")
+                                    } else {
+                                        alert("请重试")
+                                    }
+                                }, dataType = "JSON") //不直接显示明文
+                        }
+
+                        //注册
+                        if (this.mode == 2) {
+                            console.log("registering.")
+                                // 提交到后端
+                            $.ajaxSettings.async = false; //修改为同步请求！！！
+                            // that.input_val[0] = null;
+                            var param = {
+                                "mytoken": that.mytoken,
+                                "mode": "2",
+                                "data": JSON.stringify(that.input_val)
+                            }
+                            console.log(param);
+                            $.post(that.direction, param, function(data, status) {
+                                    console.log(data);
+
+                                    if (data.tips) {
+                                        that.tips = data.tips;
+                                    }
+
+                                    if (data.status == "ok") {
+                                        alert("注册成功")
+                                    } else {
+                                        alert("注册失败")
+                                    }
+                                }, dataType = "JSON") //不直接显示明文
+                        }
+                    },
+                },
+
+                mounted() {
+                    that = this; //注意，http请求后的函数中，this的指向为副本的局部，无法真正修改！！所以要用that先复制指针，用that改值
+                    //后端退出
+                    $.ajaxSettings.async = false; //修改为同步请求！！！
+                    var param = {
+                        "mode": "3",
+                    }
+                    console.log(param);
+                    $.post(that.direction, param, function(data, status) {
+                            console.log(data);
+                            console.log("quit successfully.");
+                            //set 缓存
+                            that.mytoken = data['token'];
+
+                        }, dataType = "JSON") //不直接显示明文
+
+                    $.ajaxSettings.async = false; //修改为同步请求！
+                    var param = {
+                        "mytoken": that.mytoken,
+                    }
+                    $.post(that.directionprefix+"/get_verification_pic/", param, function(data, status) {
+                            console.log("res")
+                            console.log(data);
+                            var obj = document.getElementById("img1");
+                            //obj.src = "data:image/jpeg;base64," + data;
+                            obj.src = "data:image/png;base64," + data;
+                        }) //不直接显示明文
+
+
+
+                },
+
+            }
+            Vue.createApp(App1).mount('#App1')
+        </script>
+
+
+
+
+    </body>
+
+    </html>

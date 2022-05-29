@@ -1,0 +1,1051 @@
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 18:26:20
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+b'------WebKitFormBoundaryUAvG6bPANjFxeDHp\r\nContent-Disposition: form-data; name="myFile"; filename="vivo.txt"\r\nContent-Type: text/plain\r\n\r\nhttps://vchat.vivo.xyz:8443/vivo/down/pc/index.html#/\r\n\r\n72162669\r\n\r\nhttps://vdi.vivo.xyz\r\n\r\nhttps://jus.vivo.xyz/\r\n\r\n\r\n------WebKitFormBoundaryUAvG6bPANjFxeDHp--\r\n'
+POST_param {}
+12345
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 413, in upload_files
+    filename = recv["myFile"]
+KeyError: 'myFile'
+[29/May/2022 18:26:21] "POST /upload_files/ HTTP/1.0" 500 64583
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 18:28:09
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 18:28:16
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 18:28:42
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+b'------WebKitFormBoundary2aFVXZdbADXnWEdT\r\nContent-Disposition: form-data; name="myFile"; filename="vivo.txt"\r\nContent-Type: text/plain\r\n\r\nhttps://vchat.vivo.xyz:8443/vivo/down/pc/index.html#/\r\n\r\n72162669\r\n\r\nhttps://vdi.vivo.xyz\r\n\r\nhttps://jus.vivo.xyz/\r\n\r\n\r\n------WebKitFormBoundary2aFVXZdbADXnWEdT--\r\n'
+-
+<MultiValueDict: {'myFile': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+POST_param {}
+12345
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 413, in upload_files
+    filename = recv["myFile"]
+KeyError: 'myFile'
+[29/May/2022 18:28:52] "POST /upload_files/ HTTP/1.0" 500 64557
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 18:32:34
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+vivo.txt
+data vivo.txt
+/src/files/up_1.jpg
+[29/May/2022 18:32:53] "POST /upload_files/ HTTP/1.0" 200 2
+vivo.txt
+data vivo.txt
+/src/files/up_1.jpg
+[29/May/2022 18:33:43] "POST /upload_files/ HTTP/1.0" 200 2
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 18:35:23
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 18:35:28
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+vivo.txt
+data vivo.txt
+/src/files/up_1.jpg
+[29/May/2022 18:36:19] "POST /upload_files/ HTTP/1.0" 200 2
+vivo.txt
+data vivo.txt
+/src/files/up_1.jpg
+[29/May/2022 18:38:51] "POST /upload_files/ HTTP/1.0" 200 2
+vivo.txt
+data vivo.txt
+/src/files/up_1.jpg
+[29/May/2022 18:41:59] "POST /upload_files/ HTTP/1.0" 200 2
+vivo.txt
+data vivo.txt
+/src/files/up_1.jpg
+[29/May/2022 18:43:59] "POST /upload_files/ HTTP/1.0" 200 2
+vivo.txt
+data vivo.txt
+/src/files/up_1.jpg
+[29/May/2022 18:44:57] "POST /upload_files/ HTTP/1.0" 200 2
+vivo.txt
+data vivo.txt
+/src/files/up_1.jpg
+[29/May/2022 18:45:20] "POST /upload_files/ HTTP/1.0" 200 2
+vivo.txt
+data vivo.txt
+/src/files/up_1.jpg
+[29/May/2022 18:45:54] "POST /upload_files/ HTTP/1.0" 200 2
+vivo.txt
+data vivo.txt
+/src/files/up_1.jpg
+[29/May/2022 18:46:16] "POST /upload_files/ HTTP/1.0" 200 2
+vivo.txt
+data vivo.txt
+/src/files/up_1.jpg
+[29/May/2022 18:46:49] "POST /upload_files/ HTTP/1.0" 200 2
+vivo.txt
+data vivo.txt
+/src/files/up_1.jpg
+[29/May/2022 18:47:01] "POST /upload_files/ HTTP/1.0" 200 2
+vivo.txt
+data vivo.txt
+/src/files/up_1.jpg
+[29/May/2022 18:48:43] "POST /upload_files/ HTTP/1.0" 200 2
+vivo.txt
+data vivo.txt
+/src/files/up_1.jpg
+[29/May/2022 18:49:22] "POST /upload_files/ HTTP/1.0" 200 2
+vivo.txt
+data vivo.txt
+/src/files/up_1.jpg
+[29/May/2022 18:50:00] "POST /upload_files/ HTTP/1.0" 200 2
+vivo.txt
+vivo - 副本.txtdata 
+vivo.txtdata
+ /src/files/up_1.jpgvivo - 副本.txt
+
+/src/files/up_1.jpg
+[29/May/2022 18:50:07] "POST /upload_files/ HTTP/1.0" 200 2
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 414, in upload_files
+    os.remove(file_path)
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/up_1.jpg'
+[29/May/2022 18:50:07] "POST /upload_files/ HTTP/1.0" 500 64658
+vivo.txt
+vivo - 副本.txtdata
+ datavivo.txt 
+vivo - 副本.txt/src/files/up_1.jpg
+
+/src/files/up_1.jpg
+[29/May/2022 18:50:13] "POST /upload_files/ HTTP/1.0" 200 2
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 414, in upload_files
+    os.remove(file_path)
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/up_1.jpg'
+[29/May/2022 18:50:13] "POST /upload_files/ HTTP/1.0" 500 64658
+vivo - 副本.txt
+vivo.txtdata 
+vivo - 副本.txt
+data/src/files/up_1.jpg 
+vivo.txt
+/src/files/up_1.jpg
+[29/May/2022 18:51:35] "POST /upload_files/ HTTP/1.0" 200 2
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 414, in upload_files
+    os.remove(file_path)
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/up_1.jpg'
+[29/May/2022 18:51:35] "POST /upload_files/ HTTP/1.0" 500 64640
+vivo.txtvivo - 副本.txt
+
+datadata  vivo.txtvivo - 副本.txt
+
+/src/files/up_1.jpg
+/src/files/up_1.jpg
+[29/May/2022 18:53:28] "POST /upload_files/ HTTP/1.0" 200 2
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 414, in upload_files
+    os.remove(file_path)
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/up_1.jpg'
+[29/May/2022 18:53:28] "POST /upload_files/ HTTP/1.0" 500 64658
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 18:55:03
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 18:55:15
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+vivo.txtvivo - 副本.txt
+
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 409, in upload_files
+    print(file)
+TypeError: can only concatenate str (not "InMemoryUploadedFile") to str
+[29/May/2022 18:55:25] "POST /upload_files/ HTTP/1.0" 500 64914
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 409, in upload_files
+    print(file)
+TypeError: can only concatenate str (not "InMemoryUploadedFile") to str
+[29/May/2022 18:55:25] "POST /upload_files/ HTTP/1.0" 500 64923
+vivo.txt
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 409, in upload_files
+    print(file)
+TypeError: can only concatenate str (not "InMemoryUploadedFile") to str
+[29/May/2022 18:55:43] "POST /upload_files/ HTTP/1.0" 500 64914
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 18:57:42
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+<MultiValueDict: {'myFile': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+vivo.txt
+myFile
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 411, in upload_files
+    file_path = file_path_prefix + request.FILES['myFile']
+TypeError: can only concatenate str (not "InMemoryUploadedFile") to str
+[29/May/2022 18:57:45] "POST /upload_files/ HTTP/1.0" 500 64980
+<MultiValueDict: {}>
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/utils/datastructures.py", line 78, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'myFile'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 407, in upload_files
+    print(request.FILES['myFile'])
+  File "/usr/local/lib/python3.7/site-packages/django/utils/datastructures.py", line 80, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'myFile'
+[29/May/2022 18:59:44] "POST /upload_files/ HTTP/1.0" 500 72688
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 19:00:40
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 19:01:45
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+<MultiValueDict: {}>
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/utils/datastructures.py", line 78, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'myFiles'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 407, in upload_files
+    print(request.FILES['myFiles'])
+  File "/usr/local/lib/python3.7/site-packages/django/utils/datastructures.py", line 80, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'myFiles'
+[29/May/2022 19:01:50] "POST /upload_files/ HTTP/1.0" 500 72705
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 19:22:34
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 19:22:44
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 19:22:53
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 19:23:01
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 19:25:43
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 19:25:48
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 19:25:51
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 19:25:53
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+<MultiValueDict: {'myFile': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+---
+/src/files/myFile
+[29/May/2022 19:25:58] "POST /upload_files/ HTTP/1.0" 200 2
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 19:27:34
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 19:27:44
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 19:28:28
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 19:29:51
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+POST_param {'filename': 'UML 图.jpg', 'sourcekind': 'file'}
+<WSGIRequest: POST '/deal_pic_demo/'>
+<MultiValueDict: {'file': [<InMemoryUploadedFile: UML 图.jpg (image/jpeg)>]}>
+data UML 图.jpg
+/src/files/up_1.jpg
+downimagepath=/src/files/color_17.jpg
+[29/May/2022 19:30:01] "POST /deal_pic_demo/ HTTP/1.0" 200 30384
+POST_param {'sourcekind': 'file'}
+<WSGIRequest: POST '/deal_pic_demo/'>
+<MultiValueDict: {'UML 图.jpg': [<InMemoryUploadedFile: UML 图.jpg (image/jpeg)>]}>
+data UML 图.jpg
+/src/files/up_1.jpg
+downimagepath=/src/files/color_17.jpg
+[29/May/2022 19:30:21] "POST /deal_pic_demo/ HTTP/1.0" 200 30384
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}><MultiValueDict: {'vivo - 副本.txt': [<InMemoryUploadedFile: vivo - 副本.txt (text/plain)>]}>
+
+---
+---/src/files/vivo.txt
+
+/src/files/vivo - 副本.txt
+[29/May/2022 19:32:15] "POST /upload_files/ HTTP/1.0" 200 2
+[29/May/2022 19:32:15] "POST /upload_files/ HTTP/1.0" 200 2
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+---<MultiValueDict: {'vivo2.txt': [<InMemoryUploadedFile: vivo2.txt (text/plain)>]}>
+
+/src/files/vivo.txt---
+
+/src/files/vivo2.txt
+[29/May/2022 19:33:06] "POST /upload_files/ HTTP/1.0" 200 2
+[29/May/2022 19:33:06] "POST /upload_files/ HTTP/1.0" 200 2
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+<MultiValueDict: {'vivo2.txt': [<InMemoryUploadedFile: vivo2.txt (text/plain)>]}>---
+
+---/src/files/vivo.txt
+
+/src/files/vivo2.txt
+[29/May/2022 19:33:37] "POST /upload_files/ HTTP/1.0" 200 2
+[29/May/2022 19:33:37] "POST /upload_files/ HTTP/1.0" 200 2
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+<MultiValueDict: {'vivo2.txt': [<InMemoryUploadedFile: vivo2.txt (text/plain)>]}>
+---
+---/src/files/vivo.txt
+
+/src/files/vivo2.txt
+[29/May/2022 19:33:38] "POST /upload_files/ HTTP/1.0" 200 2
+[29/May/2022 19:33:38] "POST /upload_files/ HTTP/1.0" 200 2
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+<MultiValueDict: {'vivo2.txt': [<InMemoryUploadedFile: vivo2.txt (text/plain)>]}>---
+
+---/src/files/vivo.txt
+
+/src/files/vivo2.txt
+[29/May/2022 19:33:40] "POST /upload_files/ HTTP/1.0" 200 2
+[29/May/2022 19:33:40] "POST /upload_files/ HTTP/1.0" 200 2
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}><MultiValueDict: {'vivo2.txt': [<InMemoryUploadedFile: vivo2.txt (text/plain)>]}>
+
+------
+
+/src/files/vivo2.txt/src/files/vivo.txt
+
+[29/May/2022 20:33:32] "POST /upload_files/ HTTP/1.0" 200 2
+[29/May/2022 20:33:32] "POST /upload_files/ HTTP/1.0" 200 2
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+---
+/src/files/vivo.txt
+[29/May/2022 20:33:34] "POST /upload_files/ HTTP/1.0" 200 2
+<MultiValueDict: {'vivo2.txt': [<InMemoryUploadedFile: vivo2.txt (text/plain)>]}>
+---<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+
+/src/files/vivo2.txt---
+
+/src/files/vivo.txt
+[29/May/2022 20:36:55] "POST /upload_files/ HTTP/1.0" 200 2
+[29/May/2022 20:36:55] "POST /upload_files/ HTTP/1.0" 200 2
+<MultiValueDict: {'vivo.txt': [<InMemoryUploadedFile: vivo.txt (text/plain)>]}>
+---
+/src/files/vivo.txt
+[29/May/2022 20:36:59] "POST /upload_files/ HTTP/1.0" 200 2
+POST_param {'sourcekind': 'file'}
+<WSGIRequest: POST '/deal_pic_demo/'>
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+data out.png
+/src/files/up_1.jpg
+downimagepath=/src/files/color_17.jpg
+[29/May/2022 20:49:49] "POST /deal_pic_demo/ HTTP/1.0" 200 30384
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+---
+/src/files/out.png
+[29/May/2022 20:52:58] "POST /upload_files/ HTTP/1.0" 200 2
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 20:57:44
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+{'kind': '000', 'username': 'admin'}
+[29/May/2022 20:58:19] "POST /auth/ HTTP/1.0" 200 79
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 21:02:10
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 21:02:23
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+{'pathprefix': 'abc/'}
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/out.png
+[29/May/2022 21:03:20] "POST /upload_files/ HTTP/1.0" 200 2
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 21:03:56
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 21:05:03
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 406, in upload_files
+    path_prefix = os.path.join(path_prefix, request.POST.dict().get("pathprefix"))
+UnboundLocalError: local variable 'path_prefix' referenced before assignment
+[29/May/2022 21:05:23] "POST /upload_files/ HTTP/1.0" 500 65160
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 21:05:47
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/files/null
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/nullout.png
+[29/May/2022 21:06:17] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/out.png
+[29/May/2022 21:07:51] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/out.png
+[29/May/2022 21:08:40] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/1
+<MultiValueDict: {'UML 图.jpg': [<InMemoryUploadedFile: UML 图.jpg (image/jpeg)>]}>
+/src/files/1UML 图.jpg
+[29/May/2022 21:08:57] "POST /upload_files/ HTTP/1.0" 200 2
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 21:09:25
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/files/1
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/1/out.png
+[29/May/2022 21:09:34] "POST /upload_files/ HTTP/1.0" 200 2
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 21:10:06
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 21:10:33
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 21:10:37
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/files/1
+<MultiValueDict: {'UML 图.jpg': [<InMemoryUploadedFile: UML 图.jpg (image/jpeg)>]}>
+/src/files/1/UML 图.jpg
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 417, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/1/UML 图.jpg'
+[29/May/2022 21:10:42] "POST /upload_files/ HTTP/1.0" 500 65066
+/src/files/
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/out.png
+[29/May/2022 21:11:03] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+<MultiValueDict: {'UML 图.jpg': [<InMemoryUploadedFile: UML 图.jpg (image/jpeg)>]}>
+/src/files/UML 图.jpg
+[29/May/2022 21:12:20] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/1
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/1/out.png
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 417, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/1/out.png'
+[29/May/2022 21:12:39] "POST /upload_files/ HTTP/1.0" 500 65031
+/src/files/1
+<MultiValueDict: {'UML 图.jpg': [<InMemoryUploadedFile: UML 图.jpg (image/jpeg)>]}>
+/src/files/1/UML 图.jpg
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 417, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/1/UML 图.jpg'
+[29/May/2022 21:14:57] "POST /upload_files/ HTTP/1.0" 500 65066
+/src/files/1
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/1/out.png
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 417, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/1/out.png'
+[29/May/2022 21:16:38] "POST /upload_files/ HTTP/1.0" 500 65031
+/src/files/
+<MultiValueDict: {'UML 图.jpg': [<InMemoryUploadedFile: UML 图.jpg (image/jpeg)>]}>
+/src/files/UML 图.jpg
+[29/May/2022 21:16:45] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+<MultiValueDict: {'UML 图.jpg': [<InMemoryUploadedFile: UML 图.jpg (image/jpeg)>]}>
+/src/files/UML 图.jpg
+[29/May/2022 21:18:12] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/1
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/1/out.png
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 417, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/1/out.png'
+[29/May/2022 21:18:20] "POST /upload_files/ HTTP/1.0" 500 65031
+/src/files/1
+<MultiValueDict: {'UML 图.jpg': [<InMemoryUploadedFile: UML 图.jpg (image/jpeg)>]}>
+/src/files/1/UML 图.jpg
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 417, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/1/UML 图.jpg'
+[29/May/2022 21:18:25] "POST /upload_files/ HTTP/1.0" 500 65066
+/src/files/1
+<MultiValueDict: {'UML 图.jpg': [<InMemoryUploadedFile: UML 图.jpg (image/jpeg)>]}>
+/src/files/1/UML 图.jpg
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 417, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/1/UML 图.jpg'
+[29/May/2022 21:20:17] "POST /upload_files/ HTTP/1.0" 500 65066
+/src/files/
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/out.png
+[29/May/2022 21:20:30] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/1
+<MultiValueDict: {'UML 图 (1).jpg': [<InMemoryUploadedFile: UML 图 (1).jpg (image/jpeg)>]}>
+/src/files/1/UML 图 (1).jpg
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 417, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/1/UML 图 (1).jpg'
+[29/May/2022 21:21:03] "POST /upload_files/ HTTP/1.0" 500 65098
+/src/files/
+<MultiValueDict: {'UML 图.jpg': [<InMemoryUploadedFile: UML 图.jpg (image/jpeg)>]}>
+/src/files/UML 图.jpg
+[29/May/2022 21:23:31] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/1
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/1/out.png
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 417, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/1/out.png'
+[29/May/2022 21:23:39] "POST /upload_files/ HTTP/1.0" 500 65031
+/src/files/1
+<MultiValueDict: {'UML 图.jpg': [<InMemoryUploadedFile: UML 图.jpg (image/jpeg)>]}>
+/src/files/1/UML 图.jpg
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 417, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/1/UML 图.jpg'
+[29/May/2022 21:24:50] "POST /upload_files/ HTTP/1.0" 500 65066
+/src/files/
+<MultiValueDict: {'UML 图.jpg': [<InMemoryUploadedFile: UML 图.jpg (image/jpeg)>]}>
+/src/files/UML 图.jpg
+[29/May/2022 21:25:03] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/out.png
+[29/May/2022 21:25:26] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/1
+<MultiValueDict: {'UML 图.jpg': [<InMemoryUploadedFile: UML 图.jpg (image/jpeg)>]}>
+/src/files/1/UML 图.jpg
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 417, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/1/UML 图.jpg'
+[29/May/2022 21:25:44] "POST /upload_files/ HTTP/1.0" 500 65066
+/src/files/
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/out.png
+[29/May/2022 21:26:05] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/out.png
+[29/May/2022 21:26:28] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/out.png
+[29/May/2022 21:26:44] "POST /upload_files/ HTTP/1.0" 200 2
+/src/files/1
+<MultiValueDict: {'UML 图 (1).jpg': [<InMemoryUploadedFile: UML 图 (1).jpg (image/jpeg)>]}>
+/src/files/1/UML 图 (1).jpg
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 417, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/1/UML 图 (1).jpg'
+[29/May/2022 21:26:50] "POST /upload_files/ HTTP/1.0" 500 65098
+/src/files/1
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/1/out.png
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 417, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/1/out.png'
+[29/May/2022 21:27:16] "POST /upload_files/ HTTP/1.0" 500 65031
+/src/files/1
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/1/out.png
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 417, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/1/out.png'
+[29/May/2022 21:27:41] "POST /upload_files/ HTTP/1.0" 500 65031
+/src/files/1
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/1/out.png
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 417, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/1/out.png'
+[29/May/2022 21:28:15] "POST /upload_files/ HTTP/1.0" 500 65031
+/src/files/1
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/1/out.png
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 417, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/1/out.png'
+[29/May/2022 21:28:53] "POST /upload_files/ HTTP/1.0" 500 65031
+/src/files/1
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/1/out.png
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 417, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/1/out.png'
+[29/May/2022 21:29:23] "POST /upload_files/ HTTP/1.0" 500 65031
+/src/files/
+<MultiValueDict: {'UML 图.jpg': [<InMemoryUploadedFile: UML 图.jpg (image/jpeg)>]}>
+/src/files/UML 图.jpg
+[29/May/2022 21:29:30] "POST /upload_files/ HTTP/1.0" 200 2
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 21:33:16
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/files/a/b/c
+<MultiValueDict: {'out.png': [<InMemoryUploadedFile: out.png (image/png)>]}>
+/src/files/a/b/c/out.png
+Internal Server Error: /upload_files/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/django1/app1/views.py", line 418, in upload_files
+    with open(file_path, 'wb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/src/files/a/b/c/out.png'
+[29/May/2022 21:33:29] "POST /upload_files/ HTTP/1.0" 500 65046
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 21:35:29
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+/src/files/a/b/c
+<MultiValueDict: {'UML 图.jpg': [<InMemoryUploadedFile: UML 图.jpg (image/jpeg)>]}>
+/src/files/a/b/c/UML 图.jpg
+[29/May/2022 21:35:32] "POST /upload_files/ HTTP/1.0" 200 2
+/src/django1/app1/views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 29, 2022 - 21:35:58
+Django version 2.2, using settings 'django1.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.

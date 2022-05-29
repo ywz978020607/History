@@ -1,0 +1,5 @@
+django==2.2.0
+django-cors-headers
+pycryptodome==3.14.1
+pillow==9.1.1
+requests==2.22.0
