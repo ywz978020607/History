@@ -1,4 +1,5 @@
 # nginx with django to support auth, upload(drag or click) and pic_pipeline.
+You can use this as a nginx docker with a small background management! (login admin as user:admin passwd:a)
 
 # Why use this?
 
