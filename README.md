@@ -18,7 +18,7 @@
 - web相关
 
   *服务器相关的有趣应用，django等前后端交互应用以及nginx配置视频推流等应用, 主要对接智能软硬件/esp32实现物联网全栈开发*
-  - ⭐[支持超管&用户管理+允许注册开关&文件上传&图片pipeline对比的nginx静态文件服务器Docker(普通nginx不能上传)](web%E7%9B%B8%E5%85%B3%20(python%E5%85%A8%E6%A0%88%E7%B3%BB%E5%88%97)/docker_nginx_with_Django_AuthUpload/))
+  - ⭐[支持超管&用户注册管理&文件上传&img-pipeline: nginx's Docker with django manager](web%E7%9B%B8%E5%85%B3%20(python%E5%85%A8%E6%A0%88%E7%B3%BB%E5%88%97)/docker_nginx_with_Django_AuthUpload/) ⭐[Alone Repo](https://github.com/ywz978020607/docker_nginx_with_manage)
   - [django web insides docker](web%E7%9B%B8%E5%85%B3%20(python%E5%85%A8%E6%A0%88%E7%B3%BB%E5%88%97)/docker_run_djangoweb/))
   - django/express(node.js)/nginx配置等
   - vue/uniapp/jquery
