@@ -1,3 +1,5 @@
+# This folder is updated separately in [this repo](https://github.com/ywz978020607/docker_nginx_with_manage)
+
 # nginx with django to support auth, upload(drag or click) and pic_pipeline.
 You can use this as a nginx docker with a small background management! (login admin as user:admin passwd:a)
 
