@@ -14,14 +14,14 @@ Host gitee.com
 Host gitlab.com
   HostName gitlab.com
   PreferredAuthentications publickey
-  IdentityFile ~/.ssh/id_rsa.gitlab
+  IdentityFile ~/.ssh/id_rsa.gitlab # gitlab copy from github
 
-# gitlab copy from github
+# gitlab私有化部署版本
 Host mygitlab.com
-  HostName 127.0.0.1
+  HostName 127.0.0.1 # 需要ssh -L 8022:10.134.162.162:8022 207/jump1 #or other
   Port 8022
   PreferredAuthentications publickey
-  IdentityFile ~/.ssh/id_rsa.gitlab
+  IdentityFile ~/.ssh/id_rsa.gitlab # gitlab copy from github
 
 # github
 Host github.com
@@ -30,7 +30,7 @@ Host github.com
   IdentityFile ~/.ssh/id_rsa.github
   ProxyCommand connect -S 127.0.0.1:10808 -a none %h %p #win-dns解析失败时设置走本机socks代理
 
-
+##
 Host vps
   HostName 209.250.237.38
   User ywz
