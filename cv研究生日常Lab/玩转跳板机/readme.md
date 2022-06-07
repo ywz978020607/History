@@ -3,12 +3,20 @@
 ## 1. 修改.ssh/config文件 - vscode易用
 范例见[config](config)，将系统ssh config文件(vscode的远程配置端点击配置可自动打开此文件)进行参考修改，再远程即可  
 BUAA-MC^2 同学可直接参考实时更新的[最新配置](https://raw.githubusercontent.com/Archer-Tatsu/MC-2/master/machine/IRCmachinedocker/code/config): 
+配置好~/.ssh/config文件后，在powershell/bash/任何系统命令行内测试:
 ```
 ssh 30901 
 #如果需要跳转/多级跳转
 ssh 30901 -J jump1,jump2,207,2080,... #每一个代号都是一个配置好的节点，不需要加Proxy参数
 # 端口转发
 ssh -L 9050:127.0.0.1:8000 30901 #将30901机器(若需跳板机同上)服务器自身(127.0.0.1)的8000端口转发到执行此条命令的本机的9050端口
+```
+如果是电脑端且安装了vscode，可以安装remote ssh插件，点击刷新后自动显示所有的remote机器-实现sftp+ssh
+```
+从vscode打开的话是直接加载远程机器的文件系统&终端，如果人在校外/需要跳板机，则需要在config文件对应机器的最后加上
+ProxyJump jump1
+表示从jump1跳到这里，其中jump1也是一个config配置好的Host。
+如果需要多级跳，每一级的机器配一个ProxyJump，保证能链起来即可
 ```
 
 ## 2. 类linux-命令行版配置, 支持多级跳转(默认一级)
