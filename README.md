@@ -26,8 +26,8 @@ git submodule update --remote
 - web相关
 
   *服务器相关的有趣应用，django等前后端交互应用以及nginx配置视频推流等应用, 主要对接智能软硬件/esp32实现物联网全栈开发*
-  - ⭐[支持超管&用户注册管理&文件上传&img-pipeline: nginx's Docker with django manager(Docker: Nginx+Uwsgi+Django+Sqlite3+Vue)](web%E7%9B%B8%E5%85%B3(python%E5%85%A8%E6%A0%88%E7%B3%BB%E5%88%97)/docker_nginx_with_Django_AuthUpload/)
-  - [django web insides docker](web%E7%9B%B8%E5%85%B3(python%E5%85%A8%E6%A0%88%E7%B3%BB%E5%88%97)/docker_run_djangoweb/))
+  - ⭐[支持超管&用户注册管理&文件上传&img-pipeline: nginx's Docker with django manager(Docker: Nginx+Uwsgi+Django+Sqlite3+Vue)](https://github.com/ywz978020607/History_Web/tree/master/docker_nginx_with_Django_AuthUpload)
+  - [django web insides docker](https://github.com/ywz978020607/History_Web/tree/master/docker_run_djangoweb/)
   - django/express(node.js)/nginx配置等
   - vue/uniapp/jquery
   - sqlite3、mongodb等小型化数据库简易上手
