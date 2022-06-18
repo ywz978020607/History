@@ -3,7 +3,7 @@
 	url = git@github.com:ywz978020607/Multi-planes-path-planning.git
 	branch = master
 
-[submodule "web相关(python全栈系列)"]
-	path = web相关(python全栈系列)
+[submodule "web相关"]
+	path = web相关
 	url = git@github.com:ywz978020607/History_Web.git
 	branch = master
