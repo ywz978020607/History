@@ -9,6 +9,8 @@ git submodule update --init --recursive
 git submodule update --remote
 ```
 
+- 站点[https://ywz978020607.github.io/History/](https://ywz978020607.github.io/History/)
+
 [软硬件前后端物联网全栈开发b站视频账号](https://space.bilibili.com/250616280)
 
 - cv研究生日常Lab
