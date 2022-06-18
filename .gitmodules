@@ -2,3 +2,8 @@
 	path = 算法及应用相关/空域管理-多机路径规划
 	url = git@github.com:ywz978020607/Multi-planes-path-planning.git
 	branch = master
+
+[submodule "web相关(python全栈系列)"]
+	path = web相关(python全栈系列)
+	url = git@github.com:ywz978020607/History_Web.git
+	branch = master

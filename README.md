@@ -1,5 +1,9 @@
 # 软硬件相关 全栈式开发记录
-
+*本仓库作为github全仓入口，已瘦身，采用gitmodule方式关联子仓库，可放心clone，子模块在本仓库clone后进行拉取*
+```
+git submodule update --init --recursive #子模块初始化&下载
+git submodule update --remote           #子模块更新
+```
 
 ## 站点
 -   GitHub Pages: https://ywz978020607.github.io/History
