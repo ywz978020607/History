@@ -1,3 +1,0 @@
-from sender import *
-
-sender()

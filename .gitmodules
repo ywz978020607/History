@@ -11,3 +11,7 @@
 	path = web相关(python全栈系列)
 	url = git@github.com:ywz978020607/History_Web.git
 	branch = master
+[submodule "智能软硬件(python全栈系列)"]
+	path = 智能软硬件(python全栈系列)
+	url = git@github.com:ywz978020607/History_mpy.git
+	branch = master
