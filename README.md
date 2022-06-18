@@ -9,9 +9,6 @@ git submodule update --init --recursive
 git submodule update --remote
 ```
 
-## 站点
--   GitHub Pages: https://ywz978020607.github.io/History
-
 [软硬件前后端物联网全栈开发b站视频账号](https://space.bilibili.com/250616280)
 
 - cv研究生日常Lab
@@ -21,7 +18,7 @@ git submodule update --remote
   - 内网穿透脚本教程
   - [一键梯子教程/内网二级梯子/校园网免流量等v2ray配置](cv%E7%A0%94%E7%A9%B6%E7%94%9F%E6%97%A5%E5%B8%B8Lab/v2ray%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC/readme.md)/[北航云盘上传/下载ref](https://github.com/xdedss/dist_bhpan)/[北航脚本仓库集合ref](https://github.com/buaahub/awesome-buaa)
   - 日常各类常用脚本/linux运维/docker/[git使用推荐配置](cv研究生日常Lab/git%E7%AE%A1%E7%90%86%E5%8F%8A%E5%90%8C%E6%AD%A5.md)等
-  - LC-leetcode编程相关 如 [java常用数据结构算法](cv研究生日常Lab/LC/数据结构/java常用数据结构算法.md)
+  - LC-leetcode编程相关，采用单独仓库+docisfy部署，可在线查看&定期更新leetcode个人笔记，支持评论 [leetcode等算法笔记网站版](https://ywz978020607.github.io/leetcode/#/)
   - 图像处理常用demo
 - web相关
   *服务器相关的有趣应用，django等前后端交互应用以及nginx配置视频推流等应用, 主要对接智能软硬件/esp32实现物联网全栈开发*
