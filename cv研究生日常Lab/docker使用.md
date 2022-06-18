@@ -42,9 +42,7 @@ docker restart $( docker ps -a --no-trunc --filter name=prefix123 )
 ```
 
 
-
-视频教程
-
-链接：https://pan.baidu.com/s/1IA12UKLeIr4YCYCKM0p2Hw 
-提取码：8u0s 
-复制这段内容后打开百度网盘手机App，操作更方便哦
+docker-compose运行命令后优雅地保持阻塞:
+```
+command: bash -c "your command && tail -f /dev/null"
+```

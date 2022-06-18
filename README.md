@@ -24,7 +24,6 @@ git submodule update --remote
   - LC-leetcode编程相关 如 [java常用数据结构算法](cv研究生日常Lab/LC/数据结构/java常用数据结构算法.md)
   - 图像处理常用demo
 - web相关
-
   *服务器相关的有趣应用，django等前后端交互应用以及nginx配置视频推流等应用, 主要对接智能软硬件/esp32实现物联网全栈开发*
   - ⭐[支持超管&用户注册管理&文件上传&img-pipeline: nginx's Docker with django manager(Docker: Nginx+Uwsgi+Django+Sqlite3+Vue)](https://github.com/ywz978020607/History_Web/tree/master/docker_nginx_with_Django_AuthUpload)
   - [django web insides docker](https://github.com/ywz978020607/History_Web/tree/master/docker_run_djangoweb/)
