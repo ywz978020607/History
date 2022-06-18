@@ -1,9 +1,12 @@
 # 软硬件相关 全栈式开发记录
 *本仓库作为github全仓入口，已瘦身，采用gitmodule方式关联子仓库，可放心clone，子模块在本仓库clone后进行拉取*
 ```
-git submodule add -b master git@github.com:ywz978020607/History_mpy.git 智能软硬件(python全栈系列) #添加子模块
-git submodule update --init --recursive #子模块初始化&下载
-git submodule update --remote           #子模块更新
+#添加子模块
+git submodule add -b master git@github.com:ywz978020607/History_mpy.git 智能软硬件(python全栈系列) 
+#子模块初始化&下载
+git submodule update --init --recursive
+#子模块更新
+git submodule update --remote
 ```
 
 ## 站点
