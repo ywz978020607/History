@@ -145,7 +145,7 @@ sudo service docker restart  # 重启docker
 ## 管理员docker命令
 ```
 #镜像清理
-docker image prune
+docker image prune -a
 docker ps -a
 docker ps -a -q
 #停止/删除所有容器
