@@ -6,7 +6,7 @@ git submodule add -b master https://github.com/ywz978020607/History_mpy.git 智�
 #子模块初始化&下载
 git submodule update --init --recursive
 #子模块更新
-git submodule update --remote
+git submodule update --remote -f
 ```
 
 - 站点[https://ywz978020607.github.io/History/](https://ywz978020607.github.io/History/)
