@@ -5,6 +5,9 @@
 `<command> 2>&1 >/dev/null | tee logfile`
 加入-a参数表示追加  
 
+## 日志查询分析
+tail (-f) -n 1000 log.txt | grep "xxx" -B 30
+
 ## 打印时间
 date +%Y%m%d-%H:%M:%S  
 
