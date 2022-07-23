@@ -17,6 +17,25 @@ ctrl+shift+v
 jupyter nbconvert --to script *.ipynb
 
 
+# 图像数值对比
+```
+import cv2
+import numpy as np
+
+f1 = "ori.png"
+f2 = "out.png"
+
+
+png1 = cv2.imread(f1, -1).astype(np.float32)
+png2 = cv2.imread(f2, -1).astype(np.float32)
+print(png2.shape)
+print(png1)
+print(png2)
+
+# row, col = 0, 4350
+row, col = 0, 0
+print("at:[{},{}], png1:{},png2:{}".format(row, col, png1[row, col], png2[row, col]))
+```
 
 # 加载图像
 
