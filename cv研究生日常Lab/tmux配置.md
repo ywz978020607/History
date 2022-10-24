@@ -35,5 +35,16 @@ source-file ~/.tmux.conf
 
 注意：规范使用：ctrl+b : +w是切换窗格，+s才是切换会话   有些系统中用w看不到其他会话
 
-重新适配窗口：进入tmux之后，输入 `tmux detach -a`
+- 重新适配窗口
+进入tmux之后，输入 `tmux detach -a`
+
+- 会话管理
+会话-窗口-窗格
+```
+tmux ls
+tmux rename-session -t 0 <new-name>
+tmux a -t 0 #常用
+tmux switch -t 0
+```
+
 
