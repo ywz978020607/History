@@ -6,7 +6,7 @@
 # echo $temp_branch
 
 # 自动更新主分支并合并到本分支
-alias automerge="temp_branch=$(git symbolic-ref -q --short HEAD) && git checkout master && git pull origin master && git checkout $temp_branch && git merge master && git branch | grep '*'"
+alias gmerge="temp_branch=$(git symbolic-ref -q --short HEAD) && git checkout master && git pull origin master && git checkout $temp_branch && git merge master && git branch | grep '*'"
 
 #
 alias gaddup="git add -A && git commit -m 'up'"
