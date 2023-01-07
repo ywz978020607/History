@@ -1,3 +1,4 @@
+import numpy as np
 from ctypes import *
 #dll = cdll.LoadLibrary('dlltest.dll')  #c
 # dll = cdll.LoadLibrary('dlltest2.dll')  #cpp
