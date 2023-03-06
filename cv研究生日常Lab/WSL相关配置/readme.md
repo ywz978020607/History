@@ -73,4 +73,11 @@ sudo mount -t drvfs E: /mnt/e
 
 
 
-
+# Windows-Docker-Desktop排错指南
+1. 一直卡在starting
+   cd "C:\Program Files\Docker\Docker"
+   ./DockerCli.exe -SwitchDaemon
+2. 启动后运行报错open \\.\pipe\docker_engine_window
+   Docker-Desktop重新安装4.13.0(-4.16.x版本有bug)，并取消自动升级
+3. 报错虚拟化xxxx开启BIOS
+   确保Hyper-V开启，然后执行`bcdedit /set hypervisorlaunchtype auto`并重启
