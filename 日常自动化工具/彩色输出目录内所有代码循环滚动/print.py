@@ -2,7 +2,8 @@
 import colorama
  
 colorama.init(autoreset=True)
-import os, random
+import os, random, time
+sleep_delta = float(input("each line sleep time(s):"))
 
 all_files = os.popen('dir /s /b').read().split('\n')
 mod = "\033[0;{};40m{}\033[0m"
@@ -15,7 +16,7 @@ def print_with_auto_color(line):
         # print(color)
         # print(word)
         print("\b{} ".format(mod.format(color, word)), end = ' ')
-
+    time.sleep(sleep_delta)
 
 def print_all_files():
     for file in all_files:
