@@ -15,9 +15,24 @@
 http_onenet = {}
 
 -- get points
+function http_onenet.get_datastream(id, key, datastream_id, limit)
+    local res_data = {}
+    local code, headers, body = http.request("GET", "http://api.heclouds.com/devices/"..id.."/datapoints?datastream_id="..datastream_id.."&limit="..limit, {["api-key"]=key},json.encode({})).wait()
+    -- log.info("http.get", code, headers, body)
+    body = json.decode(body)
+    -- log.info("decode body:", body)
+    if body.errno == 0 then
+        for k,v in ipairs(body.data.datastreams) do
+            res_data[v["id"]] = v["datapoints"]
+        end
+    end
+    return res_data
+end
+
+-- get points
 function http_onenet.get_points(id, key, limit)
     local res_data = {}
-    local code, headers, body = http.request("GET", "http://api.heclouds.com/devices/"..id.."/datapoints", {["api-key"]=key},json.encode({limit=limit})).wait()
+    local code, headers, body = http.request("GET", "http://api.heclouds.com/devices/"..id.."/datapoints?limit="..limit, {["api-key"]=key},json.encode({})).wait()
     -- log.info("http.get", code, headers, body)
     body = json.decode(body)
     -- log.info("decode body:", body)
