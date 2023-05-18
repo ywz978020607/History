@@ -176,9 +176,3 @@ unset ALL_PROXY #取消代理
 sudo systemctl set-default multi-user.target
 #默认下次开机后UI
 sudo systemctl set-default graphical.target
-
-# python3 自启临时httpserver测试用
-- ipv4版本
-python3 -m http.server 8000
-- ipv6版本
-python3 -c "import socket,SocketServer,CGIHTTPServer;SocketServer.TCPServer.address_family=socket.AF_INET6;CGIHTTPServer.test()" 8000
