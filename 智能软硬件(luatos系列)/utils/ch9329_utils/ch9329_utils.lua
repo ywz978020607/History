@@ -286,8 +286,8 @@ function ch9329_utils.deal_input_dict(uartid, get_data)
     if get_data['mode'] == 'kb' then
         context = tostring(get_data['context'])
         context_list = ch9329_utils.mysplit(context, '\\u')
-        for i = 1, #bb do
-            data = bb[i]
+        for i = 1, #context_list do
+            data = context_list[i]
             if #data == 4 then
                 ch9329_utils.run_send(uartid, ch9329_utils.get_usb_key_cmd(data, false, false, true))
             elseif #data > 0 then
