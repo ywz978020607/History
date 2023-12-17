@@ -4,6 +4,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import * #QApplication,QMainWindow
 from PyQt5.QtCore import * #QFileInfo, QUrl
 from PyQt5.QtWebEngineWidgets import * #QWebEngineView
+# from PyQt5.QtWebEngineWidgets  import QWebEngineSettings
+# from PyQt5.QtWebKit import QWebSettings
+# from PyQt5.QtWebKit.QWebSettings import setOfflineStoragePath
+
 import json
 import os
 
@@ -12,6 +16,7 @@ icopath = "ico.ico" #支持png等格式
 class TrayIcon(QtWidgets.QSystemTrayIcon):
     def __init__(self, MainWindow, parent=None):
         super(TrayIcon, self).__init__(parent)
+        # self.
         self.ui = MainWindow
         self.createMenu()
  
@@ -40,7 +45,7 @@ class TrayIcon(QtWidgets.QSystemTrayIcon):
         # 若是最小化，则先正常显示窗口，再变为活动窗口（暂时显示在最前面）
         self.ui.showNormal()
         self.ui.activateWindow()
-        self.ui.setWindowFlags(Qt.SplashScreen | Qt.WindowTransparentForInput)
+        self.ui.setWindowFlags(self.ui.get_show_status(Qt.SplashScreen, self.ui.config_dict['transparent'], self.ui.config_dict['ontop']))
         self.ui.setWindowOpacity(self.ui.config_dict['opacity']) # 半透明
         self.ui.show()
 
@@ -48,7 +53,7 @@ class TrayIcon(QtWidgets.QSystemTrayIcon):
         # 若是最小化，则先正常显示窗口，再变为活动窗口（暂时显示在最前面）
         self.ui.showNormal()
         self.ui.activateWindow()
-        self.ui.setWindowFlags(QtCore.Qt.Window)
+        self.ui.setWindowFlags(self.ui.get_show_status(QtCore.Qt.Window, False, self.ui.config_dict['ontop']))
         self.ui.setWindowOpacity(1.0) # 半透明
         self.ui.show()
 
@@ -81,13 +86,18 @@ class MainWindow(QMainWindow):
             "geometry": [5, 30, 1355, 730],
             "opacity": 0.7,
             "modify_mode": False,
-            "zoom": 0.1
+            "zoom": 0.1,
+            "transparent": False,
+            "ontop": True,
         }
         if os.path.exists(config_path):
             print(config_path)
             with open(config_path, 'r') as f:
-                last_config_dict = json.load(f)
-                self.config_dict.update(last_config_dict)
+                try:
+                    last_config_dict = json.load(f)
+                    self.config_dict.update(last_config_dict)
+                except:
+                    print("empty/error json")
                 print(self.config_dict)
 
         self.setWindowTitle('Title')
@@ -95,17 +105,20 @@ class MainWindow(QMainWindow):
             self.setGeometry(self.config_dict.get('geometry', [])[0], self.config_dict.get('geometry', [])[1],self.config_dict.get('geometry', [])[2],self.config_dict.get('geometry', [])[3])
         self.setWindowOpacity(self.config_dict['opacity']) # 半透明
 
-        self.browser=QWebEngineView()
+        profile = QWebEngineProfile.defaultProfile()
+        profile.setPersistentCookiesPolicy(QWebEngineProfile.ForcePersistentCookies)
+        self.browser = QWebEngineView()
+        webpage = QWebEnginePage(profile, self.browser)
+        self.browser.setPage(webpage)
+
+        self.browser.load(QUrl('http://api.moyudage.top:8880/mindoc/'))
+        # self.browser.load(QUrl(QFileInfo("./frontend/index.html").absoluteFilePath()))
         self.browser.setZoomFactor(self.config_dict['zoom'])
-        #加载外部的web界面
-        # self.browser.load(QUrl('https://blog.csdn.net/jia666666'))
-        self.browser.load(QUrl(QFileInfo("./frontend/index.html").absoluteFilePath()))
         self.setCentralWidget(self.browser)
-        self.setWindowFlags(Qt.SplashScreen | Qt.WindowTransparentForInput) #去掉标题栏和任务栏 | #鼠标穿透
-        
+        # self.setWindowFlags(Qt.SplashScreen)
+        self.setWindowFlags(self.get_show_status(Qt.SplashScreen, self.config_dict['transparent'], self.config_dict['ontop']))
+
         self.update_location()
-
-
 
     def update_location(self):
         print("widget.geometry().x() = %d" % self.geometry().x())
@@ -114,15 +127,14 @@ class MainWindow(QMainWindow):
         print("widget.geometry().height() = %d" % self.geometry().height())
         self.config_dict["geometry"] = [self.geometry().x(), self.geometry().y(), self.geometry().width(), self.geometry().height()]
 
-    #     self.bt1 = QPushButton("1111", self)
-    #     self.bt1.resize(100, 100)
-    #     self.bt1.clicked.connect(self.click1)
-    # def click1(self):
-    #     print("press")
-        
-
-
-
+    def get_show_status(self, ori, transparent, ontop):
+        res = ori
+        if transparent:
+            res = res | Qt.WindowTransparentForInput
+        if ontop:
+            res = res | Qt.WindowStaysOnTopHint
+        return res
+    
 if __name__ == '__main__':
     if 1:
         # 启动server
