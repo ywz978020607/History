@@ -22,3 +22,5 @@ pyi-makespec clipweb.py
 pyinstaller -F -w 
 ```
 
+## 不打包bat后台执行
+见.bat文件
