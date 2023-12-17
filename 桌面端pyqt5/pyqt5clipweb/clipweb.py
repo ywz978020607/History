@@ -75,7 +75,10 @@ class TrayIcon(QtWidgets.QSystemTrayIcon):
         if reason == 2 or reason == 3:
             # self.showMessage("xxxx", "点击退出", self.icon)
             if self.ui.isMinimized() or not self.ui.isVisible():
-                self.show_window()
+                if reason == 2:
+                    self.show_full_window()
+                elif reason == 3:
+                    self.show_window()
             else:
                 self.hid_window()
 
