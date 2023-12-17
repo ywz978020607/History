@@ -24,3 +24,7 @@ pyinstaller -F -w
 
 ## 不打包bat后台执行
 见.bat文件
+- 固定任务栏方式:
+    - 对任意文件右键创建快捷方式
+    - 打开%AppData%\Microsoft\Windows\Start Menu\Programs，把快捷方式放到这里
+    - 在开始菜单的列表（所有应用）中找到它，然后右键固定到开始屏幕
