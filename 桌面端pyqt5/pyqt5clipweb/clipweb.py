@@ -72,10 +72,10 @@ class TrayIcon(QtWidgets.QSystemTrayIcon):
 
     # 鼠标点击icon传递的信号会带有一个整形的值，1是表示单击右键，2是双击，3是单击左键，4是用鼠标中键点击
     def onIconClicked(self, reason):
-        if reason == 2 or reason == 3:
+        if reason == 2 or reason == 3 or reason == 4:
             # self.showMessage("xxxx", "点击退出", self.icon)
             if self.ui.isMinimized() or not self.ui.isVisible():
-                if reason == 2:
+                if reason == 2 or reason == 4:
                     self.show_full_window()
                 elif reason == 3:
                     self.show_window()
