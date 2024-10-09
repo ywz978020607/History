@@ -111,9 +111,11 @@
             document.getElementById('question-text').innerText = '题干: ' + question['A'];
             document.getElementById('question-type').innerText = '类型: ' + question['B'];
             let optionsHtml = '';
-            question['C'].split('|').forEach(function(option, i) {
-                optionsHtml += '<div>选项 ' + String.fromCharCode(65 + i) + ': ' + option + '</div>';
-            });
+            if(question['B'] != '判断'){
+                question['C'].split('|').forEach(function(option, i) {
+                    optionsHtml += '<div>选项 ' + String.fromCharCode(65 + i) + ': ' + option + '</div>';
+                });
+            }
             document.getElementById('options').innerHTML = optionsHtml;
             document.getElementById('answer').innerText = '答案: ' + question['D'];
         }
