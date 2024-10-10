@@ -11,3 +11,9 @@
 ; Alt + s 和 Alt + f 分别为左键和右键点击
 !s::MouseClick, left          ; 左键点击
 !f::MouseClick, right         ; 右键点击
+
+; Alt + u 按下左键（按住不放）
+!u::Click Down ; 按住左键
+
+; Alt + o 松开左键
+!o::Click Up ; 松开左键
